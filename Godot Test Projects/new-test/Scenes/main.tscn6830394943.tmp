@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://brx1opbb2qvmt"]
+
+[ext_resource type="Texture2D" uid="uid://d4in1ui1rytqm" path="res://Textures/rusty_metal_grid_diff_4k.png" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://dgu62kks5wk6h" path="res://Skybox/qwantani_moon_noon_puresky_4k.hdr" id="2_8gbba"]
+[ext_resource type="ArrayMesh" uid="uid://co8kc8nljdow" path="res://Grome.tres" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://c4wqxagd5afrp" path="res://Scripts/grome.gd" id="4_kry3j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qn07e"]
+albedo_texture = ExtResource("1_bo1nx")
+metallic = 0.05
+ao_enabled = true
+refraction_enabled = true
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dgmes"]
+panorama = ExtResource("2_8gbba")
+
+[sub_resource type="Sky" id="Sky_36s4f"]
+sky_material = SubResource("PanoramaSkyMaterial_dgmes")
+
+[sub_resource type="Environment" id="Environment_v5cjn"]
+background_mode = 2
+sky = SubResource("Sky_36s4f")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
+
+[node name="(hello) world" type="Node3D" unique_id=1264221906]
+
+[node name="stage" type="Node3D" parent="." unique_id=2058819802]
+
+[node name="floor" type="CSGBox3D" parent="stage" unique_id=599993827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006158352, -0.50300324, 0.0026971102)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_qn07e")
+
+[node name="environment" type="Node3D" parent="." unique_id=148232283]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="environment" unique_id=1847337173]
+environment = SubResource("Environment_v5cjn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="environment" unique_id=505907810]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=612237595]
+script = ExtResource("4_kry3j")
+
+[node name="Grome" type="MeshInstance3D" parent="player" unique_id=1335071394]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006, 0, -0.01)
+mesh = ExtResource("3_jjvhh")
+
+[node name="Head" type="Node3D" parent="player" unique_id=2006919736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3913186, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=457994095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0032380223, -0.025325656)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1192955423]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_jjvhh")

@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://brx1opbb2qvmt"]
+
+[ext_resource type="Texture2D" uid="uid://d4in1ui1rytqm" path="res://Textures/rusty_metal_grid_diff_4k.png" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://dgu62kks5wk6h" path="res://Skybox/qwantani_moon_noon_puresky_4k.hdr" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://c0ik4j13vgjxp" path="res://Textures/rusty_metal_grid_nor_gl_4k.png" id="2_21xkr"]
+[ext_resource type="Texture2D" uid="uid://c03s1eqqjlvty" path="res://Textures/rusty_metal_grid_rough_4k.png" id="3_6bp64"]
+[ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://es7rrudvwyib" path="res://Scripts/TEST.tscn.gd" id="3_kry3j"]
+[ext_resource type="Material" uid="uid://ylup6c432g51" path="res://Assets/Carpet.tres" id="4_ynf5e"]
+[ext_resource type="Material" uid="uid://c3qc10rsembnr" path="res://materials/gnome.tres" id="6_344ge"]
+[ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="7_6bp64"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qn07e"]
+albedo_texture = ExtResource("1_bo1nx")
+metallic = 0.05
+roughness_texture = ExtResource("3_6bp64")
+normal_enabled = true
+normal_texture = ExtResource("2_21xkr")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bp64"]
+albedo_texture = ExtResource("1_bo1nx")
+metallic = 0.05
+roughness_texture = ExtResource("3_6bp64")
+roughness_texture_channel = 2
+normal_enabled = true
+normal_texture = ExtResource("2_21xkr")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dgmes"]
+panorama = ExtResource("2_8gbba")
+
+[sub_resource type="Sky" id="Sky_36s4f"]
+sky_material = SubResource("PanoramaSkyMaterial_dgmes")
+
+[sub_resource type="Environment" id="Environment_v5cjn"]
+background_mode = 2
+sky = SubResource("Sky_36s4f")
+tonemap_mode = 2
+ssao_enabled = true
+ssao_intensity = 0.85
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+volumetric_fog_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 1.08
+adjustment_saturation = 1.03
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kry3j"]
+height = 1.2
+
+[node name="(hello) world" type="Node3D" unique_id=1264221906]
+
+[node name="stage" type="Node3D" parent="." unique_id=2058819802]
+
+[node name="floor2" type="CSGBox3D" parent="stage" unique_id=143446838]
+transform = Transform3D(-0.998607, -0.0086238505, 0.052056927, -0.008726522, 0.9999605, -0.0017453285, -0.05203981, -0.0021971737, -0.99864256, 16.12035, 1.2549504, 6.879099)
+use_collision = true
+size = Vector3(10, 1, 100)
+material = SubResource("StandardMaterial3D_qn07e")
+
+[node name="floor3" type="CSGBox3D" parent="stage" unique_id=966731070]
+transform = Transform3D(0.9077775, 0, -0.4194521, 0, 1, 0, 0.4194521, 0, 0.9077775, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_6bp64")
+
+[node name="arch" type="CSGCombiner3D" parent="stage" unique_id=358454784]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.46355152, 0, 0)
+material_override = ExtResource("4_ynf5e")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="stage/arch" unique_id=1189485339]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 12, 3.140752, 2.0304642, -8.695172)
+material = ExtResource("4_ynf5e")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage/arch" unique_id=896693441]
+transform = Transform3D(1.9450545, 0, 0, 0, 2.2166321, 0, 0, 0, 12, 3.140752, 1.111023, -8.695172)
+material_override = ExtResource("4_ynf5e")
+operation = 2
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="stage/arch" unique_id=1565933489]
+transform = Transform3D(1.94, 0, 0, 0, 0.023171186, -2.0988576, 0, 3.8259394, 0.012711394, 3.1441092, 2.1663241, -10.377773)
+material_override = ExtResource("4_ynf5e")
+operation = 2
+height = 4.067871
+sides = 32
+
+[node name="environment" type="Node3D" parent="." unique_id=148232283]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="environment" unique_id=1847337173]
+environment = SubResource("Environment_v5cjn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="environment/WorldEnvironment" unique_id=426555106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -521.2595, 1752.0881, 895.2859)
+light_color = Color(0.7621648, 0.8146841, 1, 1)
+light_energy = 0.407
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=612237595]
+script = ExtResource("3_kry3j")
+
+[node name="Grome" type="MeshInstance3D" parent="player" unique_id=1335071394]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006, 0, -0.01)
+material_override = ExtResource("6_344ge")
+mesh = ExtResource("3_jjvhh")
+
+[node name="Head" type="Node3D" parent="player" unique_id=2006919736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3913186, -0.0944175)
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=457994095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0032380223, -0.025325656)
+cull_mask = 1048573
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="player/Head/Camera3D" unique_id=702735798]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="player/Head/Camera3D/SubViewportContainer" unique_id=1068335278]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="view_model_camera" parent="player/Head/Camera3D/SubViewportContainer/SubViewport" unique_id=981051096 instance=ExtResource("7_6bp64")]
+cull_mask = 1047554
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="player" unique_id=1192955423]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_jjvhh")
+
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="player" unique_id=1115026]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.3096739, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_kry3j")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="player" unique_id=247870951]
+target_position = Vector3(0, 0.7, 0)
+
+[node name="Grome" type="MeshInstance3D" parent="." unique_id=747643153]
+transform = Transform3D(-1.7484555e-05, 0, 400, 0, 400, 0, -400, 0, -1.7484555e-05, -90.11652, -125.65989, -2.989554)
+material_override = ExtResource("6_344ge")
+mesh = ExtResource("3_jjvhh")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Grome" unique_id=950076686]
+transform = Transform3D(0.0025, -1.3877788e-17, -8.6736174e-19, 0, 0.00013519712, -0.0024963417, 1.3877788e-17, 0.0024963417, 0.00013519712, -3.259629e-09, 0.26982677, 0.07560852)
+light_color = Color(1, 0, 0, 1)
+light_energy = 8.008
+light_volumetric_fog_energy = 5.119
+spot_range = 2713.212
+spot_attenuation = 0.62
