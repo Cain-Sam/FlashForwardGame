@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cq6o8t6i0o52m"]
+
+[ext_resource type="Script" uid="uid://es7rrudvwyib" path="res://Scripts/TEST.tscn.gd" id="1_42h2c"]
+[ext_resource type="Material" uid="uid://c3qc10rsembnr" path="res://materials/gnome.tres" id="2_pwjl4"]
+[ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="3_c5m4g"]
+[ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="4_osv0v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kry3j"]
+height = 1.2
+
+[node name="player" type="CharacterBody3D" unique_id=1110909322]
+script = ExtResource("1_42h2c")
+
+[node name="Grome" type="MeshInstance3D" parent="." unique_id=2042388137]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006, 0, -0.01)
+material_override = ExtResource("2_pwjl4")
+mesh = ExtResource("3_c5m4g")
+
+[node name="Head" type="Node3D" parent="." unique_id=823764736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3913186, -0.0944175)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1823406363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0032380223, -0.025325656)
+cull_mask = 1048573
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D" unique_id=1679629365]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer" unique_id=2027528900]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="view_model_camera" parent="Head/Camera3D/SubViewportContainer/SubViewport" unique_id=981051096 instance=ExtResource("4_osv0v")]
+cull_mask = 1047554
+
+[node name="Vision" type="RayCast3D" parent="Head" unique_id=456329300]
+transform = Transform3D(1, 0, 0, 0, -0.12852214, -0.4831998, 0, 0.4831998, -0.12852214, 0, 0, -0.049968764)
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=952326081]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_jjvhh")
+
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="." unique_id=528201251]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.3096739, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_kry3j")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1025731372]
+target_position = Vector3(0, 0.7, 0)

@@ -3,6 +3,8 @@ extends Camera3D
 @onready var fps_rig: Node3D = $fps_rig
 @onready var animation_player: AnimationPlayer = $fps_rig/shotgun/AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $fps_rig/leg/left_leg/AnimationPlayer2
+@onready var door: CSGBox3D = $"../../../../../../stage/Door"
+@onready var vision: RayCast3D = $"../../../../Vision"
 
 
 var shotgun_in_use = true;
@@ -34,3 +36,7 @@ func _input(event):
 			animation_player.play("pull_up")
 	if(event.is_action_pressed("kick")):
 		animation_player_2.play("kick")
+		if vision.is_colliding():
+			var collider = vision.get_collider()
+			if collider.is_in_group("door"):
+				collider.queue_free()
