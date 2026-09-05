@@ -68,13 +68,13 @@ use_collision = true
 size = Vector3(10, 1, 100)
 material = SubResource("StandardMaterial3D_qn07e")
 
-[node name="floor3" type="CSGBox3D" parent="stage" unique_id=966731070 groups=["door"]]
+[node name="floor3" type="CSGBox3D" parent="stage" unique_id=966731070]
 transform = Transform3D(0.9077775, 0, -0.4194521, 0, 1, 0, 0.4194521, 0, 0.9077775, 0, -0.5, 0)
 use_collision = true
 size = Vector3(100, 1, 100)
 material = SubResource("StandardMaterial3D_6bp64")
 
-[node name="arch" type="CSGCombiner3D" parent="stage" unique_id=358454784 groups=["door"]]
+[node name="arch" type="CSGCombiner3D" parent="stage" unique_id=358454784]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0.46355152, 0, 0)
 material_override = ExtResource("4_ynf5e")
 use_collision = true
@@ -126,7 +126,7 @@ light_energy = 0.407
 
 [node name="player" parent="." unique_id=1110909322 instance=ExtResource("6_ynf5e")]
 
-[node name="Grome" type="MeshInstance3D" parent="." unique_id=747643153 groups=["door"]]
+[node name="Grome" type="MeshInstance3D" parent="." unique_id=747643153]
 transform = Transform3D(-1.7484555e-05, 0, 400, 0, 400, 0, -400, 0, -1.7484555e-05, -90.11652, -125.65989, -2.989554)
 material_override = ExtResource("6_344ge")
 mesh = ExtResource("3_jjvhh")
