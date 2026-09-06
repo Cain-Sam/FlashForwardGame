@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var view_model_camera: Camera3D = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera
+@export var myhead_4: Node3D
 
 #Movement Vars
 
@@ -40,7 +41,6 @@ func _input(event):
 func _physics_process(delta):
 	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
 	
-	
 	#Handle Movement State
 	
 	#Crouching
@@ -50,7 +50,6 @@ func _physics_process(delta):
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
 	elif !ray_cast_3d.is_colliding(): 
-		
 		#Standing
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = true

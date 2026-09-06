@@ -6139,7 +6139,7 @@ mesh = SubResource("ArrayMesh_6kmyk")
 transform = Transform3D(-0.023499446, -0.02347204, -0.005459351, 0.02405159, -0.023153396, -0.0042128586, -0.0007954288, -0.0066571212, 0.03390118, 0.08890591, -0.06322826, -0.59471166)
 
 [node name="hand" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand" unique_id=1589199316]
-transform = Transform3D(0.6888387, -0.6466079, 0.3277191, 0.57161707, 0.7625222, 0.3030081, -0.44582078, -0.021393832, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
+transform = Transform3D(0.6888387, -0.6466078, 0.3277191, 0.57161707, 0.76252216, 0.3030081, -0.44582078, -0.02139383, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
 layers = 2
 material_override = ExtResource("2_74nyn")
 mesh = SubResource("ArrayMesh_gjxc6")
@@ -6229,6 +6229,7 @@ libraries/ = SubResource("AnimationLibrary_4n8fr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="fps_rig/shotgun" unique_id=1436061460]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.9906588, 0.16917628, 0, -0.14051166, 0.8228052, 0.08937336, -0.08478116, -0.49435002)
+visible = false
 light_color = Color(0.9137255, 1, 0.8509804, 1)
 spot_range = 1.0
 spot_angle = 63.33
@@ -6764,13 +6765,13 @@ settings/3/joints/1/limitation = null
 transform = Transform3D(0.6482257, 0.75268066, 0.11522482, 0.44878748, -0.4999029, 0.7407344, 0.61513716, -0.428452, -0.6618426, -437.93683, 6615.165, 9069.925)
 
 [node name="Marker3D2" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=7481512]
-transform = Transform3D(0.40647066, -0.5591171, -0.722613, 0.5626536, 0.7763156, -0.28417608, 0.71986485, -0.29107136, 0.6301372, 1556.0309, 6291.027, -1639.7227)
+transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.77631557, -0.2841761, 0.71986485, -0.29107133, 0.63013726, 1556.0309, 6291.027, -1639.7227)
 
 [node name="Marker3D3" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=1621962855]
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988181, -0.14587697, -0.5836158, 0.593162, 0.029347174, 0.804546, -0.10023763, -0.9888655, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881805, -0.14587697, -0.5836158, 0.59316194, 0.029347172, 0.804546, -0.10023762, -0.98886544, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
