@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmg8qfar70tyu"]
+
+[ext_resource type="Script" uid="uid://cltmrd8610myu" path="res://Scripts/scene_exporter.gd" id="1_li22u"]
+[ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="2_ab4cp"]
+
+[node name="Node2D" type="Node2D" unique_id=557186882]
+
+[node name="SceneEXPORTER" type="Node" parent="." unique_id=1774140328]
+script = ExtResource("1_li22u")
+target_scene = ExtResource("2_ab4cp")
+metadata/_custom_type_script = "uid://cltmrd8610myu"

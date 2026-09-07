@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c3qc10rsembnr"]
+
+[ext_resource type="Texture2D" uid="uid://ltyhksx4yrfd" path="res://Godot Test Projects/garden_gnome_diff_4k.png" id="1_ak67n"]
+[ext_resource type="Texture2D" uid="uid://clufl7a5h74rv" path="res://Godot Test Projects/garden_gnome_ao_4k.png" id="2_g3bhg"]
+[ext_resource type="Texture2D" uid="uid://dnc32wd08rt8e" path="res://Godot Test Projects/garden_gnome_metal_4k.png" id="3_mbcdl"]
+[ext_resource type="Texture2D" uid="uid://clufl7a5h74rv" path="res://Godot Test Projects/garden_gnome_ao_4k.png" id="4_txymu"]
+[ext_resource type="Texture2D" uid="uid://v7t1lw2udt85" path="res://Godot Test Projects/garden_gnome_rough_4k.png" id="5_jvgg7"]
+
+[resource]
+albedo_texture = ExtResource("1_ak67n")
+metallic = 1.0
+metallic_texture = ExtResource("3_mbcdl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_jvgg7")
+normal_enabled = true
+normal_texture = ExtResource("4_txymu")
+ao_enabled = true
+ao_texture = ExtResource("2_g3bhg")
+ao_texture_channel = 1

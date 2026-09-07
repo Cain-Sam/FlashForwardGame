@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b1sfjhawiy1us"]
+
+[ext_resource type="PackedScene" uid="uid://c76qke2o7g6ee" path="res://Godot Test Projects/player.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node3D" unique_id=653599091]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1365452781]
+size = Vector3(108, 1, 176)
+
+[node name="House" type="CSGCombiner3D" parent="." unique_id=749216940]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House" unique_id=1525080945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3, -16)
+size = Vector3(8, 7, 1)
+
+[node name="player" parent="." unique_id=2091483284 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+script = null

@@ -3,7 +3,6 @@ extends Camera3D
 @onready var fps_rig: Node3D = $fps_rig
 @onready var animation_player: AnimationPlayer = $fps_rig/shotgun/AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $fps_rig/leg/left_leg/AnimationPlayer2
-@onready var door: CSGBox3D = $"../../../../../../stage/Door"
 @onready var vision: RayCast3D = $"../../../../Vision"
 @export var myhead: MeshInstance3D
 @export var gpu_particles_3d: GPUParticles3D
@@ -43,7 +42,7 @@ func _input(event):
 		animation_player_2.play("kick")
 		if vision.is_colliding():
 			var collider = vision.get_collider()
-			if collider.is_in_group("door"):
+			if collider.is_in_group("kickable"):
 				collider.queue_free()
 			if collider.is_in_group("myhead"):
 				get_tree().call_group("global_kick_events", "trigger_kick_effect")

@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="New Test"
-run/main_scene="uid://brx1opbb2qvmt"
+config/name="Theatre Imm Sim"
+run/main_scene="uid://bi010alm8oii7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+kickable=""
+player="literally the player"
 
 [input]
 
