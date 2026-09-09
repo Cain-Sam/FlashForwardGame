@@ -1,26 +1,35 @@
 [gd_scene format=3 uid="uid://bi010alm8oii7"]
 
+[ext_resource type="Texture2D" uid="uid://cmgt26nym0vyl" path="res://Skybox/dikhololo_night_4k.hdr" id="1_1mqhj"]
 [ext_resource type="PackedScene" uid="uid://c76qke2o7g6ee" path="res://Scenes/player.tscn" id="1_qlyh0"]
 [ext_resource type="Script" uid="uid://dxknrj0sdnlbv" path="res://Scripts/leveltrans.gd" id="2_jqwmj"]
+[ext_resource type="Material" uid="uid://bxigbj4p316sn" path="res://materials/Mud.tres" id="2_mexhj"]
 [ext_resource type="PackedScene" uid="uid://k8wnayykdnxw" path="res://Scenes/Loading.tscn" id="3_e6mhq"]
+[ext_resource type="Material" uid="uid://cx1xvr42dvxr7" path="res://materials/rock_wall.tres" id="5_epdjj"]
+[ext_resource type="Shader" uid="uid://cn8qf747jkxoh" path="res://shaders/portal_shader.tres" id="5_uh1jf"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qlyh0"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11p01"]
+panorama = ExtResource("1_1mqhj")
 
-[sub_resource type="Sky" id="Sky_jqwmj"]
-sky_material = SubResource("ProceduralSkyMaterial_qlyh0")
+[sub_resource type="Sky" id="Sky_nsg14"]
+sky_material = SubResource("PanoramaSkyMaterial_11p01")
 
 [sub_resource type="Environment" id="Environment_e6mhq"]
 background_mode = 2
-sky = SubResource("Sky_jqwmj")
+sky = SubResource("Sky_nsg14")
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_emission_energy = 6.17
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oayfh"]
 size = Vector3(3.7683716, 3.4781494, 1.1987333)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
-albedo_color = Color(1, 0, 1, 0.39607844)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiwdf"]
+render_priority = 0
+shader = ExtResource("5_uh1jf")
+shader_parameter/color_intensity = 4.0
+shader_parameter/ColorParameter = Color(0.72039026, 0.35971254, 0.30015555, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oayfh"]
 size = Vector3(2.2158203, 2.1669312, 0.001)
@@ -29,6 +38,7 @@ size = Vector3(2.2158203, 2.1669312, 0.001)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1355492188]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.153
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=810336268]
@@ -38,6 +48,7 @@ environment = SubResource("Environment_e6mhq")
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=545861446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7781776, 0)
+material_override = ExtResource("2_mexhj")
 use_collision = true
 size = Vector3(7.7285156, 0.23535156, 10.65918)
 
@@ -53,16 +64,18 @@ use_collision = true
 
 [node name="Portal" type="MeshInstance3D" parent="Area3D/LevelTrans" unique_id=732890729]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09231743, 0.2599306, -3.291091)
-material_override = SubResource("StandardMaterial3D_hul88")
+material_override = SubResource("ShaderMaterial_qiwdf")
 mesh = SubResource("BoxMesh_oayfh")
 
 [node name="Wall" type="CSGBox3D" parent="Area3D/LevelTrans" unique_id=1405631803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22485352, 1.0103604, -3.7843356)
 size = Vector3(3.708496, 3.5030518, 1)
+material = ExtResource("5_epdjj")
 
 [node name="Hole" type="CSGBox3D" parent="Area3D/LevelTrans/Wall" unique_id=1173894593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15865481, -0.7813407, 0.32104802)
 operation = 2
 size = Vector3(1.7148438, 1.9665527, 1)
+material = ExtResource("5_epdjj")
 
 [node name="Loading" parent="Area3D" unique_id=1293335694 instance=ExtResource("3_e6mhq")]
