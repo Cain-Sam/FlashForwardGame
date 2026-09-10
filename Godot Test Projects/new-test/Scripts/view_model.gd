@@ -13,6 +13,9 @@ extends Camera3D
 
 
 var shotgun_in_use = true;
+var lightMode = false;
+var lightBulb
+var playerLight
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +26,18 @@ func _ready():
 func _process(delta):
 	fps_rig.position.x = lerp(fps_rig.position.x,0.0,delta*5)
 	fps_rig.position.y = lerp(fps_rig.position.y,0.0,delta*5)
+	if lightMode && is_instance_valid(lightBulb):
+		playerLight.look_at(global_position, Vector3.UP)
+		if !vision.is_colliding():
+			playerLight.global_position = vision.to_global(vision.target_position)
+			lightBulb.transparency =  0.3
+			lightBulb.material.albedo_color = Color(0.7, 0.0, 0.0)
+			lightBulb.material.emission = Color(0.11, 0.11, 0.11)
+		else:
+			playerLight.global_position = vision.get_collision_point()
+			lightBulb.transparency = 0
+			lightBulb.material.albedo_color = Color(0.0, 0.7, 0.0)
+			lightBulb.material.emission = Color(0.0, 0.11, 0.0)
 	
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*0.00004
@@ -48,11 +63,27 @@ func _input(event):
 			if collider.is_in_group("myhead"):
 				get_tree().call_group("global_kick_events", "trigger_kick_effect")
 	if(event.is_action_pressed("light")):
-		if vision.is_colliding():
-			var playerLight = player_light.duplicate()
+		if lightMode:
+			lightMode = false
+			playerLight.queue_free()
+			playerLight = null 
+			lightBulb = null
+		else:
+			lightMode = true
+			playerLight = player_light.duplicate()
 			get_tree().current_scene.add_child(playerLight)
 			playerLight.visible = true
-			playerLight.global_position = vision.get_collision_point()
-			playerLight.look_at(global_position, Vector3.UP)
-		
+			lightBulb = playerLight.get_child(1)
+			if lightBulb.material:
+				lightBulb.material = lightBulb.material.duplicate()
+			playerLight.get_child(0).light_energy = 0.4
+	if(event.is_action_pressed("interact")) && lightMode && vision.is_colliding():
+		lightMode = false
+		playerLight.global_position = vision.get_collision_point()
+		playerLight.look_at(global_position, Vector3.UP)
+		playerLight.get_child(0).light_energy = 4.5
+		lightBulb.material.albedo_color = Color(0.4, 0.0, 0.4)
+		lightBulb.material.emission = Color(0.11, 0.11, 0.11)
+		playerLight = null 
+		lightBulb = null
 			
