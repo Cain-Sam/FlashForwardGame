@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cxr7tsjhhvfgv"]
 
 [ext_resource type="Texture2D" uid="uid://d4in1ui1rytqm" path="res://Textures/rusty_metal_grid_diff_4k.png" id="1_6gevf"]
-[ext_resource type="PackedScene" uid="uid://c76qke2o7g6ee" path="res://Scenes/player.tscn" id="2_vyjki"]
+[ext_resource type="Script" uid="uid://es7rrudvwyib" path="res://Scripts/TEST.tscn.gd" id="2_6mjcn"]
+[ext_resource type="Material" uid="uid://c3qc10rsembnr" path="res://materials/gnome.tres" id="3_tc1sb"]
+[ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="4_mfyy1"]
+[ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="5_tom4x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tc1sb"]
 
@@ -16,6 +19,24 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyjki"]
 albedo_texture = ExtResource("1_6gevf")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kry3j"]
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mjcn"]
+albedo_color = Color(0.20089048, 2.7651116e-05, 0.2008889, 1)
+emission_enabled = true
+emission = Color(0.51358086, 0.104366936, 0.72828513, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_oayfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
+albedo_color = Color(0.20089048, 2.7651116e-05, 0.2008889, 1)
+emission_enabled = true
+emission = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
 [node name="Node3D" type="Node3D" unique_id=120673772]
 
@@ -40,8 +61,94 @@ material_override = SubResource("StandardMaterial3D_vyjki")
 use_collision = true
 size = Vector3(5.326431, 4.6982107, 0.238)
 
-[node name="player" parent="." unique_id=2091483284 instance=ExtResource("2_vyjki")]
+[node name="player" type="CharacterBody3D" parent="." unique_id=2091483284]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2864864, 0)
+script = ExtResource("2_6mjcn")
+
+[node name="Grome" type="MeshInstance3D" parent="player" unique_id=1364683187]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006, 0, -0.01)
+material_override = ExtResource("3_tc1sb")
+mesh = ExtResource("4_mfyy1")
+
+[node name="Head" type="Node3D" parent="player" unique_id=939925582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3913186, -0.0944175)
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=686497528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.104354, 0, 0.0032380223, -0.025325656)
+cull_mask = 1048573
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="player/Head/Camera3D" unique_id=1188999955]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="player/Head/Camera3D/SubViewportContainer" unique_id=1614579910]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="view_model_camera" parent="player/Head/Camera3D/SubViewportContainer/SubViewport" unique_id=981051096 instance=ExtResource("5_tom4x")]
+cull_mask = 1047554
+
+[node name="Vision" type="RayCast3D" parent="player/Head" unique_id=669649178]
+transform = Transform3D(1, 0, 0, 0, -0.12852214, -0.4831998, 0, 0.4831998, -0.12852214, 0, 0, -0.049968764)
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="player" unique_id=987246698]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_jjvhh")
+
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="player" unique_id=906133429]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.3096739, 0)
+visibility_parent = NodePath("../Grome")
+shape = SubResource("CapsuleShape3D_kry3j")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="player" unique_id=1041253933]
+target_position = Vector3(0, 0.7, 0)
+
+[node name="interact_container" type="CanvasLayer" parent="player" unique_id=980937716]
+visible = false
+
+[node name="BoxContainer" type="BoxContainer" parent="player/interact_container" unique_id=1490168066]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="interact text" type="Label" parent="player/interact_container/BoxContainer" unique_id=1883468384]
+visible = false
+layout_mode = 2
+text = "Press \"E\" to Interact"
+
+[node name="PlayerLight" type="Node3D" parent="player" unique_id=567771808]
+visible = false
+
+[node name="OmniLight" type="OmniLight3D" parent="player/PlayerLight" unique_id=1304181549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009062946, 0)
+light_color = Color(0.3948785, 0.0001068984, 0.39487565, 1)
+light_energy = 4.644
+light_indirect_energy = 5.119
+light_volumetric_fog_energy = 16.0
+light_size = 0.307
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="player/PlayerLight" unique_id=799370735]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.024780989, 0)
+material_override = SubResource("StandardMaterial3D_6mjcn")
+mesh = SubResource("SphereMesh_oayfh")
+material = SubResource("StandardMaterial3D_hul88")
 
 [node name="Roof5" type="CSGBox3D" parent="." unique_id=293262970]
 transform = Transform3D(1.0138973, 0, 0, 0, -4.2468347e-08, -1, 0, 0.9715625, -4.371139e-08, -0.70116115, -0.6370242, -0.5038445)
