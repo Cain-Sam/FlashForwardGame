@@ -4,15 +4,15 @@
 [ext_resource type="Material" uid="uid://c3qc10rsembnr" path="res://materials/gnome.tres" id="2_fkybt"]
 [ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="3_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="4_3smsa"]
+[ext_resource type="PackedScene" uid="uid://duv2f1ncwjvc5" path="res://Scenes/playerLIGHT.tscn" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kry3j"]
 height = 1.2
 
-[node name="player" type="CharacterBody3D" unique_id=2091483284 node_paths=PackedStringArray("myhead_4")]
+[node name="player" type="CharacterBody3D" unique_id=2091483284]
 script = ExtResource("1_vgqql")
-myhead_4 = NodePath("")
 
 [node name="Grome" type="MeshInstance3D" parent="." unique_id=1364683187]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006, 0, -0.01)
@@ -32,10 +32,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer" unique_id=1614579910]
 transparent_bg = true
 handle_input_locally = false
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="view_model_camera" parent="Head/Camera3D/SubViewportContainer/SubViewport" unique_id=981051096 instance=ExtResource("4_3smsa")]
@@ -79,3 +81,6 @@ grow_vertical = 2
 visible = false
 layout_mode = 2
 text = "Press \"E\" to Interact"
+
+[node name="PlayerLight" parent="." unique_id=567771808 instance=ExtResource("5_fkybt")]
+visible = false

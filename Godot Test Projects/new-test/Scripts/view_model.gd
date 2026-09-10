@@ -8,6 +8,7 @@ extends Camera3D
 @export var gpu_particles_3d: GPUParticles3D
 @export var spot_light_3d: SpotLight3D
 @export var lostcause: AudioStreamPlayer3D 
+@onready var player_light: Node3D = $"../../../../../PlayerLight"
 
 
 
@@ -46,4 +47,12 @@ func _input(event):
 				collider.queue_free()
 			if collider.is_in_group("myhead"):
 				get_tree().call_group("global_kick_events", "trigger_kick_effect")
+	if(event.is_action_pressed("light")):
+		if vision.is_colliding():
+			var playerLight = player_light.duplicate()
+			get_tree().current_scene.add_child(playerLight)
+			playerLight.visible = true
+			playerLight.global_position = vision.get_collision_point()
+			playerLight.look_at(global_position, Vector3.UP)
+		
 			
