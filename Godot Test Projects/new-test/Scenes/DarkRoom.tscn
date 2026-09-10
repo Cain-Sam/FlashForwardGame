@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cxr7tsjhhvfgv"]
+
+[ext_resource type="Texture2D" uid="uid://d4in1ui1rytqm" path="res://Textures/rusty_metal_grid_diff_4k.png" id="1_6gevf"]
+[ext_resource type="PackedScene" uid="uid://c76qke2o7g6ee" path="res://Scenes/player.tscn" id="2_vyjki"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tc1sb"]
+
+[sub_resource type="Sky" id="Sky_6gevf"]
+sky_material = SubResource("ProceduralSkyMaterial_tc1sb")
+
+[sub_resource type="Environment" id="Environment_vyjki"]
+background_mode = 1
+background_color = Color(0.029506592, 0.029506546, 0.029506557, 1)
+sky = SubResource("Sky_6gevf")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyjki"]
+albedo_texture = ExtResource("1_6gevf")
+
+[node name="Node3D" type="Node3D" unique_id=120673772]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=156820223]
+environment = SubResource("Environment_vyjki")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2055877262]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.1893278, 0.18932778, 0.1893278, 1)
+shadow_enabled = true
+sky_mode = 2
+
+[node name="Roof9" type="CSGBox3D" parent="." unique_id=457793731]
+transform = Transform3D(1.0567588, 0, 0, 0, 0.9439337, -1.6745801e-07, 0, 1.6269593e-07, 0.9439337, -0.79235196, 0.8978062, 1.5599291)
+material_override = SubResource("StandardMaterial3D_vyjki")
+use_collision = true
+size = Vector3(5.467415, 4.6982107, 0.238)
+
+[node name="Roof6" type="CSGBox3D" parent="." unique_id=1845217695]
+transform = Transform3D(1.0279877, 0, 0, 0, -0.9715625, 8.617974e-08, 0, -8.3729006e-08, -0.9715625, -0.42744094, 0.9966004, -2.505253)
+material_override = SubResource("StandardMaterial3D_vyjki")
+use_collision = true
+size = Vector3(5.326431, 4.6982107, 0.238)
+
+[node name="player" parent="." unique_id=2091483284 instance=ExtResource("2_vyjki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2864864, 0)
+
+[node name="Roof5" type="CSGBox3D" parent="." unique_id=293262970]
+transform = Transform3D(1.0138973, 0, 0, 0, -4.2468347e-08, -1, 0, 0.9715625, -4.371139e-08, -0.70116115, -0.6370242, -0.5038445)
+material_override = SubResource("StandardMaterial3D_vyjki")
+use_collision = true
+size = Vector3(6.724197, 6.447738, 0.238)
+
+[node name="Roof7" type="CSGBox3D" parent="." unique_id=1786917977]
+transform = Transform3D(1.0138973, 0, 0, 0, -4.2468347e-08, -1, 0, 0.9715625, -4.371139e-08, -0.34801638, 3.0826423, -0.36485413)
+material_override = SubResource("StandardMaterial3D_vyjki")
+use_collision = true
+size = Vector3(5.160215, 4.8520193, 0.238)
+
+[node name="Roof8" type="CSGBox3D" parent="." unique_id=184312432]
+transform = Transform3D(-0.056860443, -2.702527e-07, -1.0252999, 8.526513e-14, -0.9170904, 2.440439e-07, -0.9690221, 1.7279163e-08, 0.04800192, 2.0290065, 0.9937913, -0.5157621)
+material_override = SubResource("StandardMaterial3D_vyjki")
+use_collision = true
+size = Vector3(5.467415, 4.6982107, 0.238)
+
+[node name="Roof10" type="CSGBox3D" parent="." unique_id=347075628]
+transform = Transform3D(-0.056860443, -2.702527e-07, -1.0252999, 8.526513e-14, -0.9170904, 2.440439e-07, -0.9690221, 1.7279163e-08, 0.04800192, -2.619506, 0.9937913, -0.5157621)
+material_override = SubResource("StandardMaterial3D_vyjki")
+use_collision = true
+size = Vector3(5.467415, 4.6982107, 0.238)
