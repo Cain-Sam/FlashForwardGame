@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://caoiku0ipqv8c"]
+
+[ext_resource type="Texture2D" uid="uid://hyp2fsvldcq0" path="res://Textures/megaphone/Megaphone_01_diff_4k.png" id="1_3jj3m"]
+[ext_resource type="Texture2D" uid="uid://0o0hcmklcexe" path="res://Textures/megaphone/Megaphone_01_arm_4k.png" id="2_q14v5"]
+[ext_resource type="Texture2D" uid="uid://ceyab378kwd8n" path="res://Textures/megaphone/Megaphone_01_nor_gl_4k.png" id="3_lc5nj"]
+
+[resource]
+albedo_texture = ExtResource("1_3jj3m")
+metallic = 1.0
+metallic_texture = ExtResource("2_q14v5")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_q14v5")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_lc5nj")
+ao_enabled = true
+ao_texture = ExtResource("2_q14v5")

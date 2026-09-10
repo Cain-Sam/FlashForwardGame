@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxigbj4p316sn"]
+
+[ext_resource type="Texture2D" uid="uid://ckqri6tplxbjq" path="res://Textures/brown mud/brown_mud_leaves_01_diff_4k.png" id="1_nsg14"]
+[ext_resource type="Texture2D" uid="uid://bpl2sn13vigoq" path="res://Textures/brown mud/brown_mud_leaves_01_arm_4k.png" id="2_pys41"]
+[ext_resource type="Texture2D" uid="uid://nn1gm3k3nmho" path="res://Textures/brown mud/brown_mud_leaves_01_nor_gl_4k.png" id="3_qe0bn"]
+
+[resource]
+albedo_texture = ExtResource("1_nsg14")
+metallic = 1.0
+metallic_texture = ExtResource("2_pys41")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_pys41")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_qe0bn")
+ao_enabled = true
+ao_texture = ExtResource("2_pys41")
+uv1_scale = Vector3(2, 2, 2)

@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cx1xvr42dvxr7"]
+
+[ext_resource type="Texture2D" uid="uid://cs7djwi41ps7t" path="res://materials/rock_wall_13_diff_4k.png" id="1_15pud"]
+[ext_resource type="Texture2D" uid="uid://rmjtbe8lkei6" path="res://Textures/stone/rock_wall_13_arm_4k.png" id="2_tayni"]
+[ext_resource type="Texture2D" uid="uid://06o466qwqlhw" path="res://Textures/stone/rock_wall_13_nor_gl_4k.png" id="3_bovk1"]
+
+[resource]
+albedo_texture = ExtResource("1_15pud")
+metallic = 1.0
+metallic_texture = ExtResource("2_tayni")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_tayni")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_bovk1")
+ao_enabled = true
+ao_texture = ExtResource("2_tayni")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true

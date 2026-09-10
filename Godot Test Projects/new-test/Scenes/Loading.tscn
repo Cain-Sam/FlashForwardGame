@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://k8wnayykdnxw"]
+
+[ext_resource type="Script" uid="uid://c37d5wfg2rxm1" path="res://Scripts/loading.gd" id="1_sid5e"]
+
+[node name="Loading" type="CanvasLayer" unique_id=1293335694]
+script = ExtResource("1_sid5e")
+
+[node name="Label" type="Label" parent="." unique_id=1506434646]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "LOADING"
+horizontal_alignment = 1
+vertical_alignment = 1
