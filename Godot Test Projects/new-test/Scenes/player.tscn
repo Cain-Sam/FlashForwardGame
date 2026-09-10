@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c76qke2o7g6ee"]
+[gd_scene format=3 uid="uid://ctmymxux33uvo"]
 
 [ext_resource type="Script" uid="uid://es7rrudvwyib" path="res://Scripts/TEST.tscn.gd" id="1_vgqql"]
 [ext_resource type="Material" uid="uid://c3qc10rsembnr" path="res://materials/gnome.tres" id="2_fkybt"]
@@ -11,22 +11,22 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kry3j"]
 height = 1.2
 
-[node name="player" type="CharacterBody3D" unique_id=2091483284]
+[node name="player" type="CharacterBody3D" unique_id=961832965 groups=["player"]]
 script = ExtResource("1_vgqql")
 
-[node name="Grome" type="MeshInstance3D" parent="." unique_id=1364683187]
+[node name="Grome" type="MeshInstance3D" parent="." unique_id=1660201055]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.006, 0, -0.01)
 material_override = ExtResource("2_fkybt")
 mesh = ExtResource("3_x3wgy")
 
-[node name="Head" type="Node3D" parent="." unique_id=939925582]
+[node name="Head" type="Node3D" parent="." unique_id=1409270966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3913186, -0.0944175)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=686497528]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=2010584142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.104354, 0, 0.0032380223, -0.025325656)
 cull_mask = 1048573
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D" unique_id=1188999955]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera3D" unique_id=136655334]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer" unique_id=1614579910]
+[node name="SubViewport" type="SubViewport" parent="Head/Camera3D/SubViewportContainer" unique_id=1073502963]
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)
@@ -43,27 +43,27 @@ render_target_update_mode = 4
 [node name="view_model_camera" parent="Head/Camera3D/SubViewportContainer/SubViewport" unique_id=981051096 instance=ExtResource("4_3smsa")]
 cull_mask = 1047554
 
-[node name="Vision" type="RayCast3D" parent="Head" unique_id=669649178]
+[node name="Vision" type="RayCast3D" parent="Head" unique_id=1748234429]
 transform = Transform3D(1, 0, 0, 0, -0.12852214, -0.4831998, 0, 0.4831998, -0.12852214, 0, 0, -0.049968764)
 
-[node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=987246698]
+[node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=2119777659]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
 visibility_parent = NodePath("../Grome")
 shape = SubResource("CapsuleShape3D_jjvhh")
 
-[node name="crouching_collision_shape" type="CollisionShape3D" parent="." unique_id=906133429]
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="." unique_id=996005928]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.3096739, 0)
 visibility_parent = NodePath("../Grome")
 shape = SubResource("CapsuleShape3D_kry3j")
 disabled = true
 
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1041253933]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1972573107]
 target_position = Vector3(0, 0.7, 0)
 
-[node name="interact_container" type="CanvasLayer" parent="." unique_id=980937716]
+[node name="interact_container" type="CanvasLayer" parent="." unique_id=1345937261]
 visible = false
 
-[node name="BoxContainer" type="BoxContainer" parent="interact_container" unique_id=1490168066]
+[node name="BoxContainer" type="BoxContainer" parent="interact_container" unique_id=1697716181]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,10 +77,10 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="interact text" type="Label" parent="interact_container/BoxContainer" unique_id=1883468384]
+[node name="interact text" type="Label" parent="interact_container/BoxContainer" unique_id=1276767027]
 visible = false
 layout_mode = 2
 text = "Press \"E\" to Interact"
 
-[node name="PlayerLight" parent="." unique_id=567771808 instance=ExtResource("5_fkybt")]
+[node name="PlayerLight" parent="." unique_id=960294778 instance=ExtResource("5_fkybt")]
 visible = false

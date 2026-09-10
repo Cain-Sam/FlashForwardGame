@@ -30,14 +30,14 @@ func _process(delta):
 		playerLight.look_at(global_position, Vector3.UP)
 		if !vision.is_colliding():
 			playerLight.global_position = vision.to_global(vision.target_position)
-			lightBulb.transparency =  0.3
+			lightBulb.transparency =  0.1
 			lightBulb.material.albedo_color = Color(0.7, 0.0, 0.0)
-			lightBulb.material.emission = Color(0.11, 0.11, 0.11)
+			lightBulb.material.emission = Color(0.3, 0.0, 0.0)
 		else:
 			playerLight.global_position = vision.get_collision_point()
 			lightBulb.transparency = 0
 			lightBulb.material.albedo_color = Color(0.0, 0.7, 0.0)
-			lightBulb.material.emission = Color(0.0, 0.11, 0.0)
+			lightBulb.material.emission = Color(0.0, 0.3, 0.0)
 	
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*0.00004
@@ -76,14 +76,14 @@ func _input(event):
 			lightBulb = playerLight.get_child(1)
 			if lightBulb.material:
 				lightBulb.material = lightBulb.material.duplicate()
-			playerLight.get_child(0).light_energy = 0.4
+			playerLight.get_child(0).light_energy = 0.1
 	if(event.is_action_pressed("interact")) && lightMode && vision.is_colliding():
 		lightMode = false
 		playerLight.global_position = vision.get_collision_point()
 		playerLight.look_at(global_position, Vector3.UP)
 		playerLight.get_child(0).light_energy = 4.5
 		lightBulb.material.albedo_color = Color(0.4, 0.0, 0.4)
-		lightBulb.material.emission = Color(0.11, 0.11, 0.11)
+		lightBulb.material.emission = Color(0.4, 0.0, 0.4)
+		lightBulb.material.emission_energy_multiplier = 7
 		playerLight = null 
 		lightBulb = null
-			

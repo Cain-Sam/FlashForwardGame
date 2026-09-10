@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://duv2f1ncwjvc5"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_oayfh"]
+[sub_resource type="SphereMesh" id="SphereMesh_1thqu"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qgu4"]
 albedo_color = Color(0.20089048, 2.7651116e-05, 0.2008889, 1)
 emission_enabled = true
 emission = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
 [node name="PlayerLight" type="Node3D" unique_id=567771808]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1249970311]
+[node name="OmniLight" type="OmniLight3D" parent="." unique_id=248863850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009062946, 0)
 light_color = Color(0.3948785, 0.0001068984, 0.39487565, 1)
 light_energy = 4.644
@@ -17,7 +17,7 @@ light_indirect_energy = 5.119
 light_volumetric_fog_energy = 16.0
 light_size = 0.307
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=799370735]
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=486374721]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.024780989, 0)
-mesh = SubResource("SphereMesh_oayfh")
-material = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("SphereMesh_1thqu")
+material = SubResource("StandardMaterial3D_2qgu4")
