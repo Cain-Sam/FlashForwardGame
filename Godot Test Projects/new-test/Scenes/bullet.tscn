@@ -14,6 +14,7 @@ script = ExtResource("1_v7oki")
 
 [node name="OmniLight" type="OmniLight3D" parent="." unique_id=1543761502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009062946, 0)
+layers = 3
 light_color = Color(0.3948785, 0.0001068984, 0.39487565, 1)
 light_energy = 4.644
 light_indirect_energy = 5.119
