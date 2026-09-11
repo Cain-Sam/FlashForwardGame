@@ -9,13 +9,22 @@ extends Camera3D
 @export var spot_light_3d: SpotLight3D
 @export var lostcause: AudioStreamPlayer3D 
 @onready var player_light: Node3D = $"../../../../../PlayerLight"
+@onready var shootsound: AudioStreamPlayer3D = $shootsound
 
+#Bullets
 
+@onready var barrel_raycast: RayCast3D = $barrel_raycast
 
+var bullet = load("res://Scenes/bullet.tscn")
+var bullet_instance
+
+#Gun
 var shotgun_in_use = true;
 var lightMode = false;
 var lightBulb
 var playerLight
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,7 +54,14 @@ func sway(sway_amount):
 
 func _input(event):
 	if(event.is_action_pressed("shoot")):
-		animation_player.play("fire")
+		if !animation_player.is_playing():
+			animation_player.play("fire")
+			shootsound.play()
+			bullet_instance = bullet.instantiate()
+			bullet_instance.position = barrel_raycast.global_position
+			bullet_instance.transform.basis = barrel_raycast.global_transform.basis
+			get_parent().add_child(bullet_instance)
+			
 	if(event.is_action_pressed("reload")):
 		animation_player.play("reload")
 	if(event.is_action_pressed("use")):

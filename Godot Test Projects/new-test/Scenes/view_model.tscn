@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://brs5p37rj1db2" path="res://Scripts/view_model.gd" id="1_74nyn"]
 [ext_resource type="Material" uid="uid://dngk4dcpp7fg2" path="res://materials/shotgun_material.tres" id="1_lygrx"]
 [ext_resource type="Material" uid="uid://djmfhnhqwjy4u" path="res://materials/hands_material.tres" id="2_74nyn"]
+[ext_resource type="AudioStream" uid="uid://dg61nattarlwt" path="res://Audio/shootsound.mp3" id="4_6hgl2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
 resource_name = "ShotgunMaterial"
@@ -6139,7 +6140,7 @@ mesh = SubResource("ArrayMesh_6kmyk")
 transform = Transform3D(-0.023499446, -0.02347204, -0.005459351, 0.02405159, -0.023153396, -0.0042128586, -0.0007954288, -0.0066571212, 0.03390118, 0.08890591, -0.06322826, -0.59471166)
 
 [node name="hand" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand" unique_id=1589199316]
-transform = Transform3D(0.6888387, -0.6466078, 0.3277191, 0.57161707, 0.76252216, 0.3030081, -0.44582078, -0.02139383, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
+transform = Transform3D(0.6888387, -0.6466078, 0.3277191, 0.57161707, 0.7625221, 0.3030081, -0.44582078, -0.02139383, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
 layers = 2
 material_override = ExtResource("2_74nyn")
 mesh = SubResource("ArrayMesh_gjxc6")
@@ -6771,7 +6772,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.79881805, -0.14587697, -0.5836158, 0.59316194, 0.029347172, 0.804546, -0.10023762, -0.98886544, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.798818, -0.14587696, -0.5836158, 0.59316194, 0.02934717, 0.804546, -0.100237615, -0.9888654, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
@@ -6780,3 +6781,12 @@ libraries/Kick = SubResource("AnimationLibrary_7oct0")
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=776858558]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_nxqgf")
+
+[node name="barrel_raycast" type="RayCast3D" parent="." unique_id=902721694]
+transform = Transform3D(0.46352077, 0, 0, 0, 0.46352077, 0, 0, 0, 0.46352077, 0.07439482, -0.027764287, -1.0208268)
+target_position = Vector3(0, 0, -1)
+
+[node name="shootsound" type="AudioStreamPlayer3D" parent="." unique_id=725172661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054759502, -0.67979074)
+stream = ExtResource("4_6hgl2")
+max_db = -3.722
