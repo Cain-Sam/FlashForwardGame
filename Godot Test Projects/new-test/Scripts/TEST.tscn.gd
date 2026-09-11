@@ -10,6 +10,7 @@ extends CharacterBody3D
 @onready var view_model_camera: Camera3D = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera
 @export var myhead_4: Node3D
 
+
 #Movement Vars
 
 @export var current_speed = 5.0
@@ -20,9 +21,9 @@ extends CharacterBody3D
 var crouching_depth = -0.1
 @export var lerp_speed = 10.0
 
+
+
 #Input Variables
-
-
 
 var direction = Vector3.ZERO
 const mouse_sens = 0.25
