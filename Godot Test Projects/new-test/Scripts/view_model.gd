@@ -9,27 +9,12 @@ extends Camera3D
 @export var spot_light_3d: SpotLight3D
 @export var lostcause: AudioStreamPlayer3D 
 @onready var player_light: Node3D = $"../../../../../PlayerLight"
-
-
+@onready var colorchange = $"res://Scripts/color_list.gd"
 
 var shotgun_in_use = true;
 var lightMode = false;
 var lightBulb
 var playerLight
-var color_list: Array[Color] = [
-	Color(0.8, 0.0, 0.0), 
-	Color(0.8, 0.4, 0.0), 
-	Color(0.8, 0.8, 0.0),
-	Color(0.4, 0.8, 0.0),
-	Color(0.0, 0.8, 0.0),
-	Color(0.0, 0.8, 0.4),
-	Color(0.0, 0.8, 0.8),
-	Color(0.0, 0.4, 0.8),
-	Color(0.0, 0.0, 0.8),
-	Color(0.4, 0.0, 0.8),
-	Color(0.8, 0.0, 0.8),
-	Color(0.8, 0.0, 0.4),
-]
 var colorindex = 0;
 
 # Called when the node enters the scene tree for the first time.
@@ -46,13 +31,13 @@ func _process(delta):
 		if !vision.is_colliding():
 			playerLight.global_position = vision.to_global(vision.target_position)
 			lightBulb.transparency =  0.1
-			lightBulb.material.albedo_color = color_list[colorindex]
-			lightBulb.material.emission = color_list[colorindex]
+			lightBulb.material.albedo_color = ColorList.color_list[colorindex]
+			lightBulb.material.emission = ColorList.color_list[colorindex]
 		else:
 			playerLight.global_position = vision.get_collision_point()
 			lightBulb.transparency = 0
-			lightBulb.material.albedo_color = color_list[colorindex]
-			lightBulb.material.emission = color_list[colorindex]
+			lightBulb.material.albedo_color = ColorList.color_list[colorindex]
+			lightBulb.material.emission = ColorList.color_list[colorindex]
 	
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*0.00004
@@ -96,19 +81,19 @@ func _input(event):
 		lightMode = false
 		playerLight.global_position = vision.get_collision_point()
 		playerLight.get_child(0).light_energy = 4.5
-		playerLight.get_child(0).light_color = color_list[colorindex]
-		lightBulb.material.albedo_color = color_list[colorindex]
-		lightBulb.material.emission = color_list[colorindex]
+		playerLight.get_child(0).light_color = ColorList.color_list[colorindex]
+		lightBulb.material.albedo_color = ColorList.color_list[colorindex]
+		lightBulb.material.emission = ColorList.color_list[colorindex]
 		lightBulb.material.emission_energy_multiplier = 7
 		playerLight = null 
 		lightBulb = null
 	if(event.is_action_pressed("scrollup")) && lightMode:
-		if colorindex == color_list.size() - 1:
+		if colorindex == ColorList.color_list.size() - 1:
 			colorindex = 0
 		else:
 			colorindex += 1
 	if(event.is_action_pressed("scrolldown")) && lightMode:
 		if colorindex == 0:
-			colorindex = color_list.size() - 1
+			colorindex = ColorList.color_list.size() - 1
 		else:
 			colorindex -= 1
