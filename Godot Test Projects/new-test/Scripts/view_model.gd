@@ -12,7 +12,6 @@ extends Camera3D
 @onready var shootsound: AudioStreamPlayer3D = $shootsound
 
 #Bullets
-@onready var colorchange = $"res://Scripts/color_list.gd"
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
 
 var bullet = load("res://Scenes/bullet.tscn")

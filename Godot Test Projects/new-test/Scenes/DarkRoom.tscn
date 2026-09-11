@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://d4in1ui1rytqm" path="res://Textures/rusty_metal_grid_diff_4k.png" id="1_6gevf"]
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="2_6gevf"]
+[ext_resource type="Script" uid="uid://cg01bpq7vk6h3" path="res://Scripts/leveltranstestcell.gd" id="3_tc1sb"]
+[ext_resource type="Shader" uid="uid://cn8qf747jkxoh" path="res://shaders/portal_shader.tres" id="4_mfyy1"]
+[ext_resource type="Material" uid="uid://cx1xvr42dvxr7" path="res://materials/rock_wall.tres" id="5_tom4x"]
+[ext_resource type="PackedScene" uid="uid://k8wnayykdnxw" path="res://Scenes/Loading.tscn" id="6_mrh62"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tc1sb"]
 
@@ -16,6 +20,18 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyjki"]
 albedo_texture = ExtResource("1_6gevf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u61h7"]
+size = Vector3(2.0517578, 2.0320435, 0.25061107)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkx6j"]
+render_priority = 0
+shader = ExtResource("4_mfyy1")
+shader_parameter/color_intensity = 4.0
+shader_parameter/ColorParameter = Color(0.23661578, 0.3786229, 0.83194923, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rfo1e"]
+size = Vector3(2.2158203, 2.1669312, 0.001)
 
 [node name="Node3D" type="Node3D" unique_id=120673772]
 
@@ -65,3 +81,41 @@ transform = Transform3D(-0.056860443, -2.702527e-07, -1.0252999, 8.526513e-14, -
 material_override = SubResource("StandardMaterial3D_vyjki")
 use_collision = true
 size = Vector3(5.467415, 4.6982107, 0.238)
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=1379692679]
+transform = Transform3D(-0.9995382, 0, -0.030392408, 0, 1, 0, 0.030392408, 0, -0.9995382, 0, -4.7683716e-07, -2.4947972)
+script = ExtResource("3_tc1sb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1067731632]
+transform = Transform3D(0.9999744, 0, 2.924353e-07, 0, 1, 0, -2.924353e-07, 0, 0.9999744, 0.10022094, 0.3536682, -3.4463105)
+shape = SubResource("BoxShape3D_u61h7")
+
+[node name="LevelTrans" type="CSGCombiner3D" parent="Area3D2" unique_id=552833013]
+use_collision = true
+
+[node name="Portal" type="MeshInstance3D" parent="Area3D2/LevelTrans" unique_id=1044224433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09231743, 0.2599306, -3.291091)
+material_override = SubResource("ShaderMaterial_kkx6j")
+mesh = SubResource("BoxMesh_rfo1e")
+
+[node name="Wall" type="CSGBox3D" parent="Area3D2/LevelTrans" unique_id=1102547938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22485352, 1.0103604, -3.7843356)
+size = Vector3(3.708496, 3.5030518, 1)
+material = ExtResource("5_tom4x")
+
+[node name="Hole" type="CSGBox3D" parent="Area3D2/LevelTrans/Wall" unique_id=1394601878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15865481, -0.7813407, 0.32104802)
+operation = 2
+size = Vector3(1.7148438, 1.9665527, 1)
+material = ExtResource("5_tom4x")
+
+[node name="portal_glow" type="SpotLight3D" parent="Area3D2/LevelTrans/Wall/Hole" unique_id=1298716714]
+transform = Transform3D(-0.9958338, 0.0784591, -0.04646548, 0.07837383, 0.9969173, 0.003656906, 0.046609156, -6.851658e-09, -0.9989132, -0.20529652, 0.03480504, 0.0049347705)
+light_color = Color(0.23529412, 0.38039216, 0.83137256, 1)
+light_energy = 4.345
+spot_range = 2.982
+spot_attenuation = 1.06
+spot_angle = 115.28
+spot_angle_attenuation = 2.2191403
+
+[node name="Loading" parent="Area3D2" unique_id=1293335694 instance=ExtResource("6_mrh62")]

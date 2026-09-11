@@ -30,7 +30,7 @@ const mouse_sens = 0.25
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$Head/Camera3D/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
+	#$Head/Camera3D/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
 	
 func _input(event):
 	if event is InputEventMouseMotion:
