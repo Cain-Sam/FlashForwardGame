@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brs5p37rj1db2" path="res://Scripts/view_model.gd" id="1_74nyn"]
 [ext_resource type="Material" uid="uid://dngk4dcpp7fg2" path="res://materials/shotgun_material.tres" id="1_lygrx"]
 [ext_resource type="Material" uid="uid://djmfhnhqwjy4u" path="res://materials/hands_material.tres" id="2_74nyn"]
-[ext_resource type="Script" uid="uid://o380p23glony" path="res://Scenes/gun_color_reminder.gd" id="3_rueqf"]
+[ext_resource type="Script" uid="uid://o380p23glony" path="res://Scripts/gun_color_reminder.gd" id="3_rueqf"]
 [ext_resource type="AudioStream" uid="uid://dg61nattarlwt" path="res://Audio/shootsound.mp3" id="4_6hgl2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
@@ -221,7 +221,10 @@ emission_enabled = true
 emission = Color(0.6291956, 0.0002905172, 0.6286541, 1)
 emission_energy_multiplier = 16.0
 
-[sub_resource type="SphereMesh" id="SphereMesh_53sl3"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_1e8r0"]
+top_radius = 0.03515625
+bottom_radius = 0.03515625
+height = 0.17803955
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rapw5"]
 
@@ -6054,11 +6057,10 @@ material_override = ExtResource("1_lygrx")
 mesh = SubResource("ArrayMesh_1xsej")
 
 [node name="Lightcolor" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=328889073]
-transform = Transform3D(-0.00023202346, 0.0664642, 0.23403583, 0.0010211546, -0.29254305, 0.05317168, 0.2999982, 0.0010471826, 1.7669214e-08, 0.43205044, 0.19649309, -0.0014776587)
+transform = Transform3D(-0.0021703937, 0.29991803, 0.005461079, -0.0007854309, -0.006832204, 0.23994274, 0.29998368, 0.0021519067, 0.0006677123, 0.41528258, 0.19913295, 0.00044991076)
 layers = 2
 material_override = SubResource("StandardMaterial3D_rueqf")
-transparency = 0.99
-mesh = SubResource("SphereMesh_53sl3")
+mesh = SubResource("CylinderMesh_1e8r0")
 script = ExtResource("3_rueqf")
 
 [node name="right_hand" type="Node3D" parent="fps_rig/shotgun" unique_id=561650335]
@@ -6157,7 +6159,7 @@ mesh = SubResource("ArrayMesh_6kmyk")
 transform = Transform3D(-0.023499446, -0.02347204, -0.005459351, 0.02405159, -0.023153396, -0.0042128586, -0.0007954288, -0.0066571212, 0.03390118, 0.08890591, -0.06322826, -0.59471166)
 
 [node name="hand" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand" unique_id=1589199316]
-transform = Transform3D(0.6888387, -0.64660776, 0.3277191, 0.57161707, 0.76252204, 0.3030081, -0.44582078, -0.021393828, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
+transform = Transform3D(0.6888387, -0.64660764, 0.3277191, 0.57161707, 0.7625219, 0.3030081, -0.44582078, -0.021393824, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
 layers = 2
 material_override = ExtResource("2_74nyn")
 mesh = SubResource("ArrayMesh_gjxc6")
@@ -6789,7 +6791,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.79881793, -0.14587696, -0.5836158, 0.5931619, 0.029347168, 0.804546, -0.10023761, -0.9888653, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.7988178, -0.14587694, -0.5836158, 0.59316176, 0.029347165, 0.804546, -0.10023759, -0.9888652, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
