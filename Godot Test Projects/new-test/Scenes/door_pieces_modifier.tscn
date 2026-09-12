@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2c5x0gsgh6g8" path="res://Scripts/door_pieces_break.gd" id="1_1rm8h"]
 [ext_resource type="Texture2D" uid="uid://dgasuvbgpfpcc" path="res://Assets/door_pieces_rusty_metal_grid_nor_gl_4k.png" id="1_g4jfj"]
+[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scenes/kickedObject.gd" id="2_keos2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q84gl"]
 resource_name = "Material_0"
@@ -290,9 +291,9 @@ points = PackedVector3Array(-0.17354813, -0.365757, 0.021449812, -0.17229286, -0
 
 [node name="door_pieces" type="Node3D" unique_id=469200051]
 script = ExtResource("1_1rm8h")
-INTENSITY = 600.0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1553610915]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1553610915 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell" type="MeshInstance3D" parent="RigidBody3D" unique_id=1511130376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2648893, -0.32333997, 0.08180509)
@@ -302,7 +303,8 @@ mesh = SubResource("ArrayMesh_ghxoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2648893, -0.32333997, 0.08180509)
 shape = SubResource("ConvexPolygonShape3D_g4jfj")
 
-[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=413103321]
+[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=413103321 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_001" type="MeshInstance3D" parent="RigidBody3D2" unique_id=1250232102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24419878, 0.2863414, 0.042004585)
@@ -312,7 +314,8 @@ mesh = SubResource("ArrayMesh_n0o0a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24419878, 0.2863414, 0.042004585)
 shape = SubResource("ConvexPolygonShape3D_1rm8h")
 
-[node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1247563184]
+[node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1247563184 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_002" type="MeshInstance3D" parent="RigidBody3D3" unique_id=1747094927]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11574218, 0.21129507, -0.0012414418)
@@ -322,7 +325,8 @@ mesh = SubResource("ArrayMesh_foyy6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11574218, 0.21129507, -0.0012414418)
 shape = SubResource("ConvexPolygonShape3D_keos2")
 
-[node name="RigidBody3D4" type="RigidBody3D" parent="." unique_id=1880816707]
+[node name="RigidBody3D4" type="RigidBody3D" parent="." unique_id=1880816707 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_003" type="MeshInstance3D" parent="RigidBody3D4" unique_id=1256446159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1878673, -0.19595805, -0.0131355)
@@ -332,7 +336,8 @@ mesh = SubResource("ArrayMesh_un1k3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1878673, -0.19595805, -0.0131355)
 shape = SubResource("ConvexPolygonShape3D_faasg")
 
-[node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=1131388790]
+[node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=1131388790 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_004" type="MeshInstance3D" parent="RigidBody3D5" unique_id=133151604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
@@ -342,7 +347,8 @@ mesh = SubResource("ArrayMesh_0c01r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
 shape = SubResource("ConvexPolygonShape3D_baj1c")
 
-[node name="RigidBody3D6" type="RigidBody3D" parent="." unique_id=430622538]
+[node name="RigidBody3D6" type="RigidBody3D" parent="." unique_id=430622538 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_005" type="MeshInstance3D" parent="RigidBody3D6" unique_id=969656783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24586841, 0.32760626, -0.047675055)
@@ -352,7 +358,8 @@ mesh = SubResource("ArrayMesh_hhxlx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24586841, 0.32760626, -0.047675055)
 shape = SubResource("ConvexPolygonShape3D_w1yup")
 
-[node name="RigidBody3D7" type="RigidBody3D" parent="." unique_id=126489978]
+[node name="RigidBody3D7" type="RigidBody3D" parent="." unique_id=126489978 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_006" type="MeshInstance3D" parent="RigidBody3D7" unique_id=782008614]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1773881, -0.2712244, -0.0014436431)
@@ -362,7 +369,8 @@ mesh = SubResource("ArrayMesh_htb0x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1773881, -0.2712244, -0.0014436431)
 shape = SubResource("ConvexPolygonShape3D_2gvmt")
 
-[node name="RigidBody3D8" type="RigidBody3D" parent="." unique_id=1291481842]
+[node name="RigidBody3D8" type="RigidBody3D" parent="." unique_id=1291481842 groups=["kickable"]]
+script = ExtResource("2_keos2")
 
 [node name="Door2_cell_007" type="MeshInstance3D" parent="RigidBody3D8" unique_id=1735016909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1575998, -0.29122543, 0.07669473)

@@ -22,7 +22,6 @@ buses/default_bus_layout="uid://djsycf0ls5nod"
 [autoload]
 
 ColorList="*uid://dhubt70xj3yye"
-EventBus="*uid://bj4ddwh2hwinb"
 
 [global_group]
 

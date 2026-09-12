@@ -154,7 +154,8 @@ func checkKickCollision():
 func kickKickable(collider):
 	var direction = -global_transform.basis.z
 	var intensity = INTENSITY
-	EventBus.kicked.emit(-global_transform.basis.z,INTENSITY,collider)
+	if collider.has_method("kicked"):
+		collider.kicked(direction, intensity)
 	
 	
 func kickMyHead():
