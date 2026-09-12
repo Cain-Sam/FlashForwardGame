@@ -35,6 +35,7 @@ var bullet_light_multiplyer = 7
 var bullet_light_energy = 4.5
 var sway_x_multiplyer = 0.00004
 var sway_y_multiplyer = 0.00004
+var INTENSITY = 8.0
 #endregion
 
 # Called when the node enters the scene tree for the first time.
@@ -151,7 +152,9 @@ func checkKickCollision():
 		kickMyHead()
 
 func kickKickable(collider):
-	collider.queue_free()
+	var direction = -global_transform.basis.z
+	var intensity = INTENSITY
+	EventBus.kicked.emit(-global_transform.basis.z,INTENSITY,collider)
 	
 	
 func kickMyHead():

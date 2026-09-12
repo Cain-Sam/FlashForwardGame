@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="1_2mdd2"]
 [ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="1_ys3ib"]
-[ext_resource type="PackedScene" uid="uid://cdeodg3s1run2" path="res://Scenes/door_pieces_modifier.tscn" id="2_8ktnr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcjox"]
 resource_name = "Material_0"
@@ -44,14 +43,11 @@ shadow_mesh = SubResource("ArrayMesh_b0xgt")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ys3ib"]
 points = PackedVector3Array(-0.41151428, -0.6569824, -0.09814453, -0.41151428, -0.6569824, 0.09814453, -0.41151428, 0.6569824, -0.09814453, 0.41151422, -0.6569824, -0.09814453, 0.41151422, -0.6569824, 0.09814453, -0.41151428, 0.6569824, 0.09814453, 0.41151422, 0.6569824, -0.09814453, 0.41151422, 0.6569824, 0.09814453)
 
-[node name="door3" type="Node3D" unique_id=461606196]
+[node name="StaticBody3D" type="StaticBody3D" unique_id=324353811 groups=["kickable"]]
 script = ExtResource("1_ys3ib")
-broken_model = ExtResource("2_8ktnr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1778548635]
-
-[node name="Door2" type="MeshInstance3D" parent="StaticBody3D" unique_id=299694848]
+[node name="Door2" type="MeshInstance3D" parent="." unique_id=878580212 groups=["kickable"]]
 mesh = SubResource("ArrayMesh_h0j1r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1697874550]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=12280891 groups=["kickable"]]
 shape = SubResource("ConvexPolygonShape3D_ys3ib")
