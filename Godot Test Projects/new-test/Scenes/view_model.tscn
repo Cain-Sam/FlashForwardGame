@@ -6057,7 +6057,7 @@ material_override = ExtResource("1_lygrx")
 mesh = SubResource("ArrayMesh_1xsej")
 
 [node name="Lightcolor" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=328889073]
-transform = Transform3D(-0.0021703937, 0.29991803, 0.005461079, -0.0007854309, -0.006832204, 0.23994274, 0.29998368, 0.0021519067, 0.0006677123, 0.41528258, 0.19913295, 0.00044991076)
+transform = Transform3D(-0.0021703942, 0.29991803, 0.005461079, -0.00078543316, -0.006832204, 0.239943, 0.29998317, 0.0021519067, 0.0006677143, 0.41528258, 0.19913296, 0.0004499033)
 layers = 2
 material_override = SubResource("StandardMaterial3D_rueqf")
 mesh = SubResource("CylinderMesh_1e8r0")
@@ -6159,7 +6159,7 @@ mesh = SubResource("ArrayMesh_6kmyk")
 transform = Transform3D(-0.023499446, -0.02347204, -0.005459351, 0.02405159, -0.023153396, -0.0042128586, -0.0007954288, -0.0066571212, 0.03390118, 0.08890591, -0.06322826, -0.59471166)
 
 [node name="hand" type="MeshInstance3D" parent="fps_rig/shotgun/left_hand" unique_id=1589199316]
-transform = Transform3D(0.6888387, -0.64660764, 0.3277191, 0.57161707, 0.7625219, 0.3030081, -0.44582078, -0.021393824, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
+transform = Transform3D(0.6888387, -0.64660764, 0.3277191, 0.57161707, 0.76252186, 0.3030081, -0.44582078, -0.021393823, 0.89486676, 0.42860222, 0.42810607, 1.0108471)
 layers = 2
 material_override = ExtResource("2_74nyn")
 mesh = SubResource("ArrayMesh_gjxc6")
@@ -6791,7 +6791,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988178, -0.14587694, -0.5836158, 0.59316176, 0.029347165, 0.804546, -0.10023759, -0.9888652, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881775, -0.14587693, -0.5836158, 0.59316176, 0.029347163, 0.804546, -0.100237586, -0.98886514, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
