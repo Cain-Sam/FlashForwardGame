@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://bh377qwom0d52"]
+
+[ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="1_2mdd2"]
+[ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="1_ys3ib"]
+[ext_resource type="PackedScene" uid="uid://cdeodg3s1run2" path="res://Scenes/door_pieces_modifier.tscn" id="2_8ktnr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcjox"]
+resource_name = "Material_0"
+albedo_texture = ExtResource("1_2mdd2")
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b0xgt"]
+_surfaces = [{
+"aabb": AABB(-0.41151428, -0.6569824, -0.09814453, 0.82302856, 1.3139648, 0.19628906),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAAAAgAEAAAAAAAFAAMAAwAGAAIABwAFAAAAAwAFAAcAAAAEAAcABwAGAAMABwAEAAIAAgAGAAcA"),
+"name": "Material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAAAAAAAAAAAA//8AAAAA//8AAAAAAAAAAP////8AAP//AAD//wAA/////wAAAAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h0j1r"]
+resource_name = "door3_Door2"
+_surfaces = [{
+"aabb": AABB(-0.41151428, -0.6569824, -0.09814453, 0.82302856, 1.3139648, 0.19628906),
+"attribute_data": PackedByteArray("////////AAAAAAAA////////AAAAAAAA////////AAAAAAAAAAAAAAAA////////////////AAAAAAAAAAAAAAAA////////AAAAAAAA////////AAAAAAAA////////////////AAAAAAAAAAAAAAAA////////////////AAAAAAAAAAAAAAAA////////"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMA"),
+"material": SubResource("StandardMaterial3D_qcjox"),
+"name": "Material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAAP//qioAAAAAAACqKgAA//8AAKoq//8AAAAAqioAAAAAAACqKgAAAAD//6oqAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAD//wAAqioAAP////+qKgAAAAD//6oqAAAAAP//AAAAAP////8AAP///////wAA////////qioAAP////+qKgAA//8AAKoqAAAAAP//qir//wAA//+qKv//AAAAAKoq////////AAD//wAA//8AAAAAAAD//wAA//8AAAAAqir//wAA//+qKv///////6oq//8AAAAAAAD/////AAAAAAAA//8AAAAAAAD//wAAqir/////AACqKv///////6oq////////qir/////AACqKv//AAAAAKoqVFWqqlRVqqpUVaqqVFVUVVRVVFVUVVRV/3////9/////f///VFWqqlRVqqpUVaqq/3//f/9//3//f/9/VNWqKlTVqipU1aoqVFVUVVRVVFVUVVRV/3//f/9//3//f/9/qqpUVaqqVFWqqlRV/3////9/////f///VNWqKlTVqipU1aoqqqpUVaqqVFWqqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b0xgt")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ys3ib"]
+points = PackedVector3Array(-0.41151428, -0.6569824, -0.09814453, -0.41151428, -0.6569824, 0.09814453, -0.41151428, 0.6569824, -0.09814453, 0.41151422, -0.6569824, -0.09814453, 0.41151422, -0.6569824, 0.09814453, -0.41151428, 0.6569824, 0.09814453, 0.41151422, 0.6569824, -0.09814453, 0.41151422, 0.6569824, 0.09814453)
+
+[node name="door3" type="Node3D" unique_id=461606196]
+script = ExtResource("1_ys3ib")
+broken_model = ExtResource("2_8ktnr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1778548635]
+
+[node name="Door2" type="MeshInstance3D" parent="StaticBody3D" unique_id=299694848]
+mesh = SubResource("ArrayMesh_h0j1r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1697874550]
+shape = SubResource("ConvexPolygonShape3D_ys3ib")

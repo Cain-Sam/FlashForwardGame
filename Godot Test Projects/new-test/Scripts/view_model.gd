@@ -153,6 +153,7 @@ func checkKickCollision():
 func kickKickable(collider):
 	collider.queue_free()
 	
+	
 func kickMyHead():
 	get_tree().call_group("global_kick_events", "trigger_kick_effect")
 	
