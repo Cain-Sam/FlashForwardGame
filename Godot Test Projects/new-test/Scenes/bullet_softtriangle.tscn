@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dretkn2c5etxy"]
+
+[ext_resource type="Script" uid="uid://dj3div5mq2ij4" path="res://Scripts/bullet.gd" id="1_a33rk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1e8r0"]
+emission_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_1thqu"]
+radial_segments = 16
+rings = 8
+
+[node name="bullet" type="Node3D" unique_id=186536062]
+script = ExtResource("1_a33rk")
+
+[node name="OmniLight" type="OmniLight3D" parent="." unique_id=1543761502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026018426, 0.007957522)
+visible = false
+layers = 3
+light_color = Color(0.3948785, 0.0001068984, 0.39487565, 1)
+light_energy = 4.644
+light_indirect_energy = 5.119
+light_volumetric_fog_energy = 16.0
+light_size = 0.307
+
+[node name="CSGMesh3D2" type="SoftBody3D" parent="." unique_id=404559772]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.024780989, 0)
+material_override = SubResource("StandardMaterial3D_1e8r0")
+mesh = SubResource("SphereMesh_1thqu")
+simulation_precision = 10
+total_mass = 1.308
+linear_stiffness = 0.15
+shrinking_factor = -0.3
+pressure_coefficient = 10.0
+damping_coefficient = 0.42
+
+[node name="bullet_raycast" type="RayCast3D" parent="." unique_id=255798106]
+transform = Transform3D(3.640916, 0, 0, 0, 3.910236, 0, 0, 0, 1.432902, 0, 0.023470469, 0)
+visible = false
+target_position = Vector3(0, 0, -1)

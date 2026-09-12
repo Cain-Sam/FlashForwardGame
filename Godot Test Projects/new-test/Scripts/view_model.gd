@@ -128,13 +128,13 @@ func fireGun():
 	bullet_light.light_color = ColorList.color_list[ColorList.colorindex]
 	
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
-	if bullet_mesh.material:
-		bullet_mesh.material = bullet_mesh.material.duplicate()
+	if bullet_mesh.material_override:
+		bullet_mesh.material_override = bullet_mesh.material_override.duplicate()
 	
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material.albedo_color = ColorList.color_list[ColorList.colorindex]
-	bullet_mesh.material.emission = ColorList.color_list[ColorList.colorindex]
-	bullet_mesh.material.emission_energy_multiplier = bullet_light_multiplyer
+	bullet_mesh.material_override.albedo_color = ColorList.color_list[ColorList.colorindex]
+	bullet_mesh.material_override.emission = ColorList.color_list[ColorList.colorindex]
+	bullet_mesh.material_override.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
 	get_parent().add_child(bullet_instance)
