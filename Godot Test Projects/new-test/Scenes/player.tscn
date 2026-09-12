@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctmymxux33uvo"]
 
-[ext_resource type="Script" uid="uid://es7rrudvwyib" path="res://Scripts/TEST.tscn.gd" id="1_vgqql"]
+[ext_resource type="Script" uid="uid://es7rrudvwyib" path="res://Scripts/player.gd" id="1_vgqql"]
 [ext_resource type="Material" uid="uid://c3qc10rsembnr" path="res://materials/gnome.tres" id="2_fkybt"]
 [ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="3_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="4_3smsa"]
