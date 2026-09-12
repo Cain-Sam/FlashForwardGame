@@ -43,11 +43,15 @@ shadow_mesh = SubResource("ArrayMesh_b0xgt")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ys3ib"]
 points = PackedVector3Array(-0.41151428, -0.6569824, -0.09814453, -0.41151428, -0.6569824, 0.09814453, -0.41151428, 0.6569824, -0.09814453, 0.41151422, -0.6569824, -0.09814453, 0.41151422, -0.6569824, 0.09814453, -0.41151428, 0.6569824, 0.09814453, 0.41151422, 0.6569824, -0.09814453, 0.41151422, 0.6569824, 0.09814453)
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=324353811 groups=["kickable"]]
+[node name="RigidBody3D" type="RigidBody3D" unique_id=68427573 groups=["kickable"]]
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 100.0
 script = ExtResource("1_ys3ib")
 
-[node name="Door2" type="MeshInstance3D" parent="." unique_id=878580212 groups=["kickable"]]
+[node name="Door2" type="MeshInstance3D" parent="." unique_id=767662530 groups=["collidable", "kickable"]]
 mesh = SubResource("ArrayMesh_h0j1r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=12280891 groups=["kickable"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=895845993 groups=["kickable"]]
 shape = SubResource("ConvexPolygonShape3D_ys3ib")
