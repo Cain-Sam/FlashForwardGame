@@ -17,9 +17,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		var impact_strength := total_impulse.length()
 		
 		var hit_object = state.get_contact_collider_object(i)
-		var hit_from_direction = state.get_contact_local_normal(i)
+		var global_normal = state.get_contact_local_normal(i)
+		var hit_from_direction = global_transform.basis * global_normal
 		
 		if hit_object && state.get_contact_collider_object(i).has_method("collided") && total_impulse.length() > 0.2:		
 			state.get_contact_collider_object(i).collided(hit_from_direction, total_impulse.length() + 2)
-			print (str(hit_from_direction))
 		
