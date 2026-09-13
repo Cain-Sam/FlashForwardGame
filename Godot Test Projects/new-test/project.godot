@@ -29,6 +29,7 @@ kickable=""
 player="literally the player"
 view_model="a group for the view model"
 collidable="can be collided with"
+bullet=""
 
 [input]
 
