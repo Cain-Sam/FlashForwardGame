@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2c5x0gsgh6g8" path="res://Scripts/door_pieces_break.gd" id="1_1rm8h"]
 [ext_resource type="Texture2D" uid="uid://dgasuvbgpfpcc" path="res://Assets/door_pieces_rusty_metal_grid_nor_gl_4k.png" id="1_g4jfj"]
-[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scenes/kickedObject.gd" id="2_keos2"]
+[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="2_keos2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q84gl"]
 resource_name = "Material_0"
