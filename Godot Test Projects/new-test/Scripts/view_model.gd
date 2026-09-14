@@ -95,6 +95,24 @@ func _input(event):
 		else:
 			ColorList.colorindex -= 1
 			
+	if(event.is_action_pressed("Hotkey1")):
+		ColorList.colorindex = 0
+			
+	if(event.is_action_pressed("Hotkey2")):
+		ColorList.colorindex = 4
+		
+	if(event.is_action_pressed("Hotkey3")):
+		ColorList.colorindex = 8
+		
+	if(event.is_action_pressed("Hotkey4")):
+		ColorList.colorindex = 16
+		
+	if(event.is_action_pressed("Hotkey5")):
+		ColorList.colorindex = 32
+		
+	if(event.is_action_pressed("Hotkey6")):
+		ColorList.colorindex = 36
+			
 func playerHoldingBulb():
 	
 	#Bulb can not be placed

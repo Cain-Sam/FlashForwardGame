@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://05i7s1qkfh7c"]
+
+[ext_resource type="Script" uid="uid://c3wlxnjck45x6" path="res://Scripts/teleporter.gd" id="1_75k4i"]
+[ext_resource type="Shader" uid="uid://cn8qf747jkxoh" path="res://shaders/portal_shader.tres" id="2_73k1r"]
+[ext_resource type="AudioStream" uid="uid://jo83n803yyk7" path="res://STOLENSHITTHATWEWILLDELETE/altrC.wav" id="3_73k1r"]
+[ext_resource type="AudioStream" uid="uid://cny4js7e1qsgi" path="res://STOLENSHITTHATWEWILLDELETE/enchant.wav" id="4_itjrl"]
+[ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="5_6vd6g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
+size = Vector3(1.3790741, 2.1353931, 0.44082832)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_itjrl"]
+render_priority = 0
+shader = ExtResource("2_73k1r")
+shader_parameter/color_intensity = 4.0
+shader_parameter/ColorParameter = Color(0.72156864, 0.36078432, 0.3019608, 1)
+shader_parameter/is_spinning = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_6vd6g"]
+size = Vector3(1.4301758, 2.1503754, 0.001)
+
+[node name="Area3D" type="Area3D" unique_id=1652388293 groups=["teleporter"]]
+script = ExtResource("1_75k4i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1265614421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2047599, 0.39077508, -3.0610247)
+shape = SubResource("BoxShape3D_vi5sq")
+
+[node name="Portal" type="MeshInstance3D" parent="." unique_id=1571669070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18757603, 0.39938545, -3.141368)
+material_override = SubResource("ShaderMaterial_itjrl")
+mesh = SubResource("BoxMesh_6vd6g")
+
+[node name="portal_glow" type="SpotLight3D" parent="Portal" unique_id=252623904]
+transform = Transform3D(-0.99583393, 0.07845911, -0.04646548, 0.078373834, 0.99691737, 0.003656906, 0.04660916, -6.836774e-09, -0.9989132, -0.1954253, 0.124050856, -0.204005)
+light_color = Color(0.72156864, 0.36078432, 0.3019608, 1)
+light_energy = 4.345
+spot_range = 2.982
+spot_attenuation = 1.06
+spot_angle = 115.28
+spot_angle_attenuation = 2.2191403
+
+[node name="AltrC" type="AudioStreamPlayer" parent="." unique_id=198902176]
+stream = ExtResource("3_73k1r")
+volume_db = -24.668
+
+[node name="Enchant" type="AudioStreamPlayer" parent="." unique_id=408036817]
+stream = ExtResource("4_itjrl")
+volume_db = -24.638
+
+[node name="IlluFail" type="AudioStreamPlayer" parent="." unique_id=1350595155]
+stream = ExtResource("5_6vd6g")
+volume_db = -23.548

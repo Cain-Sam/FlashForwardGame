@@ -23,7 +23,7 @@ albedo_texture = ExtResource("1_6gevf")
 [node name="Area3D" parent="." unique_id=1988150016 instance=ExtResource("1_vyjki")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.19575542, -2.2696438)
 sceneTo = "res://Scenes/test_cell.tscn"
-portalColor = Color(0.09019608, 0.14509805, 0.3254902, 1)
+portalColor = Color(0.22352941, 0.3254902, 0.6509804, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=156820223]
 environment = SubResource("Environment_vyjki")

@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://bxigbj4p316sn" path="res://materials/Mud.tres" id="2_mexhj"]
 [ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="4_uh1jf"]
 [ext_resource type="Material" uid="uid://sjngqjbs367b" path="res://materials/pole.tres" id="8_0hhbd"]
+[ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="8_jp01x"]
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
 [ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://Audio/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
 
@@ -125,7 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014470816, 0, 0)
 [node name="Area3D2" parent="." unique_id=1293701164 instance=ExtResource("4_uh1jf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.21808505, 0, 0.56292963)
 sceneTo = "res://Scenes/DarkRoom.tscn"
-portalColor = Color(0.09019608, 0.14509805, 0.3254902, 1)
+portalColor = Color(0.22512543, 0.32621056, 0.6498314, 1)
 
 [node name="speaker pole" type="StaticBody3D" parent="." unique_id=1694428739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5275927, 0, -1.711637)
@@ -178,3 +179,6 @@ doppler_tracking = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="speaker pole" unique_id=1192957328]
 transform = Transform3D(0.19856648, 0, 0, 0, 3.6963894, 0, 0, 0, 0.20982999, -3.944703, 3.017197, -1.2628348)
 shape = SubResource("CylinderShape3D_p5x4p")
+
+[node name="Teleporter" parent="." unique_id=1643606398 instance=ExtResource("8_jp01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.8850336)

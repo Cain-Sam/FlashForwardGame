@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvbjt74ojyct7"]
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="1_6jlns"]
+[ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="1_prxxp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwpog"]
 albedo_color = Color(1, 0.8235294, 0.16078432, 1)
@@ -94,6 +95,9 @@ sky = SubResource("Sky_prxxp")
 glow_enabled = true
 
 [node name="main" type="Node3D" unique_id=1182305847]
+
+[node name="Teleporter" parent="." unique_id=1643606398 instance=ExtResource("1_prxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.484526, 13.257816, -7.356193)
 
 [node name="Floor1" type="Node3D" parent="." unique_id=195243872]
 
@@ -432,3 +436,15 @@ environment = SubResource("Environment_t7ij0")
 
 [node name="player" parent="." unique_id=961832965 instance=ExtResource("1_6jlns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.449377, 0)
+
+[node name="Teleporter2" parent="." unique_id=1058326060 instance=ExtResource("1_prxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.749199, 13.257816, -7.356193)
+
+[node name="Teleporter3" parent="." unique_id=1487034786 instance=ExtResource("1_prxxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.709103, 13.257816, -7.356193)
+
+[node name="Teleporter4" parent="." unique_id=1652388293 instance=ExtResource("1_prxxp")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.484526, 13.257816, 5.8622503)
+
+[node name="Teleporter5" parent="." unique_id=1490560701 instance=ExtResource("1_prxxp")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.03117, 13.257816, 5.8622503)
