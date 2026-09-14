@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://bxigbj4p316sn" path="res://materials/Mud.tres" id="2_mexhj"]
 [ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="4_uh1jf"]
 [ext_resource type="Material" uid="uid://sjngqjbs367b" path="res://materials/pole.tres" id="8_0hhbd"]
-[ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="8_jp01x"]
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
 [ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://Audio/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
 
@@ -180,5 +179,7 @@ doppler_tracking = 2
 transform = Transform3D(0.19856648, 0, 0, 0, 3.6963894, 0, 0, 0, 0.20982999, -3.944703, 3.017197, -1.2628348)
 shape = SubResource("CylinderShape3D_p5x4p")
 
-[node name="Teleporter" parent="." unique_id=1643606398 instance=ExtResource("8_jp01x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.8850336)
+[node name="Area3D3" parent="." unique_id=584686124 instance=ExtResource("4_uh1jf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.4983399, 0, 0.14575267)
+sceneTo = "res://Scenes/Theatre01.tscn"
+portalColor = Color(0.07293365, 0.42977807, 0, 1)

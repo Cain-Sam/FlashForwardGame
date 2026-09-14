@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="1_6jlns"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="1_prxxp"]
+[ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="1_t7ij0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwpog"]
 albedo_color = Color(1, 0.8235294, 0.16078432, 1)
@@ -95,6 +96,11 @@ sky = SubResource("Sky_prxxp")
 glow_enabled = true
 
 [node name="main" type="Node3D" unique_id=1182305847]
+
+[node name="Area3D3" parent="." unique_id=1988150016 instance=ExtResource("1_t7ij0")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 2.549298, 13.242204, 0.14575267)
+sceneTo = "res://Scenes/test_cell.tscn"
+portalColor = Color(0.07293365, 0.42977807, 0, 1)
 
 [node name="Teleporter" parent="." unique_id=1643606398 instance=ExtResource("1_prxxp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.484526, 13.257816, -7.356193)
