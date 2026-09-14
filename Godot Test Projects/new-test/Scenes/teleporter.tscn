@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="5_6vd6g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
-size = Vector3(1.3790741, 2.1353931, 0.44082832)
+size = Vector3(1.3790741, 2.1353931, 0.16528943)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itjrl"]
 render_priority = 0
@@ -23,7 +23,7 @@ size = Vector3(1.4301758, 2.1503754, 0.001)
 script = ExtResource("1_75k4i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1265614421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2047599, 0.39077508, -3.0610247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2047599, 0.39077508, -3.1236188)
 shape = SubResource("BoxShape3D_vi5sq")
 
 [node name="Portal" type="MeshInstance3D" parent="." unique_id=1571669070]

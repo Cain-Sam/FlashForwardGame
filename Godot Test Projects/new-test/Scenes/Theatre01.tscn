@@ -90,8 +90,8 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_6jlns")
 
 [sub_resource type="Environment" id="Environment_t7ij0"]
-background_mode = 1
-background_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+background_mode = 2
+background_color = Color(0.09809855, 0.098098494, 0.098098524, 1)
 sky = SubResource("Sky_prxxp")
 glow_enabled = true
 
@@ -443,14 +443,14 @@ environment = SubResource("Environment_t7ij0")
 [node name="player" parent="." unique_id=961832965 instance=ExtResource("1_6jlns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.449377, 0)
 
-[node name="Teleporter2" parent="." unique_id=1058326060 instance=ExtResource("1_prxxp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.749199, 13.257816, -7.356193)
+[node name="Teleporter2" parent="." unique_id=1652388293 instance=ExtResource("1_prxxp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 245.32785, -1.5456796, -7.356193)
 
-[node name="Teleporter3" parent="." unique_id=1487034786 instance=ExtResource("1_prxxp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.709103, 13.257816, -7.356193)
+[node name="Teleporter3" parent="." unique_id=524822685 instance=ExtResource("1_prxxp")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 3, 0, 4, 0, -4.371139e-08, 65.042694, 13.257816, -50.048317)
 
-[node name="Teleporter4" parent="." unique_id=1652388293 instance=ExtResource("1_prxxp")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.484526, 13.257816, 5.8622503)
+[node name="Teleporter4" parent="." unique_id=84339873 instance=ExtResource("1_prxxp")]
+transform = Transform3D(-1.3113416e-07, 0, -1, 0, 1, 0, 3, 0, -4.371139e-08, 65.05477, 13.257816, 9.670519)
 
-[node name="Teleporter5" parent="." unique_id=1490560701 instance=ExtResource("1_prxxp")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.03117, 13.257816, 5.8622503)
+[node name="Teleporter5" parent="." unique_id=271564571 instance=ExtResource("1_prxxp")]
+transform = Transform3D(-3.059797e-06, 0, -1, 0, 11, 0, 70, 0, -4.371139e-08, 172.88449, 5.34115, 19.173973)

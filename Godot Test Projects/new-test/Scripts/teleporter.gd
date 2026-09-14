@@ -24,7 +24,7 @@ func _manual_on_body_entered(body: Node3D) -> void:
 				var forward_distance: float = 1
 				var target_forward: Vector3 = -node.global_transform.basis.z
 				var destination: Vector3 = node.global_position + (target_forward * forward_distance)
-				body.global_transform.basis = node.global_transform.basis
+				body.global_transform.basis = node.global_transform.basis.orthonormalized()
 				body.rotate_y(PI) 
 				body.global_position = destination
 				telesuccess.play()
