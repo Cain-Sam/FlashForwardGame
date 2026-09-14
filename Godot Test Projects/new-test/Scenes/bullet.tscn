@@ -9,6 +9,9 @@ albedo_color = Color(0.20089048, 2.7651116e-05, 0.2008889, 1)
 emission_enabled = true
 emission = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hul88"]
+radius = 0.050772823
+
 [node name="bullet" type="Node3D" unique_id=186536062]
 script = ExtResource("1_v7oki")
 
@@ -29,3 +32,9 @@ material = SubResource("StandardMaterial3D_2qgu4")
 [node name="bullet_raycast" type="RayCast3D" parent="." unique_id=255798106]
 transform = Transform3D(3.640916, 0, 0, 0, 3.910236, 0, 0, 0, 1.432902, 0, 0.023470469, 0)
 target_position = Vector3(0, 0, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=929515793 groups=["bullet"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1938046811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024862245, 7.516146e-05)
+shape = SubResource("SphereShape3D_hul88")

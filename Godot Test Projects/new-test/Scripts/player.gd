@@ -30,6 +30,7 @@ const mouse_sens = 0.25
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	platform_on_leave = CharacterBody3D.PLATFORM_ON_LEAVE_DO_NOTHING
 	#$Head/Camera3D/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
 	
 func _input(event):
