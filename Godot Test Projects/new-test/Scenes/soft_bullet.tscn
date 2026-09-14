@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://tp165rtqbalx"]
+[gd_scene format=3 uid="uid://dg0c3g2c26wxb"]
 
-[ext_resource type="Script" uid="uid://dj3div5mq2ij4" path="res://Scripts/bullet.gd" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://dj3div5mq2ij4" path="res://Scripts/bullet.gd" id="1_ydffn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_oduel"]
 
@@ -32,7 +32,7 @@ radial_segments = 16
 rings = 16
 
 [node name="bullet" type="Node3D" unique_id=186536062]
-script = ExtResource("1_v7oki")
+script = ExtResource("1_ydffn")
 
 [node name="OmniLight" type="OmniLight3D" parent="." unique_id=1543761502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026018426, 0.007957522)
