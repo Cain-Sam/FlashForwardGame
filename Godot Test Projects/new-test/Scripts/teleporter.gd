@@ -1,5 +1,4 @@
 extends Area3D
-@onready var loading: CanvasLayer = $Loading
 @export var sceneTo: String = "res://Scenes/main.tscn"
 @export var portalColor: Color = Color(0.7, 0.7, 0.7)
 @onready var portal: MeshInstance3D = $Portal
