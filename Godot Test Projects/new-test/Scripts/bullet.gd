@@ -8,6 +8,7 @@ const SPEED = 40
 @onready var omni_light: OmniLight3D = $OmniLight
 
 var stuck := false
+var physics_groups = ["door", "collidable"]
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -31,8 +32,15 @@ func _stick() -> void:
 	global_position = collision
 	if coll_normal.abs() != Vector3.UP:
 		look_at(collision + coll_normal, Vector3.UP)
-		
+	
+		var collider = bullet_raycast.get_collider()
+		for i in physics_groups:
+			if collider.is_in_group(i) or collider.get_parent().is_in_group(i):
+				merge_bullet(hit_object)
 	# 1. Physically extract and remove structural sub-components
+	
+
+func merge_bullet(hit_object):
 	bullet_raycast.queue_free() 
 	
 	# If CSGMesh is projecting collisions, explicitly strip its interior body

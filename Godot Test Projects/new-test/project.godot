@@ -31,6 +31,7 @@ view_model="a group for the view model"
 collidable="can be collided with"
 bullet=""
 teleporter=""
+level_transition=""
 
 [input]
 

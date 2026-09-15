@@ -13,11 +13,12 @@ render_priority = 0
 shader = ExtResource("2_n2q70")
 shader_parameter/color_intensity = 4.0
 shader_parameter/ColorParameter = Color(0.72156864, 0.36078432, 0.3019608, 1)
+shader_parameter/is_spinning = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_oayfh"]
 size = Vector3(1.4301758, 2.1503754, 0.001)
 
-[node name="Area3D" type="Area3D" unique_id=1988150016]
+[node name="Area3D" type="Area3D" unique_id=1988150016 groups=["level_transition"]]
 script = ExtResource("1_yxcth")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1803993370]
