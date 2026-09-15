@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dg0c3g2c26wxb"]
+[gd_scene format=3 uid="uid://tp165rtqbalx"]
 
-[ext_resource type="Script" uid="uid://dj3div5mq2ij4" path="res://Scripts/soft_bullet.gd" id="1_ydffn"]
+[ext_resource type="Script" uid="uid://dj3div5mq2ij4" path="res://Scripts/soft_bullet.gd" id="1_v7oki"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_oduel"]
 
@@ -31,8 +31,11 @@ height = 0.25
 radial_segments = 16
 rings = 16
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hul88"]
+radius = 0.050772823
+
 [node name="bullet" type="Node3D" unique_id=186536062]
-script = ExtResource("1_ydffn")
+script = ExtResource("1_v7oki")
 
 [node name="OmniLight" type="OmniLight3D" parent="." unique_id=1543761502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026018426, 0.007957522)
@@ -256,3 +259,9 @@ attachments/65/offset = Vector3(0, 0, 0)
 [node name="bullet_raycast" type="RayCast3D" parent="." unique_id=255798106]
 transform = Transform3D(3.640916, 0, 0, 0, 3.910236, 0, 0, 0, 0.70158273, 0, 0.023470469, 0.02947998)
 target_position = Vector3(0, 0, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=929515793 groups=["bullet"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1938046811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024862245, 7.516146e-05)
+shape = SubResource("SphereShape3D_hul88")
