@@ -47,11 +47,11 @@ light_volumetric_fog_energy = 16.0
 light_size = 0.307
 
 [node name="CSGMesh3D2" type="SoftBody3D" parent="." unique_id=404559772]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.0022628307, 0.022518039, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0022628307, 0.022518039, 0)
 material_override = SubResource("StandardMaterial3D_1e8r0")
 mesh = SubResource("SphereMesh_1thqu")
 simulation_precision = 10
-total_mass = 1.792
+total_mass = 9.316
 linear_stiffness = 0.28
 shrinking_factor = -0.7
 pressure_coefficient = 1.0
