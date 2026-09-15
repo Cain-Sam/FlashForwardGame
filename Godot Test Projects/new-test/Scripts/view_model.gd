@@ -14,7 +14,7 @@ extends Camera3D
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
 
-var bullet = load("res://Scenes/bullet.tscn")
+var bullet = load("res://Scenes/splat_bullet.tscn")
 var bullet_instance
 
 #Gun
