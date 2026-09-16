@@ -18,7 +18,7 @@ func _ready() -> void:
 	portal.material_override.set_shader_parameter("is_spinning", false)	
 	target_nodes = get_tree().get_nodes_in_group("teleporter")
 func _manual_on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") && portalActive():
+	if portalActive():
 		for node in target_nodes:
 			if node != self && node.portal_glow.light_color == self.portal_glow.light_color:
 				var forward_distance: float = 1

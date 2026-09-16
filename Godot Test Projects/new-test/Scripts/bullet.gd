@@ -8,7 +8,7 @@ const SPEED = 40
 @onready var omni_light: OmniLight3D = $OmniLight
 
 var stuck := false
-var physics_groups = ["door", "collidable"]
+var physics_groups = ["kickable", "collidable"]
 
 func _ready() -> void:
 	pass # Replace with function body.
