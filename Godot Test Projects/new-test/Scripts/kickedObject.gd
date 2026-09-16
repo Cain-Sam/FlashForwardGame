@@ -20,6 +20,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		var global_normal = state.get_contact_local_normal(i)
 		var hit_from_direction = global_transform.basis * global_normal
 		
-		if hit_object && state.get_contact_collider_object(i).has_method("collided") && total_impulse.length() > 0.2:		
+		if hit_object && state.get_contact_collider_object(i).has_method("collided"):		
 			state.get_contact_collider_object(i).collided(hit_from_direction, total_impulse.length() + 2)
 		
