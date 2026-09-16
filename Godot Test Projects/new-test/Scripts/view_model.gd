@@ -10,6 +10,7 @@ extends Camera3D
 @export var lostcause: AudioStreamPlayer3D 
 @onready var player_light: Node3D = $"../../../../../PlayerLight"
 @onready var shootsound: AudioStreamPlayer3D = $shootsound
+@onready var kick_cast: RayCast3D = $"../../../../KickCast"
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -71,7 +72,7 @@ func _input(event):
 			
 	if(event.is_action_pressed("kick")):
 		animation_player_2.play("kick")
-		if vision.is_colliding():
+		if kick_cast.is_colliding():
 			checkKickCollision()
 			
 	if(event.is_action_pressed("light")):
@@ -163,7 +164,7 @@ func fireGun():
 	bullet_light = null
 	
 func checkKickCollision():
-	var collider = vision.get_collider()
+	var collider = kick_cast.get_collider()
 	if collider.is_in_group("kickable"):
 		kickKickable(collider)
 	if collider.is_in_group("myhead"):

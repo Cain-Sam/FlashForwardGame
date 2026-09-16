@@ -37,20 +37,15 @@ func _stick() -> void:
 		for i in physics_groups:
 			if collider.is_in_group(i) or collider.get_parent().is_in_group(i):
 				merge_bullet(hit_object)
-	# 1. Physically extract and remove structural sub-components
-	
 
 func merge_bullet(hit_object):
 	bullet_raycast.queue_free() 
 	
-	# If CSGMesh is projecting collisions, explicitly strip its interior body
 	csg_mesh_3d_2.use_collision = false
 	
-	# Clean any lingering collision components that survived inside the tree
 	for child in get_children():
 		if child is CollisionShape3D or child is CollisionObject3D:
 			child.queue_free()
 
-	# 2. Attach the shell to your targeted node safely
 	if hit_object and hit_object is Node:
 		reparent(hit_object, true)

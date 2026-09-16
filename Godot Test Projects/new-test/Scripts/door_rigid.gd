@@ -1,12 +1,15 @@
 extends RigidBody3D
 const DOOR_PIECES_MODIFIER = preload("uid://cdeodg3s1run2")
+@export var intensityBreakThresh = 2.2
+@export var kickBreakable: bool = true
 
 func kicked(direction, intensity):
-	breakDoor(direction, intensity)
+	if kickBreakable:
+		breakDoor(direction, intensity);
 
 func collided(direction, intensity):
-	if intensity > 2.2:
-		breakDoor(direction, intensity)
+	if intensity > intensityBreakThresh:
+		breakDoor(direction, intensity);
 
 func breakDoor(direction, intensity):
 	var broken_model_inst = DOOR_PIECES_MODIFIER.instantiate();

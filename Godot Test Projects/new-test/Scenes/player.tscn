@@ -46,6 +46,9 @@ cull_mask = 1047554
 [node name="Vision" type="RayCast3D" parent="Head" unique_id=1748234429]
 transform = Transform3D(1, 0, 0, 0, -0.12852214, -0.4831998, 0, 0.4831998, -0.12852214, 0, 0, -0.049968764)
 
+[node name="KickCast" type="RayCast3D" parent="Head" unique_id=711449485]
+transform = Transform3D(2.73, 0, 0, 0, -0.091359496, -2.964425, 0, 0.6940125, -0.39023554, 0, 0, -0.049968764)
+
 [node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=2119777659]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
 visibility_parent = NodePath("../Grome")
