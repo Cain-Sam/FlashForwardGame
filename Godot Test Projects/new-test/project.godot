@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://djsycf0ls5nod"
 
 ColorList="*uid://dhubt70xj3yye"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/brackeys_particle_controls/plugin.cfg")
+
 [global_group]
 
 kickable=""
