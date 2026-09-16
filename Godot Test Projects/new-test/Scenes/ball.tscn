@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cecbdkh2dsred"]
+
+[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="1_d60mj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_d60mj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ij5cq"]
+
+[node name="RigidBody3D5" type="RigidBody3D" unique_id=74562454 groups=["collidable", "kickable"]]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_d60mj")
+directionYOffset = 0.3
+
+[node name="Door2_cell_004" type="MeshInstance3D" parent="." unique_id=100978859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+mesh = SubResource("SphereMesh_d60mj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=875896262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+shape = SubResource("SphereShape3D_ij5cq")

@@ -1,9 +1,15 @@
 extends RigidBody3D
 var velocity_last_frame: Vector3 = Vector3.ZERO
+@export var directionXOffset: float = 0
+@export var directionYOffset: float = 1
+@export var directionZOffset: float = 0
+@export var intensityOffset: float = 10
 
 func kicked(direction, intensity):
-	direction.y += 1
-	intensity += 10
+	direction.x += directionXOffset
+	direction.y += directionYOffset
+	direction.z += directionZOffset
+	intensity += intensityOffset
 	self.apply_impulse( direction * intensity, self.global_position )
 	
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
