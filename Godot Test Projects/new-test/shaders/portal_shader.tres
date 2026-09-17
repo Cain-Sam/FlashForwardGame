@@ -14,6 +14,12 @@ default_value = true
 
 [sub_resource type="VisualShaderNodeSwitch" id="VisualShaderNodeSwitch_shag5"]
 
+[sub_resource type="VisualShaderNodeVec2Parameter" id="VisualShaderNodeVec2Parameter_1e8r0"]
+expanded_output_ports = [0]
+parameter_name = "SpinSpeed"
+default_value_enabled = true
+default_value = Vector2(1, 1)
+
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_8ir7q"]
 texture = ExtResource("1_1e8r0")
 texture_type = 1
@@ -55,7 +61,7 @@ nodes/fragment/3/position = Vector2(-260, 460)
 nodes/fragment/4/node = SubResource("VisualShaderNodeUVFunc_5bd60")
 nodes/fragment/4/position = Vector2(60, 640)
 nodes/fragment/5/node = SubResource("VisualShaderNodeVectorOp_qam4c")
-nodes/fragment/5/position = Vector2(-510, 680)
+nodes/fragment/5/position = Vector2(-570, 780)
 nodes/fragment/6/node = SubResource("VisualShaderNodeInput_ql5qn")
 nodes/fragment/6/position = Vector2(-920, 650)
 nodes/fragment/7/node = SubResource("VisualShaderNodeVectorOp_hkg8x")
@@ -70,4 +76,6 @@ nodes/fragment/11/node = SubResource("VisualShaderNodeBooleanParameter_1e8r0")
 nodes/fragment/11/position = Vector2(-650, 1050)
 nodes/fragment/12/node = SubResource("VisualShaderNodeSwitch_shag5")
 nodes/fragment/12/position = Vector2(-90, 1110)
-nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 4, 0, 2, 0, 6, 0, 5, 0, 7, 0, 0, 0, 2, 0, 7, 1, 9, 0, 10, 0, 8, 0, 10, 1, 10, 0, 7, 0, 5, 0, 12, 1, 12, 0, 4, 2, 11, 0, 12, 0)
+nodes/fragment/13/node = SubResource("VisualShaderNodeVec2Parameter_1e8r0")
+nodes/fragment/13/position = Vector2(-290, 670)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 4, 0, 2, 0, 6, 0, 5, 0, 7, 0, 0, 0, 2, 0, 7, 1, 9, 0, 10, 0, 8, 0, 10, 1, 10, 0, 7, 0, 5, 0, 12, 1, 12, 0, 4, 2, 11, 0, 12, 0, 13, 0, 4, 1)

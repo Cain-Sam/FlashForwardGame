@@ -7,8 +7,9 @@ extends Area3D
 @onready var activate: AudioStreamPlayer = $Enchant
 @onready var activatefail: AudioStreamPlayer = $IlluFail
 
-var portal_active
+var portal_timeout: bool = false
 var target_nodes
+var target_portal = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _manual_on_body_entered(body: Node3D) -> void:
 	if portalActive():
 		for node in target_nodes:
 			if node != self && node.portal_glow.light_color == self.portal_glow.light_color:
+				target_portal = node
 				var forward_distance: float = 1
 				var target_forward: Vector3 = -node.global_transform.basis.z
 				var destination: Vector3 = node.global_position + (target_forward * forward_distance)
@@ -30,6 +32,7 @@ func _manual_on_body_entered(body: Node3D) -> void:
 				telesuccess.play()
 				if body is CharacterBody3D && stopWhenEntered:
 					body.velocity = Vector3.ZERO
+				setPortalTimeout()
 		
 	if body.is_in_group("bullet"):
 		var portals_of_color_count = 0
@@ -53,9 +56,17 @@ func changePortalColor(color):
 		activate.play()
 	
 func portalActive():
-	if portal_glow.light_color == Color(0.7, 0.7, 0.7):
+	if portal_glow.light_color == Color(0.7, 0.7, 0.7) || portal.material_override.get_shader_parameter("SpinSpeed").x < 1:
 		return false
 	return true
+
+func setPortalTimeout():
+	var color_store = portal_glow.light_color
+	portal.material_override.set_shader_parameter("SpinSpeed", Vector2(0.1, 0.1))
+	target_portal.get_node("Portal").material_override.set_shader_parameter("SpinSpeed", Vector2(0.1, 0.1))
+	await get_tree().create_timer(3.0).timeout
+	portal.material_override.set_shader_parameter("SpinSpeed", Vector2(1.0, 1.0))
+	target_portal.get_node("Portal").material_override.set_shader_parameter("SpinSpeed", Vector2(1, 1))
 
 func _process(_delta: float) -> void:
 	pass
