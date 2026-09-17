@@ -1,7 +1,4 @@
 extends SpotLight3D
-
-
-
 @export var fade_duration: float = 5.0  
 @export var max_energy: float = 5.0       
 

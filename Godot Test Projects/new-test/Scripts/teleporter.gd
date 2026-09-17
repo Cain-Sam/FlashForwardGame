@@ -1,6 +1,6 @@
 extends Area3D
-@export var sceneTo: String = "res://Scenes/main.tscn"
 @export var portalColor: Color = Color(0.7, 0.7, 0.7)
+@export var stopWhenEntered: bool = false
 @onready var portal: MeshInstance3D = $Portal
 @onready var portal_glow: SpotLight3D = $Portal/portal_glow
 @onready var telesuccess: AudioStreamPlayer = $AltrC
@@ -28,8 +28,8 @@ func _manual_on_body_entered(body: Node3D) -> void:
 				body.rotate_y(PI) 
 				body.global_position = destination
 				telesuccess.play()
-				#if body is CharacterBody3D:
-					#body.velocity = Vector3.ZERO
+				if body is CharacterBody3D && stopWhenEntered:
+					body.velocity = Vector3.ZERO
 		
 	if body.is_in_group("bullet"):
 		var portals_of_color_count = 0
