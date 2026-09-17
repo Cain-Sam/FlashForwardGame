@@ -1,4 +1,8 @@
 extends RigidBody3D
+@export var directionXOffset: float = 0
+@export var directionYOffset: float = 0
+@export var directionZOffset: float = 0
+@export var intensityOffset: float = 0
 var velocity_last_frame: Vector3 = Vector3.ZERO
 @export var directionXOffset: float = 0
 @export var directionYOffset: float = 1
