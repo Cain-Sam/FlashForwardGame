@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cny4js7e1qsgi" path="res://STOLENSHITTHATWEWILLDELETE/enchant.wav" id="5_arkox"]
 [ext_resource type="Texture2D" uid="uid://dnw5u6dn5mbod" path="res://Textures/brackeys_vfx_bundle/particles/alpha/spark_04_a.png" id="6_5nc6o"]
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="6_mwpog"]
+[ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/fog_machine.tscn" id="12_hip6d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
 size = Vector3(1.3790741, 2.1353931, 0.16528943)
@@ -115,6 +116,8 @@ background_mode = 1
 background_color = Color(0.09809855, 0.098098494, 0.098098524, 1)
 sky = SubResource("Sky_prxxp")
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_p5x4p"]
 
@@ -599,6 +602,10 @@ use_collision = true
 size = Vector3(79.112465, 1, 205.53674)
 material = SubResource("StandardMaterial3D_ko3m7")
 
+[node name="FogVolume" parent="Floor1/Floor2" unique_id=308469915 instance=ExtResource("12_hip6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2179565, 0.64848137, -1.1346548)
+size = Vector3(21.91272, 0.2987976, 26.239983)
+
 [node name="CSGBox3D11" type="CSGBox3D" parent="Floor1" unique_id=595549845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.022316, 4.043933, 2.905056)
 use_collision = true
@@ -742,3 +749,27 @@ lifetime = 2.0399999999999996
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ye0fn")
 draw_pass_1 = SubResource("QuadMesh_p5x4p")
+
+[node name="FogVolume" parent="." unique_id=430846119 instance=ExtResource("12_hip6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.52216, 0.1772896, 14.555433)
+size = Vector3(38.518906, 1.0657363, 120.20851)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FogVolume" unique_id=538221725]
+transform = Transform3D(1, 0, 0, 0, 0.0070253788, 0.9999753, 0, -0.9999753, 0.0070253788, -0.795105, 20.62398, -14.218726)
+light_color = Color(0.99951583, 0.67044115, 0.6637651, 1)
+light_energy = 2.627
+light_volumetric_fog_energy = 4.525
+spot_range = 29.82
+spot_attenuation = -0.13
+spot_angle = 31.78
+spot_angle_attenuation = 0.25881636
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=960481596]
+transform = Transform3D(1, 0, 0, 0, -0.6917943, 0.72209466, 0, -0.72209466, -0.6917943, 23.236614, 20.230492, -9.824413)
+light_color = Color(0.9999998, 0.8680343, 0.6975303, 1)
+light_energy = 1.542
+light_volumetric_fog_energy = 3.259
+spot_range = 16.967
+spot_attenuation = -0.8
+spot_angle = 17.67
+spot_angle_attenuation = 1.5691686

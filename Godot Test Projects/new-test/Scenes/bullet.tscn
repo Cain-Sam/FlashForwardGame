@@ -21,7 +21,7 @@ layers = 3
 light_color = Color(0.3948785, 0.0001068984, 0.39487565, 1)
 light_energy = 4.644
 light_indirect_energy = 5.119
-light_volumetric_fog_energy = 16.0
+light_volumetric_fog_energy = 1.265
 light_size = 0.307
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=361543900]
