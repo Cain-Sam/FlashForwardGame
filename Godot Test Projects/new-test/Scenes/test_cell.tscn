@@ -3,11 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cmgt26nym0vyl" path="res://Skybox/dikhololo_night_4k.hdr" id="1_1mqhj"]
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="2_3i5ih"]
 [ext_resource type="Material" uid="uid://bxigbj4p316sn" path="res://materials/Mud.tres" id="2_mexhj"]
-[ext_resource type="Script" uid="uid://dxknrj0sdnlbv" path="res://Scripts/leveltrans.gd" id="4_ofbji"]
 [ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="4_uh1jf"]
-[ext_resource type="Shader" uid="uid://cn8qf747jkxoh" path="res://shaders/portal_shader.tres" id="5_6wees"]
-[ext_resource type="Material" uid="uid://cx1xvr42dvxr7" path="res://materials/rock_wall.tres" id="6_xohai"]
-[ext_resource type="PackedScene" uid="uid://k8wnayykdnxw" path="res://Scenes/Loading.tscn" id="7_vhyt2"]
 [ext_resource type="Material" uid="uid://sjngqjbs367b" path="res://materials/pole.tres" id="8_0hhbd"]
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
 [ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://Audio/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
@@ -25,19 +21,6 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_emission_energy = 6.17
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_oayfh"]
-size = Vector3(2.0517578, 2.4220123, 0.93482983)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiwdf"]
-render_priority = 0
-shader = ExtResource("5_6wees")
-shader_parameter/color_intensity = 4.0
-shader_parameter/ColorParameter = Color(0.72156864, 0.36078432, 0.3019608, 1)
-shader_parameter/is_spinning = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_oayfh"]
-size = Vector3(1.4301758, 2.1503754, 0.001)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1r050"]
 resource_name = "modular_electricity_poles"
@@ -136,43 +119,8 @@ material_override = ExtResource("2_mexhj")
 use_collision = true
 size = Vector3(7.7285156, 0.23535156, 10.65918)
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1988150016]
+[node name="Area3D" parent="." unique_id=1988150016 instance=ExtResource("4_uh1jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014470816, 0, 0)
-script = ExtResource("4_ofbji")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1803993370]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09989387, 0.3795799, -3.7922933)
-shape = SubResource("BoxShape3D_oayfh")
-
-[node name="LevelTrans" type="CSGCombiner3D" parent="Area3D" unique_id=909274149]
-use_collision = true
-
-[node name="Portal" type="MeshInstance3D" parent="Area3D/LevelTrans" unique_id=878305127]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15586826, 0.333189, -3.291091)
-material_override = SubResource("ShaderMaterial_qiwdf")
-mesh = SubResource("BoxMesh_oayfh")
-
-[node name="Wall" type="CSGBox3D" parent="Area3D/LevelTrans" unique_id=1167159316]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15441895, 0.7390896, -3.7843356)
-size = Vector3(2.9499512, 2.9605103, 1)
-material = ExtResource("6_xohai")
-
-[node name="Hole" type="CSGBox3D" parent="Area3D/LevelTrans/Wall" unique_id=1873161297]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008421898, -0.31665477, 0.28430486)
-operation = 2
-size = Vector3(1.4052734, 2.26062, 1)
-material = ExtResource("6_xohai")
-
-[node name="portal_glow" type="SpotLight3D" parent="Area3D/LevelTrans/Wall/Hole" unique_id=1124298089]
-transform = Transform3D(-0.9958338, 0.0784591, -0.04646548, 0.07837383, 0.9969173, 0.003656906, 0.046609156, -6.851658e-09, -0.9989132, -0.20529652, 0.03480504, 0.0049347705)
-light_color = Color(0.72156864, 0.36078432, 0.3019608, 1)
-light_energy = 4.345
-spot_range = 2.982
-spot_attenuation = 1.06
-spot_angle = 115.28
-spot_angle_attenuation = 2.2191403
-
-[node name="Loading" parent="Area3D" unique_id=1293335694 instance=ExtResource("7_vhyt2")]
 
 [node name="Area3D2" parent="." unique_id=1293701164 instance=ExtResource("4_uh1jf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.21808505, 0, 0.56292963)
