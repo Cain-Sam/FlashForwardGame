@@ -28,8 +28,10 @@ func _manual_on_body_entered(body: Node3D) -> void:
 				var target_forward: Vector3 = -node.global_transform.basis.z
 				var destination: Vector3 = node.global_position + (target_forward * forward_distance)
 				#body.global_transform.basis = node.global_transform.basis.orthonormalized()
-				body.rotate_y(PI) 
 				body.global_position = destination
+				var look_target: Vector3 = destination + target_forward
+				body.look_at(look_target, Vector3.UP)
+				body.rotate_y(PI) 
 				telesuccess.play()
 				if body is CharacterBody3D && stopWhenEntered:
 					body.velocity = Vector3.ZERO
