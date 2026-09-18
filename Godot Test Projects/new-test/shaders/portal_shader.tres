@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" format=3 uid="uid://cn8qf747jkxoh"]
 
-[ext_resource type="Texture2D" uid="uid://vhf17swx1ino" path="res://STOLENSHITTHATWEWILLDELETE/meatyport.png" id="1_1e8r0"]
+[ext_resource type="Texture2D" uid="uid://bq1pd4j07flci" path="res://Textures/garden_gnome_ao_4k.png" id="1_1e8r0"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_shag5"]
 default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]

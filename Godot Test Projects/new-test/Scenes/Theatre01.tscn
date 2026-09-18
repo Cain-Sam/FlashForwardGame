@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dnw5u6dn5mbod" path="res://Textures/brackeys_vfx_bundle/particles/alpha/spark_04_a.png" id="6_5nc6o"]
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="6_mwpog"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/fog_machine.tscn" id="12_hip6d"]
+[ext_resource type="PackedScene" uid="uid://cecbdkh2dsred" path="res://Scenes/ball.tscn" id="13_4vich"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
 size = Vector3(1.3790741, 2.1353931, 0.16528943)
@@ -773,3 +774,7 @@ spot_range = 16.967
 spot_attenuation = -0.8
 spot_angle = 17.67
 spot_angle_attenuation = 1.5691686
+
+[node name="RigidBody3D5" parent="." unique_id=74562454 instance=ExtResource("13_4vich")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.747025, 12.813888, 0.1896531)
+intensityOffset = 10.0
