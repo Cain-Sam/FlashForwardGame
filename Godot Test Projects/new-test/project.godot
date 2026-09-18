@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://djsycf0ls5nod"
 
 ColorList="*uid://dhubt70xj3yye"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/brackeys_particle_controls/plugin.cfg")
+
 [global_group]
 
 kickable=""
@@ -148,3 +152,5 @@ Hotkey6={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/volumetric_fog/volume_size=124
+environment/volumetric_fog/volume_depth=124
