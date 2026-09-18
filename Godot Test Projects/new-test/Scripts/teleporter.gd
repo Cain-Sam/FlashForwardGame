@@ -10,16 +10,17 @@ extends Area3D
 var portal_timeout: bool = false
 var target_nodes
 var target_portal = null
+var deactivate_color = Color(0.29, 0.29, 0.29)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	body_entered.connect(_manual_on_body_entered)
 	if portal.material_override:
-		changePortalColor(portalColor)
+		changePortalColor(portal, portalColor)
 	portal.material_override.set_shader_parameter("is_spinning", false)	
 	target_nodes = get_tree().get_nodes_in_group("teleporter")
 func _manual_on_body_entered(body: Node3D) -> void:
-	if portalActive():
+	if portalActive() && !body.is_in_group("bullet"):
 		for node in target_nodes:
 			if node != self && node.portal_glow.light_color == self.portal_glow.light_color:
 				target_portal = node
@@ -39,34 +40,32 @@ func _manual_on_body_entered(body: Node3D) -> void:
 		for node in target_nodes:
 			if node.portal_glow.light_color == ColorList.color_list[ColorList.colorindex]:
 				portals_of_color_count += 1
-		if portals_of_color_count < 2:
-			changePortalColor(ColorList.color_list[ColorList.colorindex])
+		if portals_of_color_count < 2 && portal_glow.light_color != deactivate_color:
+			changePortalColor(portal, ColorList.color_list[ColorList.colorindex])
 			activate.play()
 		else:
 			activatefail.play()
 		body.get_parent().queue_free()
 
-func changePortalColor(color):
+func changePortalColor(targetPortal, color):
 	var unique_material = portal.material_override.duplicate()
-	portal.material_override = unique_material
-	portal.material_override.set_shader_parameter("ColorParameter", color)
-	portal.material_override.set_shader_parameter("is_spinning", true)
-	portal_glow.light_color = color
-	if portalActive():
-		activate.play()
+	targetPortal.material_override = unique_material
+	targetPortal.material_override.set_shader_parameter("ColorParameter", color)
+	targetPortal.material_override.set_shader_parameter("is_spinning", true)
+	targetPortal.get_node("portal_glow").light_color = color
 	
 func portalActive():
-	if portal_glow.light_color == Color(0.7, 0.7, 0.7) || portal.material_override.get_shader_parameter("SpinSpeed").x < 1:
+	if portal_glow.light_color == Color(0.7, 0.7, 0.7) || portal_glow.light_color == deactivate_color:
 		return false
 	return true
 
 func setPortalTimeout():
 	var color_store = portal_glow.light_color
-	portal.material_override.set_shader_parameter("SpinSpeed", Vector2(0.1, 0.1))
-	target_portal.get_node("Portal").material_override.set_shader_parameter("SpinSpeed", Vector2(0.1, 0.1))
+	changePortalColor(portal, deactivate_color)
+	changePortalColor(target_portal.get_node("Portal"), deactivate_color)
 	await get_tree().create_timer(3.0).timeout
-	portal.material_override.set_shader_parameter("SpinSpeed", Vector2(1.0, 1.0))
-	target_portal.get_node("Portal").material_override.set_shader_parameter("SpinSpeed", Vector2(1, 1))
+	changePortalColor(portal, color_store)
+	changePortalColor(target_portal.get_node("Portal"), color_store)
 
 func _process(_delta: float) -> void:
 	pass
