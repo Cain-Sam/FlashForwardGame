@@ -39,8 +39,11 @@ func _stick() -> void:
 				merge_bullet(hit_object)
 
 func merge_bullet(hit_object):
-	bullet_raycast.queue_free() 
-	
+	bullet_raycast.queue_free()
+	 
+	if hit_object.has_method("_manual_on_body_entered"):
+		hit_object._manual_on_body_entered(self)
+		 
 	csg_mesh_3d_2.use_collision = false
 	
 	for child in get_children():

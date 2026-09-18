@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dyhrmfcfolehn"]
+
+[ext_resource type="Script" uid="uid://dsecnerh0c73k" path="res://Scripts/colorChangeSoftBody.gd" id="1_53t6c"]
+[ext_resource type="AudioStream" uid="uid://cny4js7e1qsgi" path="res://STOLENSHITTHATWEWILLDELETE/enchant.wav" id="2_kkuqr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kxxg"]
+cull_mode = 2
+albedo_color = Color(0.5448716, 0, 0.15767166, 1)
+emission_enabled = true
+emission = Color(0.2665993, 0.019366208, 0.07579938, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p5x4p"]
+size = Vector2(9.3, 7.3)
+subdivide_width = 50
+subdivide_depth = 50
+orientation = 0
+
+[node name="curtain3" type="SoftBody3D" unique_id=15610218 groups=["collidable"]]
+transform = Transform3D(10.304434, 0, 0, 0, -4.4553423e-09, 0.10192633, 0, -6.455263, -2.8216846e-07, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_3kxxg")
+mesh = SubResource("PlaneMesh_p5x4p")
+simulation_precision = 100
+total_mass = 0.076
+linear_stiffness = 0.35
+damping_coefficient = 0.23
+pinned_points = [2703, 2652, 2657, 2662, 2667, 2672, 2677, 2682, 2687, 2692, 2697]
+attachments/0/point_index = 2703
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 2652
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+attachments/2/point_index = 2657
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
+attachments/3/point_index = 2662
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
+attachments/4/point_index = 2667
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
+attachments/5/point_index = 2672
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
+attachments/6/point_index = 2677
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
+attachments/7/point_index = 2682
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
+attachments/8/point_index = 2687
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
+attachments/9/point_index = 2692
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
+attachments/10/point_index = 2697
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
+script = ExtResource("1_53t6c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=655089238]
+
+[node name="Enchant" type="AudioStreamPlayer" parent="." unique_id=1155864970]
+stream = ExtResource("2_kkuqr")
+volume_db = -20.934
