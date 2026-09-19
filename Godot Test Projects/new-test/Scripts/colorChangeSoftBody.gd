@@ -20,4 +20,4 @@ func changeColor(color):
 	var unique_material = self.material_override.duplicate()
 	self.material_override = unique_material;
 	self.material_override.albedo_color = color;
-	self.material_override.emission = color.darkened(0.9);
+	self.material_override.emission = color;

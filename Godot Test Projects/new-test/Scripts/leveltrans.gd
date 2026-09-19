@@ -18,7 +18,7 @@ func _manual_on_body_entered(body: Node3D) -> void:
 		await get_tree().create_timer(0.1).timeout
 		get_tree().change_scene_to_file(sceneTo)
 	if body.is_in_group("bullet"):
-		changePortalColor(ColorList.finalcolor)
+		changePortalColor(ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex]))
 		body.get_parent().queue_free()
 
 func changePortalColor(color):
