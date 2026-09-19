@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	
 func _manual_on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("bullet"):
-		changeColor(ColorList.color_list[ColorList.colorindex])
+		changeColor(ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex]))
 		activate.play()
 		body.queue_free()
 		

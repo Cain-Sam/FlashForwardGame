@@ -40,10 +40,10 @@ func _manual_on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("bullet"):
 		var portals_of_color_count = 0
 		for node in target_nodes:
-			if node.portal_glow.light_color == ColorList.color_list[ColorList.colorindex]:
+			if node.portal_glow.light_color == ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex]):
 				portals_of_color_count += 1
 		if portals_of_color_count < 2 && portal_glow.light_color != deactivate_color:
-			changePortalColor(portal, ColorList.color_list[ColorList.colorindex])
+			changePortalColor(portal, ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex]))
 			activate.play()
 		else:
 			activatefail.play()

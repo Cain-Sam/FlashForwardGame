@@ -95,6 +95,18 @@ func _input(event):
 			ColorList.colorindex = ColorList.color_list.size() - 1
 		else:
 			ColorList.colorindex -= 1
+	
+	if(event.is_action_pressed("darknessdown")):
+		if ColorList.darkenindex == 0:
+			ColorList.darkenindex = ColorList.darken_list.size() - 1
+		else:
+			ColorList.darkenindex -= 1
+			
+	if(event.is_action_pressed("darknessup")):
+		if ColorList.darkenindex == ColorList.darken_list.size() - 1:
+			ColorList.darkenindex = 0
+		else:
+			ColorList.darkenindex += 1
 			
 	if(event.is_action_pressed("Hotkey1")):
 		ColorList.colorindex = 0
@@ -120,15 +132,15 @@ func playerHoldingBulb():
 	if !vision.is_colliding():
 		playerLight.global_position = vision.to_global(vision.target_position)
 		lightBulb.transparency = non_placable_lightbulb_transparency
-		lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex]
-		lightBulb.material.emission = ColorList.color_list[ColorList.colorindex]
+		lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+		lightBulb.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
 		
 	#Bulb CAN be placed
 	else:
 		playerLight.global_position = vision.get_collision_point()
 		lightBulb.transparency = placable_lightbulb_transparency
-		lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex]
-		lightBulb.material.emission = ColorList.color_list[ColorList.colorindex]
+		lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+		lightBulb.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
 		
 func fireGun():
 	animation_player.play("fire")
@@ -145,15 +157,15 @@ func fireGun():
 	
 	#Bullet Light
 	bullet_light.light_energy = bullet_light_energy
-	bullet_light.light_color = ColorList.color_list[ColorList.colorindex]
+	bullet_light.light_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
 	
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
 	if bullet_mesh.material:
 		bullet_mesh.material = bullet_mesh.material.duplicate()
 	
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material.albedo_color = ColorList.color_list[ColorList.colorindex]
-	bullet_mesh.material.emission = ColorList.color_list[ColorList.colorindex]
+	bullet_mesh.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+	bullet_mesh.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
 	bullet_mesh.material.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
@@ -217,11 +229,11 @@ func placeLight():
 	
 	#Set Light Settings for Placed Light
 	light.light_energy = placed_light_energy
-	light.light_color = ColorList.color_list[ColorList.colorindex]
+	light.light_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
 	
 	#Set Mesh Settings for Placed Light
-	lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex]
-	lightBulb.material.emission = ColorList.color_list[ColorList.colorindex]
+	lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+	lightBulb.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
 	lightBulb.material.emission_energy_multiplier = placed_bulb_light_multiplyer
 	
 	#Clear Variables
