@@ -13,8 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="6_mwpog"]
 [ext_resource type="PackedScene" uid="uid://dyhrmfcfolehn" path="res://Scenes/curtain.tscn" id="10_mwpog"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/fog_machine.tscn" id="12_hip6d"]
-[ext_resource type="PackedScene" uid="uid://cecbdkh2dsred" path="res://Scenes/ball.tscn" id="13_4vich"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/door_rigid.tscn" id="14_arkox"]
+[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="14_y0jgv"]
+[ext_resource type="Texture2D" uid="uid://odkfqoio8x2p" path="res://Textures/sam.png" id="15_x0srs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
 size = Vector3(1.3790741, 2.1353931, 0.16528943)
@@ -224,6 +225,16 @@ scale_max = 2.2
 color_initial_ramp = SubResource("GradientTexture1D_27oid")
 alpha_curve = SubResource("CurveTexture_3kxxg")
 emission_curve = SubResource("CurveTexture_shkdl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwyet"]
+albedo_color = Color(0.48235294, 0.98039216, 0.4509804, 1)
+albedo_texture = ExtResource("15_x0srs")
+emission_enabled = true
+emission = Color(0.045685608, 0.11115209, 0.04074474, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_d60mj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ij5cq"]
 
 [node name="main" type="Node3D" unique_id=1182305847]
 
@@ -738,9 +749,22 @@ spot_attenuation = -0.8
 spot_angle = 17.67
 spot_angle_attenuation = 1.5691686
 
-[node name="RigidBody3D5" parent="." unique_id=74562454 instance=ExtResource("13_4vich")]
+[node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=74562454 groups=["collidable", "kickable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.747025, 12.813888, 0.1896531)
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("14_y0jgv")
+directionYOffset = 0.3
 intensityOffset = 10.0
+
+[node name="Door2_cell_004" type="MeshInstance3D" parent="RigidBody3D5" unique_id=100978859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+material_override = SubResource("StandardMaterial3D_cwyet")
+mesh = SubResource("SphereMesh_d60mj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D5" unique_id=875896262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+shape = SubResource("SphereShape3D_ij5cq")
 
 [node name="DOOR" parent="." unique_id=68427573 instance=ExtResource("14_arkox")]
 transform = Transform3D(-0.078459054, 0, -0.9969173, 0, 1, 0, 0.9969173, 0, -0.078459054, 15.688499, 13.248444, -7.1523395)
