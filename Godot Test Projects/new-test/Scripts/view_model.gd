@@ -132,15 +132,15 @@ func playerHoldingBulb():
 	if !vision.is_colliding():
 		playerLight.global_position = vision.to_global(vision.target_position)
 		lightBulb.transparency = non_placable_lightbulb_transparency
-		lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
-		lightBulb.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+		lightBulb.material.albedo_color = ColorList.get_color()
+		lightBulb.material.emission = ColorList.get_color()
 		
 	#Bulb CAN be placed
 	else:
 		playerLight.global_position = vision.get_collision_point()
 		lightBulb.transparency = placable_lightbulb_transparency
-		lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
-		lightBulb.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+		lightBulb.material.albedo_color = ColorList.get_color()
+		lightBulb.material.emission = ColorList.get_color()
 		
 func fireGun():
 	animation_player.play("fire")
@@ -157,15 +157,15 @@ func fireGun():
 	
 	#Bullet Light
 	bullet_light.light_energy = bullet_light_energy
-	bullet_light.light_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+	bullet_light.light_color = ColorList.get_color()
 	
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
 	if bullet_mesh.material:
 		bullet_mesh.material = bullet_mesh.material.duplicate()
 	
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
-	bullet_mesh.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+	bullet_mesh.material.albedo_color = ColorList.get_color()
+	bullet_mesh.material.emission = ColorList.get_color()
 	bullet_mesh.material.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
@@ -229,11 +229,11 @@ func placeLight():
 	
 	#Set Light Settings for Placed Light
 	light.light_energy = placed_light_energy
-	light.light_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+	light.light_color = ColorList.get_color()
 	
 	#Set Mesh Settings for Placed Light
-	lightBulb.material.albedo_color = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
-	lightBulb.material.emission = ColorList.color_list[ColorList.colorindex].darkened(ColorList.darken_list[ColorList.darkenindex])
+	lightBulb.material.albedo_color = ColorList.get_color()
+	lightBulb.material.emission = ColorList.get_color()
 	lightBulb.material.emission_energy_multiplier = placed_bulb_light_multiplyer
 	
 	#Clear Variables
