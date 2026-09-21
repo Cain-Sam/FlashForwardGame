@@ -11,11 +11,12 @@ extends Camera3D
 @onready var player_light: Node3D = $"../../../../../PlayerLight"
 @onready var shootsound: AudioStreamPlayer3D = $shootsound
 @onready var kick_cast: RayCast3D = $"../../../../KickCast"
+@onready var rat_shot: AudioStreamPlayer3D = $rat_shot
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
 
-var bullet = load("res://Scenes/bullet.tscn")
+var bullet = load("res://Scenes/rat_bullet.tscn")
 var bullet_instance
 
 #Gun
@@ -148,13 +149,13 @@ func fireGun():
 	bullet_light.light_color = ColorList.color_list[ColorList.colorindex]
 	
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
-	if bullet_mesh.material:
-		bullet_mesh.material = bullet_mesh.material.duplicate()
+	if bullet_mesh.material_override:
+		bullet_mesh.material_override = bullet_mesh.material_override.duplicate()
 	
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material.albedo_color = ColorList.color_list[ColorList.colorindex]
-	bullet_mesh.material.emission = ColorList.color_list[ColorList.colorindex]
-	bullet_mesh.material.emission_energy_multiplier = bullet_light_multiplyer
+	bullet_mesh.material_override.albedo_color = ColorList.color_list[ColorList.colorindex]
+	bullet_mesh.material_override.emission = ColorList.color_list[ColorList.colorindex]
+	bullet_mesh.material_override.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
 	get_parent().add_child(bullet_instance)
