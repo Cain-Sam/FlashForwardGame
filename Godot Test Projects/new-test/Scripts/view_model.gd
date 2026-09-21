@@ -11,16 +11,19 @@ extends Camera3D
 @onready var player_light: Node3D = $"../../../../../PlayerLight"
 @onready var shootsound: AudioStreamPlayer3D = $shootsound
 @onready var kick_cast: RayCast3D = $"../../../../KickCast"
+@onready var altFire: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/AltFire
 @onready var rat_shot: AudioStreamPlayer3D = $rat_shot
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
 
-var bullet = load("res://Scenes/rat_bullet.tscn")
+var bullet = load("res://Scenes/bullet.tscn")
+var drawMaterial = load("res://Scenes/drawmaterial.tscn")
 var bullet_instance
 
 #Gun
 var shotgun_in_use = true;
+var alt_fire = false;
 var lightMode = false;
 var lightBulb
 var playerLight
@@ -51,6 +54,10 @@ func _process(delta):
 	if lightMode && is_instance_valid(lightBulb):
 		playerHoldingBulb()
 	
+	if(Input.is_action_pressed("shoot")):
+		if !animation_player.is_playing() && alt_fire:
+			fireDraw()
+			
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*sway_x_multiplyer
 	fps_rig.position.y += sway_amount.y*sway_y_multiplyer
@@ -58,7 +65,8 @@ func sway(sway_amount):
 func _input(event):
 	
 	if(event.is_action_pressed("shoot")):
-		if !animation_player.is_playing():
+		if !animation_player.is_playing() && !alt_fire:
+			animateShoot()
 			fireGun()
 			
 	if(event.is_action_pressed("reload")):
@@ -109,6 +117,14 @@ func _input(event):
 		else:
 			ColorList.darkenindex += 1
 			
+	if(event.is_action_pressed("swap_mode")):
+		if alt_fire:
+			altFire.visible = false
+			alt_fire = false;
+		else:
+			altFire.visible = true
+			alt_fire = true;
+			
 	if(event.is_action_pressed("Hotkey1")):
 		ColorList.colorindex = 0
 			
@@ -143,10 +159,11 @@ func playerHoldingBulb():
 		lightBulb.material.albedo_color = ColorList.get_color()
 		lightBulb.material.emission = ColorList.get_color()
 		
-func fireGun():
+func animateShoot():
 	animation_player.play("fire")
 	shootsound.play()
-	
+
+func fireGun():
 	#Create Bullet
 	bullet_instance = bullet.instantiate()
 	var bullet_light = bullet_instance.get_child(0)
@@ -240,3 +257,27 @@ func placeLight():
 	#Clear Variables
 	playerLight = null 
 	lightBulb = null
+	
+func fireDraw():
+	#Create Bullet
+	bullet_instance = drawMaterial.instantiate()
+	var bullet_mesh = bullet_instance.get_child(0)
+	
+	#Bullet Possition
+	bullet_instance.position = barrel_raycast.global_position
+	bullet_instance.transform.basis = barrel_raycast.global_transform.basis
+	
+	#Make Bullet Mesh Seperate From Other Bullet Meshes
+	if bullet_mesh.material:
+		bullet_mesh.material = bullet_mesh.material.duplicate()
+	
+	#Set Bullet Color Equal To Chosen Color
+	bullet_mesh.material.albedo_color = ColorList.get_color()
+	bullet_mesh.material.emission = ColorList.get_color()
+	bullet_mesh.material.emission_energy_multiplier = bullet_light_multiplyer
+	
+	#Fire
+	get_parent().add_child(bullet_instance)
+	
+	#Clean Up
+	bullet_mesh = null
