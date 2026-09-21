@@ -13,11 +13,12 @@ func _process(delta: float) -> void:
 func _manual_on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("bullet"):
 		changeColor(ColorList.get_color())
-		activate.play()
 		body.queue_free()
 		
 func changeColor(color):
 	var unique_material = self.material_override.duplicate()
 	self.material_override = unique_material;
+	if self.material_override.albedo_color != ColorList.get_color():
+		activate.play()
 	self.material_override.albedo_color = color;
 	self.material_override.emission = color;
