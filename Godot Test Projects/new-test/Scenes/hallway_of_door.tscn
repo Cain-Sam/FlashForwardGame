@@ -20,6 +20,355 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 
+[sub_resource type="Animation" id="Animation_cbuwh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpotLight3D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpotLight3D4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SpotLight3D5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpotLight3D6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SpotLight3D7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SpotLight3D8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SpotLight3D9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SpotLight3D10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SpotLight3D11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SpotLight3D12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SpotLight3D13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SpotLight3D14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kbihw"]
+resource_name = "lights_out"
+length = 7.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpotLight3D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpotLight3D4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SpotLight3D5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpotLight3D6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SpotLight3D7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.6299999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SpotLight3D8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.0149994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SpotLight3D9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.544999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SpotLight3D10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 5.0149994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SpotLight3D11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 5.5349994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SpotLight3D12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5.9749994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SpotLight3D13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 6.5249996),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("SpotLight3D14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 7.0249996),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_la0iy"]
+_data = {
+&"RESET": SubResource("Animation_cbuwh"),
+&"lights_out": SubResource("Animation_kbihw")
+}
+
 [node name="Hallway of Door" type="Node3D" unique_id=1828722087]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1444042671]
@@ -488,7 +837,151 @@ size = Vector3(1.684452, 0.16418457, 1.6285934)
 [node name="player" parent="." unique_id=961832965 instance=ExtResource("1_6fau0")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=718448575]
+libraries/ = SubResource("AnimationLibrary_la0iy")
+autoplay = &"lights_out"
+speed_scale = 0.571
 
 [node name="FogVolume" parent="." unique_id=308469915 instance=ExtResource("3_cbuwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13586378, -0.10050678, -20.55338)
 size = Vector3(3.514762, 0.5175171, 41.70141)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1790126976]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -3.1161754)
+visible = false
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1663840085]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -6.141416)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=533076583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -8.940235)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=1983522522]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -11.515076)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="." unique_id=1434561336]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -14.363116)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="." unique_id=1073418153]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -17.369219)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="." unique_id=33880502]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -20.203743)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="." unique_id=488792664]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -22.828362)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="." unique_id=1595547979]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -25.641598)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="." unique_id=1477188715]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -28.252832)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="." unique_id=561495956]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -30.976429)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="." unique_id=965912510]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -33.734707)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="." unique_id=1918565238]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -36.22583)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="." unique_id=1804759006]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.07921332, 1.4652972, -38.762882)
+light_color = Color(0.93931973, 0.88653934, 0.87456, 1)
+light_energy = 1.855
+light_specular = 0.0
+spot_range = 2.369
+spot_attenuation = 1.65
+spot_angle = 34.01
+spot_angle_attenuation = 1.2311455
