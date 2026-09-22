@@ -18,7 +18,7 @@ func _process(delta):
 		return
 	
 	if bullet_raycast.is_colliding():
-		if !bullet_raycast.get_collider().is_in_group("player"):
+		if !bullet_raycast.get_collider().is_in_group("player") && !bullet_raycast.get_collider().is_in_group("bullet"):
 			mesh_instance_3d.scale.x = 0.4
 			mesh_instance_3d.scale.y = 0.4
 			mesh_instance_3d.scale.z = 0.05

@@ -59,8 +59,8 @@ func _process(delta):
 	if lightMode && is_instance_valid(lightBulb):
 		playerHoldingBulb()
 	
-	if Input.is_action_pressed("shoot"):
-		if !animation_player.is_playing() && alt_fire:
+	if Input.is_action_pressed("paint"):
+		#if !animation_player.is_playing():
 			fireDraw()
 			
 	if vision.is_colliding() || scanSelected:
@@ -138,10 +138,8 @@ func _input(event):
 			
 	if(event.is_action_pressed("swap_mode")):
 		if alt_fire:
-			altFire.visible = false
 			alt_fire = false;
 		else:
-			altFire.visible = true
 			alt_fire = true;
 		
 	if(event.is_action_pressed("scan")):
