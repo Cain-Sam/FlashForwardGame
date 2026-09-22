@@ -65,13 +65,14 @@ func _process(delta):
 			
 	if vision.is_colliding() || scanSelected:
 		if !scanSelected: 
-			if vision.get_collider().is_in_group("scannable"):
-				scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
-				var unique_material = scanCollisionMesh.material_override.duplicate()
-				colorStore = unique_material.albedo_color
-				scanCollisionMesh.material_override = unique_material
-				scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
-				scanSelected = true
+			if vision.get_collider() != null:
+				if vision.get_collider().is_in_group("scannable"):
+					scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
+					var unique_material = scanCollisionMesh.material_override.duplicate()
+					colorStore = unique_material.albedo_color
+					scanCollisionMesh.material_override = unique_material
+					scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
+					scanSelected = true
 		elif !vision.is_colliding():
 			scanCollisionMesh.material_override.albedo_color = colorStore
 			scanSelected = false
@@ -303,13 +304,13 @@ func fireDraw():
 	bullet_instance.transform.basis = barrel_raycast.global_transform.basis
 	
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
-	if bullet_mesh.material:
-		bullet_mesh.material = bullet_mesh.material.duplicate()
+	if bullet_mesh.material_override:
+		bullet_mesh.material_override = bullet_mesh.material_override.duplicate()
 	
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material.albedo_color = ColorList.get_color()
-	bullet_mesh.material.emission = ColorList.get_color()
-	bullet_mesh.material.emission_energy_multiplier = bullet_light_multiplyer
+	bullet_mesh.material_override.albedo_color = ColorList.get_color()
+	bullet_mesh.material_override.emission = ColorList.get_color()
+	bullet_mesh.material_override.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
 	get_parent().add_child(bullet_instance)

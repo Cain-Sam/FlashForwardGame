@@ -3,7 +3,7 @@ extends Node3D
 
 const SPEED = 10
 
-@onready var csg_mesh_3d_2: CSGMesh3D = $CSGMesh3D2
+@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 
 var stuck = false
@@ -19,9 +19,9 @@ func _process(delta):
 	
 	if bullet_raycast.is_colliding():
 		if !bullet_raycast.get_collider().is_in_group("player"):
-			csg_mesh_3d_2.scale.x = 0.4
-			csg_mesh_3d_2.scale.y = 0.4
-			csg_mesh_3d_2.scale.z = 0.05
+			mesh_instance_3d.scale.x = 0.4
+			mesh_instance_3d.scale.y = 0.4
+			mesh_instance_3d.scale.z = 0.05
 			_stick()
 	else:
 		position += transform.basis * Vector3(0, 0, -SPEED) * delta
@@ -44,8 +44,6 @@ func merge_bullet(hit_object):
 	 
 	if hit_object.has_method("_manual_on_body_entered"):
 		hit_object._manual_on_body_entered(self)
-		 
-	csg_mesh_3d_2.use_collision = false
 
 	if hit_object and hit_object is Node:
 		reparent(hit_object, true)
