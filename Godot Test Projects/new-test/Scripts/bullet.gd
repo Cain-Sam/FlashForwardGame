@@ -3,7 +3,7 @@ extends Node3D
 
 const SPEED = 40
 
-@onready var csg_mesh_3d_2: CSGMesh3D = $CSGMesh3D2
+@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 @onready var omni_light: OmniLight3D = $OmniLight
 
@@ -44,7 +44,7 @@ func merge_bullet(hit_object):
 	if hit_object.has_method("_manual_on_body_entered"):
 		hit_object._manual_on_body_entered(self)
 		 
-	csg_mesh_3d_2.use_collision = false
+	#mesh_instance_3d.use_collision = false
 	
 	for child in get_children():
 		if child is CollisionShape3D or child is CollisionObject3D:

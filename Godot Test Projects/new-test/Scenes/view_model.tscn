@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://o380p23glony" path="res://Scripts/gun_color_reminder.gd" id="3_rueqf"]
 [ext_resource type="AudioStream" uid="uid://dg61nattarlwt" path="res://Audio/shootsound.mp3" id="4_6hgl2"]
 [ext_resource type="AudioStream" uid="uid://ilvyqkwvke38" path="res://Audio/rat_impact.mp3" id="6_53sl3"]
+[ext_resource type="AudioStream" uid="uid://ddhd7tde1iobh" path="res://STOLENSHITTHATWEWILLDELETE/FireHit_01.wav" id="7_4n8fr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
 resource_name = "ShotgunMaterial"
@@ -6800,7 +6801,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988175, -0.1458769, -0.5836158, 0.5931616, 0.029347157, 0.804546, -0.100237556, -0.98886496, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881746, -0.1458769, -0.5836158, 0.5931615, 0.029347155, 0.804546, -0.10023755, -0.9888649, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
@@ -6811,7 +6812,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_nxqgf")
 
 [node name="barrel_raycast" type="RayCast3D" parent="." unique_id=902721694]
-transform = Transform3D(0.46352077, 0, 0, 0, 0.46352077, 0, 0, 0, 0.46352077, 0.07439482, -0.027764287, -0.3376224)
+transform = Transform3D(0.46352077, 0, 0, 0, 0.46352077, 0, 0, 0, 0.46352077, 0.046136156, -0.025454726, -0.20832402)
 target_position = Vector3(0, 0, -1)
 
 [node name="shootsound" type="AudioStreamPlayer3D" parent="." unique_id=725172661]
@@ -6823,3 +6824,7 @@ max_db = -3.722
 stream = ExtResource("6_53sl3")
 volume_db = -3.333
 max_db = 0.083
+
+[node name="scan" type="AudioStreamPlayer" parent="." unique_id=1543085224]
+stream = ExtResource("7_4n8fr")
+volume_db = -21.889

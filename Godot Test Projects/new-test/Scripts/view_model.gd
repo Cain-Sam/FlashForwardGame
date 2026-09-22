@@ -13,6 +13,7 @@ extends Camera3D
 @onready var kick_cast: RayCast3D = $"../../../../KickCast"
 @onready var altFire: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/AltFire
 @onready var rat_shot: AudioStreamPlayer3D = $rat_shot
+@onready var scan: AudioStreamPlayer = $scan
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -20,6 +21,10 @@ extends Camera3D
 var bullet = load("res://Scenes/bullet.tscn")
 var drawMaterial = load("res://Scenes/drawmaterial.tscn")
 var bullet_instance
+var scanSelected: bool = false
+var colorStore
+var scanCollisionMesh
+var bulletmesh = null
 
 #Gun
 var shotgun_in_use = true;
@@ -54,9 +59,22 @@ func _process(delta):
 	if lightMode && is_instance_valid(lightBulb):
 		playerHoldingBulb()
 	
-	if(Input.is_action_pressed("shoot")):
+	if Input.is_action_pressed("shoot"):
 		if !animation_player.is_playing() && alt_fire:
 			fireDraw()
+			
+	if vision.is_colliding() || scanSelected:
+		if !scanSelected: 
+			if vision.get_collider().is_in_group("scannable"):
+				scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
+				var unique_material = scanCollisionMesh.material_override.duplicate()
+				colorStore = unique_material.albedo_color
+				scanCollisionMesh.material_override = unique_material
+				scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
+				scanSelected = true
+		elif !vision.is_colliding():
+			scanCollisionMesh.material_override.albedo_color = colorStore
+			scanSelected = false
 			
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*sway_x_multiplyer
@@ -124,6 +142,11 @@ func _input(event):
 		else:
 			altFire.visible = true
 			alt_fire = true;
+		
+	if(event.is_action_pressed("scan")):
+		if scanSelected:
+			bulletmesh = scanCollisionMesh
+			scan.play()
 			
 	if(event.is_action_pressed("Hotkey1")):
 		ColorList.colorindex = 0
@@ -161,13 +184,25 @@ func playerHoldingBulb():
 		
 func animateShoot():
 	animation_player.play("fire")
-	shootsound.play()
-
+	if bulletmesh != null:
+		if bulletmesh.name == "Rat":
+			rat_shot.play()
+		else:
+			shootsound.play()
+	else:
+		shootsound.play()
 func fireGun():
 	#Create Bullet
 	bullet_instance = bullet.instantiate()
-	var bullet_light = bullet_instance.get_child(0)
-	var bullet_mesh = bullet_instance.get_child(1)
+	var bullet_light = bullet_instance.find_child("OmniLight", true, false)
+	var bullet_mesh = bullet_instance.find_child("MeshInstance3D", true, false)
+	if bulletmesh != null:
+		var bulletmeshCopy = bulletmesh.duplicate()
+		var meshOverrideCopy = bullet_mesh.material_override.duplicate()
+		bulletmeshCopy.material_override = meshOverrideCopy
+		bullet_instance.get_child(1).queue_free()
+		bullet_instance.add_child(bulletmeshCopy)
+		
 	
 	#Bullet Possition
 	bullet_instance.position = barrel_raycast.global_position
@@ -180,7 +215,7 @@ func fireGun():
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
 	if bullet_mesh.material_override:
 		bullet_mesh.material_override = bullet_mesh.material_override.duplicate()
-	
+		
 	#Set Bullet Color Equal To Chosen Color
 	bullet_mesh.material_override.albedo_color = ColorList.color_list[ColorList.colorindex]
 	bullet_mesh.material_override.emission = ColorList.color_list[ColorList.colorindex]

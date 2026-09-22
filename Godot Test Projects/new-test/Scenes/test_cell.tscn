@@ -11,6 +11,8 @@
 [ext_resource type="Material" uid="uid://sjngqjbs367b" path="res://materials/pole.tres" id="8_0hhbd"]
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
 [ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://Audio/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
+[ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/Rat.tscn" id="12_6wees"]
+[ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/ScannableShapeTest.tscn" id="13_xohai"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11p01"]
 panorama = ExtResource("1_1mqhj")
@@ -235,3 +237,9 @@ shape = SubResource("CylinderShape3D_p5x4p")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.4983399, 0, 0.14575267)
 sceneTo = "res://Scenes/Theatre01.tscn"
 portalColor = Color(0.07293365, 0.42977807, 0, 1)
+
+[node name="Rat" parent="." unique_id=1567692786 instance=ExtResource("12_6wees")]
+transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, -1.9336684, -0.58379096, -0.016141415)
+
+[node name="Rat2" parent="." unique_id=1907114190 instance=ExtResource("13_xohai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5083861, -0.4580333, 2.01981)
