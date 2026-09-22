@@ -60,7 +60,7 @@ func _process(delta):
 		playerHoldingBulb()
 	
 	if Input.is_action_pressed("paint"):
-		#if !animation_player.is_playing():
+		if !animation_player.is_playing():
 			fireDraw()
 			
 	if vision.is_colliding() || scanSelected:
