@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://dyhrmfcfolehn"]
 
 [ext_resource type="Script" uid="uid://dsecnerh0c73k" path="res://Scripts/colorChangeSoftBody.gd" id="1_53t6c"]
+[ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="1_p1s5g"]
+[ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="2_7phak"]
 [ext_resource type="AudioStream" uid="uid://cny4js7e1qsgi" path="res://STOLENSHITTHATWEWILLDELETE/enchant.wav" id="2_kkuqr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kxxg"]
 cull_mode = 2
 albedo_color = Color(0.5448716, 0, 0.15767166, 1)
+metallic = 1.0
+metallic_texture = ExtResource("1_p1s5g")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_p1s5g")
+roughness_texture_channel = 1
 emission_enabled = true
 emission = Color(0.2665993, 0.019366208, 0.07579938, 1)
+normal_enabled = true
+normal_texture = ExtResource("2_7phak")
+ao_enabled = true
+ao_texture = ExtResource("1_p1s5g")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p5x4p"]
 size = Vector2(9.3, 7.3)

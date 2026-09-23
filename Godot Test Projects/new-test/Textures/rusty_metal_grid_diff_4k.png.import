@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4in1ui1rytqm"
-path.s3tc="res://.godot/imported/rusty_metal_grid_diff_4k.png-f8db211cb7f675da4c042ddc7a3bbc25.s3tc.ctex"
+uid="uid://ddp33jp23kte5"
+path.s3tc="res://.godot/imported/rusty_metal_grid_diff_4k.png-35ac3846a07145efe81a148b71b95981.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/rusty_metal_grid_diff_4k.png"
-dest_files=["res://.godot/imported/rusty_metal_grid_diff_4k.png-f8db211cb7f675da4c042ddc7a3bbc25.s3tc.ctex"]
+source_file="res://Textures/rusty_metal_grid_4k/textures/rusty_metal_grid_diff_4k.png"
+dest_files=["res://.godot/imported/rusty_metal_grid_diff_4k.png-35ac3846a07145efe81a148b71b95981.s3tc.ctex"]
 
 [params]
 

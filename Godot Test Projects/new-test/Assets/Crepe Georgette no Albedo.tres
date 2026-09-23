@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nv2p54i706et"]
+
+[ext_resource type="Texture2D" uid="uid://la7b4ncsi10p" path="res://Textures/crepe/crepe_georgette_arm_4k.png" id="1_6bwaw"]
+[ext_resource type="Texture2D" uid="uid://dwkv1jb41uveg" path="res://Textures/crepe/crepe_georgette_nor_gl_4k.png" id="2_jr4tj"]
+
+[resource]
+metallic = 1.0
+metallic_texture = ExtResource("1_6bwaw")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_6bwaw")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_jr4tj")
+ao_enabled = true
+ao_texture = ExtResource("1_6bwaw")
