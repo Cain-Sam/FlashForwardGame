@@ -1,12 +1,11 @@
-[gd_scene format=4 uid="uid://bh377qwom0d52"]
+[gd_scene format=4 uid="uid://dp506axv37iul"]
 
-[ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="1_2mdd2"]
-[ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="1_ys3ib"]
-[ext_resource type="Texture2D" uid="uid://bu8vxsy1iajb6" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Manifold/Manifold_01-512x512.png" id="3_8ktnr"]
+[ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="1_qmmw1"]
+[ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="2_k5gl5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcjox"]
 resource_name = "Material_0"
-albedo_texture = ExtResource("1_2mdd2")
+albedo_texture = ExtResource("2_k5gl5")
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_b0xgt"]
@@ -44,46 +43,15 @@ shadow_mesh = SubResource("ArrayMesh_b0xgt")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ys3ib"]
 points = PackedVector3Array(-0.41151428, -0.6569824, -0.09814453, -0.41151428, -0.6569824, 0.09814453, -0.41151428, 0.6569824, -0.09814453, 0.41151422, -0.6569824, -0.09814453, 0.41151422, -0.6569824, 0.09814453, -0.41151428, 0.6569824, 0.09814453, 0.41151422, 0.6569824, -0.09814453, 0.41151422, 0.6569824, 0.09814453)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
-albedo_color = Color(0.3454283, 0.2232151, 0.14926821, 1)
-albedo_texture = ExtResource("3_8ktnr")
-
-[sub_resource type="BoxMesh" id="BoxMesh_p5x4p"]
-material = SubResource("StandardMaterial3D_pqdas")
-size = Vector3(0.086364746, 1.3117371, 0.055333376)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pf2un"]
-points = PackedVector3Array(0.043182366, 0.65586853, 0.09732056, -0.043182373, 0.65586853, 0.09732056, 0.043182366, -0.65586853, 0.09732056, 0.043182366, 0.65586853, -0.09732056, -0.043182373, 0.65586853, -0.09732056, -0.043182373, -0.65586853, 0.09732056, 0.043182366, -0.65586853, -0.09732056, -0.043182373, -0.65586853, -0.09732056)
-
-[node name="door_hinged" type="Node3D" unique_id=170761439]
-
-[node name="DOOR" type="RigidBody3D" parent="." unique_id=68427573 groups=["kickable"]]
-collision_layer = 8
-collision_mask = 15
-mass = 1.596
+[node name="DOOR" type="RigidBody3D" unique_id=68427573 groups=["kickable"]]
+lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
 linear_damp = 100.0
-script = ExtResource("1_ys3ib")
+script = ExtResource("1_qmmw1")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="DOOR" unique_id=767662530 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="." unique_id=767662530 groups=["collidable", "kickable"]]
 mesh = SubResource("ArrayMesh_h0j1r")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="DOOR" unique_id=895845993 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="." unique_id=895845993 groups=["kickable"]]
 shape = SubResource("ConvexPolygonShape3D_ys3ib")
-
-[node name="Frame" type="StaticBody3D" parent="." unique_id=1343070888]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Frame" unique_id=234306613]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Frame" unique_id=1572064398]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45681763, -0.0007171631, -0.00021362305)
-shape = SubResource("ConvexPolygonShape3D_pf2un")
-
-[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=19024380]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.3785117, 0, 0)
-node_a = NodePath("../Frame")
-node_b = NodePath("../DOOR")
-angular_limit/enable = true

@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var view_model_camera: Camera3D = $Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera
 @export var myhead_4: Node3D
-
+@export var push_force = 2.0
 
 #Movement Vars
 
@@ -84,3 +84,11 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
 	move_and_slide()
+	
+	#Adds physics force to player collision - I added the push_force variable to an export a the top of the script so we can play around with force.
+	for i in get_slide_collision_count():
+		var player_collision = get_slide_collision(i)
+		var object_collider = player_collision.get_collider()
+		if object_collider is RigidBody3D: 
+			var push_direction = -player_collision.get_normal()
+			object_collider.apply_impulse(push_direction * push_force, player_collision.get_position() - object_collider.global_position)

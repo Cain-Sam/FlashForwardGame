@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ramwj418jib2"]
+[gd_scene format=4 uid="uid://ramwj418jib2"]
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="1_6fau0"]
 [ext_resource type="Texture2D" uid="uid://7j1c1a0mlpf1" path="res://Textures/crepe/crepe_georgette_diff_4k.png" id="1_nmumr"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://crivkedd2njht" path="res://Textures/Grey Plaster/grey_plaster_02_nor_gl_4k.png" id="3_p21xc"]
 [ext_resource type="Texture2D" uid="uid://dwkv1jb41uveg" path="res://Textures/crepe/crepe_georgette_nor_gl_4k.png" id="3_sw1fu"]
 [ext_resource type="Material" uid="uid://btrjyxny1xvps" path="res://materials/wallpaper.tres" id="7_y60j3"]
+[ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="11_y60j3"]
+[ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="12_q8k80"]
+[ext_resource type="Texture2D" uid="uid://bu8vxsy1iajb6" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Manifold/Manifold_01-512x512.png" id="13_r0res"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gttq5"]
 sky_top_color = Color(7.786343e-05, 0.000117608855, 0.00018593781, 1)
@@ -404,6 +407,57 @@ _data = {
 &"lights_out": SubResource("Animation_kbihw")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcjox"]
+resource_name = "Material_0"
+albedo_texture = ExtResource("12_q8k80")
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b0xgt"]
+_surfaces = [{
+"aabb": AABB(-0.41151428, -0.6569824, -0.09814453, 0.82302856, 1.3139648, 0.19628906),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAAAAgAEAAAAAAAFAAMAAwAGAAIABwAFAAAAAwAFAAcAAAAEAAcABwAGAAMABwAEAAIAAgAGAAcA"),
+"name": "Material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAAAAAAAAAAAA//8AAAAA//8AAAAAAAAAAP////8AAP//AAD//wAA/////wAAAAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h0j1r"]
+resource_name = "door3_Door2"
+_surfaces = [{
+"aabb": AABB(-0.41151428, -0.6569824, -0.09814453, 0.82302856, 1.3139648, 0.19628906),
+"attribute_data": PackedByteArray("////////AAAAAAAA////////AAAAAAAA////////AAAAAAAAAAAAAAAA////////////////AAAAAAAAAAAAAAAA////////AAAAAAAA////////AAAAAAAA////////////////AAAAAAAAAAAAAAAA////////////////AAAAAAAAAAAAAAAA////////"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMA"),
+"material": SubResource("StandardMaterial3D_qcjox"),
+"name": "Material_0",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAAP//qioAAAAAAACqKgAA//8AAKoq//8AAAAAqioAAAAAAACqKgAAAAD//6oqAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAD//wAAqioAAP////+qKgAAAAD//6oqAAAAAP//AAAAAP////8AAP///////wAA////////qioAAP////+qKgAA//8AAKoqAAAAAP//qir//wAA//+qKv//AAAAAKoq////////AAD//wAA//8AAAAAAAD//wAA//8AAAAAqir//wAA//+qKv///////6oq//8AAAAAAAD/////AAAAAAAA//8AAAAAAAD//wAAqir/////AACqKv///////6oq////////qir/////AACqKv//AAAAAKoqVFWqqlRVqqpUVaqqVFVUVVRVVFVUVVRV/3////9/////f///VFWqqlRVqqpUVaqq/3//f/9//3//f/9/VNWqKlTVqipU1aoqVFVUVVRVVFVUVVRV/3//f/9//3//f/9/qqpUVaqqVFWqqlRV/3////9/////f///VNWqKlTVqipU1aoqqqpUVaqqVFWqqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b0xgt")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ys3ib"]
+points = PackedVector3Array(-0.41151428, -0.6569824, -0.09814453, -0.41151428, -0.6569824, 0.09814453, -0.41151428, 0.6569824, -0.09814453, 0.41151422, -0.6569824, -0.09814453, 0.41151422, -0.6569824, 0.09814453, -0.41151428, 0.6569824, 0.09814453, 0.41151422, 0.6569824, -0.09814453, 0.41151422, 0.6569824, 0.09814453)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
+albedo_color = Color(0.3454283, 0.2232151, 0.14926821, 1)
+albedo_texture = ExtResource("13_r0res")
+
+[sub_resource type="BoxMesh" id="BoxMesh_p5x4p"]
+material = SubResource("StandardMaterial3D_pqdas")
+size = Vector3(0.086364746, 1.3117371, 0.055333376)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pf2un"]
+points = PackedVector3Array(0.043182366, 0.65586853, 0.09732056, -0.043182373, 0.65586853, 0.09732056, 0.043182366, -0.65586853, 0.09732056, 0.043182366, 0.65586853, -0.09732056, -0.043182373, 0.65586853, -0.09732056, -0.043182373, -0.65586853, 0.09732056, 0.043182366, -0.65586853, -0.09732056, -0.043182373, -0.65586853, -0.09732056)
+
 [node name="Hallway of Door" type="Node3D" unique_id=1828722087]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1444042671]
@@ -440,10 +494,10 @@ use_collision = true
 size = Vector3(1.8337479, 0.16418457, 41.877808)
 
 [node name="subtraction" type="CSGBox3D" parent="inner_wallR" unique_id=1474106102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, 18.829315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056129515, -0.013242245, 18.71238)
 operation = 2
 use_collision = true
-size = Vector3(1.373476, 0.20478821, 0.86432004)
+size = Vector3(1.4143991, 0.20478821, 1.0190585)
 
 [node name="DOOR" parent="inner_wallR/subtraction" unique_id=68427573 instance=ExtResource("2_gttq5")]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
@@ -1028,3 +1082,40 @@ spot_range = 2.369
 spot_attenuation = 1.65
 spot_angle = 34.01
 spot_angle_attenuation = 1.2311455
+
+[node name="door_hinged" type="Node3D" parent="." unique_id=170761439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74939156, -2.3718085)
+
+[node name="DOOR" type="RigidBody3D" parent="door_hinged" unique_id=126508820 groups=["kickable"]]
+collision_layer = 8
+collision_mask = 15
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 100.0
+script = ExtResource("11_y60j3")
+
+[node name="DoorMesh" type="MeshInstance3D" parent="door_hinged/DOOR" unique_id=767662530 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010900319, 0)
+mesh = SubResource("ArrayMesh_h0j1r")
+
+[node name="DoorCollision" type="CollisionShape3D" parent="door_hinged/DOOR" unique_id=895845993 groups=["kickable"]]
+shape = SubResource("ConvexPolygonShape3D_ys3ib")
+
+[node name="Frame" type="StaticBody3D" parent="door_hinged" unique_id=1343070888]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="door_hinged/Frame" unique_id=234306613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45681763, -0.0007171631, -0.00021362305)
+mesh = SubResource("BoxMesh_p5x4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_hinged/Frame" unique_id=1572064398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45681763, -0.0007171631, -0.00021362305)
+shape = SubResource("ConvexPolygonShape3D_pf2un")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="door_hinged" unique_id=19024380]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.41200182, 0, 0)
+node_a = NodePath("../Frame")
+node_b = NodePath("../DOOR")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+angular_limit/lower = -1.9198622

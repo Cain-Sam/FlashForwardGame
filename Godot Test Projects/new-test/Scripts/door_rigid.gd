@@ -3,6 +3,7 @@ const DOOR_PIECES_MODIFIER = preload("uid://cdeodg3s1run2")
 @export var intensityBreakThresh = 2.2
 @export var kickBreakable: bool = true
 
+
 func kicked(direction, intensity):
 	if kickBreakable:
 		breakDoor(direction, intensity);
