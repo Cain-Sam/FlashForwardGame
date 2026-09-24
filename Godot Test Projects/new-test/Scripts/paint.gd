@@ -1,7 +1,7 @@
 extends Node3D
 
 
-const SPEED = 10
+const SPEED = 40
 
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
