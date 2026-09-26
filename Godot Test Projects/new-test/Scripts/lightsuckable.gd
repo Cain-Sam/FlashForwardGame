@@ -40,12 +40,12 @@ func suckLight():
 func _manual_on_body_entered(body: Node3D) -> bool:
 	if body.is_in_group("bullet"):
 		body.queue_free()
+		var bulb = find_child("Bulb")
+		var light = find_child("Light")
+		light.light_color = ColorList.get_color().lightened(0.3)
+		bulb.material_override.emission = ColorList.get_color().lightened(0.3)
 		if currentPower < maxPower:
 			currentPower += 1
-			var bulb = find_child("Bulb")
-			var light = find_child("Light")
-			light.light_color = ColorList.get_color()
-			bulb.material_override.emission = ColorList.get_color()
 			if currentPower == maxPower:
 				bulb.material_override.emission_energy_multiplier = bulbEmission
 				light.light_energy = lightEnergy
