@@ -16,6 +16,9 @@ extends Camera3D
 @onready var scan: AudioStreamPlayer = $scan
 @onready var bullet_preview: MeshInstance3D = $fps_rig/shotgun/BulletPreview
 @onready var shotgun_model: Node3D = $fps_rig/shotgun/Shotgun_Model
+@onready var fail: AudioStreamPlayer = $IlluFail
+@onready var suck_cast: RayCast3D = $"../../../../SuckCast"
+
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -24,6 +27,7 @@ var bullet = load("res://Scenes/bullet.tscn")
 var drawMaterial = load("res://Scenes/drawmaterial.tscn")
 var bullet_instance
 var scanSelected: bool = false
+var infinite_ammo: bool = false
 var colorStore
 var scanCollisionMesh
 var bulletmesh = null
@@ -34,6 +38,8 @@ var alt_fire = false;
 var lightMode = false;
 var lightBulb
 var playerLight
+var lightAmmo: int = 0
+var hold_time = 0
 
 #endregion
 
@@ -61,7 +67,18 @@ func _process(delta):
 	bullet_preview.rotate(Vector3.UP, 0.01)
 	if lightMode && is_instance_valid(lightBulb):
 		playerHoldingBulb()
-	
+	if Input.is_action_just_released("shoot"):
+		hold_time = 0
+	if Input.is_action_pressed("shoot"):
+		if alt_fire && suck_cast.is_colliding():
+			if is_instance_valid(suck_cast.get_collider()) && suck_cast.get_collider().is_in_group("light"):
+				hold_time += delta
+				if hold_time > 1:
+					hold_time = 0
+					var lightSuck: bool = suck_cast.get_collider().suckLight()
+					if lightSuck:
+						increaseAmmo()
+					
 	if Input.is_action_pressed("paint"):
 		if !animation_player.is_playing():
 			fireDraw()
@@ -86,10 +103,24 @@ func sway(sway_amount):
 
 func _input(event):
 	
+	if(event.is_action_pressed("interact")): 
+		if lightMode && vision.is_colliding():
+			placeLight()
+		if scanSelected:
+			bulletmesh = scanCollisionMesh
+			bullet_preview.mesh = scanCollisionMesh.mesh
+			scan.play()
+	
 	if(event.is_action_pressed("shoot")):
-		if !animation_player.is_playing() && !alt_fire:
+		if alt_fire:
+			return
+		elif lightAmmo < 1 && !infinite_ammo:
+			fail.play()
+		elif !animation_player.is_playing() && !alt_fire:
 			animateShoot()
 			fireGun()
+			if lightAmmo > 0:
+				lightAmmo -= 1
 			
 	if(event.is_action_pressed("reload")):
 		animation_player.play("reload")
@@ -111,9 +142,6 @@ func _input(event):
 			putLightAway()
 		else:
 			equipLight()
-			
-	if(event.is_action_pressed("interact")) && lightMode && vision.is_colliding():
-		placeLight()
 		
 	if(event.is_action_pressed("scrollup")):
 		if ColorList.colorindex == ColorList.color_list.size() - 1:
@@ -138,18 +166,20 @@ func _input(event):
 			ColorList.darkenindex = 0
 		else:
 			ColorList.darkenindex += 1
-			
+	
 	if(event.is_action_pressed("swap_mode")):
 		if alt_fire:
-			alt_fire = false;
+			alt_fire = false
+			altFire.visible = false
 		else:
-			alt_fire = true;
+			alt_fire = true
+			altFire.visible = true	
 		
-	if(event.is_action_pressed("scan")):
-		if scanSelected:
-			bulletmesh = scanCollisionMesh
-			bullet_preview.mesh = scanCollisionMesh.mesh
-			scan.play()
+	if(event.is_action_pressed("infiniteAmmo")):
+		if infinite_ammo:
+			infinite_ammo = false;
+		else:
+			infinite_ammo = true;
 			
 	if(event.is_action_pressed("Hotkey1")):
 		ColorList.colorindex = 0
@@ -319,3 +349,6 @@ func fireDraw():
 	
 	#Clean Up
 	bullet_mesh = null
+
+func increaseAmmo():
+	lightAmmo += 1

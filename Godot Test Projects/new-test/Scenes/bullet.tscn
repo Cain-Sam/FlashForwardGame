@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://tp165rtqbalx"]
 
 [ext_resource type="Script" uid="uid://dj3div5mq2ij4" path="res://Scripts/bullet.gd" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://dop1553mr743l" path="res://Scripts/bulletLightSuck.gd" id="2_oduel"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qgu4"]
 transparency = 1
@@ -40,7 +41,11 @@ transform = Transform3D(3.640916, 0, 0, 0, 3.910236, 0, 0, 0, 1.432902, 0, 0.023
 target_position = Vector3(0, 0, -1)
 collision_mask = 9
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=929515793 groups=["bullet"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=929515793 groups=["bullet", "light"]]
+transform = Transform3D(7.17, 0, 0, 0, 7.17, 0, 0, 0, 7.17, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("2_oduel")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1938046811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024862245, 7.516146e-05)

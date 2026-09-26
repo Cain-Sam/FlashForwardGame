@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="3_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://hdnrwpxmt0eo" path="res://Scenes/view_model.tscn" id="4_3smsa"]
 [ext_resource type="PackedScene" uid="uid://duv2f1ncwjvc5" path="res://Scenes/playerLIGHT.tscn" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://ijn00rw16bbf" path="res://Textures/stone/145556-dot.png" id="5_x3wgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
 
@@ -45,6 +46,21 @@ render_target_update_mode = 4
 [node name="view_model_camera" parent="Head/Camera3D/SubViewportContainer/SubViewport" unique_id=981051096 instance=ExtResource("4_3smsa")]
 cull_mask = 1047554
 
+[node name="TextureRect" type="TextureRect" parent="Head/Camera3D/SubViewportContainer/SubViewport" unique_id=224258509]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.5
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_x3wgy")
+expand_mode = 1
+
 [node name="Vision" type="RayCast3D" parent="Head" unique_id=1748234429]
 transform = Transform3D(1, 0, 0, 0, -0.12852214, -0.4831998, 0, 0.4831998, -0.12852214, 0, 0, -0.049968764)
 collision_mask = 9
@@ -52,6 +68,10 @@ collision_mask = 9
 [node name="KickCast" type="RayCast3D" parent="Head" unique_id=711449485]
 transform = Transform3D(2.73, 0, 0, 0, -0.091359496, -2.964425, 0, 0.6940125, -0.39023554, 0, 0, -0.049968764)
 collision_mask = 9
+
+[node name="SuckCast" type="RayCast3D" parent="Head" unique_id=1761095147]
+transform = Transform3D(1, 0, 0, 0, -0.4187936, -0.9993908, 0, 11.992691, -0.03489946, -0.018628761, -0.022089452, -0.003295824)
+collision_mask = 8
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=2119777659]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
