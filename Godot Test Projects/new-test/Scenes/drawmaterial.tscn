@@ -9,6 +9,20 @@ emission = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_oayfh"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p5x4p"]
+direction = Vector3(0, 0, -1)
+gravity = Vector3(0, 0, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g28q7"]
+albedo_color = Color(0.15209198, 4.0008686e-06, 0.12125767, 1)
+emission_enabled = true
+emission_energy_multiplier = 0.0
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_j3pel"]
+material = SubResource("StandardMaterial3D_g28q7")
+size = 0.06
+
 [node name="bullet" type="Node3D" unique_id=186536062 groups=["bullet"]]
 script = ExtResource("1_ukmrf")
 
@@ -16,6 +30,18 @@ script = ExtResource("1_ukmrf")
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.18, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ukmrf")
 mesh = SubResource("SphereMesh_oayfh")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D" unique_id=328777373]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 7.0831874e-09, 0.16204488)
+emitting = false
+amount = 11
+lifetime = 0.68
+explosiveness = 0.06
+randomness = 0.05
+fixed_fps = 60
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_p5x4p")
+draw_pass_1 = SubResource("RibbonTrailMesh_j3pel")
 
 [node name="bullet_raycast" type="RayCast3D" parent="." unique_id=255798106]
 transform = Transform3D(3.640916, 0, 0, 0, 3.910236, 0, 0, 0, 1.432902, 0, 0.023470469, 0)

@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/door_rigid.tscn" id="14_arkox"]
 [ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="14_y0jgv"]
 [ext_resource type="Texture2D" uid="uid://odkfqoio8x2p" path="res://Textures/sam.png" id="15_x0srs"]
+[ext_resource type="Shader" uid="uid://02f5gdgy8eh5" path="res://shaders/filter.gdshader" id="21_e646c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
 size = Vector3(1.3790741, 2.1353931, 0.16528943)
@@ -126,6 +127,9 @@ sky = SubResource("Sky_prxxp")
 glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
+
+[sub_resource type="Compositor" id="Compositor_x7w6x"]
+compositor_effects = Array[CompositorEffect]([null])
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_p5x4p"]
 
@@ -260,6 +264,27 @@ emission = Color(0.045685608, 0.11115209, 0.04074474, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_d60mj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ij5cq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnp3h"]
+render_priority = 0
+shader = ExtResource("21_e646c")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color_coat = 0.0
+shader_parameter/oilyness = 0.1
+shader_parameter/rim_amount = 0.8
+shader_parameter/rim_shape = 2.5
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/refraction_strength = 0.5
+shader_parameter/blur_amount = 4.0
+shader_parameter/roughness_affect = 0.0
+shader_parameter/roughness = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_pqdas"]
+material = SubResource("ShaderMaterial_xnp3h")
+size = Vector2(2, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e646c"]
+points = PackedVector3Array(1, 1, 0, 1, -1, 0, -1, 1, 0, -1, -1, 0)
 
 [node name="main" type="Node3D" unique_id=1182305847]
 
@@ -640,6 +665,7 @@ size = Vector3(2.5744019, 15.937347, 152.19675)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=492415755]
 environment = SubResource("Environment_t7ij0")
+compositor = SubResource("Compositor_x7w6x")
 
 [node name="player" parent="." unique_id=961832965 instance=ExtResource("1_6jlns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.449377, 0)
@@ -849,3 +875,12 @@ transform = Transform3D(-0.078459054, 0, -0.9969173, 0, 1, 0, 0.9969173, 0, -0.0
 
 [node name="DOOR3" parent="." unique_id=96163847 instance=ExtResource("14_arkox")]
 transform = Transform3D(-0.078459054, 0, -0.9969173, 0, 1, 0, 0.9969173, 0, -0.078459054, 14.495154, 13.248444, 3.246654)
+
+[node name="Filter" type="MeshInstance3D" parent="." unique_id=293897391]
+transform = Transform3D(-6.0475195e-08, 0, -1, 0, 1, 0, 1, 0, -6.0475195e-08, 4.5729012, 13.625484, 0)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_pqdas")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1762304571]
+transform = Transform3D(-6.0475195e-08, 0, -1, 0, 1, 0, 1, 0, -6.0475195e-08, 4.5729012, 13.625484, 0)
+shape = SubResource("ConvexPolygonShape3D_e646c")
