@@ -1050,6 +1050,21 @@ _data = {
 &"reload": SubResource("Animation_4n8fr")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n8fr"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.8352941)
+metallic = 1.0
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(0.47417235, 0.00015786887, 0.47416896, 1)
+emission_energy_multiplier = 16.0
+emission_operator = 1
+normal_scale = -1.28
+
+[sub_resource type="SphereMesh" id="SphereMesh_2yhsm"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3yot"]
 resource_name = "Beta_Joints_MAT1"
 cull_mode = 2
@@ -6265,6 +6280,12 @@ spot_range = 1.0
 spot_angle = 63.33
 spot_angle_attenuation = 1.1095695
 
+[node name="BulletPreview" type="MeshInstance3D" parent="fps_rig/shotgun" unique_id=260220609]
+transform = Transform3D(0.01, 0, 0, 0, 0.009997626, -0.00021859899, 0, 0.00021859925, 0.00999761, 0.08926421, 0.002772741, -0.3533351)
+layers = 2
+material_override = SubResource("StandardMaterial3D_4n8fr")
+mesh = SubResource("SphereMesh_2yhsm")
+
 [node name="leg" type="Node3D" parent="fps_rig" unique_id=789915299]
 transform = Transform3D(0.9535741, -0.014001777, -0.22655807, 0.0064138416, 0.9395831, -0.09126996, 0.13861926, 0.05284544, 1.5627362, 0.07159984, 0.6814978, -0.5010134)
 
@@ -6801,7 +6822,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.79881746, -0.1458769, -0.5836158, 0.5931615, 0.029347155, 0.804546, -0.10023755, -0.9888649, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881734, -0.14587687, -0.5836158, 0.59316146, 0.029347153, 0.804546, -0.10023753, -0.9888648, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
