@@ -7,7 +7,7 @@ const SPEED = 80
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 
 var stuck = false
-var physics_groups = ["kickable", "collidable"]
+var physics_groups = ["kickable", "collidable", "paintchange"]
 
 func _ready() -> void:
 	pass # Replace with function body.

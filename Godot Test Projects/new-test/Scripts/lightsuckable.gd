@@ -44,7 +44,7 @@ func _manual_on_body_entered(body: Node3D) -> bool:
 		var light = find_child("Light")
 		light.light_color = ColorList.get_color().lightened(0.3)
 		bulb.material_override.emission = ColorList.get_color().lightened(0.3)
-		if currentPower < maxPower:
+		if currentPower < maxPower && !body.is_in_group("paint"):
 			currentPower += 1
 			if currentPower == maxPower:
 				bulb.material_override.emission_energy_multiplier = bulbEmission

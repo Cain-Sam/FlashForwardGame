@@ -26,7 +26,7 @@ emission_energy_multiplier = 9.77
 height = 0.5675049
 radius = 0.013183594
 
-[node name="Lamp" type="RigidBody3D" unique_id=218677188 groups=["light"]]
+[node name="Lamp" type="RigidBody3D" unique_id=218677188 groups=["light", "paintchange"]]
 collision_layer = 9
 collision_mask = 9
 freeze = true

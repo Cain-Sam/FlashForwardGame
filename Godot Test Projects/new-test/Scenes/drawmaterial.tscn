@@ -23,7 +23,7 @@ use_particle_trails = true
 material = SubResource("StandardMaterial3D_g28q7")
 size = 0.06
 
-[node name="bullet" type="Node3D" unique_id=186536062 groups=["bullet"]]
+[node name="bullet" type="Node3D" unique_id=186536062 groups=["bullet", "paint"]]
 script = ExtResource("1_ukmrf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=553310329]

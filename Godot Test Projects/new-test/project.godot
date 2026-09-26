@@ -38,6 +38,8 @@ teleporter=""
 level_transition=""
 scannable=""
 light=""
+paintchange=""
+paint=""
 
 [input]
 
