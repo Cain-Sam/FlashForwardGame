@@ -18,6 +18,7 @@ extends Camera3D
 @onready var shotgun_model: Node3D = $fps_rig/shotgun/Shotgun_Model
 @onready var fail: AudioStreamPlayer = $IlluFail
 @onready var suck_cast: RayCast3D = $"../../../../SuckCast"
+@onready var player: CharacterBody3D = $"../../../../.."
 
 
 #Bullets
@@ -38,7 +39,6 @@ var alt_fire = false;
 var lightMode = false;
 var lightBulb
 var playerLight
-var lightAmmo: int = 0
 var hold_time = 0
 
 #endregion
@@ -71,6 +71,15 @@ func _process(delta):
 		hold_time = 0
 	if Input.is_action_pressed("shoot"):
 		if alt_fire && suck_cast.is_colliding():
+			if is_instance_valid(suck_cast.get_collider()):
+				hold_time += delta
+				for child in suck_cast.get_collider().get_children():
+					if child.is_in_group("bullet"):
+						var bullet_node = child
+						if hold_time > 1:
+							hold_time = 0
+							bullet_node.queue_free()
+							increaseAmmo()
 			if is_instance_valid(suck_cast.get_collider()) && suck_cast.get_collider().is_in_group("light"):
 				hold_time += delta
 				if hold_time > 1:
@@ -114,13 +123,13 @@ func _input(event):
 	if(event.is_action_pressed("shoot")):
 		if alt_fire:
 			return
-		elif lightAmmo < 1 && !infinite_ammo:
+		elif ColorList.lightAmmo < 1 && !infinite_ammo:
 			fail.play()
 		elif !animation_player.is_playing() && !alt_fire:
 			animateShoot()
 			fireGun()
-			if lightAmmo > 0:
-				lightAmmo -= 1
+			if ColorList.lightAmmo > 0:
+				ColorList.lightAmmo -= 1
 			
 	if(event.is_action_pressed("reload")):
 		animation_player.play("reload")
@@ -229,6 +238,8 @@ func fireGun():
 	bullet_instance = bullet.instantiate()
 	var bullet_light = bullet_instance.find_child("OmniLight", true, false)
 	var bullet_mesh = bullet_instance.find_child("MeshInstance3D", true, false)
+	var bullet_body = bullet_instance.find_child("StaticBody3D", true, false)
+	bullet_body.add_collision_exception_with(player)
 	if bulletmesh != null:
 		var bulletmeshCopy = bulletmesh.duplicate()
 		var meshOverrideCopy = bullet_mesh.material_override.duplicate()
@@ -351,4 +362,4 @@ func fireDraw():
 	bullet_mesh = null
 
 func increaseAmmo():
-	lightAmmo += 1
+	ColorList.lightAmmo += 1

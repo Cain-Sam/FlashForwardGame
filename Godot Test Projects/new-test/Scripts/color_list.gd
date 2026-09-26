@@ -54,6 +54,7 @@ var color_list: Array[Color] = [
 var darken_list = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 var colorindex = 0
 var darkenindex = 0
+var lightAmmo: int = 0
 
 func get_color():
 	return color_list[colorindex].darkened(darken_list[darkenindex])

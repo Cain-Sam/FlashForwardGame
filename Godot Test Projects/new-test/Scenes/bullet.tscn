@@ -50,3 +50,7 @@ script = ExtResource("2_oduel")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1938046811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024862245, 7.516146e-05)
 shape = SubResource("SphereShape3D_hul88")
+
+[node name="Timer" type="Timer" parent="." unique_id=1218388202]
+wait_time = 2.0
+one_shot = true

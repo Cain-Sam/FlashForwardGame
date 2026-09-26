@@ -19,7 +19,7 @@ func _ready() -> void:
 		changePortalColor(portal, portalColor)
 	portal.material_override.set_shader_parameter("is_spinning", false)	
 	target_nodes = get_tree().get_nodes_in_group("teleporter")
-func _manual_on_body_entered(body: Node3D) -> void:
+func _manual_on_body_entered(body: Node3D) -> bool:
 	if portalActive() && !body.is_in_group("bullet"):
 		for node in target_nodes:
 			if node != self && node.portal_glow.light_color == self.portal_glow.light_color:
@@ -36,7 +36,7 @@ func _manual_on_body_entered(body: Node3D) -> void:
 				if body is CharacterBody3D && stopWhenEntered:
 					body.velocity = Vector3.ZERO
 				setPortalTimeout()
-		
+				
 	if body.is_in_group("bullet"):
 		var portals_of_color_count = 0
 		for node in target_nodes:
@@ -48,6 +48,7 @@ func _manual_on_body_entered(body: Node3D) -> void:
 		else:
 			activatefail.play()
 		body.get_parent().queue_free()
+	return false
 
 func changePortalColor(targetPortal, color):
 	var unique_material = portal.material_override.duplicate()

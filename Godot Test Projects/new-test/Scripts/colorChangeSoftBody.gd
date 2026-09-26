@@ -10,10 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func _manual_on_body_entered(body: Node3D) -> void:
+func _manual_on_body_entered(body: Node3D) -> bool:
 	if body.is_in_group("bullet"):
 		changeColor(ColorList.get_color())
 		body.queue_free()
+	return false
 		
 func changeColor(color):
 	var unique_material = self.material_override.duplicate()

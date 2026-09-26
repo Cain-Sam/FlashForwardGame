@@ -337,8 +337,10 @@ angular_limit/lower = -1.9198622
 
 [node name="Lamp" parent="." unique_id=363834986 instance=ExtResource("17_3r5t6")]
 transform = Transform3D(3.18, 0, 0, 0, 3.18, 0, 0, 0, 3.18, -3.0182211, -0.69520307, 4.883244)
+ON = false
 currentPower = 3
 maxPower = 3
+lightEnergy = 20
 
 [node name="SmallLamp" parent="." unique_id=218677188 instance=ExtResource("17_3r5t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6020212, -0.6924375, -0.21406949)

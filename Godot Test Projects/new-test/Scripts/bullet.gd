@@ -1,27 +1,32 @@
 extends Node3D
 
 
-const SPEED = 40
+const SPEED = 30
 
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 @onready var omni_light: OmniLight3D = $OmniLight
+@onready var timer: Timer = $Timer
 
 var stuck = false
-var physics_groups = ["kickable", "collidable"]
+var physics_groups = ["kickable", "collidable", "light"]
 
 func _ready() -> void:
+	timer.start()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if stuck:
 		return
-	
 	if bullet_raycast.is_colliding():
 		_stick()
 	else:
 		position += transform.basis * Vector3(0, 0, -SPEED) * delta
+		if timer.time_left <= 0:
+			ColorList.lightAmmo += 1
+			self.queue_free()
+			
 		
 func _stick() -> void:
 	stuck = true
@@ -42,9 +47,9 @@ func merge_bullet(hit_object):
 	bullet_raycast.queue_free()
 	 
 	if hit_object.has_method("_manual_on_body_entered"):
-		hit_object._manual_on_body_entered(self)
-		 
-	#mesh_instance_3d.use_collision = false
+		var bulletUsed = hit_object._manual_on_body_entered(self)
+		if !bulletUsed:
+			ColorList.lightAmmo += 1
 	
 	for child in get_children():
 		if child is CollisionShape3D or child is CollisionObject3D:

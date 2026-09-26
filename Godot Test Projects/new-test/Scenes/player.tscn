@@ -71,7 +71,7 @@ collision_mask = 9
 
 [node name="SuckCast" type="RayCast3D" parent="Head" unique_id=1761095147]
 transform = Transform3D(1, 0, 0, 0, -0.4187936, -0.9993908, 0, 11.992691, -0.03489946, -0.018628761, -0.022089452, -0.003295824)
-collision_mask = 8
+collision_mask = 9
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=2119777659]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
