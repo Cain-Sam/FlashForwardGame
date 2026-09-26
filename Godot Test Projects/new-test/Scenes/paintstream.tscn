@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c08s67yjoho0v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_oayfh"]
+
+[node name="Paintstream" type="Node3D" unique_id=1014921286]
+
+[node name="SoftBody3D" type="SoftBody3D" parent="." unique_id=1331029045]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("SphereMesh_oayfh")

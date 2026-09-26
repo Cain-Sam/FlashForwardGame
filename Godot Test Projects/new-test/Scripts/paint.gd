@@ -1,7 +1,7 @@
 extends Node3D
 
 
-const SPEED = 40
+const SPEED = 80
 
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
@@ -22,6 +22,7 @@ func _process(delta):
 			mesh_instance_3d.scale.x = 0.4
 			mesh_instance_3d.scale.y = 0.4
 			mesh_instance_3d.scale.z = 0.05
+			mesh_instance_3d.visible = true
 			_stick()
 	else:
 		position += transform.basis * Vector3(0, 0, -SPEED) * delta

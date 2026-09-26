@@ -14,6 +14,8 @@ extends Camera3D
 @onready var altFire: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/AltFire
 @onready var rat_shot: AudioStreamPlayer3D = $rat_shot
 @onready var scan: AudioStreamPlayer = $scan
+@onready var bullet_preview: MeshInstance3D = $fps_rig/shotgun/BulletPreview
+@onready var shotgun_model: Node3D = $fps_rig/shotgun/Shotgun_Model
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -56,13 +58,14 @@ func _ready():
 func _process(delta):
 	fps_rig.position.x = lerp(fps_rig.position.x,0.0,delta*5)
 	fps_rig.position.y = lerp(fps_rig.position.y,0.0,delta*5)
+	bullet_preview.rotate(Vector3.UP, 0.01)
 	if lightMode && is_instance_valid(lightBulb):
 		playerHoldingBulb()
 	
 	if Input.is_action_pressed("paint"):
 		if !animation_player.is_playing():
 			fireDraw()
-			
+		
 	if vision.is_colliding() || scanSelected:
 		if !scanSelected: 
 			if vision.get_collider() != null:
@@ -145,6 +148,7 @@ func _input(event):
 	if(event.is_action_pressed("scan")):
 		if scanSelected:
 			bulletmesh = scanCollisionMesh
+			bullet_preview.mesh = scanCollisionMesh.mesh
 			scan.play()
 			
 	if(event.is_action_pressed("Hotkey1")):
