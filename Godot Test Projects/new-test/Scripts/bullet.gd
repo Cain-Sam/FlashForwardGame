@@ -44,8 +44,8 @@ func _stick() -> void:
 				merge_bullet(hit_object)
 
 func merge_bullet(hit_object):
+	print(hit_object.get_class())
 	bullet_raycast.queue_free()
-	 
 	if hit_object.has_method("_manual_on_body_entered"):
 		var bulletUsed = hit_object._manual_on_body_entered(self)
 		if !bulletUsed:

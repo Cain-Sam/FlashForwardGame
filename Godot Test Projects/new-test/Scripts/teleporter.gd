@@ -27,7 +27,6 @@ func _manual_on_body_entered(body: Node3D) -> bool:
 				var forward_distance: float = 1
 				var target_forward: Vector3 = -node.global_transform.basis.z
 				var destination: Vector3 = node.global_position + (target_forward * forward_distance)
-				#body.global_transform.basis = node.global_transform.basis.orthonormalized()
 				body.global_position = destination
 				var look_target: Vector3 = destination + target_forward
 				body.look_at(look_target, Vector3.UP)
@@ -48,6 +47,7 @@ func _manual_on_body_entered(body: Node3D) -> bool:
 		else:
 			activatefail.play()
 		body.get_parent().queue_free()
+		ColorList.lightAmmo += 1
 	return false
 
 func changePortalColor(targetPortal, color):

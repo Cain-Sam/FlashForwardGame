@@ -18,7 +18,7 @@ func _process(delta):
 		return
 	
 	if bullet_raycast.is_colliding():
-		if !bullet_raycast.get_collider().is_in_group("player") && !bullet_raycast.get_collider().is_in_group("bullet"):
+		if is_instance_valid(bullet_raycast.get_collider()) && !bullet_raycast.get_collider().is_in_group("player") && !bullet_raycast.get_collider().is_in_group("bullet"):
 			mesh_instance_3d.scale.x = 0.4
 			mesh_instance_3d.scale.y = 0.4
 			mesh_instance_3d.scale.z = 0.05
@@ -34,6 +34,7 @@ func _stick() -> void:
 	var hit_object = bullet_raycast.get_collider()
 	global_position = collision
 	var collider = bullet_raycast.get_collider()
+	print(collider.get_class())
 	var up_dir = Vector3.UP if abs(coll_normal.dot(Vector3.UP)) < 0.99 else Vector3.RIGHT
 	look_at(global_position + coll_normal, up_dir)
 	for i in physics_groups:
