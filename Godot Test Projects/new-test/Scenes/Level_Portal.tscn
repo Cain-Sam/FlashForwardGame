@@ -19,7 +19,6 @@ shader_parameter/is_spinning = true
 size = Vector3(1.4301758, 2.1503754, 0.001)
 
 [node name="Area3D" type="Area3D" unique_id=1988150016 groups=["level_transition", "paintchange"]]
-collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_yxcth")
 

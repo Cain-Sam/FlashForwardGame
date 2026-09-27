@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="15_3i5ih"]
 [ext_resource type="Texture2D" uid="uid://bu8vxsy1iajb6" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Manifold/Manifold_01-512x512.png" id="16_3i5ih"]
 [ext_resource type="PackedScene" uid="uid://dj5k7oqq1cdo1" path="res://Scenes/lamp.tscn" id="17_3r5t6"]
+[ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="18_k2kp4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11p01"]
 panorama = ExtResource("1_1mqhj")
@@ -193,8 +194,10 @@ material_override = ExtResource("2_mexhj")
 use_collision = true
 size = Vector3(7.7285156, 0.23535156, 10.65918)
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1988150016]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014470816, 0, 0)
+[node name="Area3D" type="Area3D" parent="." unique_id=1988150016 groups=["level_transition", "paintchange"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014470816, -0.0354352, 0)
+collision_layer = 17
+collision_mask = 17
 script = ExtResource("4_ofbji")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1803993370]
@@ -355,3 +358,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6020212, -0.6924375, -3.34
 transform = Transform3D(0.04100837, 0, 0.9991588, 0, 1, 0, -0.9991588, 0, 0.04100837, 0.17827272, 0.117081165, 1.9529395)
 sceneTo = "res://Scenes/hallway_of_door.tscn"
 portalColor = Color(0.15372622, 0.0061242725, 3.008172e-09, 1)
+
+[node name="Area3D5" parent="." unique_id=1652388293 instance=ExtResource("18_k2kp4")]
+transform = Transform3D(-0.010395383, 0.03424837, -0.9993593, 0, 0.9994133, 0.034250222, 0.99994594, 0.00035604418, -0.010389284, -0.32685637, 0.21089578, -2.3436189)
+
+[node name="Area3D5" parent="Area3D5" unique_id=1045253080 instance=ExtResource("18_k2kp4")]
+transform = Transform3D(0.9983837, -0.032655027, -0.046521682, 0.032674648, 0.9994664, -0.00033904967, 0.046507932, -0.0011815858, 0.9989177, 4.9693274, 0.1276241, 0.086229146)

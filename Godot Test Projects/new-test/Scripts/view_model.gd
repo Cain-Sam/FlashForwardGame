@@ -339,7 +339,9 @@ func placeLight():
 func fireDraw():
 	#Create Bullet
 	bullet_instance = drawMaterial.instantiate()
+	var bullet_body = bullet_instance.find_child("StaticBody3D", true, false)
 	var bullet_mesh = bullet_instance.get_child(0)
+	bullet_body.add_collision_exception_with(player)
 	
 	#Bullet Possition
 	bullet_instance.position = barrel_raycast.global_position

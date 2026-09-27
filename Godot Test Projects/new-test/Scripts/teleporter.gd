@@ -19,6 +19,7 @@ func _ready() -> void:
 		changePortalColor(portal, portalColor)
 	portal.material_override.set_shader_parameter("is_spinning", false)	
 	target_nodes = get_tree().get_nodes_in_group("teleporter")
+	
 func _manual_on_body_entered(body: Node3D) -> bool:
 	if portalActive() && !body.is_in_group("bullet"):
 		for node in target_nodes:
@@ -47,7 +48,8 @@ func _manual_on_body_entered(body: Node3D) -> bool:
 		else:
 			activatefail.play()
 		body.get_parent().queue_free()
-		ColorList.lightAmmo += 1
+		if !body.is_in_group("paint"):
+			ColorList.lightAmmo += 1
 	return false
 
 func changePortalColor(targetPortal, color):

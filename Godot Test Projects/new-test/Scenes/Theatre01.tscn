@@ -3,14 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="1_6jlns"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="1_prxxp"]
 [ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="1_t7ij0"]
-[ext_resource type="Script" uid="uid://c3wlxnjck45x6" path="res://Scripts/teleporter.gd" id="2_ba72y"]
-[ext_resource type="Shader" uid="uid://cn8qf747jkxoh" path="res://shaders/portal_shader.tres" id="3_hip6d"]
-[ext_resource type="AudioStream" uid="uid://jo83n803yyk7" path="res://STOLENSHITTHATWEWILLDELETE/altrC.wav" id="4_4vich"]
 [ext_resource type="Texture2D" uid="uid://bh25xiyrqh6i1" path="res://Textures/brackeys_vfx_bundle/particles/alpha/smoke_04_a.png" id="4_7oy3d"]
 [ext_resource type="Texture2D" uid="uid://ol4s3ms7inxl" path="res://Textures/brackeys_vfx_bundle/particles/alpha/smoke_07_a.png" id="5_8hxr3"]
 [ext_resource type="AudioStream" uid="uid://cny4js7e1qsgi" path="res://STOLENSHITTHATWEWILLDELETE/enchant.wav" id="5_arkox"]
 [ext_resource type="Texture2D" uid="uid://dnw5u6dn5mbod" path="res://Textures/brackeys_vfx_bundle/particles/alpha/spark_04_a.png" id="6_5nc6o"]
-[ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="6_mwpog"]
 [ext_resource type="PackedScene" uid="uid://dyhrmfcfolehn" path="res://Scenes/curtain.tscn" id="10_mwpog"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="11_1f2ln"]
 [ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/Rat.tscn" id="11_x0srs"]
@@ -22,19 +18,6 @@
 [ext_resource type="VideoStream" uid="uid://w8insmkldsyg" path="res://STOLENSHITTHATWEWILLDELETE/yee.ogv" id="15_buxhf"]
 [ext_resource type="Texture2D" uid="uid://odkfqoio8x2p" path="res://Textures/sam.png" id="15_x0srs"]
 [ext_resource type="Shader" uid="uid://02f5gdgy8eh5" path="res://shaders/filter.gdshader" id="21_e646c"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vi5sq"]
-size = Vector3(1.3790741, 2.1353931, 0.16528943)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_itjrl"]
-render_priority = 0
-shader = ExtResource("3_hip6d")
-shader_parameter/color_intensity = 4.0
-shader_parameter/ColorParameter = Color(0.72156864, 0.36078432, 0.3019608, 1)
-shader_parameter/is_spinning = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_6vd6g"]
-size = Vector3(1.4301758, 2.1503754, 0.001)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwpog"]
 albedo_color = Color(1, 0.8235294, 0.16078432, 1)
@@ -290,44 +273,13 @@ points = PackedVector3Array(1, 1, 0, 1, -1, 0, -1, 1, 0, -1, -1, 0)
 
 [node name="main" type="Node3D" unique_id=1182305847]
 
+[node name="Teleporter" parent="." unique_id=1652388293 instance=ExtResource("1_prxxp")]
+transform = Transform3D(0.9999995, 0, 0.001008004, 0, 1, 0, -0.001008004, 0, 0.9999995, 6.1349316, 13.258932, -7.3611035)
+
 [node name="Area3D3" parent="." unique_id=1988150016 instance=ExtResource("1_t7ij0")]
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 2.549298, 13.242204, 0.14575267)
 sceneTo = "res://Scenes/test_cell.tscn"
 portalColor = Color(0.07293365, 0.42977807, 0, 1)
-
-[node name="Teleporter" type="Area3D" parent="." unique_id=1643606398 groups=["teleporter"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.484526, 13.257816, -7.356193)
-script = ExtResource("2_ba72y")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter" unique_id=1265614421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2047599, 0.39077508, -3.1236188)
-shape = SubResource("BoxShape3D_vi5sq")
-
-[node name="Portal" type="MeshInstance3D" parent="Teleporter" unique_id=1571669070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18757603, 0.39938545, -3.141368)
-material_override = SubResource("ShaderMaterial_itjrl")
-mesh = SubResource("BoxMesh_6vd6g")
-
-[node name="portal_glow" type="SpotLight3D" parent="Teleporter/Portal" unique_id=252623904]
-transform = Transform3D(-0.99583393, 0.07845911, -0.04646548, 0.078373834, 0.99691737, 0.003656906, 0.04660916, -6.836774e-09, -0.9989132, -0.1954253, 0.124050856, -0.204005)
-light_color = Color(0.72156864, 0.36078432, 0.3019608, 1)
-light_energy = 4.345
-spot_range = 2.982
-spot_attenuation = 1.06
-spot_angle = 115.28
-spot_angle_attenuation = 2.2191403
-
-[node name="AltrC" type="AudioStreamPlayer" parent="Teleporter" unique_id=198902176]
-stream = ExtResource("4_4vich")
-volume_db = -24.668
-
-[node name="Enchant" type="AudioStreamPlayer" parent="Teleporter" unique_id=408036817]
-stream = ExtResource("5_arkox")
-volume_db = -24.638
-
-[node name="IlluFail" type="AudioStreamPlayer" parent="Teleporter" unique_id=1350595155]
-stream = ExtResource("6_mwpog")
-volume_db = -23.548
 
 [node name="Floor1" type="Node3D" parent="." unique_id=195243872]
 
@@ -672,7 +624,7 @@ compositor = SubResource("Compositor_x7w6x")
 [node name="player" parent="." unique_id=961832965 instance=ExtResource("1_6jlns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.449377, 0)
 
-[node name="Teleporter2" parent="." unique_id=1652388293 instance=ExtResource("1_prxxp")]
+[node name="Teleporter2" parent="." unique_id=141619556 instance=ExtResource("1_prxxp")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 245.32785, -1.5456796, -7.356193)
 
 [node name="Teleporter3" parent="." unique_id=524822685 instance=ExtResource("1_prxxp")]

@@ -42,7 +42,6 @@ func _input(event):
 	
 func _physics_process(delta):
 	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
-	
 	#Handle Movement State
 	
 	#Crouching

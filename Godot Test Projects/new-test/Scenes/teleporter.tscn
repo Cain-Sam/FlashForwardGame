@@ -20,6 +20,7 @@ shader_parameter/is_spinning = true
 size = Vector3(1.4301758, 2.1503754, 0.001)
 
 [node name="Area3D" type="Area3D" unique_id=1652388293 groups=["teleporter"]]
+collision_mask = 17
 script = ExtResource("1_75k4i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1265614421]

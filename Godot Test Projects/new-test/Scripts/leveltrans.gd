@@ -21,7 +21,8 @@ func _manual_on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("bullet"):
 		changePortalColor(ColorList.get_color())
 		body.get_parent().queue_free()
-		ColorList.lightAmmo += 1
+		if !body.is_in_group("paint"):
+			ColorList.lightAmmo += 1
 
 func changePortalColor(color):
 	var unique_material = portal.material_override.duplicate()

@@ -5,6 +5,7 @@ const SPEED = 80
 
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
+@onready var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
 
 var stuck = false
 var physics_groups = ["kickable", "collidable", "paintchange"]
@@ -34,7 +35,6 @@ func _stick() -> void:
 	var hit_object = bullet_raycast.get_collider()
 	global_position = collision
 	var collider = bullet_raycast.get_collider()
-	print(collider.get_class())
 	var up_dir = Vector3.UP if abs(coll_normal.dot(Vector3.UP)) < 0.99 else Vector3.RIGHT
 	look_at(global_position + coll_normal, up_dir)
 	for i in physics_groups:
