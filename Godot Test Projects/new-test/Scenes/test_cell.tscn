@@ -297,7 +297,7 @@ portalColor = Color(0.07293365, 0.42977807, 0, 1)
 transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, -1.9336684, -0.58379096, -0.016141415)
 
 [node name="Rat2" parent="." unique_id=1907114190 instance=ExtResource("13_xohai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5083861, -0.4580333, 2.01981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5083861, -0.4580333, -1.0343549)
 
 [node name="door_hinged" type="Node3D" parent="." unique_id=170761439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.116199434, 1.5871847)
@@ -350,3 +350,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6020212, -0.6924375, -1.83
 
 [node name="SmallLamp3" parent="." unique_id=1773710468 instance=ExtResource("17_3r5t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6020212, -0.6924375, -3.3405557)
+
+[node name="Area3D4" parent="." unique_id=898837280 instance=ExtResource("4_uh1jf")]
+transform = Transform3D(0.04100837, 0, 0.9991588, 0, 1, 0, -0.9991588, 0, 0.04100837, 0.17827272, 0.117081165, 1.9529395)
+sceneTo = "res://Scenes/hallway_of_door.tscn"
+portalColor = Color(0.15372622, 0.0061242725, 3.008172e-09, 1)

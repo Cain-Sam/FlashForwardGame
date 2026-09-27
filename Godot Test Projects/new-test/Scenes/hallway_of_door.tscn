@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ramwj418jib2"]
 
+[ext_resource type="Script" uid="uid://bkx8ding4why2" path="res://Scripts/hallway_of_door.gd" id="1_dywha"]
 [ext_resource type="Texture2D" uid="uid://7j1c1a0mlpf1" path="res://Textures/crepe/crepe_georgette_diff_4k.png" id="1_nmumr"]
 [ext_resource type="Texture2D" uid="uid://bkdcffwahcki" path="res://Textures/Grey Plaster/grey_plaster_02_diff_4k.png" id="1_x7w6x"]
 [ext_resource type="Texture2D" uid="uid://la7b4ncsi10p" path="res://Textures/crepe/crepe_georgette_arm_4k.png" id="2_cjim2"]
@@ -32,8 +33,9 @@
 [ext_resource type="Script" uid="uid://dovljlw6ns8j5" path="res://Scripts/lights_out_area_detection.gd" id="26_h04mc"]
 [ext_resource type="Script" uid="uid://de00bcc6kqfe1" path="res://Scripts/kick_curse.gd" id="27_0nt72"]
 [ext_resource type="Script" uid="uid://vsi18odfkjqc" path="res://Scripts/slow_kick_curse.gd" id="28_y2arq"]
-[ext_resource type="Script" uid="uid://dgtimn3rdvy0l" path="res://scripts/door_fisk.gd" id="29_dywha"]
+[ext_resource type="Script" uid="uid://dgtimn3rdvy0l" path="res://Scripts/door_fisk.gd" id="29_dywha"]
 [ext_resource type="Script" uid="uid://ewawvt8t7c34" path="res://Scripts/fast_kick_curse.gd" id="29_x8ogr"]
+[ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="36_8f8kq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
 resource_name = "ShotgunMaterial"
@@ -9028,6 +9030,7 @@ radial_segments = 60
 size = Vector3(3.401001, 1.2608643, 1)
 
 [node name="Hallway of Door" type="Node3D" unique_id=1828722087]
+script = ExtResource("1_dywha")
 
 [node name="player" type="CharacterBody3D" parent="." unique_id=961832965 groups=["player"]]
 collision_layer = 9
@@ -9861,7 +9864,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988169, -0.14587685, -0.5836158, 0.59316117, 0.029347148, 0.804546, -0.10023748, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881686, -0.14587685, -0.5836158, 0.59316105, 0.029347148, 0.804546, -0.100237474, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
@@ -12527,3 +12530,8 @@ script = ExtResource("29_x8ogr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4" unique_id=1582023333]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17364502, 0.13043213, -0.2912544)
 shape = SubResource("BoxShape3D_p5x4p")
+
+[node name="Area3D5" parent="." unique_id=1988150016 instance=ExtResource("36_8f8kq")]
+transform = Transform3D(-0.9999683, 0, -0.0079626385, 0, 1, 0, 0.0079626385, 0, -0.9999683, -0.22690916, 0.67786515, -2.8443377)
+sceneTo = "res://Scenes/test_cell.tscn"
+portalColor = Color(0.116112374, 0.03179159, 0.021204624, 1)
