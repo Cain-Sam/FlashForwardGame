@@ -28,7 +28,6 @@ var bullet = load("res://Scenes/bullet.tscn")
 var drawMaterial = load("res://Scenes/drawmaterial.tscn")
 var bullet_instance
 var scanSelected: bool = false
-var infinite_ammo: bool = false
 var colorStore
 var scanCollisionMesh
 var bulletmesh = null
@@ -123,7 +122,7 @@ func _input(event):
 	if(event.is_action_pressed("shoot")):
 		if alt_fire:
 			return
-		elif ColorList.lightAmmo < 1 && !infinite_ammo:
+		elif ColorList.lightAmmo < 1 && !ColorList.infinite_ammo:
 			fail.play()
 		elif !animation_player.is_playing() && !alt_fire:
 			animateShoot()
@@ -185,10 +184,10 @@ func _input(event):
 			altFire.visible = true	
 		
 	if(event.is_action_pressed("infiniteAmmo")):
-		if infinite_ammo:
-			infinite_ammo = false;
+		if ColorList.infinite_ammo:
+			ColorList.infinite_ammo = false;
 		else:
-			infinite_ammo = true;
+			ColorList.infinite_ammo = true;
 			
 	if(event.is_action_pressed("Hotkey1")):
 		ColorList.colorindex = 0

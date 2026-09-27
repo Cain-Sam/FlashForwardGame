@@ -1,9 +1,15 @@
 extends Node3D
+@onready var label_3d: Label3D = $player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/shotgun/Shotgun_Model/Body_lowpoly/Label3D
+@onready var body_lowpoly: MeshInstance3D = $player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/shotgun/Shotgun_Model/Body_lowpoly
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	label_3d.set_script(null)
+	label_3d.text = "KICK"
+	label_3d.modulate = Color(75,0,0)
+	ColorList.infinite_ammo = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

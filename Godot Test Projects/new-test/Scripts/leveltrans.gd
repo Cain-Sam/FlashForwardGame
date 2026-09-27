@@ -15,6 +15,7 @@ func _ready() -> void:
 func _manual_on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		loading.show()
+		ColorList.infinite_ammo = false
 		await get_tree().create_timer(0.1).timeout
 		get_tree().change_scene_to_file(sceneTo)
 	if body.is_in_group("bullet"):
