@@ -187,6 +187,7 @@ infiniteAmmo={
 
 [rendering]
 
+rendering_device/d3d12/max_resource_descriptors=131072
 rendering_device/driver.windows="d3d12"
 environment/volumetric_fog/volume_size=124
 environment/volumetric_fog/volume_depth=124

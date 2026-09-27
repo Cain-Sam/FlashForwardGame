@@ -55,9 +55,64 @@ size = Vector3(0.086364746, 1.3117371, 0.055333376)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pf2un"]
 points = PackedVector3Array(0.043182366, 0.65586853, 0.09732056, -0.043182373, 0.65586853, 0.09732056, 0.043182366, -0.65586853, 0.09732056, 0.043182366, 0.65586853, -0.09732056, -0.043182373, 0.65586853, -0.09732056, -0.043182373, -0.65586853, 0.09732056, 0.043182366, -0.65586853, -0.09732056, -0.043182373, -0.65586853, -0.09732056)
 
+[sub_resource type="Animation" id="Animation_8ktnr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DOOR:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pf2un"]
+resource_name = "swing_in"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DOOR:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 2.4622896),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wnyme"]
+resource_name = "swing_out"
+length = 0.33299999999999996
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DOOR:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_874wh"]
+_data = {
+&"RESET": SubResource("Animation_8ktnr"),
+&"swing_in": SubResource("Animation_pf2un"),
+&"swing_out": SubResource("Animation_wnyme")
+}
+
 [node name="door_hinged" type="Node3D" unique_id=170761439]
 
 [node name="DOOR" type="RigidBody3D" parent="." unique_id=68427573 groups=["kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
 mass = 1.596
@@ -67,9 +122,11 @@ linear_damp = 100.0
 script = ExtResource("1_ys3ib")
 
 [node name="DoorMesh" type="MeshInstance3D" parent="DOOR" unique_id=767662530 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_h0j1r")
 
 [node name="DoorCollision" type="CollisionShape3D" parent="DOOR" unique_id=895845993 groups=["kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ys3ib")
 
 [node name="Frame" type="StaticBody3D" parent="." unique_id=1343070888]
@@ -87,3 +144,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.37
 node_a = NodePath("../Frame")
 node_b = NodePath("../DOOR")
 angular_limit/enable = true
+
+[node name="DoorAnimations" type="AnimationPlayer" parent="." unique_id=1604089505]
+libraries/ = SubResource("AnimationLibrary_874wh")
