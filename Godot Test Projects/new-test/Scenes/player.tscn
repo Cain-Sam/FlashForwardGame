@@ -9,8 +9,33 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jjvhh"]
 
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ukyrk"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_pu2lt"]
+density = -8.655
+density_texture = SubResource("NoiseTexture3D_ukyrk")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kry3j"]
 height = 1.2
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3wgy"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_3smsa"]
+sky_material = SubResource("ProceduralSkyMaterial_x3wgy")
+
+[sub_resource type="Environment" id="Environment_8erm5"]
+background_mode = 2
+sky = SubResource("Sky_3smsa")
+tonemap_mode = 2
+glow_enabled = true
+fog_density = 0.0
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_ambient_inject = 0.92
 
 [node name="player" type="CharacterBody3D" unique_id=961832965 groups=["player"]]
 collision_layer = 9
@@ -78,6 +103,12 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
 visibility_parent = NodePath("../Grome")
 shape = SubResource("CapsuleShape3D_jjvhh")
 
+[node name="FogVolume" type="FogVolume" parent="standing_collision_shape" unique_id=99352370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020507813, -0.40594208, 0.01977539)
+size = Vector3(1.0332031, 2.677765, 0.8129883)
+shape = 0
+material = SubResource("FogMaterial_pu2lt")
+
 [node name="crouching_collision_shape" type="CollisionShape3D" parent="." unique_id=996005928]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.3096739, 0)
 visibility_parent = NodePath("../Grome")
@@ -111,3 +142,6 @@ text = "Press \"E\" to Interact"
 
 [node name="PlayerLight" parent="." unique_id=960294778 instance=ExtResource("5_fkybt")]
 visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=915889354]
+environment = SubResource("Environment_8erm5")

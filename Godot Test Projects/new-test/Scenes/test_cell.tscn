@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://k8wnayykdnxw" path="res://Scenes/Loading.tscn" id="7_vhyt2"]
 [ext_resource type="Material" uid="uid://sjngqjbs367b" path="res://materials/pole.tres" id="8_0hhbd"]
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
-[ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://Audio/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
+[ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://STOLENSHITTHATWEWILLDELETE/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
 [ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/Rat.tscn" id="12_6wees"]
 [ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/ScannableShapeTest.tscn" id="13_xohai"]
 [ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="14_sqron"]

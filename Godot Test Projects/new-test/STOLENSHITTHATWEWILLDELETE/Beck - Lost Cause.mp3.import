@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6cfeuqxqyf8h"
+path="res://.godot/imported/Beck - Lost Cause.mp3-700c5aef10123b8dbdc6b33b9befa902.mp3str"
+
+[deps]
+
+source_file="res://STOLENSHITTHATWEWILLDELETE/Beck - Lost Cause.mp3"
+dest_files=["res://.godot/imported/Beck - Lost Cause.mp3-700c5aef10123b8dbdc6b33b9befa902.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

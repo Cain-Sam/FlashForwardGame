@@ -7,7 +7,7 @@ uniform float density = 1.0;
 uniform sampler2D gradiant; 
 
 void fog() {
-	vec2 movement = vec2(0.07, 0.0)*TIME;
+	vec2 movement = vec2(0.0, 0.02)*TIME;
 	float detail_noise = texture(noise_texture, WORLD_POSITION.xz*noise_scale + movement).r; 
 	detail_noise *= 0.2;
 	float noise = texture(noise_texture, WORLD_POSITION.xz*noise_scale + movement + detail_noise).r;
