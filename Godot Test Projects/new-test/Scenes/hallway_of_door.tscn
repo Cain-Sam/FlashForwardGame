@@ -32,9 +32,18 @@
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="23_gau1o"]
 [ext_resource type="Script" uid="uid://dovljlw6ns8j5" path="res://Scripts/lights_out_area_detection.gd" id="26_h04mc"]
 [ext_resource type="Script" uid="uid://de00bcc6kqfe1" path="res://Scripts/kick_curse.gd" id="27_0nt72"]
+[ext_resource type="AudioStream" uid="uid://c20uvgbiaugfs" path="res://Audio/door_break1.mp3" id="27_2i8ai"]
+[ext_resource type="AudioStream" uid="uid://q8fr0ireud3q" path="res://Audio/door_break2.mp3" id="28_q0qds"]
 [ext_resource type="Script" uid="uid://vsi18odfkjqc" path="res://Scripts/slow_kick_curse.gd" id="28_y2arq"]
 [ext_resource type="Script" uid="uid://dgtimn3rdvy0l" path="res://Scripts/door_fisk.gd" id="29_dywha"]
+[ext_resource type="AudioStream" uid="uid://cbcdggnmu24yy" path="res://Audio/door_break3.mp3" id="29_t04hu"]
 [ext_resource type="Script" uid="uid://ewawvt8t7c34" path="res://Scripts/fast_kick_curse.gd" id="29_x8ogr"]
+[ext_resource type="AudioStream" uid="uid://bxyjdcbiyork2" path="res://Audio/door_break4.mp3" id="30_cw47b"]
+[ext_resource type="AudioStream" uid="uid://drluvhhqxj7ss" path="res://Audio/dragon-studio-glass-breaking-504033.mp3" id="31_0ci46"]
+[ext_resource type="AudioStream" uid="uid://cq3jpetau3lae" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Wilhelm 4.mp3" id="32_lx50m"]
+[ext_resource type="AudioStream" uid="uid://dattvpnm2dv2a" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/John_Weissmuller's_MGM_Tarzan_Yell.ogg" id="33_ebys0"]
+[ext_resource type="AudioStream" uid="uid://b0vdsqf720vtw" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Newcastlethunder.ogg" id="34_b1tg4"]
+[ext_resource type="AudioStream" uid="uid://cnrce6fxgd51a" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Screaming_Hawk.wav" id="35_o4sth"]
 [ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="36_8f8kq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
@@ -6203,6 +6212,24 @@ _data = {
 &"swing_out": SubResource("Animation_wnyme")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w5eyr"]
+playback_mode = 1
+random_pitch = 1.1692499
+streams_count = 9
+stream_0/stream = ExtResource("27_2i8ai")
+stream_1/stream = ExtResource("28_q0qds")
+stream_2/stream = ExtResource("29_t04hu")
+stream_3/stream = ExtResource("30_cw47b")
+stream_4/stream = ExtResource("31_0ci46")
+stream_5/stream = ExtResource("32_lx50m")
+stream_5/weight = 0.1
+stream_6/stream = ExtResource("33_ebys0")
+stream_6/weight = 0.1
+stream_7/stream = ExtResource("34_b1tg4")
+stream_7/weight = 0.1
+stream_8/stream = ExtResource("35_o4sth")
+stream_8/weight = 0.1
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_ld7ko"]
 resource_name = "door3_Door2"
 _surfaces = [{
@@ -9865,7 +9892,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988168, -0.14587685, -0.5836158, 0.59316105, 0.029347148, 0.804546, -0.10023747, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881674, -0.14587685, -0.5836158, 0.593161, 0.029347148, 0.804546, -0.10023746, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
@@ -10067,6 +10094,11 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door1close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction/door_hinged" unique_id=1778168777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction/door_hinged" unique_id=874354289]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction2" type="CSGBox3D" parent="inner_wallR" unique_id=1590344571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, 15.723148)
 operation = 2
@@ -10112,6 +10144,10 @@ angular_limit/enable = true
 
 [node name="DoorAnimations" type="AnimationPlayer" parent="inner_wallR/subtraction2/DOOR" unique_id=1690008552]
 libraries/ = SubResource("AnimationLibrary_874wh")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction2/DOOR" unique_id=1179295599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="door2close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction2" unique_id=1561543593]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
@@ -10162,6 +10198,10 @@ angular_limit/enable = true
 
 [node name="DoorAnimations" type="AnimationPlayer" parent="inner_wallR/subtraction3/DOOR" unique_id=5316218]
 libraries/ = SubResource("AnimationLibrary_874wh")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction3/DOOR" unique_id=207883209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="door3close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction3" unique_id=1615384180]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.015048623, 0.11301303, -0.006260395)
@@ -10217,6 +10257,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0.025603294, -0.15225774, 0.04359579)
 stream = ExtResource("13_hi7lt")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction4/DOOR" unique_id=1530585732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction5" type="CSGBox3D" parent="inner_wallR" unique_id=1594975615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, 7.4734507)
 operation = 2
@@ -10266,6 +10310,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door2close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction5/DOOR" unique_id=1084349580]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction5/DOOR" unique_id=353171223]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -0.0034008026, 0.4554394, 0.0057344437)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction6" type="CSGBox3D" parent="inner_wallR" unique_id=1172596783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, 4.4943924)
@@ -10317,6 +10365,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0029964447, 0.012424529, -0.10799575)
 stream = ExtResource("12_gau1o")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction6/DOOR" unique_id=1588485568]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, -0.003399849, 0.4554394, 0.0057344437)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction7" type="CSGBox3D" parent="inner_wallR" unique_id=235703272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, 1.3893585)
 operation = 2
@@ -10366,6 +10418,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door1close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction7/DOOR" unique_id=438603385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction7/DOOR" unique_id=920432376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction8" type="CSGBox3D" parent="inner_wallR" unique_id=1738088981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -1.0002251)
@@ -10417,6 +10473,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction8/DOOR" unique_id=1065945200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction9" type="CSGBox3D" parent="inner_wallR" unique_id=301356296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -3.7986317)
 operation = 2
@@ -10466,6 +10526,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door3close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction9/DOOR" unique_id=809864199]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0029964447, 0.012424529, -0.10799575)
 stream = ExtResource("12_gau1o")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction9/DOOR" unique_id=7446751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction10" type="CSGBox3D" parent="inner_wallR" unique_id=2063339211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -6.586254)
@@ -10517,6 +10581,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction10/DOOR" unique_id=55132909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction11" type="CSGBox3D" parent="inner_wallR" unique_id=474043805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -9.334896)
 operation = 2
@@ -10566,6 +10634,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door2close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction11/DOOR" unique_id=596668339]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction11/DOOR" unique_id=2136114518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction12" type="CSGBox3D" parent="inner_wallR" unique_id=1605565850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -11.988094)
@@ -10617,6 +10689,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction12/DOOR" unique_id=1211029484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction13" type="CSGBox3D" parent="inner_wallR" unique_id=1813149516]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -14.572117)
 operation = 2
@@ -10666,6 +10742,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door1close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction13/DOOR" unique_id=1594299131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction13/DOOR" unique_id=1350126869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction14" type="CSGBox3D" parent="inner_wallR" unique_id=1188653573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -17.142212)
@@ -10717,6 +10797,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction14/DOOR" unique_id=1910407849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction15" type="CSGBox3D" parent="inner_wallR" unique_id=1120819732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, -0.013242245, -19.528389)
 operation = 2
@@ -10766,6 +10850,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door3close" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction15/DOOR" unique_id=1037437313]
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallR/subtraction15/DOOR" unique_id=397385160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="divider wall" type="CSGBox3D" parent="inner_wallR" unique_id=1033663124]
 transform = Transform3D(1, -4.3711392e-08, -4.371139e-08, -4.3711392e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0.0746479, -0.7397158, 0.08826828)
@@ -10907,6 +10995,10 @@ angular_limit/enable = true
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction/DOOR" unique_id=1859205573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction2" type="CSGBox3D" parent="inner_wallL" unique_id=413798866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, 15.704174)
 operation = 2
@@ -10956,6 +11048,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door3close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction2/DOOR" unique_id=2046145269]
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction2/DOOR" unique_id=1681908297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction3" type="CSGBox3D" parent="inner_wallL" unique_id=1638332255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, 12.850309)
@@ -11007,6 +11103,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction3/DOOR" unique_id=1709662100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction4" type="CSGBox3D" parent="inner_wallL" unique_id=1190725023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, 10.065466)
 operation = 2
@@ -11056,6 +11156,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door2close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction4/DOOR" unique_id=339168516]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction4/DOOR" unique_id=1793142448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction5" type="CSGBox3D" parent="inner_wallL" unique_id=1664474496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, 7.4475718)
@@ -11107,6 +11211,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction5/DOOR" unique_id=1569080661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction6" type="CSGBox3D" parent="inner_wallL" unique_id=1013867637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, 4.4739456)
 operation = 2
@@ -11156,6 +11264,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door1close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction6/DOOR" unique_id=1712069506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction6/DOOR" unique_id=1567613141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction7" type="CSGBox3D" parent="inner_wallL" unique_id=577481028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, 1.3809357)
@@ -11207,6 +11319,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction7/DOOR" unique_id=423001028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction8" type="CSGBox3D" parent="inner_wallL" unique_id=477440331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -0.9985771)
 operation = 2
@@ -11256,6 +11372,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door3close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction8/DOOR" unique_id=1960748204]
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction8/DOOR" unique_id=1558776386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction9" type="CSGBox3D" parent="inner_wallL" unique_id=2146330156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -3.8082752)
@@ -11307,6 +11427,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction9/DOOR" unique_id=1866085467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction10" type="CSGBox3D" parent="inner_wallL" unique_id=658321984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -6.5905266)
 operation = 2
@@ -11356,6 +11480,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door2close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction10/DOOR" unique_id=1312776276]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction10/DOOR" unique_id=868223520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction11" type="CSGBox3D" parent="inner_wallL" unique_id=173663625]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -9.335201)
@@ -11407,6 +11535,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction11/DOOR" unique_id=1640601714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction12" type="CSGBox3D" parent="inner_wallL" unique_id=1336997709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -12.004696)
 operation = 2
@@ -11456,6 +11588,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door1close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction12/DOOR" unique_id=554122589]
 transform = Transform3D(-4.371139e-08, 0, -1, 1, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, 1.9106855e-15, 0.025600433, -0.15225774, 0.04359579)
 stream = ExtResource("13_hi7lt")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction12/DOOR" unique_id=1268801424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="subtraction13" type="CSGBox3D" parent="inner_wallL" unique_id=704187315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -14.577061)
@@ -11507,6 +11643,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.08519018, 0.13032031, -0.047003746)
 stream = ExtResource("11_36ra3")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction13/DOOR" unique_id=1211306400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction14" type="CSGBox3D" parent="inner_wallL" unique_id=1853511331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -17.148071)
 operation = 2
@@ -11557,6 +11697,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.3711385e-08, -1, 4.3711392e-08, 0.1047287, 0.00037235022, -0.0074071884)
 stream = ExtResource("12_gau1o")
 
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction14/DOOR" unique_id=1016493706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
+
 [node name="subtraction15" type="CSGBox3D" parent="inner_wallL" unique_id=513084193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076591074, 0.012788773, -19.52552)
 operation = 2
@@ -11606,6 +11750,10 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 [node name="door1close" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction15/DOOR" unique_id=1226709994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14963365, -0.03857845, -0.028867006)
 stream = ExtResource("13_hi7lt")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="inner_wallL/subtraction15/DOOR" unique_id=366721545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_w5eyr")
 
 [node name="divider wall" type="CSGBox3D" parent="inner_wallL" unique_id=858403000]
 transform = Transform3D(1, -4.3711392e-08, -4.371139e-08, -4.3711392e-08, -4.3711385e-08, -1, 4.371139e-08, 1, -4.371139e-08, 0.07464796, 0.753031, 0.08826828)

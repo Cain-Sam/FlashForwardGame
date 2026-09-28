@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cq3jpetau3lae"
+path="res://.godot/imported/Wilhelm 4.mp3-0f90da5d631297c2f87d65f364d2f20e.mp3str"
+
+[deps]
+
+source_file="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Wilhelm 4.mp3"
+dest_files=["res://.godot/imported/Wilhelm 4.mp3-0f90da5d631297c2f87d65f364d2f20e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

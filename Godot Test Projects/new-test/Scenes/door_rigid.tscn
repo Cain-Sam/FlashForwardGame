@@ -3,6 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="1_2mdd2"]
 [ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="1_ys3ib"]
 [ext_resource type="Texture2D" uid="uid://bu8vxsy1iajb6" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Manifold/Manifold_01-512x512.png" id="3_8ktnr"]
+[ext_resource type="AudioStream" uid="uid://c20uvgbiaugfs" path="res://Audio/door_break1.mp3" id="4_7eed2"]
+[ext_resource type="AudioStream" uid="uid://q8fr0ireud3q" path="res://Audio/door_break2.mp3" id="5_qe1bq"]
+[ext_resource type="AudioStream" uid="uid://cbcdggnmu24yy" path="res://Audio/door_break3.mp3" id="6_tnadh"]
+[ext_resource type="AudioStream" uid="uid://bxyjdcbiyork2" path="res://Audio/door_break4.mp3" id="7_lkp4e"]
+[ext_resource type="AudioStream" uid="uid://drluvhhqxj7ss" path="res://Audio/dragon-studio-glass-breaking-504033.mp3" id="8_dcgrv"]
+[ext_resource type="AudioStream" uid="uid://cq3jpetau3lae" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Wilhelm 4.mp3" id="9_p3b25"]
+[ext_resource type="AudioStream" uid="uid://dattvpnm2dv2a" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/John_Weissmuller's_MGM_Tarzan_Yell.ogg" id="10_ibqj8"]
+[ext_resource type="AudioStream" uid="uid://b0vdsqf720vtw" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Newcastlethunder.ogg" id="11_vu5gw"]
+[ext_resource type="AudioStream" uid="uid://cnrce6fxgd51a" path="res://STOLENSHITTHATWEWILLDELETE/easily_identified_sound_effects/Screaming_Hawk.wav" id="12_0hnru"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcjox"]
 resource_name = "Material_0"
@@ -109,6 +118,24 @@ _data = {
 &"swing_out": SubResource("Animation_wnyme")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p5x4p"]
+playback_mode = 1
+random_pitch = 1.1692499
+streams_count = 9
+stream_0/stream = ExtResource("4_7eed2")
+stream_1/stream = ExtResource("5_qe1bq")
+stream_2/stream = ExtResource("6_tnadh")
+stream_3/stream = ExtResource("7_lkp4e")
+stream_4/stream = ExtResource("8_dcgrv")
+stream_5/stream = ExtResource("9_p3b25")
+stream_5/weight = 0.1
+stream_6/stream = ExtResource("10_ibqj8")
+stream_6/weight = 0.1
+stream_7/stream = ExtResource("11_vu5gw")
+stream_7/weight = 0.1
+stream_8/stream = ExtResource("12_0hnru")
+stream_8/weight = 0.1
+
 [node name="door_hinged" type="Node3D" unique_id=170761439]
 
 [node name="DOOR" type="RigidBody3D" parent="." unique_id=68427573 groups=["kickable"]]
@@ -147,3 +174,8 @@ angular_limit/enable = true
 
 [node name="DoorAnimations" type="AnimationPlayer" parent="." unique_id=1604089505]
 libraries/ = SubResource("AnimationLibrary_874wh")
+
+[node name="door_break_sound_effects" type="AudioStreamPlayer3D" parent="." unique_id=1088331084]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
+stream = SubResource("AudioStreamRandomizer_p5x4p")
