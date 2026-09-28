@@ -179,3 +179,4 @@ libraries/ = SubResource("AnimationLibrary_874wh")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45806348, -0.0007171631, 0.00013649464)
 stream = SubResource("AudioStreamRandomizer_p5x4p")
+volume_db = -38.226
