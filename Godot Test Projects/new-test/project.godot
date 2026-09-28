@@ -181,6 +181,12 @@ infiniteAmmo={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Main Layer"
+3d_physics/layer_2="Player Layer"
+3d_physics/layer_5="Paint-affected Layer"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
