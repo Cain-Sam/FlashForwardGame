@@ -14,44 +14,55 @@ var deactivate_color = Color(0.29, 0.29, 0.29)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	body_entered.connect(_manual_on_body_entered)
 	if portal.material_override:
 		changePortalColor(portal, portalColor)
 	portal.material_override.set_shader_parameter("is_spinning", false)	
 	target_nodes = get_tree().get_nodes_in_group("teleporter")
 	
-func _manual_on_body_entered(body: Node3D) -> bool:
+func _on_body_entered(body: Node3D) -> void:
+	
+	# If and object that isn't a bullet enters an active portal
 	if portalActive() && !body.is_in_group("bullet"):
 		for node in target_nodes:
 			if node != self && node.portal_glow.light_color == self.portal_glow.light_color:
+				
+				# Choose Spot and Facing Direction for teleporting
 				target_portal = node
 				var forward_distance: float = 1
 				var target_forward: Vector3 = -node.global_transform.basis.z
 				var destination: Vector3 = node.global_position + (target_forward * forward_distance)
-				body.global_position = destination
 				var look_target: Vector3 = destination + target_forward
-				body.look_at(look_target, Vector3.UP)
-				body.rotate_y(PI) 
+								
+				teleporterRotateObject(body, destination, look_target)
+				
 				telesuccess.play()
+				
+				# Export Variable option to not preserve momentum (in case we portal into a cutscene or something)
 				if body is CharacterBody3D && stopWhenEntered:
 					body.velocity = Vector3.ZERO
-				setPortalTimeout()
 				
+				setPortalTimeout()
+	
+	# If a bullet Enters a portal
 	if body.is_in_group("bullet"):
-		var portals_of_color_count = 0
-		for node in target_nodes:
-			if node.portal_glow.light_color == ColorList.get_color():
-				portals_of_color_count += 1
+		
+		var portals_of_color_count = checkNumberOfPortalsWithThisColor()
+		
+		#If portal is ready to be turned colors
 		if portals_of_color_count < 2 && portal_glow.light_color != deactivate_color:
-			changePortalColor(portal, ColorList.get_color())
+			changePortalColor(portal, GlobalVariables.get_color())
+			
 			activate.play()
+			
 		else:
 			activatefail.play()
+			
 		body.get_parent().queue_free()
+		
+		# Refund ammo, but not if we used paint
 		if !body.is_in_group("paint"):
-			ColorList.lightAmmo += 1
-	return false
-
+			GlobalVariables.lightAmmo += 1
+	
 func changePortalColor(targetPortal, color):
 	var unique_material = portal.material_override.duplicate()
 	targetPortal.material_override = unique_material
@@ -74,3 +85,15 @@ func setPortalTimeout():
 
 func _process(_delta: float) -> void:
 	pass
+
+func teleporterRotateObject(body, destination, look_target):
+		body.global_position = destination
+		body.look_at(look_target, Vector3.UP)
+		body.rotate_y(PI)
+		
+func checkNumberOfPortalsWithThisColor():
+	var portals_of_color_count = 0
+	for node in target_nodes:
+		if node.portal_glow.light_color == GlobalVariables.get_color():
+			portals_of_color_count += 1
+	return portals_of_color_count

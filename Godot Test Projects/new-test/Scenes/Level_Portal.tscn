@@ -55,3 +55,5 @@ spot_angle = 115.28
 spot_angle_attenuation = 2.2191403
 
 [node name="Loading" parent="." unique_id=1293335694 instance=ExtResource("4_nvt23")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

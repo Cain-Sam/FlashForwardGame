@@ -9,7 +9,7 @@ func _ready() -> void:
 	label_3d.set_script(null)
 	label_3d.text = "KICK"
 	label_3d.modulate = Color(75,0,0)
-	ColorList.infinite_ammo = true
+	GlobalVariables.infinite_ammo = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

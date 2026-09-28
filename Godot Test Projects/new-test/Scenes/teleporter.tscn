@@ -52,3 +52,5 @@ volume_db = -24.638
 [node name="IlluFail" type="AudioStreamPlayer" parent="." unique_id=1350595155]
 stream = ExtResource("5_6vd6g")
 volume_db = -23.548
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

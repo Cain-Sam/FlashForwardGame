@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	self.material_override.albedo_color = ColorList.get_color()
-	self.material_override.emission = ColorList.get_color()
+	self.material_override.albedo_color = GlobalVariables.get_color()
+	self.material_override.emission = GlobalVariables.get_color()

@@ -21,7 +21,7 @@ buses/default_bus_layout="uid://djsycf0ls5nod"
 
 [autoload]
 
-ColorList="*uid://dhubt70xj3yye"
+GlobalVariables="*uid://dhubt70xj3yye"
 
 [editor_plugins]
 

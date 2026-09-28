@@ -20,7 +20,6 @@ extends Camera3D
 @onready var suck_cast: RayCast3D = $"../../../../SuckCast"
 @onready var player: CharacterBody3D = $"../../../../.."
 
-
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
 
@@ -64,28 +63,27 @@ func _process(delta):
 	fps_rig.position.x = lerp(fps_rig.position.x,0.0,delta*5)
 	fps_rig.position.y = lerp(fps_rig.position.y,0.0,delta*5)
 	bullet_preview.rotate(Vector3.UP, 0.01)
+	
+	# This is the feature where a player can place a light that we don't use
 	if lightMode && is_instance_valid(lightBulb):
 		playerHoldingBulb()
+	
+	# Sucking Functionality
 	if Input.is_action_just_released("shoot"):
 		hold_time = 0
 	if Input.is_action_pressed("shoot"):
+		# If we are in suck mode and pointed at a light
 		if alt_fire && suck_cast.is_colliding():
 			if is_instance_valid(suck_cast.get_collider()):
 				hold_time += delta
 				for child in suck_cast.get_collider().get_children():
 					if child.is_in_group("bullet"):
-						var bullet_node = child
-						if hold_time > 1:
-							hold_time = 0
-							bullet_node.queue_free()
-							increaseAmmo()
+						suckBullet(child)
+
+			# This is formatted weird to make sure we check if we are still colliding each frame. It stops crashes.
 			if is_instance_valid(suck_cast.get_collider()) && suck_cast.get_collider().is_in_group("light"):
 				hold_time += delta
-				if hold_time > 1:
-					hold_time = 0
-					var lightSuck: bool = suck_cast.get_collider().suckLight()
-					if lightSuck:
-						increaseAmmo()
+				suckLight()
 					
 	if Input.is_action_pressed("paint"):
 		if !animation_player.is_playing():
@@ -95,12 +93,9 @@ func _process(delta):
 		if !scanSelected: 
 			if vision.get_collider() != null:
 				if vision.get_collider().is_in_group("scannable"):
-					scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
-					var unique_material = scanCollisionMesh.material_override.duplicate()
-					colorStore = unique_material.albedo_color
-					scanCollisionMesh.material_override = unique_material
-					scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
-					scanSelected = true
+					showScannableObjectIsSelectable()
+		
+		# Change scannable object color back when not looking at it
 		elif !vision.is_colliding():
 			scanCollisionMesh.material_override.albedo_color = colorStore
 			scanSelected = false
@@ -122,13 +117,13 @@ func _input(event):
 	if(event.is_action_pressed("shoot")):
 		if alt_fire:
 			return
-		elif ColorList.lightAmmo < 1 && !ColorList.infinite_ammo:
+		elif GlobalVariables.lightAmmo < 1 && !GlobalVariables.infinite_ammo:
 			fail.play()
 		elif !animation_player.is_playing() && !alt_fire:
 			animateShoot()
 			fireGun()
-			if ColorList.lightAmmo > 0:
-				ColorList.lightAmmo -= 1
+			if GlobalVariables.lightAmmo > 0:
+				GlobalVariables.lightAmmo -= 1
 			
 	if(event.is_action_pressed("reload")):
 		animation_player.play("reload")
@@ -152,28 +147,28 @@ func _input(event):
 			equipLight()
 		
 	if(event.is_action_pressed("scrollup")):
-		if ColorList.colorindex == ColorList.color_list.size() - 1:
-			ColorList.colorindex = 0
+		if GlobalVariables.colorindex == GlobalVariables.color_list.size() - 1:
+			GlobalVariables.colorindex = 0
 		else:
-			ColorList.colorindex += 1
+			GlobalVariables.colorindex += 1
 			
 	if(event.is_action_pressed("scrolldown")):
-		if ColorList.colorindex == 0:
-			ColorList.colorindex = ColorList.color_list.size() - 1
+		if GlobalVariables.colorindex == 0:
+			GlobalVariables.colorindex = GlobalVariables.color_list.size() - 1
 		else:
-			ColorList.colorindex -= 1
+			GlobalVariables.colorindex -= 1
 	
 	if(event.is_action_pressed("darknessdown")):
-		if ColorList.darkenindex == 0:
-			ColorList.darkenindex = ColorList.darken_list.size() - 1
+		if GlobalVariables.darkenindex == 0:
+			GlobalVariables.darkenindex = GlobalVariables.darken_list.size() - 1
 		else:
-			ColorList.darkenindex -= 1
+			GlobalVariables.darkenindex -= 1
 			
 	if(event.is_action_pressed("darknessup")):
-		if ColorList.darkenindex == ColorList.darken_list.size() - 1:
-			ColorList.darkenindex = 0
+		if GlobalVariables.darkenindex == GlobalVariables.darken_list.size() - 1:
+			GlobalVariables.darkenindex = 0
 		else:
-			ColorList.darkenindex += 1
+			GlobalVariables.darkenindex += 1
 	
 	if(event.is_action_pressed("swap_mode")):
 		if alt_fire:
@@ -184,44 +179,43 @@ func _input(event):
 			altFire.visible = true	
 		
 	if(event.is_action_pressed("infiniteAmmo")):
-		if ColorList.infinite_ammo:
-			ColorList.infinite_ammo = false;
+		if GlobalVariables.infinite_ammo:
+			GlobalVariables.infinite_ammo = false;
 		else:
-			ColorList.infinite_ammo = true;
+			GlobalVariables.infinite_ammo = true;
 			
 	if(event.is_action_pressed("Hotkey1")):
-		ColorList.colorindex = 0
+		GlobalVariables.colorindex = 0
 			
 	if(event.is_action_pressed("Hotkey2")):
-		ColorList.colorindex = 4
+		GlobalVariables.colorindex = 4
 		
 	if(event.is_action_pressed("Hotkey3")):
-		ColorList.colorindex = 8
+		GlobalVariables.colorindex = 8
 		
 	if(event.is_action_pressed("Hotkey4")):
-		ColorList.colorindex = 16
+		GlobalVariables.colorindex = 16
 		
 	if(event.is_action_pressed("Hotkey5")):
-		ColorList.colorindex = 32
+		GlobalVariables.colorindex = 32
 		
 	if(event.is_action_pressed("Hotkey6")):
-		ColorList.colorindex = 36
+		GlobalVariables.colorindex = 36
 			
 func playerHoldingBulb():
-	
 	#Bulb can not be placed
 	if !vision.is_colliding():
 		playerLight.global_position = vision.to_global(vision.target_position)
 		lightBulb.transparency = non_placable_lightbulb_transparency
-		lightBulb.material.albedo_color = ColorList.get_color()
-		lightBulb.material.emission = ColorList.get_color()
+		lightBulb.material.albedo_color = GlobalVariables.get_color()
+		lightBulb.material.emission = GlobalVariables.get_color()
 		
 	#Bulb CAN be placed
 	else:
 		playerLight.global_position = vision.get_collision_point()
 		lightBulb.transparency = placable_lightbulb_transparency
-		lightBulb.material.albedo_color = ColorList.get_color()
-		lightBulb.material.emission = ColorList.get_color()
+		lightBulb.material.albedo_color = GlobalVariables.get_color()
+		lightBulb.material.emission = GlobalVariables.get_color()
 		
 func animateShoot():
 	animation_player.play("fire")
@@ -232,6 +226,7 @@ func animateShoot():
 			shootsound.play()
 	else:
 		shootsound.play()
+		
 func fireGun():
 	#Create Bullet
 	bullet_instance = bullet.instantiate()
@@ -253,15 +248,15 @@ func fireGun():
 	
 	#Bullet Light
 	bullet_light.light_energy = bullet_light_energy
-	bullet_light.light_color = ColorList.get_color()
+	bullet_light.light_color = GlobalVariables.get_color()
 	
 	#Make Bullet Mesh Seperate From Other Bullet Meshes
 	if bullet_mesh.material_override:
 		bullet_mesh.material_override = bullet_mesh.material_override.duplicate()
 		
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material_override.albedo_color = ColorList.color_list[ColorList.colorindex]
-	bullet_mesh.material_override.emission = ColorList.color_list[ColorList.colorindex]
+	bullet_mesh.material_override.albedo_color = GlobalVariables.color_list[GlobalVariables.colorindex]
+	bullet_mesh.material_override.emission = GlobalVariables.color_list[GlobalVariables.colorindex]
 	bullet_mesh.material_override.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
@@ -325,11 +320,11 @@ func placeLight():
 	
 	#Set Light Settings for Placed Light
 	light.light_energy = placed_light_energy
-	light.light_color = ColorList.get_color()
+	light.light_color = GlobalVariables.get_color()
 	
 	#Set Mesh Settings for Placed Light
-	lightBulb.material.albedo_color = ColorList.get_color()
-	lightBulb.material.emission = ColorList.get_color()
+	lightBulb.material.albedo_color = GlobalVariables.get_color()
+	lightBulb.material.emission = GlobalVariables.get_color()
 	lightBulb.material.emission_energy_multiplier = placed_bulb_light_multiplyer
 	
 	#Clear Variables
@@ -352,8 +347,8 @@ func fireDraw():
 		bullet_mesh.material_override = bullet_mesh.material_override.duplicate()
 	
 	#Set Bullet Color Equal To Chosen Color
-	bullet_mesh.material_override.albedo_color = ColorList.get_color()
-	bullet_mesh.material_override.emission = ColorList.get_color()
+	bullet_mesh.material_override.albedo_color = GlobalVariables.get_color()
+	bullet_mesh.material_override.emission = GlobalVariables.get_color()
 	bullet_mesh.material_override.emission_energy_multiplier = bullet_light_multiplyer
 	
 	#Fire
@@ -363,4 +358,26 @@ func fireDraw():
 	bullet_mesh = null
 
 func increaseAmmo():
-	ColorList.lightAmmo += 1
+	GlobalVariables.lightAmmo += 1
+
+func suckBullet(child):
+	var bullet_node = child
+	if hold_time > 1:
+		hold_time = 0
+		bullet_node.queue_free()
+		increaseAmmo()
+		
+func suckLight():
+	if hold_time > 1:
+		hold_time = 0
+		var lightSuck: bool = suck_cast.get_collider().suckLight()
+		if lightSuck:
+			increaseAmmo()
+			
+func showScannableObjectIsSelectable():
+	scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
+	var unique_material = scanCollisionMesh.material_override.duplicate()
+	colorStore = unique_material.albedo_color
+	scanCollisionMesh.material_override = unique_material
+	scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
+	scanSelected = true

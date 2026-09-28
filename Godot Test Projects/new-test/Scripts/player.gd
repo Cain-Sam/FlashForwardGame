@@ -31,7 +31,6 @@ const mouse_sens = 0.25
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	platform_on_leave = CharacterBody3D.PLATFORM_ON_LEAVE_DO_NOTHING
-	#$Head/Camera3D/SubViewportContainer/SubViewport.size = DisplayServer.window_get_size()
 	
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -42,7 +41,6 @@ func _input(event):
 	
 func _physics_process(delta):
 	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
-	#Handle Movement State
 	
 	#Crouching
 	if Input.is_action_pressed("crouch"):
@@ -50,16 +48,19 @@ func _physics_process(delta):
 		head.position.y = lerp(head.position.y,0.391 + crouching_depth,delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
+	
+	#Standing
 	elif !ray_cast_3d.is_colliding(): 
-		#Standing
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = true
 		head.position.y = lerp(head.position.y,0.391,delta*lerp_speed)
+		
+		#Sprinting
 		if Input.is_action_pressed("sprint"):
-			#Sprinting
 			current_speed = sprinting_speed
-		else: 
-			#Walking
+		
+		#Walking
+		else:
 			current_speed = walking_speed
 		
 	# Add the gravity.
@@ -78,6 +79,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)

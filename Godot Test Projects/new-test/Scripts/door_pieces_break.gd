@@ -7,6 +7,3 @@ func _ready() -> void:
 	
 	for pieces:RigidBody3D in self.get_children():
 		pieces.apply_impulse( direction * intensity, self.global_position );
-		
-	#await get_tree().create_timer(5).timeout; 
-	#queue_free();
