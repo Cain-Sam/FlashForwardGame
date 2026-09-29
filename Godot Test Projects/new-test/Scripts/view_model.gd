@@ -375,7 +375,8 @@ func suckLight():
 			increaseAmmo()
 			
 func showScannableObjectIsSelectable():
-	scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
+	print(vision.get_collider().get_parent().name)
+	scanCollisionMesh = vision.get_collider().get_parent().find_child("DoorMesh", true, false)
 	var unique_material = scanCollisionMesh.material_override.duplicate()
 	colorStore = unique_material.albedo_color
 	scanCollisionMesh.material_override = unique_material

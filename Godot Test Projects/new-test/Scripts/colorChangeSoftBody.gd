@@ -14,7 +14,8 @@ func bulletHit(body: Node3D) -> void:
 	if body.is_in_group("bullet"):
 		changeColor(GlobalVariables.get_color())
 		body.queue_free()
-		GlobalVariables.lightAmmo += 1
+		if !body.is_in_group("paint"):
+			GlobalVariables.lightAmmo += 1
 		
 func changeColor(color):
 	# Making a new unique copy of the softbody material to avoid changing every softbody of the same type

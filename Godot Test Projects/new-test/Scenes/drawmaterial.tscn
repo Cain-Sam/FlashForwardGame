@@ -26,7 +26,7 @@ size = 0.06
 [sub_resource type="SphereShape3D" id="SphereShape3D_ukmrf"]
 radius = 0.050772823
 
-[node name="bullet" type="Node3D" unique_id=186536062 groups=["paint"]]
+[node name="bullet" type="Node3D" unique_id=186536062 groups=["bullet", "paint"]]
 script = ExtResource("1_ukmrf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=553310329]
