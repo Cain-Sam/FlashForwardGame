@@ -77,7 +77,7 @@ func _process(delta):
 			if is_instance_valid(suck_cast.get_collider()):
 				hold_time += delta
 				for child in suck_cast.get_collider().get_children():
-					if child.is_in_group("bullet"):
+					if child.is_in_group("bullet") && !child.is_in_group("paint"):
 						suckBullet(child)
 
 			# This is formatted weird to make sure we check if we are still colliding each frame. It stops crashes.
