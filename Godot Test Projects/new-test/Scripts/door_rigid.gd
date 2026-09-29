@@ -11,7 +11,6 @@ func kicked(direction, intensity):
 		breakDoor(direction, intensity);
 
 func collided(direction, intensity):
-	print("HIT " + (str(intensity)))
 	if intensity > intensityBreakThresh:
 		breakDoor(direction, intensity);
 		
