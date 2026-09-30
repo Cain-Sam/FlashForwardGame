@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dh4c4kecj4whl"]
+
+[ext_resource type="Script" uid="uid://cptt4katr0mi7" path="res://Scripts/rat_horde.gd" id="1_ixumd"]
+[ext_resource type="ArrayMesh" uid="uid://crrg6ra0mfh6" path="res://rat.tres" id="2_4poa6"]
+
+[node name="Rat_Horde" type="Node3D" unique_id=565062840]
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=793428036]
+script = ExtResource("1_ixumd")
+
+[node name="street_rat" type="MeshInstance3D" parent="." unique_id=1218144630]
+visible = false
+mesh = ExtResource("2_4poa6")
+metadata/extras = {
+"flagrum_material": {},
+"flagrum_parts": {},
+"mesh_data_transfer_object": {
+"mesh_source": {}
+}
+}

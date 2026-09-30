@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://irhafdf1imxc"]
+
+[ext_resource type="Texture2D" uid="uid://bdvdm4cgvsp3e" path="res://Textures/rat_textures/street_rat_diff_4k.png" id="1_0p5sc"]
+[ext_resource type="Texture2D" uid="uid://cdw5bxponhu6d" path="res://Textures/rat_textures/street_rat_arm_4k.png" id="2_2pdta"]
+[ext_resource type="Texture2D" uid="uid://b56cn35sm2h0d" path="res://Textures/rat_textures/street_rat_height_4k.png" id="3_1xyew"]
+[ext_resource type="Texture2D" uid="uid://b5aguaanf8oi4" path="res://Textures/rat_textures/street_rat_nor_gl_4k.png" id="4_dmu10"]
+
+[resource]
+albedo_texture = ExtResource("1_0p5sc")
+metallic = 1.0
+metallic_texture = ExtResource("2_2pdta")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_2pdta")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("4_dmu10")
+ao_enabled = true
+ao_texture = ExtResource("2_2pdta")
+heightmap_enabled = true
+heightmap_scale = 0.019
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_1xyew")
