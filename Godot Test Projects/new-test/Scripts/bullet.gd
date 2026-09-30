@@ -17,6 +17,9 @@ func _ready() -> void:
 func _process(delta):
 	if stuck:
 		return
+	omni_light.light_color = GlobalVariables.get_color()
+	mesh_instance_3d.material_override.albedo_color = GlobalVariables.get_color()
+	mesh_instance_3d.material_override.emission = GlobalVariables.get_color()
 		
 	if bullet_raycast.is_colliding():
 		stick()
