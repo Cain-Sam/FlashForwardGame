@@ -28,7 +28,7 @@ func _on_body_entered(body: Node3D) -> void:
 				
 				# Choose Spot and Facing Direction for teleporting
 				target_portal = node
-				var forward_distance: float = 1
+				var forward_distance: float = 2.5
 				var target_forward: Vector3 = -node.global_transform.basis.z
 				var destination: Vector3 = node.global_position + (target_forward * forward_distance)
 				var look_target: Vector3 = destination + target_forward
