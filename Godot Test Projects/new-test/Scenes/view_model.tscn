@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7umq2frhdac2" path="res://Textures/Digital.png" id="6_7oct0"]
 [ext_resource type="AudioStream" uid="uid://ilvyqkwvke38" path="res://Audio/rat_impact.mp3" id="6_53sl3"]
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="7_4n8fr"]
+[ext_resource type="Texture2D" uid="uid://dtns37w7ifete" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Techno/Techno_05-512x512.png" id="7_x4mhi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
 resource_name = "ShotgunMaterial"
@@ -6297,7 +6298,7 @@ light_color = Color(1.4679879e-05, 0.9524315, 0.10736584, 1)
 light_energy = 16.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 3.198
-light_projector = ExtResource("6_7oct0")
+light_projector = ExtResource("7_x4mhi")
 light_size = 0.443
 light_specular = 16.0
 light_cull_mask = 4293918722
@@ -6872,7 +6873,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.79881716, -0.14587685, -0.5836158, 0.59316134, 0.029347148, 0.804546, -0.10023751, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.7988171, -0.14587685, -0.5836158, 0.5931613, 0.029347148, 0.804546, -0.1002375, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")

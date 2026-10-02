@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/player.tscn" id="1_6jlns"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="1_prxxp"]
 [ext_resource type="PackedScene" uid="uid://gy38xnmuljh1" path="res://Scenes/Level_Portal.tscn" id="1_t7ij0"]
+[ext_resource type="PackedScene" uid="uid://jptfw48x8hih" path="res://Scenes/emitting_window_test.tscn" id="2_iyuhw"]
 [ext_resource type="Texture2D" uid="uid://bh25xiyrqh6i1" path="res://Textures/brackeys_vfx_bundle/particles/alpha/smoke_04_a.png" id="4_7oy3d"]
 [ext_resource type="Texture2D" uid="uid://ol4s3ms7inxl" path="res://Textures/brackeys_vfx_bundle/particles/alpha/smoke_07_a.png" id="5_8hxr3"]
 [ext_resource type="AudioStream" uid="uid://cny4js7e1qsgi" path="res://STOLENSHITTHATWEWILLDELETE/enchant.wav" id="5_arkox"]
@@ -289,6 +290,9 @@ use_collision = true
 size = Vector3(40.12263, 9.793854, 2.7299805)
 material = SubResource("StandardMaterial3D_mwpog")
 
+[node name="Window" type="MeshInstance3D" parent="Floor1/Concessions/CSGBox3D" unique_id=1107815663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9176235, -0.4478588, 2.9054441)
+
 [node name="CSGBox3D6" type="CSGBox3D" parent="Floor1/Concessions" unique_id=549638129]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.870514, 1.9423046, -71.98115)
 use_collision = true
@@ -470,6 +474,18 @@ operation = 2
 use_collision = true
 size = Vector3(4.134369, 6.1112976, 3.2677956)
 material = SubResource("StandardMaterial3D_5mosk")
+
+[node name="Emitting_window_test" parent="Floor1/Concessions" unique_id=1147022871 instance=ExtResource("2_iyuhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.890625, -0.8958435, -10.477398)
+
+[node name="Emitting_window_test2" parent="Floor1/Concessions" unique_id=1495534578 instance=ExtResource("2_iyuhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.403908, -0.8958435, -10.477398)
+
+[node name="Emitting_window_test3" parent="Floor1/Concessions" unique_id=26362431 instance=ExtResource("2_iyuhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.134687, -0.8958435, -10.477398)
+
+[node name="Emitting_window_test4" parent="Floor1/Concessions" unique_id=2116955625 instance=ExtResource("2_iyuhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.796204, -0.8958435, -10.477398)
 
 [node name="Floor" type="CSGBox3D" parent="Floor1" unique_id=1658601330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.34375, -2.7288513, 0.4168396)
