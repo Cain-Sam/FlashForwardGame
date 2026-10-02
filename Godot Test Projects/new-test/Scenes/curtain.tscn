@@ -15,6 +15,7 @@ roughness_texture = ExtResource("1_p1s5g")
 roughness_texture_channel = 1
 emission_enabled = true
 emission = Color(0.2665993, 0.019366208, 0.07579938, 1)
+emission_energy_multiplier = 0.01
 normal_enabled = true
 normal_texture = ExtResource("2_7phak")
 ao_enabled = true

@@ -2,18 +2,20 @@ extends RigidBody3D
 @export var ON: bool = true
 @export var currentPower: float = 1
 @export var maxPower: float = 1
-@export var bulbEmission = 50
-@export var lightEnergy = 5
+@export var bulbEmission = 15
+@export var lightEnergy = 5 
+@export var lightRange = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var bulb = find_child("Bulb")
 	var light = find_child("Light")
+	light.omni_range = lightRange
 	if ON:
 		bulb.material_override.emission_energy_multiplier = bulbEmission
 		light.light_energy = lightEnergy
 	else:
-		bulb.material_override.emission_energy_multiplier = 0
+		bulb.material_override.emission_energy_multiplier = 0.5
 		light.light_energy = 0
 		currentPower = 0
 
@@ -33,7 +35,7 @@ func suckLight():
 		
 		# If this brings power down to 0, turn off light
 		if currentPower == 0:
-			bulb.material_override.emission_energy_multiplier = 0
+			bulb.material_override.emission_energy_multiplier = 0.5
 			light.light_energy = 0
 			
 		# Otherwise just dim the light

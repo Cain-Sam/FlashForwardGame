@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/ladder.tscn" id="13_vhyt2"]
 [ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/ScannableShapeTest.tscn" id="13_xohai"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/door_rigid.tscn" id="16_3i5ih"]
-[ext_resource type="PackedScene" uid="uid://dj5k7oqq1cdo1" path="res://Scenes/lamp.tscn" id="17_3r5t6"]
+[ext_resource type="PackedScene" uid="uid://dj5k7oqq1cdo1" path="res://Scenes/Lights/lamp.tscn" id="17_3r5t6"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/teleporter.tscn" id="18_k2kp4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11p01"]

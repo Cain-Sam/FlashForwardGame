@@ -5,6 +5,7 @@ const SPEED = 45
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 @onready var collision_shape_3d: CollisionShape3D = $StaticBody3D/CollisionShape3D
+@onready var static_body_3d: StaticBody3D = $StaticBody3D
 
 var stuck = false
 
@@ -33,6 +34,7 @@ func stick() -> void:
 	checkForObjectReaction(hit_object)
 	removeCollision()
 	mergeWithObject(hit_object)
+	simplifyPaint()
 
 func paintLieFlat(coll_normal):
 	var up_dir = Vector3.UP if abs(coll_normal.dot(Vector3.UP)) < 0.99 else Vector3.RIGHT
@@ -58,3 +60,8 @@ func flattenPaint():
 	mesh_instance_3d.scale.y = 0.4
 	mesh_instance_3d.scale.z = 0.05
 	mesh_instance_3d.visible = true
+
+func simplifyPaint():
+	static_body_3d.queue_free()
+	bullet_raycast.queue_free()
+	print("done")

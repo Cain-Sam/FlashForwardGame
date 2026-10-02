@@ -48,6 +48,7 @@ var placed_light_energy = 4.5
 var non_placable_lightbulb_transparency = 0.1
 var placable_lightbulb_transparency = 0
 var bullet_light_multiplyer = 7
+var paint_light_multiplyer = 0.02
 var bullet_light_energy = 4.5
 var sway_x_multiplyer = 0.00004
 var sway_y_multiplyer = 0.00004
@@ -349,7 +350,7 @@ func fireDraw():
 	#Set Bullet Color Equal To Chosen Color
 	bullet_mesh.material_override.albedo_color = GlobalVariables.get_color()
 	bullet_mesh.material_override.emission = GlobalVariables.get_color()
-	bullet_mesh.material_override.emission_energy_multiplier = bullet_light_multiplyer
+	bullet_mesh.material_override.emission_energy_multiplier = paint_light_multiplyer
 	
 	#Fire
 	get_parent().add_child(bullet_instance)
