@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
 [ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://STOLENSHITTHATWEWILLDELETE/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
 [ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/Rat.tscn" id="12_6wees"]
+[ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/ladder.tscn" id="13_vhyt2"]
 [ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/ScannableShapeTest.tscn" id="13_xohai"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/door_rigid.tscn" id="16_3i5ih"]
 [ext_resource type="PackedScene" uid="uid://dj5k7oqq1cdo1" path="res://Scenes/lamp.tscn" id="17_3r5t6"]
@@ -224,3 +225,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13285232, -0.003519535, 1.
 
 [node name="Area3D" parent="." unique_id=1988150016 instance=ExtResource("4_uh1jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2703557, 0.11802435, -1.0596342)
+
+[node name="rung" parent="." unique_id=2000850885 instance=ExtResource("13_vhyt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2359675, -0.30791622, 4.23528)
+rungs = 13
