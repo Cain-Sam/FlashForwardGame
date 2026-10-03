@@ -3,7 +3,7 @@ extends RigidBody3D
 @export var currentPower: float = 1
 @export var maxPower: float = 1
 @export var bulbEmission = 15
-@export var lightEnergy = 5 
+@export var lightEnergy: float = 5 
 @export var lightRange = 10
 
 # Called when the node enters the scene tree for the first time.
