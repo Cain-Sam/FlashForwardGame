@@ -666,6 +666,10 @@ lightRange = 30
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.79411, 3.647142, -1.4274755)
 lightRange = 30
 
+[node name="Lamp38" parent="Lights" unique_id=1028333275 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.057758, 3.1546755, -18.143167)
+lightEnergy = 3
+
 [node name="Portals" type="Node3D" parent="." unique_id=550434520]
 
 [node name="Area3D" parent="Portals" unique_id=1652388293 instance=ExtResource("5_7w7ni")]
