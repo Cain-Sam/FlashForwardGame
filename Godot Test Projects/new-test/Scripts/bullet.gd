@@ -7,10 +7,12 @@ const SPEED = 30
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 @onready var omni_light: OmniLight3D = $OmniLight
 @onready var timer: Timer = $Timer
+var mesh
 
 var stuck = false
 
 func _ready() -> void:
+	mesh = mesh_instance_3d;
 	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,8 +20,11 @@ func _process(delta):
 	if stuck:
 		return
 	omni_light.light_color = GlobalVariables.get_color()
-	mesh_instance_3d.material_override.albedo_color = GlobalVariables.get_color()
-	mesh_instance_3d.material_override.emission = GlobalVariables.get_color()
+	for child in self.get_children():
+		if child is MeshInstance3D:
+			mesh = child
+	mesh.material_override.albedo_color = GlobalVariables.get_color()
+	mesh.material_override.emission = GlobalVariables.get_color()
 		
 	if bullet_raycast.is_colliding():
 		stick()

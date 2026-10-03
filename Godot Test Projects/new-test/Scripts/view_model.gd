@@ -23,8 +23,8 @@ extends Camera3D
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
 
-var bullet = load("res://Scenes/bullet.tscn")
-var drawMaterial = load("res://Scenes/drawmaterial.tscn")
+var bullet = load("res://Scenes/Bullets/bullet.tscn")
+var drawMaterial = load("res://Scenes/Bullets/drawmaterial.tscn")
 var bullet_instance
 var scanSelected: bool = false
 var colorStore

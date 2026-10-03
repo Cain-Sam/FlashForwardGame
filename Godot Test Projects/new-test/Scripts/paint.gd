@@ -64,4 +64,3 @@ func flattenPaint():
 func simplifyPaint():
 	static_body_3d.queue_free()
 	bullet_raycast.queue_free()
-	print("done")
