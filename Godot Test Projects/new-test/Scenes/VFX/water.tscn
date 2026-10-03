@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://i2f6t1bssoik"]
+
+[ext_resource type="Shader" uid="uid://buskujxil2iqo" path="res://shaders/water.gdshader" id="1_slmpt"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_p5x4p"]
+subdivide_width = 200
+subdivide_depth = 200
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mjwn2"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ey6x3"]
+noise = SubResource("FastNoiseLite_mjwn2")
+seamless = true
+as_normal_map = true
+bump_strength = 1.4
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vvwhv"]
+noise_type = 3
+seed = 50
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1wgdf"]
+noise = SubResource("FastNoiseLite_vvwhv")
+seamless = true
+as_normal_map = true
+bump_strength = 1.7
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ceb56"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t2vmw"]
+noise = SubResource("FastNoiseLite_ceb56")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukc07"]
+render_priority = 0
+shader = ExtResource("1_slmpt")
+shader_parameter/albedo = Color(0.40064484, 0.59363717, 0.74759096, 1)
+shader_parameter/albedo2 = Color(0.87332654, 0.0003130424, 0.80364686, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.202000009595
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_ey6x3")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_1wgdf")
+shader_parameter/wave_move = Vector2(2, 0)
+shader_parameter/wave_move2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.01999999955296
+shader_parameter/wave = SubResource("NoiseTexture2D_t2vmw")
+shader_parameter/noise_scale = 8.0
+shader_parameter/height_scale = 0.15
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = Color(0, 0, 0, 1)
+shader_parameter/beers = 2.0
+shader_parameter/depth_offset = -0.75
+
+[node name="Water" type="MeshInstance3D" unique_id=460417075]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_p5x4p")
+surface_material_override/0 = SubResource("ShaderMaterial_ukc07")
