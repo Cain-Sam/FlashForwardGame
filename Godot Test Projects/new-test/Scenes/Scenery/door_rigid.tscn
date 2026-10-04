@@ -142,10 +142,9 @@ stream_8/weight = 0.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
-mass = 0.067
 contact_monitor = true
 max_contacts_reported = 1
-linear_damp = 100.0
+linear_damp = 21.287
 script = ExtResource("1_ys3ib")
 
 [node name="DoorMesh" type="MeshInstance3D" parent="DOOR" unique_id=767662530 groups=["collidable", "kickable"]]
