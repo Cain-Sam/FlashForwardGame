@@ -4,6 +4,7 @@ const DOOR_PIECES_MODIFIER = preload("uid://cdeodg3s1run2")
 @export var kickBreakable: bool = true
 
 @onready var door_break: AudioStreamPlayer3D = %door_break_sound_effects
+@onready var door_mesh: MeshInstance3D = $DoorMesh
 
 
 func kicked(direction, intensity):
@@ -21,6 +22,9 @@ func breakDoor(direction, intensity):
 	broken_model_inst.intensity = intensity	
 	get_parent().add_child(broken_model_inst)
 	broken_model_inst.global_transform = self.global_transform;
+	for child in broken_model_inst.find_children("*", "MeshInstance3D"):
+		if self.door_mesh.material_override != null:
+			child.material_override = self.door_mesh.material_override
 	door_break.play()
 	self.queue_free();
 	

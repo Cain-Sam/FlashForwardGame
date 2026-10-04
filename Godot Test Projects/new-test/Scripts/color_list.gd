@@ -56,6 +56,9 @@ var colorindex = 0
 var darkenindex = 0
 var lightAmmo: int = 0
 var infinite_ammo: bool = false
+var white: bool = false
 
 func get_color():
+	if white:
+		return Color(0.5,0.5,0.5)
 	return color_list[colorindex].darkened(darken_list[darkenindex])

@@ -1,13 +1,38 @@
 [gd_scene format=3 uid="uid://duv2f1ncwjvc5"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_1thqu"]
+[sub_resource type="GDScript" id="GDScript_uuc11"]
+script/source = "extends Node3D
+@onready var omni_light: OmniLight3D = $OmniLight
+@onready var csg_mesh_3d_2: CSGMesh3D = $CSGMesh3D2
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qgu4"]
-albedo_color = Color(0.20089048, 2.7651116e-05, 0.2008889, 1)
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.2, 0, 0.2, 0.08627451)
+metallic = 0.71
+metallic_specular = 1.0
+roughness = 0.0
 emission_enabled = true
 emission = Color(0.12941177, 0.12941177, 0.12941177, 1)
+emission_energy_multiplier = 0.0
+emission_operator = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_1thqu"]
 
 [node name="PlayerLight" type="Node3D" unique_id=567771808]
+transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 0, 0, 0)
+script = SubResource("GDScript_uuc11")
 
 [node name="OmniLight" type="OmniLight3D" parent="." unique_id=248863850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009062946, 0)
@@ -19,6 +44,6 @@ light_volumetric_fog_energy = 16.0
 light_size = 0.307
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=486374721]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.024780989, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024780989, 0)
+material_override = SubResource("StandardMaterial3D_2qgu4")
 mesh = SubResource("SphereMesh_1thqu")
-material = SubResource("StandardMaterial3D_2qgu4")

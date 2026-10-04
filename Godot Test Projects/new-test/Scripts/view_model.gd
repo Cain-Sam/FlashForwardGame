@@ -36,17 +36,15 @@ var shotgun_in_use = true;
 var alt_fire = false;
 var lightMode = false;
 var lightBulb
+var lightSource
 var playerLight
 var hold_time = 0
 
 #endregion
 
 #region Fun Variables for Fucking With
-var held_bulb_light_multiplyer = 0.1
-var placed_bulb_light_multiplyer = 7
-var placed_light_energy = 4.5
-var non_placable_lightbulb_transparency = 0.1
-var placable_lightbulb_transparency = 0
+var held_bulb_light_multiplyer = 0.3
+var non_placable_lightbulb_transparency = 0
 var bullet_light_multiplyer = 7
 var paint_light_multiplyer = 0.02
 var bullet_light_energy = 4.5
@@ -64,6 +62,8 @@ func _process(delta):
 	fps_rig.position.x = lerp(fps_rig.position.x,0.0,delta*5)
 	fps_rig.position.y = lerp(fps_rig.position.y,0.0,delta*5)
 	bullet_preview.rotate(Vector3.UP, 0.01)
+	if is_instance_valid(playerLight):
+		playerLight.rotate(Vector3.UP, 0.01)
 	
 	# This is the feature where a player can place a light that we don't use
 	if lightMode && is_instance_valid(lightBulb):
@@ -93,7 +93,7 @@ func _process(delta):
 	if vision.is_colliding() || scanSelected:
 		if !scanSelected: 
 			if vision.get_collider() != null:
-				if vision.get_collider().is_in_group("scannable"):
+				if vision.get_collider().is_in_group("scannable") && !lightMode:
 					showScannableObjectIsSelectable()
 		
 		# Change scannable object color back when not looking at it
@@ -108,8 +108,6 @@ func sway(sway_amount):
 func _input(event):
 	
 	if(event.is_action_pressed("interact")): 
-		if lightMode && vision.is_colliding():
-			placeLight()
 		if scanSelected:
 			bulletmesh = scanCollisionMesh
 			bullet_preview.mesh = scanCollisionMesh.mesh
@@ -130,10 +128,11 @@ func _input(event):
 		animation_player.play("reload")
 		
 	if(event.is_action_pressed("use")):
-		shotgun_in_use = !shotgun_in_use
-		if(shotgun_in_use):
+		if shotgun_in_use:
+			shotgun_in_use = !shotgun_in_use
 			animation_player.play("put_away")
-		else:
+		elif !shotgun_in_use && !lightMode:
+			shotgun_in_use = !shotgun_in_use
 			animation_player.play("pull_up")
 			
 	if(event.is_action_pressed("kick")):
@@ -144,16 +143,25 @@ func _input(event):
 	if(event.is_action_pressed("light")):
 		if lightMode:
 			putLightAway()
+			if !shotgun_in_use:
+				shotgun_in_use = true
+				animation_player.play("pull_up")
 		else:
+			if shotgun_in_use:
+				shotgun_in_use = false
+				animation_player.play("put_away")
+				await animation_player.animation_finished
 			equipLight()
 		
 	if(event.is_action_pressed("scrollup")):
+		GlobalVariables.white = false
 		if GlobalVariables.colorindex == GlobalVariables.color_list.size() - 1:
 			GlobalVariables.colorindex = 0
 		else:
 			GlobalVariables.colorindex += 1
 			
 	if(event.is_action_pressed("scrolldown")):
+		GlobalVariables.white = false
 		if GlobalVariables.colorindex == 0:
 			GlobalVariables.colorindex = GlobalVariables.color_list.size() - 1
 		else:
@@ -186,38 +194,35 @@ func _input(event):
 			GlobalVariables.infinite_ammo = true;
 			
 	if(event.is_action_pressed("Hotkey1")):
-		GlobalVariables.colorindex = 0
+		GlobalVariables.white = true
 			
 	if(event.is_action_pressed("Hotkey2")):
-		GlobalVariables.colorindex = 4
+		GlobalVariables.white = false
+		GlobalVariables.colorindex = 0
 		
 	if(event.is_action_pressed("Hotkey3")):
+		GlobalVariables.white = false
 		GlobalVariables.colorindex = 8
 		
 	if(event.is_action_pressed("Hotkey4")):
+		GlobalVariables.white = false
 		GlobalVariables.colorindex = 16
 		
 	if(event.is_action_pressed("Hotkey5")):
-		GlobalVariables.colorindex = 32
+		GlobalVariables.white = false
+		GlobalVariables.colorindex = 24
 		
 	if(event.is_action_pressed("Hotkey6")):
-		GlobalVariables.colorindex = 36
+		GlobalVariables.white = false
+		GlobalVariables.colorindex = 32
 			
 func playerHoldingBulb():
-	#Bulb can not be placed
-	if !vision.is_colliding():
-		playerLight.global_position = vision.to_global(vision.target_position)
-		lightBulb.transparency = non_placable_lightbulb_transparency
-		lightBulb.material.albedo_color = GlobalVariables.get_color()
-		lightBulb.material.emission = GlobalVariables.get_color()
-		
-	#Bulb CAN be placed
-	else:
-		playerLight.global_position = vision.get_collision_point()
-		lightBulb.transparency = placable_lightbulb_transparency
-		lightBulb.material.albedo_color = GlobalVariables.get_color()
-		lightBulb.material.emission = GlobalVariables.get_color()
-		
+	playerLight.global_position = vision.to_global(vision.target_position)
+	lightBulb.transparency = non_placable_lightbulb_transparency
+	lightBulb.material_override.albedo_color = GlobalVariables.get_color()
+	lightBulb.material_override.emission = GlobalVariables.get_color()
+	lightSource.light_color = GlobalVariables.get_color()
+	
 func animateShoot():
 	animation_player.play("fire")
 	if bulletmesh != null:
@@ -300,37 +305,20 @@ func equipLight():
 	playerLight.visible = true
 	
 	#Create Variable for Light and Mesh
-	var light = playerLight.get_child(0)
+	lightSource = playerLight.get_child(0)
 	lightBulb = playerLight.get_child(1)
 	
 	#Set Mesh and Light Settings for Unplaced Light
-	if lightBulb.material:
-		lightBulb.material = lightBulb.material.duplicate()
-	light.light_energy = held_bulb_light_multiplyer
-	
-func placeLight():
-	#Set Lightmode
-	lightMode = false
-	
-	#Create Variable for Light and Mesh
-	var light = playerLight.get_child(0)
-	lightBulb = playerLight.get_child(1)
-	
-	#Set Position to Object We are Looking At
-	playerLight.global_position = vision.get_collision_point()
-	
-	#Set Light Settings for Placed Light
-	light.light_energy = placed_light_energy
-	light.light_color = GlobalVariables.get_color()
-	
-	#Set Mesh Settings for Placed Light
-	lightBulb.material.albedo_color = GlobalVariables.get_color()
-	lightBulb.material.emission = GlobalVariables.get_color()
-	lightBulb.material.emission_energy_multiplier = placed_bulb_light_multiplyer
-	
-	#Clear Variables
-	playerLight = null 
-	lightBulb = null
+	lightSource.light_energy = held_bulb_light_multiplyer
+	lightSource.light_color = GlobalVariables.get_color()
+	if is_instance_valid(scanCollisionMesh):
+		if bulletmesh != null:
+			var bulletmeshCopy = bulletmesh.duplicate()
+			var meshOverrideCopy = lightBulb.material_override.duplicate()
+			bulletmeshCopy.material_override = meshOverrideCopy
+			playerLight.get_child(1).queue_free()
+			playerLight.add_child(bulletmeshCopy)
+			lightBulb = bulletmeshCopy
 	
 func fireDraw():
 	#Create Bullet

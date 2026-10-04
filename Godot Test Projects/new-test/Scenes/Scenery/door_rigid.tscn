@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bh377qwom0d52"]
 
 [ext_resource type="Texture2D" uid="uid://bxnunemnjjbhb" path="res://Assets/door3_rusty_metal_grid_nor_gl_4k.png" id="1_2mdd2"]
+[ext_resource type="Script" uid="uid://dqbk4oc7claqw" path="res://Scripts/doorVariableExport.gd" id="1_2ooyr"]
 [ext_resource type="Script" uid="uid://clqrudevmd1go" path="res://Scripts/door_rigid.gd" id="1_ys3ib"]
 [ext_resource type="Texture2D" uid="uid://bu8vxsy1iajb6" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Manifold/Manifold_01-512x512.png" id="3_8ktnr"]
 [ext_resource type="AudioStream" uid="uid://c20uvgbiaugfs" path="res://Audio/door_break1.mp3" id="4_7eed2"]
@@ -137,6 +138,7 @@ stream_8/stream = ExtResource("12_0hnru")
 stream_8/weight = 0.1
 
 [node name="door_hinged" type="Node3D" unique_id=170761439]
+script = ExtResource("1_2ooyr")
 
 [node name="DOOR" type="RigidBody3D" parent="." unique_id=68427573 groups=["kickable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40930668, 0, 0)
