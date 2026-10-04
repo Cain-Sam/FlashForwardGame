@@ -39,7 +39,7 @@ func _input(event):
 func _physics_process(delta):
 	$Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera.global_transform = camera.global_transform
 	if ladder_mode:
-		velocity.x = 0.2
+		velocity.x = 0
 		move_and_slide()
 		ladderMovement(delta)
 		return
@@ -97,6 +97,9 @@ func _physics_process(delta):
 			object_collider.apply_impulse(push_direction * push_force, player_collision.get_position() - object_collider.global_position)
 
 func ladderMovement(delta):
+	if is_on_floor():
+		self.global_position.y += 0.1
+	
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
 		head.position.y = lerp(head.position.y,0.391 + crouching_depth,delta*lerp_speed)
@@ -119,7 +122,7 @@ func ladderMovement(delta):
 	
 	if !Input.is_action_pressed("forward"):
 		if not is_on_floor():
-			velocity += get_gravity()/10 * delta
+			velocity += get_gravity()/1000 * delta
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):
@@ -129,7 +132,7 @@ func ladderMovement(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
-	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, 0)).normalized(),delta*lerp_speed)
+	direction = lerp(direction,(transform.basis * Vector3(input_dir.x/10, 0, 0)).normalized(),delta*lerp_speed)
 	
 	if Input.is_action_pressed("forward"):
 		self.global_position.y += 0.1
@@ -138,11 +141,13 @@ func ladderMovement(delta):
 		self.global_position.y -= 0.05	
 	
 	if direction:
-		velocity.x = direction.x * current_speed
-		velocity.z = direction.z * current_speed
-		
+		velocity.x = direction.x * current_speed/10
+		velocity.z = direction.z * current_speed/10
+		velocity.y = move_toward(0, 10, 0)
+	
 	else:
-		velocity.x = move_toward(velocity.x, 0, current_speed)
-		velocity.z = move_toward(velocity.z, 0, current_speed)
+		velocity.x = move_toward(velocity.x/10, 0, 0)
+		velocity.z = move_toward(velocity.z/10, 0, 0)
+		velocity.y = move_toward(0, 10, 0)
 
 	move_and_slide()

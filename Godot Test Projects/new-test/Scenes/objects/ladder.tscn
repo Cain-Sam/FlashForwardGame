@@ -21,7 +21,7 @@ height = 0.36923218
 radius = 0.016113281
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oayfh"]
-size = Vector3(1, 1, 0.6748047)
+size = Vector3(0.27749634, 1, 0.21161938)
 
 [node name="rung" type="StaticBody3D" unique_id=397048614]
 script = ExtResource("1_75hc7")
@@ -54,7 +54,7 @@ shape = SubResource("CylinderShape3D_hul88")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05808398, 0, 0)
 
 [node name="LadderHeight" type="CollisionShape3D" parent="Area3D" unique_id=1294781684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16259766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0750885, 0, -0.024099827)
 shape = SubResource("BoxShape3D_oayfh")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

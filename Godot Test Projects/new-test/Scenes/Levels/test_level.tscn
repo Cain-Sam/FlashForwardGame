@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="PackedScene" uid="uid://dg3ekcx461lgr" path="res://Scenes/Lights/FlatLight.tscn" id="7_xq3o0"]
+[ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/Scenery/door_rigid.tscn" id="9_7rivk"]
 
 [sub_resource type="Environment" id="Environment_oayfh"]
 background_mode = 1
@@ -171,14 +172,14 @@ size = Vector3(14.683998, 0.9736328, 10.590784)
 material = SubResource("StandardMaterial3D_akkqd")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Building/Floor" unique_id=30083917]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.667985, 0.032803535, 2.870636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.667985, 0.032803535, 3.0005722)
 operation = 2
-size = Vector3(1.8876953, 2.8468018, 2.8721924)
+size = Vector3(1.8876953, 2.8468018, 2.61232)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Building/Floor" unique_id=1833263080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0765123, 0.032803535, 2.8829775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0765123, 0.032803535, 3.013135)
 operation = 2
-size = Vector3(1.8876953, 2.8468018, 2.8721924)
+size = Vector3(1.8876953, 2.8468018, 2.6118774)
 
 [node name="Wall" type="CSGBox3D" parent="Building" unique_id=1980247945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.983769, -0.4764343, -7.496645)
@@ -202,9 +203,9 @@ size = Vector3(24.17631, 0.9736328, 12.131311)
 material = SubResource("StandardMaterial3D_xgl4d")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Building/Floor2" unique_id=871924769]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.634078, 0.032803535, 3.586102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.634078, 0.032803535, 3.7238278)
 operation = 2
-size = Vector3(1.8876953, 2.8468018, 2.8721924)
+size = Vector3(1.8876953, 2.8468018, 2.5967407)
 
 [node name="Floor3" type="CSGBox3D" parent="Building" unique_id=209951685]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 2.6920395, 0.7658644, -7.6386056)
@@ -240,12 +241,12 @@ size = Vector3(30.788462, 0.9736328, 12.110315)
 material = SubResource("StandardMaterial3D_2yvf5")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Building/Floor4" unique_id=1540007300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.519677, 0.03280449, 3.6067085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.531947, 0.028952599, 3.894208)
 operation = 2
 size = Vector3(1.8876953, 2.8468018, 2.8721924)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Building/Floor4" unique_id=309225440]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3073277, 0.032809258, 3.633411)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2929978, 0.13158226, 3.900864)
 operation = 2
 size = Vector3(1.8876953, 2.8468018, 2.8721924)
 
@@ -256,14 +257,14 @@ size = Vector3(24.139072, 0.9736328, 11.48678)
 material = SubResource("StandardMaterial3D_8v7by")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Building/Floor5" unique_id=2034086075]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.628311, 0.03280258, 3.2981782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.610637, 0.05249214, 3.490407)
 operation = 2
-size = Vector3(1.8876953, 2.8468018, 2.8721924)
+size = Vector3(1.8876953, 2.8468018, 2.8833618)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Building/Floor5" unique_id=851360503]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.873295, 0.03280258, 3.3377614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.873295, 0.03280258, 3.4271474)
 operation = 2
-size = Vector3(1.8876953, 2.8468018, 2.8721924)
+size = Vector3(1.8876953, 2.8468018, 2.6934204)
 
 [node name="Floor6" type="CSGBox3D" parent="Building" unique_id=546838610]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -4.905355, 2.1914988, -18.813242)
@@ -824,3 +825,65 @@ mesh = SubResource("CylinderMesh_oayfh")
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -5.270229, 0.8587551, -0.10905552)
 material_override = SubResource("StandardMaterial3D_rsyfn")
 mesh = SubResource("PlaneMesh_btda1")
+
+[node name="doors" type="Node3D" parent="." unique_id=1533507442]
+
+[node name="door_hinged" parent="doors" unique_id=170761439 instance=ExtResource("9_7rivk")]
+transform = Transform3D(1.5, 0, 0, 0, 2.85, 0, 0, 0, 0.925, 18.351595, 7.2862687, 7.059741)
+
+[node name="door_hinged2" parent="doors" unique_id=1395539651 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-1.5, 0, -1.3967112e-07, 0, 2.85, 0, 2.2649371e-07, 0, -0.925, 17.007252, 7.2862687, 7.0642266)
+
+[node name="door_hinged3" parent="doors" unique_id=374714697 instance=ExtResource("9_7rivk")]
+transform = Transform3D(1.5, 0, 0, 0, 2.85, 0, 0, 0, 0.925, 9.398486, 7.339126, 7.059741)
+
+[node name="door_hinged4" parent="doors" unique_id=1840628998 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-1.5, 0, -1.3967112e-07, 0, 2.85, 0, 2.2649371e-07, 0, -0.925, 8.054143, 7.339126, 7.0642266)
+
+[node name="door_hinged5" parent="doors" unique_id=1679434906 instance=ExtResource("9_7rivk")]
+transform = Transform3D(1.5, 0, 0, 0, 2.85, 0, 0, 0, 0.925, 9.535934, 7.339126, -22.427355)
+
+[node name="door_hinged6" parent="doors" unique_id=1664911311 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-1.5, 0, -1.3967112e-07, 0, 2.85, 0, 2.2649371e-07, 0, -0.925, 8.191591, 7.339126, -22.422869)
+
+[node name="door_hinged7" parent="doors" unique_id=128450679 instance=ExtResource("9_7rivk")]
+transform = Transform3D(1.5, 0, 0, 0, 2.85, 0, 0, 0, 0.925, 18.333584, 7.339126, -22.391445)
+
+[node name="door_hinged8" parent="doors" unique_id=143362610 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-1.5, 0, -1.3967112e-07, 0, 2.85, 0, 2.2649371e-07, 0, -0.925, 16.989239, 7.339126, -22.38696)
+
+[node name="door_hinged9" parent="doors" unique_id=1766398438 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-9.1793915e-08, 0, 0.255, 0, 1.9, 0, -2.1, 0, -1.1146404e-08, 2.7129025, 1.2738376, -8.963218)
+
+[node name="door_hinged10" parent="doors" unique_id=1156197581 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-9.1793915e-08, 0, -0.255, 0, 1.85, 0, 2.1, 0, -1.1146404e-08, 2.7129025, 1.246336, 1.9552994)
+
+[node name="door_hinged11" parent="doors" unique_id=382175425 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-9.1793915e-08, 0, -0.255, 0, 1.9, 0, 2.1, 0, -1.1146404e-08, -10.73271, 1.2738376, 3.8886125)
+
+[node name="door_hinged12" parent="doors" unique_id=923760590 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-9.1793915e-08, 0, -0.255, 0, 1.9, 0, 2.1, 0, -1.1146404e-08, -10.73271, 1.2738376, -10.943248)
+
+[node name="door_hinged13" parent="doors" unique_id=1035944749 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-2.1, 0, -2.2292808e-08, 0, 1.9, 0, 1.8358783e-07, 0, -0.255, -8.866556, 1.2738376, -13.822686)
+
+[node name="door_hinged14" parent="doors" unique_id=1593691682 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-2.1, 0, -2.2292808e-08, 0, 1.9, 0, 1.8358783e-07, 0, -0.255, -0.05764675, 1.2738376, -13.822686)
+
+[node name="door_hinged15" parent="doors" unique_id=875609915 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-2.1, 0, -2.2292808e-08, 0, 1.9, 0, 1.8358783e-07, 0, -0.255, 0.614385, 1.2738376, -22.526428)
+
+[node name="door_hinged16" parent="doors" unique_id=100007250 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-2.1, 0, -2.2292808e-08, 0, 1.9, 0, 1.8358783e-07, 0, -0.255, -16.8916, 1.2738376, -22.526428)
+
+[node name="door_hinged17" parent="doors" unique_id=1486174052 instance=ExtResource("9_7rivk")]
+transform = Transform3D(2.1, 0, 0, 0, 1.9, 0, 0, 0, 0.255, -15.693296, 1.2738376, 7.4041214)
+
+[node name="door_hinged18" parent="doors" unique_id=1249162134 instance=ExtResource("9_7rivk")]
+transform = Transform3D(6.4007955e-15, 1.6151358e-07, 0.255, 3.35, -1.6151358e-07, 5.293956e-23, 1.4643315e-07, 3.695, -1.1146404e-08, 47.098843, -6.955636, 1.9340553)
+
+[node name="door_hinged19" parent="doors" unique_id=2024711170 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-9.725783e-08, 0, 0.255, 0, 2.11, 0, -2.225, 0, -1.1146404e-08, 36.681305, -6.9676476, -20.83428)
+
+[node name="door_hinged20" parent="doors" unique_id=1362528029 instance=ExtResource("9_7rivk")]
+transform = Transform3D(-9.725783e-08, 0, -0.255, 0, 2.085, 0, 2.225, 0, -1.1146404e-08, 36.681305, -7.009079, 5.550673)
