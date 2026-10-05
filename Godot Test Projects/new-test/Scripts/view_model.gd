@@ -98,7 +98,10 @@ func _process(delta):
 		
 		# Change scannable object color back when not looking at it
 		elif !vision.is_colliding():
-			scanCollisionMesh.material_override.albedo_color = colorStore
+			if colorStore == null:
+				scanCollisionMesh.material_override = null
+			else:	
+				scanCollisionMesh.material_override.albedo_color = colorStore
 			scanSelected = false
 			
 func sway(sway_amount):
@@ -365,8 +368,12 @@ func suckLight():
 			
 func showScannableObjectIsSelectable():
 	scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
-	var unique_material = scanCollisionMesh.material_override.duplicate()
-	colorStore = unique_material.albedo_color
-	scanCollisionMesh.material_override = unique_material
+	if is_instance_valid(scanCollisionMesh.material_override):
+		var unique_material = scanCollisionMesh.material_override.duplicate()
+		colorStore = unique_material.albedo_color
+		scanCollisionMesh.material_override = unique_material
+	else:
+		colorStore = null
+	scanCollisionMesh.material_override = StandardMaterial3D.new()
 	scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
 	scanSelected = true

@@ -66,6 +66,7 @@ func removeCollision():
 			
 func mergeWithObject(hit_object):
 	if hit_object and hit_object is Node:
+		set_disable_scale(true)
 		reparent(hit_object, true)
 
 func bulletFaceUp(collision, coll_normal):
