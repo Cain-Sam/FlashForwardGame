@@ -88,7 +88,7 @@ expand_mode = 1
 
 [node name="Vision" type="RayCast3D" parent="Head" unique_id=1748234429]
 transform = Transform3D(1, 0, 0, 0, -0.12852214, -0.4831998, 0, 0.4831998, -0.12852214, 0, 0, -0.049968764)
-collision_mask = 9
+collision_mask = 8
 
 [node name="KickCast" type="RayCast3D" parent="Head" unique_id=711449485]
 transform = Transform3D(2.73, 0, 0, 0, -0.091359496, -2.964425, 0, 0.6940125, -0.39023554, 0, 0, -0.049968764)

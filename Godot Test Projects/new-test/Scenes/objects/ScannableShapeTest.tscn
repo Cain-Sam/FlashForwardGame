@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0xp8awsucx7e"]
 
 [ext_resource type="Texture2D" uid="uid://cdw5bxponhu6d" path="res://Textures/rat_textures/street_rat_arm_4k.png" id="1_gpk5m"]
+[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="1_n48h1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j45nl"]
 albedo_color = Color(0.59919906, 0.599199, 0.59919894, 1)
@@ -231,7 +232,10 @@ bind/70/pose = Transform3D(-0.9699097, -0.24345313, 0.00225319, 0.019268323, -0.
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u37j"]
 
-[node name="Triangle" type="Node3D" unique_id=1567692786]
+[node name="Triangle" type="RigidBody3D" unique_id=1774071606 groups=["collidable", "kickable"]]
+script = ExtResource("1_n48h1")
+directionYOffset = 1.0
+intensityOffset = 1.0
 
 [node name="Triange" type="MeshInstance3D" parent="." unique_id=932131020]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0.024780989, 0)
@@ -246,8 +250,14 @@ metadata/extras = {
 }
 }
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1470246673]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0.024780989, 0)
+shape = SubResource("BoxShape3D_7u37j")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=22029773 groups=["scannable"]]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0.024780989, 0)
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=274853031]
 shape = SubResource("BoxShape3D_7u37j")

@@ -1,20 +1,19 @@
 extends RigidBody3D
-@export var directionXOffset: float = 0
-@export var directionYOffset: float = 0
-@export var directionZOffset: float = 0
+@export var directionXOffset: float = 1
+@export var directionYOffset: float = 1
+@export var directionZOffset: float = 1
 @export var intensityOffset: float = 0
 var velocity_last_frame: Vector3 = Vector3.ZERO
 
 func kicked(direction, intensity):
-	direction.x += directionXOffset
+	direction.x = direction.x * directionXOffset
 	direction.y += directionYOffset
-	direction.z += directionZOffset
+	direction.z = direction.z * directionZOffset
 	intensity += intensityOffset
 	self.apply_impulse( direction * intensity, self.global_position )
 	
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var contact_count = state.get_contact_count()
-	
 	for i in range(contact_count):
 		var total_impulse = Vector3.ZERO
 		var impulse = state.get_contact_impulse(i)
