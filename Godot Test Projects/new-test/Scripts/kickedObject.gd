@@ -1,14 +1,14 @@
 extends RigidBody3D
-@export var directionXOffset: float = 0
-@export var directionYOffset: float = 0
-@export var directionZOffset: float = 0
+@export var directionXOffset: float = 1
+@export var directionYOffset: float = 1
+@export var directionZOffset: float = 1
 @export var intensityOffset: float = 0
 var velocity_last_frame: Vector3 = Vector3.ZERO
 
 func kicked(direction, intensity):
-	direction.x += directionXOffset
+	direction.x = direction.x * directionXOffset
 	direction.y += directionYOffset
-	direction.z += directionZOffset
+	direction.z = direction.z * directionZOffset
 	intensity += intensityOffset
 	self.apply_impulse( direction * intensity, self.global_position )
 	
