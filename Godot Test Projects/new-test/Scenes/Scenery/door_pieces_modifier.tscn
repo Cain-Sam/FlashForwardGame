@@ -293,6 +293,7 @@ points = PackedVector3Array(-0.17354813, -0.365757, 0.021449812, -0.17229286, -0
 script = ExtResource("1_1rm8h")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1553610915 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18506408, -0.43443367, 0.06779337)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -302,14 +303,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell" type="MeshInstance3D" parent="RigidBody3D" unique_id=1511130376]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2648893, -0.32333997, 0.08180509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07982522, 0.1110937, 0.014011718)
 mesh = SubResource("ArrayMesh_ghxoh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1587313678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2648893, -0.32333997, 0.08180509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07982522, 0.1110937, 0.014011718)
 shape = SubResource("ConvexPolygonShape3D_g4jfj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D" unique_id=2124965215 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18506408, 0.43443367, -0.06779337)
 collision_layer = 8
 collision_mask = 8
 
@@ -318,6 +320,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2648893, -0.32333997, 0.08
 shape = SubResource("ConvexPolygonShape3D_g4jfj")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=413103321 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25555968, 0.48260283, 0.06517652)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -327,14 +330,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_001" type="MeshInstance3D" parent="RigidBody3D2" unique_id=1250232102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24419878, 0.2863414, 0.042004585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011360899, -0.19626144, -0.023171932)
 mesh = SubResource("ArrayMesh_n0o0a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2" unique_id=1004743462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24419878, 0.2863414, 0.042004585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011360899, -0.19626144, -0.023171932)
 shape = SubResource("ConvexPolygonShape3D_1rm8h")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D2" unique_id=685862337 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25555968, -0.48260283, -0.06517652)
 collision_layer = 8
 collision_mask = 8
 
@@ -343,6 +347,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24419878, 0.2863414, 0.0420
 shape = SubResource("ConvexPolygonShape3D_1rm8h")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1247563184 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236449, 0.28139916, 0.059880733)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -352,14 +357,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_002" type="MeshInstance3D" parent="RigidBody3D3" unique_id=1747094927]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11574218, 0.21129507, -0.0012414418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12070683, -0.07010409, -0.061122175)
 mesh = SubResource("ArrayMesh_foyy6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3" unique_id=1587449204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11574218, 0.21129507, -0.0012414418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12070683, -0.07010409, -0.061122175)
 shape = SubResource("ConvexPolygonShape3D_keos2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D3" unique_id=704677451 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236449, -0.28139916, -0.059880733)
 collision_layer = 8
 collision_mask = 8
 
@@ -368,6 +374,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11574218, 0.21129507, -0.0
 shape = SubResource("ConvexPolygonShape3D_keos2")
 
 [node name="RigidBody3D4" type="RigidBody3D" parent="." unique_id=1880816707 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1555966, -0.29545808, -0.04016882)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -377,14 +384,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_003" type="MeshInstance3D" parent="RigidBody3D4" unique_id=1256446159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1878673, -0.19595805, -0.0131355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0322707, 0.09950003, 0.027033322)
 mesh = SubResource("ArrayMesh_un1k3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4" unique_id=1159234596]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1878673, -0.19595805, -0.0131355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0322707, 0.09950003, 0.027033322)
 shape = SubResource("ConvexPolygonShape3D_faasg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D4" unique_id=1791873534 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1555966, 0.29545808, 0.04016882)
 collision_layer = 8
 collision_mask = 8
 
@@ -393,6 +401,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1878673, -0.19595805, -0.01
 shape = SubResource("ConvexPolygonShape3D_faasg")
 
 [node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=1131388790 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24760929, 0.318717, -0.07463451)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -402,14 +411,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_004" type="MeshInstance3D" parent="RigidBody3D5" unique_id=133151604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036914915, -0.041143358, -0.004787892)
 mesh = SubResource("ArrayMesh_0c01r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D5" unique_id=434092946]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036914915, -0.041143358, -0.004787892)
 shape = SubResource("ConvexPolygonShape3D_baj1c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D5" unique_id=1038840221 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24760929, -0.318717, 0.07463451)
 collision_layer = 8
 collision_mask = 8
 
@@ -418,6 +428,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.07
 shape = SubResource("ConvexPolygonShape3D_baj1c")
 
 [node name="RigidBody3D6" type="RigidBody3D" parent="." unique_id=430622538 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25030258, 0.27433053, 0)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -427,14 +438,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_005" type="MeshInstance3D" parent="RigidBody3D6" unique_id=969656783]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24586841, 0.32760626, -0.047675055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0044341683, 0.053275734, -0.047675055)
 mesh = SubResource("ArrayMesh_hhxlx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D6" unique_id=1890964455]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24586841, 0.32760626, -0.047675055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0044341683, 0.053275734, -0.047675055)
 shape = SubResource("ConvexPolygonShape3D_w1yup")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D6" unique_id=1402815284 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25030258, -0.27433053, 0)
 collision_layer = 8
 collision_mask = 8
 
@@ -443,6 +455,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24586841, 0.32760626, -0.04
 shape = SubResource("ConvexPolygonShape3D_w1yup")
 
 [node name="RigidBody3D7" type="RigidBody3D" parent="." unique_id=126489978 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2561662, -0.270742, -0.02587676)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -452,14 +465,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_006" type="MeshInstance3D" parent="RigidBody3D7" unique_id=782008614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1773881, -0.2712244, -0.0014436431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07877809, -0.0004824102, 0.024433117)
 mesh = SubResource("ArrayMesh_htb0x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D7" unique_id=1624872268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1773881, -0.2712244, -0.0014436431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07877809, -0.0004824102, 0.024433117)
 shape = SubResource("ConvexPolygonShape3D_2gvmt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D7" unique_id=771179087 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2561662, 0.270742, 0.02587676)
 collision_layer = 8
 collision_mask = 8
 
@@ -468,6 +482,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1773881, -0.2712244, -0.00
 shape = SubResource("ConvexPolygonShape3D_2gvmt")
 
 [node name="RigidBody3D8" type="RigidBody3D" parent="." unique_id=1291481842 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2043289, -0.4705878, 0.07503782)
 collision_layer = 21
 collision_mask = 21
 continuous_cd = true
@@ -477,14 +492,15 @@ script = ExtResource("2_keos2")
 intensityOffset = 10.0
 
 [node name="Door2_cell_007" type="MeshInstance3D" parent="RigidBody3D8" unique_id=1735016909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1575998, -0.29122543, 0.07669473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046729088, 0.17936236, 0.0016569048)
 mesh = SubResource("ArrayMesh_6t7vm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D8" unique_id=357842860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1575998, -0.29122543, 0.07669473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046729088, 0.17936236, 0.0016569048)
 shape = SubResource("ConvexPolygonShape3D_lx8gb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D8" unique_id=1556773681 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2043289, 0.4705878, -0.07503782)
 collision_layer = 8
 collision_mask = 8
 
