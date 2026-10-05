@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bfpqkrhypfyav"]
+
+[ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="1_q60ij"]
+[ext_resource type="ArrayMesh" uid="uid://diop3o142pm1n" path="res://table.obj" id="2_vc8no"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b86mc"]
+albedo_color = Color(0.32305145, 0.18814602, 1.92523e-07, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oayfh"]
+size = Vector3(2.9992523, 1.0135498, 1.1011353)
+
+[node name="Table" type="RigidBody3D" unique_id=1970238669 groups=["collidable", "kickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14592284, -0.46646845, 0)
+mass = 6.096
+linear_damp = 20.0
+angular_damp = 20.0
+script = ExtResource("1_q60ij")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=421838347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02037251, 0, 0)
+material_override = SubResource("StandardMaterial3D_b86mc")
+mesh = ExtResource("2_vc8no")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2143024435 groups=["scannable"]]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1251104679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36288452, 0, 0)
+shape = SubResource("BoxShape3D_oayfh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=437589973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38669586, 0.0067749023, 0.0061950684)
+shape = SubResource("BoxShape3D_oayfh")

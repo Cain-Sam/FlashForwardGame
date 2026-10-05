@@ -14,7 +14,6 @@ func kicked(direction, intensity):
 	
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var contact_count = state.get_contact_count()
-	
 	for i in range(contact_count):
 		var total_impulse = Vector3.ZERO
 		var impulse = state.get_contact_impulse(i)
