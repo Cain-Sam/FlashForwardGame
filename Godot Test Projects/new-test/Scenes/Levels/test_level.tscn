@@ -874,11 +874,11 @@ transform = Transform3D(-9.725783e-08, 0, 0.255, 0, 2.11, 0, -2.225, 0, -1.11464
 transform = Transform3D(-9.725783e-08, 0, -0.255, 0, 2.085, 0, 2.225, 0, -1.1146404e-08, 36.681305, -7.009079, 5.550673)
 
 [node name="Rat" parent="." unique_id=1567692786 instance=ExtResource("10_mvu5i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.748438, 0.23473096, 0.9697504)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 37.217194, -8.074825, -3.6641097)
 
 [node name="Triangle" parent="." unique_id=1333968183 instance=ExtResource("11_xxcax")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.192374, 0.23560143, 1.1428494)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 37.19994, -8.072754, -3.989685)
 
 [node name="Table" parent="." unique_id=1970238669 instance=ExtResource("12_xxcax")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.0670673, 0.5017177, -3.8401077)
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 37.192474, -8.290968, -3.8401077)
 mass = 4.138
