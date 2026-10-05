@@ -1,21 +1,23 @@
 [gd_scene format=3 uid="uid://b1nwamhsw7vb6"]
 
 [ext_resource type="Shader" uid="uid://bwpkd0xj0fpo3" path="res://shaders/fog_machine.gdshader" id="1_vtqn0"]
-[ext_resource type="Texture2D" uid="uid://cio2dul0cgjh3" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Milky/Milky_12-512x512.png" id="2_b080v"]
+[ext_resource type="Texture2D" uid="uid://d24ltuahk8nfg" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Super Noise/SuperNoise_13-512x512.png" id="2_7rys1"]
 
 [sub_resource type="Gradient" id="Gradient_47ghl"]
-offsets = PackedFloat32Array(0.0035211267, 0.21830986, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.84917414, 0.84903175, 0.8520218, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.60679615, 0.98058254)
+colors = PackedColorArray(0, 0, 0, 1, 0.84917414, 0.84903175, 0.8520218, 1, 0.9529412, 1, 0.9764706, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_arkox"]
 gradient = SubResource("Gradient_47ghl")
+fill_from = Vector2(0.021367522, 0.08547009)
+fill_to = Vector2(1, 0.07692308)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4vich"]
 shader = ExtResource("1_vtqn0")
-shader_parameter/noise_texture = ExtResource("2_b080v")
-shader_parameter/noise_scale = 0.06
-shader_parameter/flatness = 5.0
-shader_parameter/density = 3.0
+shader_parameter/noise_texture = ExtResource("2_7rys1")
+shader_parameter/noise_scale = 0.05
+shader_parameter/flatness = 10.0
+shader_parameter/density = 10.0
 shader_parameter/gradiant = SubResource("GradientTexture2D_arkox")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fuo8s"]
@@ -42,4 +44,5 @@ environment = SubResource("Environment_vtqn0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1471511936]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4.197999, 0)
+visible = false
 shadow_enabled = true

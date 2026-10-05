@@ -2,10 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/Player/player.tscn" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://i2f6t1bssoik" path="res://Scenes/VFX/water.tscn" id="2_l7ek2"]
+[ext_resource type="Script" uid="uid://dppljdd406dtd" path="res://Scripts/fog_switch.gd" id="2_rkdv3"]
 [ext_resource type="PackedScene" uid="uid://dyhrmfcfolehn" path="res://Scenes/Scenery/curtain.tscn" id="2_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
+[ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/VFX/fog_machine.tscn" id="4_xnpcw"]
+[ext_resource type="Texture2D" uid="uid://by8oc5godxb5k" path="res://Textures/CarpetTest.png" id="5_3bggx"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
+[ext_resource type="PackedScene" uid="uid://cxnx0wigyvhmm" path="res://vfx/shitty_colorful_vfx_cloud.tscn" id="5_xnpcw"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="PackedScene" uid="uid://dg3ekcx461lgr" path="res://Scenes/Lights/FlatLight.tscn" id="7_xq3o0"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/Scenery/door_rigid.tscn" id="9_7rivk"]
@@ -15,10 +19,15 @@
 [sub_resource type="Environment" id="Environment_oayfh"]
 background_mode = 1
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0069
+volumetric_fog_density = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akkqd"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1e8r0"]
+albedo_color = Color(0.3995327, 0.021056175, 0.087640636, 1)
+metallic = 0.08
+roughness = 0.72
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgl4d"]
 albedo_color = Color(0.5137255, 0.5019608, 0, 1)
@@ -29,6 +38,75 @@ albedo_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eglq2"]
 transparency = 1
 albedo_color = Color(0.4862745, 0.4862745, 0.4862745, 0.27058825)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p5x4p"]
+size = Vector3(0.13366699, 0.041015625, 0.22027588)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4tft1"]
+size = Vector3(0.07176781, 0.006225586, 0.15520573)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5x4p"]
+
+[sub_resource type="Animation" id="Animation_rkdv3"]
+resource_name = "Lights_on"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.002506256, 0.024955988, 0.0011668205), Vector3(-0.002506256, 0.024955988, 0.0011668205)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.11479438, -1.1408844e-07, -2.6608932e-08), Vector3(0.09264699, -1.0483666e-07, -4.022485e-08)]
+}
+
+[sub_resource type="Animation" id="Animation_xnpcw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.002506256, 0.024955988, 0.0011668205)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.11479438, -1.1408844e-07, -2.6608932e-08)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bggx"]
+_data = {
+&"Lights_on": SubResource("Animation_rkdv3"),
+&"RESET": SubResource("Animation_xnpcw")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yvf5"]
 albedo_color = Color(0, 0, 0, 1)
@@ -56,10 +134,135 @@ albedo_color = Color(0.5176471, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtjkg"]
 albedo_color = Color(0.54837716, 0.28776598, 0.09655345, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0212m"]
-albedo_color = Color(1, 0.74509805, 0.47058824, 1)
+[sub_resource type="Animation" id="Animation_lqheo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5777588, 0.85372734, -0.020935059)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(12.49585, 0.073329926, 19.603638)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v608p"]
+[sub_resource type="Animation" id="Animation_akmmg"]
+resource_name = "fog_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5777588, 0.85372734, -0.020935059), Vector3(1.5777588, 0.85372734, 9.780384)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(12.49585, 0.073329926, 19.603638), Vector3(12.49585, 0.073329926, 0.001)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.94),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_avjiw"]
+resource_name = "fog_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.026666641, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5777588, 0.85372734, 9.780384), Vector3(1.5777588, 0.85372734, -0.020935059)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.026666641, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(12.49585, 0.073329926, 0.001), Vector3(12.49585, 0.073329926, 19.603638)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4v231"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1jhc"]
+_data = {
+&"RESET": SubResource("Animation_lqheo"),
+&"fog_in": SubResource("Animation_akmmg"),
+&"fog_out": SubResource("Animation_avjiw"),
+&"new_animation": SubResource("Animation_4v231")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0212m"]
 albedo_color = Color(1, 0.74509805, 0.47058824, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j4h4"]
@@ -85,8 +288,8 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y42of"]
 albedo_color = Color(1, 0.74509805, 0.47058824, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw8nc"]
-albedo_color = Color(0.23237136, 3.6471076e-05, 0.23236945, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kklc1"]
+albedo_texture = ExtResource("5_3bggx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p51s7"]
 albedo_color = Color(0.23137255, 0, 0.23137255, 1)
@@ -174,6 +377,7 @@ size = Vector3(1.8876953, 2.8468018, 2.6492004)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.983769, -0.4764343, -7.496645)
 use_collision = true
 size = Vector3(24.27309, 0.9736328, 38.43449)
+material = SubResource("StandardMaterial3D_1e8r0")
 
 [node name="Wall2" type="CSGBox3D" parent="Building" unique_id=850711025]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.985653, 4.1833086, -7.6088686)
@@ -213,7 +417,7 @@ operation = 2
 size = Vector3(1.8876953, 2.8468018, 2.8721924)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Building/Floor3" unique_id=1115027991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07753897, 0.35424042, -4.900368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07655239, 0.35453272, -4.900368)
 operation = 2
 size = Vector3(6.2493668, 2.8468018, 2.8091125)
 
@@ -222,6 +426,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45333433, -0.40739298, -5.
 use_collision = true
 size = Vector3(8.857849, 0.04647827, 4.0374746)
 material = SubResource("StandardMaterial3D_eglq2")
+
+[node name="fog switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=847103235 groups=["kickable"]]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -3.3342671, 0.44929385, -4.0728216)
+mesh = SubResource("BoxMesh_p5x4p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
+transform = Transform3D(0.99998623, 3.9676888e-08, -1.1333597e-07, -2.6433437e-08, 0.99341804, 0.11454084, 1.17134675e-07, -0.11454239, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+mesh = SubResource("BoxMesh_4tft1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895 groups=["kickable"]]
+script = ExtResource("2_rkdv3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/fog switch/StaticBody3D" unique_id=1985184925]
+transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
+shape = SubResource("BoxShape3D_p5x4p")
+
+[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/fog switch" unique_id=203406468]
+libraries/ = SubResource("AnimationLibrary_3bggx")
 
 [node name="Floor4" type="CSGBox3D" parent="Building" unique_id=380427403]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -11.135753, 5.006458, -7.615712)
@@ -315,6 +537,17 @@ use_collision = true
 size = Vector3(8.593271, 1.3754883, 19.854061)
 material = SubResource("StandardMaterial3D_dtjkg")
 
+[node name="FogVolume" parent="Building/Wall5" unique_id=308469915 instance=ExtResource("4_xnpcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5777588, 0.85372734, -0.020935059)
+visible = false
+size = Vector3(12.49585, 0.073329926, 19.603638)
+
+[node name="FogAnimation" type="AnimationPlayer" parent="Building/Wall5/FogVolume" unique_id=620147478]
+libraries/ = SubResource("AnimationLibrary_j1jhc")
+
+[node name="Node3D" parent="Building/Wall5/FogVolume" unique_id=352861206 instance=ExtResource("5_xnpcw")]
+transform = Transform3D(3.8400247, 0, 0, 0, 1, 0, 0, 0, 0.78763217, -3.3837109, -0.31264734, -0.41810322)
+
 [node name="Floor10" type="CSGBox3D" parent="Building" unique_id=2056361274]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 25.463537, 0.78943396, 7.3116198)
 use_collision = true
@@ -335,7 +568,6 @@ size = Vector3(2.8793945, 2.8468018, 3.8722248)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 25.43601, 0.78943396, -22.672367)
 use_collision = true
 size = Vector3(44.726112, 0.9736328, 20.050222)
-material = SubResource("StandardMaterial3D_v608p")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Building/Floor11" unique_id=1725453354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78113, 0.03280258, -6.540936)
@@ -367,6 +599,15 @@ size = Vector3(5.007019, 2.8468018, 2.8721924)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.858404, 4.911392, -7.6404057)
 use_collision = true
 size = Vector3(0.6878023, 0.9736328, 30.839039)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Building/Wall6" unique_id=1143513000]
+transform = Transform3D(0.9999888, -2.0715223e-10, 0.0047390913, -0.0047390913, -4.3710894e-08, 0.9999888, 1.1556078e-17, -1, -4.3711385e-08, 0, -0.2772789, 0)
+light_color = Color(0.994615, 0.8848006, 0.8095447, 1)
+light_energy = 2.392
+light_volumetric_fog_energy = 4.478
+spot_range = 21.243
+spot_attenuation = -0.59
+spot_angle = 16.3
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Building" unique_id=546928699]
 transform = Transform3D(-1.5561254e-07, 0, 2.935, 0, 1.365, 0, -3.56, 0, -1.2829292e-07, 34.623604, -7.88873, -17.358385)
@@ -420,7 +661,8 @@ size = Vector3(3.4152746, 0.9736328, 30.839039)
 material = SubResource("StandardMaterial3D_y42of")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Building" unique_id=1039250600]
-transform = Transform3D(0.98357147, 0.18051915, 0, -0.18051915, 0.98357147, 0, 0, 0, 1, 26.215895, -5.067625, -24.939291)
+transform = Transform3D(0.98357147, 0.18051915, 0, -0.18051915, 0.98357147, 0, 0, 0, 1, 26.215902, -5.067624, -24.939516)
+material_override = SubResource("StandardMaterial3D_kklc1")
 use_collision = true
 size = Vector3(47.183105, 1.6826172, 3.5148926)
 
@@ -443,7 +685,6 @@ size = Vector3(0.18325663, 0.11328125, 30.142742)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 17.232058, 0.7901659, -26.822853)
 use_collision = true
 size = Vector3(76.67643, 0.9736328, 20.58489)
-material = SubResource("StandardMaterial3D_sw8nc")
 
 [node name="Floor13" type="CSGBox3D" parent="Building" unique_id=1549457326]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 17.232058, 0.7901659, 11.9256115)
