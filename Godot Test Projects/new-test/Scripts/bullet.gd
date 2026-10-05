@@ -42,7 +42,7 @@ func stick() -> void:
 	global_position = collision
 	bulletFaceUp(collision, coll_normal)
 	checkForObjectReaction(hit_object)
-	#removeCollision()
+	removeCollision()
 	mergeWithObject(hit_object)
 		
 func bulletTimeout(body):
