@@ -2,7 +2,7 @@ extends RigidBody3D
 @export var ON: bool = true
 @export var currentPower: float = 1
 @export var maxPower: float = 1
-@export var bulbEmission = 15
+@export var bulbEmission: float = 15
 @export var lightEnergy: float = 5 
 @export var lightRange = 10
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func suckLight():
