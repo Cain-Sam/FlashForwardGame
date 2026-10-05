@@ -19,6 +19,7 @@ extends Camera3D
 @onready var fail: AudioStreamPlayer = $IlluFail
 @onready var suck_cast: RayCast3D = $"../../../../SuckCast"
 @onready var player: CharacterBody3D = $"../../../../.."
+@onready var scanIndicator: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/Scan
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -35,6 +36,7 @@ var bulletmesh = null
 var shotgun_in_use = true;
 var alt_fire = false;
 var lightMode = false;
+var scanMode = false;
 var lightBulb
 var lightSource
 var playerLight
@@ -87,22 +89,17 @@ func _process(delta):
 				suckLight()
 					
 	if Input.is_action_pressed("paint"):
-		if !animation_player.is_playing():
+		if !animation_player.is_playing() && !scanMode:
 			fireDraw()
 		
 	if vision.is_colliding() || scanSelected:
-		if !scanSelected: 
+		if !scanSelected && scanMode: 
 			if vision.get_collider() != null:
 				if vision.get_collider().is_in_group("scannable") && !lightMode:
 					showScannableObjectIsSelectable()
 		
-		# Change scannable object color back when not looking at it
 		elif !vision.is_colliding():
-			if colorStore == null:
-				scanCollisionMesh.material_override = null
-			else:	
-				scanCollisionMesh.material_override.albedo_color = colorStore
-			scanSelected = false
+			deselectScanObject()
 			
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*sway_x_multiplyer
@@ -111,13 +108,13 @@ func sway(sway_amount):
 func _input(event):
 	
 	if(event.is_action_pressed("interact")): 
-		if scanSelected:
+		if scanSelected && is_instance_valid(scanCollisionMesh):
 			bulletmesh = scanCollisionMesh
 			bullet_preview.mesh = scanCollisionMesh.mesh
 			scan.play()
 	
 	if(event.is_action_pressed("shoot")):
-		if alt_fire:
+		if alt_fire || scanMode:
 			return
 		elif GlobalVariables.lightAmmo < 1 && !GlobalVariables.infinite_ammo:
 			fail.play()
@@ -126,9 +123,10 @@ func _input(event):
 			fireGun()
 			if GlobalVariables.lightAmmo > 0:
 				GlobalVariables.lightAmmo -= 1
-			
-	if(event.is_action_pressed("reload")):
-		animation_player.play("reload")
+				
+	# Commenting this out since we might need it, but honestly probably not		
+	#if(event.is_action_pressed("reload")):
+		#animation_player.play("reload")
 		
 	if(event.is_action_pressed("use")):
 		if shotgun_in_use:
@@ -139,9 +137,10 @@ func _input(event):
 			animation_player.play("pull_up")
 			
 	if(event.is_action_pressed("kick")):
-		animation_player_2.play("kick")
-		if kick_cast.is_colliding():
-			checkKickCollision()
+		if !scanMode && !scanSelected:
+			animation_player_2.play("kick")
+			if kick_cast.is_colliding():
+				checkKickCollision()
 			
 	if(event.is_action_pressed("light")):
 		if lightMode:
@@ -189,6 +188,15 @@ func _input(event):
 		else:
 			alt_fire = true
 			altFire.visible = true	
+			
+	if(event.is_action_pressed("scan")):
+		if scanMode:
+			scanMode = false
+			scanIndicator.visible = false
+			deselectScanObject()
+		else:
+			scanMode = true
+			scanIndicator.visible = true
 		
 	if(event.is_action_pressed("infiniteAmmo")):
 		if GlobalVariables.infinite_ammo:
@@ -375,5 +383,13 @@ func showScannableObjectIsSelectable():
 	else:
 		colorStore = null
 	scanCollisionMesh.material_override = StandardMaterial3D.new()
-	scanCollisionMesh.material_override.albedo_color = Color(1,0,0)
+	scanCollisionMesh.material_override.albedo_color = Color(1.0, 0.0, 0.0, 0.1).darkened(0.5)
 	scanSelected = true
+	
+func deselectScanObject():
+	if is_instance_valid(scanCollisionMesh):
+		if colorStore == null:
+			scanCollisionMesh.material_override = null
+		else:	
+			scanCollisionMesh.material_override.albedo_color = colorStore
+		scanSelected = false

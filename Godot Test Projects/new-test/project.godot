@@ -185,6 +185,7 @@ infiniteAmmo={
 
 3d_physics/layer_1="Main Layer"
 3d_physics/layer_2="Player Layer"
+3d_physics/layer_3="Kick Layer"
 3d_physics/layer_4="Scannable"
 3d_physics/layer_5="Paint-affected Layer"
 

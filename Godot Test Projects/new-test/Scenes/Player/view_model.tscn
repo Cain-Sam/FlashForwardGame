@@ -231,6 +231,9 @@ top_radius = 0.03515625
 bottom_radius = 0.03515625
 height = 0.17803955
 
+[sub_resource type="BoxMesh" id="BoxMesh_787l6"]
+size = Vector3(2.0054932, 0.053222656, 1.8068848)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rapw5"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_btj6h"]
@@ -6094,6 +6097,15 @@ material_override = SubResource("StandardMaterial3D_rueqf")
 mesh = SubResource("CylinderMesh_1e8r0")
 script = ExtResource("3_rueqf")
 
+[node name="Scan" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=898277441]
+transform = Transform3D(-0.0021704824, 0.29991803, 0.0054610884, -0.000785473, -0.006832204, 0.23995091, 0.29997292, 0.0021519067, 0.00066775613, 0.53479064, 0.20481035, 0.01002004)
+visible = false
+layers = 2
+material_override = SubResource("StandardMaterial3D_rueqf")
+transparency = 0.77
+mesh = SubResource("BoxMesh_787l6")
+script = ExtResource("3_rueqf")
+
 [node name="right_hand" type="Node3D" parent="fps_rig/shotgun" unique_id=561650335]
 transform = Transform3D(-0.009342853, -0.03398465, -0.0007564398, 0.033726927, -0.009392908, -0.0009941725, 0.0007374431, -0.0009766117, 0.035884872, 0.120732844, -0.07731636, -0.2640478)
 
@@ -6873,7 +6885,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988171, -0.14587685, -0.5836158, 0.5931613, 0.029347148, 0.804546, -0.1002375, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881704, -0.14587685, -0.5836158, 0.5931612, 0.029347148, 0.804546, -0.100237496, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
