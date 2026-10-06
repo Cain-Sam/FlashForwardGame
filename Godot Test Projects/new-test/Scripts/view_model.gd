@@ -19,7 +19,8 @@ extends Camera3D
 @onready var fail: AudioStreamPlayer = $IlluFail
 @onready var suck_cast: RayCast3D = $"../../../../SuckCast"
 @onready var player: CharacterBody3D = $"../../../../.."
-@onready var scanIndicator: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/Scan
+#base Scan @onready var scanIndicator: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/Scan #base Scan
+@onready var scanIndicator: AreaLight3D = $fps_rig/shotgun/Shotgun_Model/LightScan
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -381,7 +382,7 @@ func showScannableObjectIsSelectable():
 	else:
 		colorStore = null
 	scanCollisionMesh.material_override = StandardMaterial3D.new()
-	scanCollisionMesh.material_override.albedo_color = Color(1.0, 0.0, 0.0, 0.1).darkened(0.5)
+	scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
 	scanSelected = true
 	
 func deselectScanObject():
