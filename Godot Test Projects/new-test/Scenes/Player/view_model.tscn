@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dg61nattarlwt" path="res://Audio/shootsound.mp3" id="4_6hgl2"]
 [ext_resource type="Texture2D" uid="uid://7umq2frhdac2" path="res://Textures/Digital.png" id="6_7oct0"]
 [ext_resource type="AudioStream" uid="uid://ilvyqkwvke38" path="res://Audio/rat_impact.mp3" id="6_53sl3"]
+[ext_resource type="Script" uid="uid://cjrvellg3vije" path="res://Scripts/light_scan.gd" id="6_787l6"]
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="7_4n8fr"]
 [ext_resource type="Texture2D" uid="uid://dtns37w7ifete" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Techno/Techno_05-512x512.png" id="7_x4mhi"]
 
@@ -233,6 +234,18 @@ height = 0.17803955
 
 [sub_resource type="BoxMesh" id="BoxMesh_787l6"]
 size = Vector3(2.0054932, 0.053222656, 1.8068848)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
+transparency = 1
+albedo_color = Color(0.8352941, 0.8235294, 0.84705883, 0.047058824)
+albedo_texture = ExtResource("6_7oct0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_p5x4p"]
+material = SubResource("StandardMaterial3D_pqdas")
+size = Vector2(0.9, 0.8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_787l6"]
+points = PackedVector3Array(0.45, 0.4, 0, 0.45, -0.4, 0, -0.45, 0.4, 0, -0.45, -0.4, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rapw5"]
 
@@ -6098,13 +6111,34 @@ mesh = SubResource("CylinderMesh_1e8r0")
 script = ExtResource("3_rueqf")
 
 [node name="Scan" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=898277441]
-transform = Transform3D(-0.0021704824, 0.29991803, 0.0054610884, -0.000785473, -0.006832204, 0.23995091, 0.29997292, 0.0021519067, 0.00066775613, 0.53479064, 0.20481035, 0.01002004)
+transform = Transform3D(-0.002170519, 0.29991803, 0.00546146, -0.00078548986, -0.0068323514, 0.23995091, 0.29997274, 0.0021522315, 0.0006678376, 0.9541719, 0.19296008, 0.0100355)
 visible = false
 layers = 2
-material_override = SubResource("StandardMaterial3D_rueqf")
 transparency = 0.77
 mesh = SubResource("BoxMesh_787l6")
-script = ExtResource("3_rueqf")
+
+[node name="LightScan" type="AreaLight3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=1376685206]
+transform = Transform3D(-0.0002820884, -0.00701401, -0.8353591, 0.01984282, 1.0037693, -0.03085728, 0.9998054, -0.019734826, -0.00020432295, 0.2627177, 0.22932558, 0.000897415)
+visible = false
+light_color = Color(1, 0.97542137, 0.9817551, 1)
+light_energy = 2.951
+light_indirect_energy = 1.977
+light_volumetric_fog_energy = 4.298
+light_size = 0.561
+shadow_enabled = true
+area_range = 0.011
+area_attenuation = 2.679
+area_size = Vector2(0.98600686, 0.8047637)
+area_texture = ExtResource("6_7oct0")
+script = ExtResource("6_787l6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model/LightScan" unique_id=1800662767]
+transform = Transform3D(1, 1.7935236e-08, -1.0477379e-09, -7.421477e-10, 1, 0, -1.1641532e-09, 0, 1, -0.0032059178, 0.006116193, -0.0007494092)
+mesh = SubResource("QuadMesh_p5x4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fps_rig/shotgun/Shotgun_Model/LightScan/MeshInstance3D" unique_id=739025289]
+transform = Transform3D(1, -6.8394e-10, 1.1641532e-10, -7.421477e-10, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_787l6")
 
 [node name="right_hand" type="Node3D" parent="fps_rig/shotgun" unique_id=561650335]
 transform = Transform3D(-0.009342853, -0.03398465, -0.0007564398, 0.033726927, -0.009392908, -0.0009941725, 0.0007374431, -0.0009766117, 0.035884872, 0.120732844, -0.07731636, -0.2640478)
@@ -6885,7 +6919,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.79881704, -0.14587685, -0.5836158, 0.5931612, 0.029347148, 0.804546, -0.100237496, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.798817, -0.14587685, -0.5836158, 0.59316117, 0.029347148, 0.804546, -0.10023749, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
