@@ -31,7 +31,7 @@ var bullet = load("res://Scenes/Bullets/bullet.tscn")
 var drawMaterial = load("res://Scenes/Bullets/drawmaterial.tscn")
 var bullet_instance
 var scanSelected: bool = false
-var colorStore
+var materialStore
 var scanCollisionMesh
 var bulletmesh = null
 
@@ -41,6 +41,7 @@ var lightBulb
 var lightSource
 var playerLight
 var hold_time = 0
+var mode: String = "gun"
 
 #endregion
 
@@ -68,7 +69,7 @@ func _process(delta):
 		playerLight.rotate(Vector3.UP, 0.01)
 	
 	# This is the feature where a player can place a light that we don't use
-	if GlobalVariables.get_mode() == "lightMode" && is_instance_valid(lightBulb):
+	if mode == "light" && is_instance_valid(lightBulb):
 		playerHoldingBulb()
 	
 	# Sucking Functionality
@@ -79,16 +80,16 @@ func _process(delta):
 	if Input.is_action_pressed("shoot") && shotgun_in_use:
 		
 		# If we are in suck mode and pointed at a light
-		if GlobalVariables.get_mode() == "vaccumMode" && suck_cast.is_colliding():
+		if mode == "vaccum" && suck_cast.is_colliding():
 			suckBullets(delta)
 			if !vaccumSound.playing:
 				vaccumSound.play()
 					
-		if GlobalVariables.get_mode() == "paintMode":
+		if mode == "paint":
 			if !animation_player.is_playing():
 				fireDraw()
 		
-	if GlobalVariables.get_mode() == "scanMode" && shotgun_in_use:
+	if mode == "scan" && shotgun_in_use:
 		checkForScannedObject()
 			
 func sway(sway_amount):
@@ -109,10 +110,10 @@ func _input(event):
 	
 	#Other shoot modes with held buttons handled in process
 	if(event.is_action_pressed("shoot")) && shotgun_in_use:
-		if GlobalVariables.get_mode() == "gunMode":
+		if mode == "gun":
 			gunAndAmmoLogic()
 		
-		if GlobalVariables.get_mode() == "scanMode":
+		if mode == "scan":
 			if scanSelected && is_instance_valid(scanCollisionMesh):
 				bulletmesh = scanCollisionMesh
 				bullet_preview.mesh = scanCollisionMesh.mesh
@@ -133,7 +134,7 @@ func _input(event):
 		changeMode()
 			
 	if(event.is_action_pressed("kick")):
-		if !GlobalVariables.get_mode() == "scanMode" && !scanSelected:
+		if !mode == "scan" && !scanSelected:
 			animation_player_2.play("kick")
 			if kick_cast.is_colliding():
 				checkKickCollision()
@@ -361,23 +362,19 @@ func suckLight():
 		if lightSuck:
 			increaseAmmo()
 			
-func showScannableObjectIsSelectable():
+func saveScannbleObject():
 	scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
 	if is_instance_valid(scanCollisionMesh.material_override):
 		var unique_material = scanCollisionMesh.material_override.duplicate()
-		colorStore = unique_material
-		scanCollisionMesh.material_override = unique_material
-	else:
-		colorStore = null
-	scanCollisionMesh.material_override = StandardMaterial3D.new()
+		materialStore = unique_material
 	scanSelected = true
 	
 func deselectScanObject():
 	if is_instance_valid(scanCollisionMesh):
-		if colorStore == null:
+		if materialStore == null:
 			scanCollisionMesh.material_override = null
 		else:	
-			scanCollisionMesh.material_override = colorStore
+			scanCollisionMesh.material_override = materialStore
 		scanSelected = false
 		
 func changeMode():
@@ -385,14 +382,19 @@ func changeMode():
 	if !shotgun_in_use:
 		return
 	if GlobalVariables.get_mode() == "gunMode":
+		mode = "gun"
 		return
 	if GlobalVariables.get_mode() == "paintMode":
+		mode = "paint"
 		altFire.visible = true
 	if GlobalVariables.get_mode() == "scanMode":
+		mode = "scan"
 		scanIndicator.visible = true
 	if GlobalVariables.get_mode() == "lightMode":
+		mode = "light"
 		equipLight()
 	if GlobalVariables.get_mode() == "vaccumMode":
+		mode = "vaccum"
 		vaccum.visible = true
 		
 func resetGun():
@@ -436,8 +438,11 @@ func checkForScannedObject():
 	if !vision.is_colliding():
 		deselectScanObject()
 	elif vision.is_colliding() || scanSelected:
-		if scanSelected:
-			scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
+		if !scanSelected:
+			saveScannbleObject()
 		else:
 			if vision.get_collider() != null:
-				showScannableObjectIsSelectable()
+				if !is_instance_valid(scanCollisionMesh.material_override):
+					materialStore = null
+					scanCollisionMesh.material_override = StandardMaterial3D.new()
+				scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
