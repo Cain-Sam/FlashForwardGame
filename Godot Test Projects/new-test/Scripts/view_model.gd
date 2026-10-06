@@ -21,6 +21,8 @@ extends Camera3D
 @onready var player: CharacterBody3D = $"../../../../.."
 #base Scan @onready var scanIndicator: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/Scan #base Scan
 @onready var scanIndicator: AreaLight3D = $fps_rig/shotgun/Shotgun_Model/LightScan
+@onready var vaccumSound: AudioStreamPlayer = $Vaccum
+@onready var vaccum: MeshInstance3D = $fps_rig/shotgun/Shotgun_Model/Vaccum
 
 #Bullets
 @onready var barrel_raycast: RayCast3D = $barrel_raycast
@@ -35,9 +37,6 @@ var bulletmesh = null
 
 #Gun
 var shotgun_in_use = true;
-var alt_fire = false;
-var lightMode = false;
-var scanMode = false;
 var lightBulb
 var lightSource
 var playerLight
@@ -69,39 +68,28 @@ func _process(delta):
 		playerLight.rotate(Vector3.UP, 0.01)
 	
 	# This is the feature where a player can place a light that we don't use
-	if lightMode && is_instance_valid(lightBulb):
+	if GlobalVariables.get_mode() == "lightMode" && is_instance_valid(lightBulb):
 		playerHoldingBulb()
 	
 	# Sucking Functionality
 	if Input.is_action_just_released("shoot"):
 		hold_time = 0
-	if Input.is_action_pressed("shoot"):
+		vaccumSound.stop()
+		
+	if Input.is_action_pressed("shoot") && shotgun_in_use:
+		
 		# If we are in suck mode and pointed at a light
-		if alt_fire && suck_cast.is_colliding():
-			if is_instance_valid(suck_cast.get_collider()):
-				hold_time += delta
-				for child in suck_cast.get_collider().get_children():
-					if child.is_in_group("bullet") && !child.is_in_group("paint"):
-						suckBullet(child)
-
-			# This is formatted weird to make sure we check if we are still colliding each frame. It stops crashes.
-			if is_instance_valid(suck_cast.get_collider()) && suck_cast.get_collider().is_in_group("light"):
-				hold_time += delta
-				suckLight()
+		if GlobalVariables.get_mode() == "vaccumMode" && suck_cast.is_colliding():
+			suckBullets(delta)
+			if !vaccumSound.playing:
+				vaccumSound.play()
 					
-	if Input.is_action_pressed("paint"):
-		if !animation_player.is_playing() && !scanMode:
-			fireDraw()
+		if GlobalVariables.get_mode() == "paintMode":
+			if !animation_player.is_playing():
+				fireDraw()
 		
-	if vision.is_colliding() || scanSelected:
-		if scanSelected:
-			scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
-		if !scanSelected && scanMode: 
-			if vision.get_collider() != null && !lightMode:
-				showScannableObjectIsSelectable()
-		
-		elif !vision.is_colliding():
-			deselectScanObject()
+	if GlobalVariables.get_mode() == "scanMode" && shotgun_in_use:
+		checkForScannedObject()
 			
 func sway(sway_amount):
 	fps_rig.position.x -= sway_amount.x*sway_x_multiplyer
@@ -109,23 +97,28 @@ func sway(sway_amount):
 
 func _input(event):
 	
-	if(event.is_action_pressed("interact")): 
-		if scanSelected && is_instance_valid(scanCollisionMesh):
-			bulletmesh = scanCollisionMesh
-			bullet_preview.mesh = scanCollisionMesh.mesh
-			scan.play()
+	if(event.is_action_pressed("swap_mode")): 
+		if GlobalVariables.modeIndex == GlobalVariables.playerModeList.size() - 1:
+			GlobalVariables.modeIndex = 0
+		else:
+			GlobalVariables.modeIndex += 1
+		changeMode()
 	
-	if(event.is_action_pressed("shoot")):
-		if alt_fire || scanMode:
-			return
-		elif GlobalVariables.lightAmmo < 1 && !GlobalVariables.infinite_ammo:
-			fail.play()
-		elif !animation_player.is_playing() && !alt_fire:
-			animateShoot()
-			fireGun()
-			if GlobalVariables.lightAmmo > 0:
-				GlobalVariables.lightAmmo -= 1
+	if(event.is_action_pressed("interact")): 
+		return
+	
+	#Other shoot modes with held buttons handled in process
+	if(event.is_action_pressed("shoot")) && shotgun_in_use:
+		if GlobalVariables.get_mode() == "gunMode":
+			gunAndAmmoLogic()
+		
+		if GlobalVariables.get_mode() == "scanMode":
+			if scanSelected && is_instance_valid(scanCollisionMesh):
+				bulletmesh = scanCollisionMesh
+				bullet_preview.mesh = scanCollisionMesh.mesh
+				scan.play()
 				
+		
 	# Commenting this out since we might need it, but honestly probably not		
 	#if(event.is_action_pressed("reload")):
 		#animation_player.play("reload")
@@ -134,28 +127,16 @@ func _input(event):
 		if shotgun_in_use:
 			shotgun_in_use = !shotgun_in_use
 			animation_player.play("put_away")
-		elif !shotgun_in_use && !lightMode:
+		elif !shotgun_in_use:
 			shotgun_in_use = !shotgun_in_use
 			animation_player.play("pull_up")
+		changeMode()
 			
 	if(event.is_action_pressed("kick")):
-		if !scanMode && !scanSelected:
+		if !GlobalVariables.get_mode() == "scanMode" && !scanSelected:
 			animation_player_2.play("kick")
 			if kick_cast.is_colliding():
 				checkKickCollision()
-			
-	if(event.is_action_pressed("light")):
-		if lightMode:
-			putLightAway()
-			if !shotgun_in_use:
-				shotgun_in_use = true
-				animation_player.play("pull_up")
-		else:
-			if shotgun_in_use:
-				shotgun_in_use = false
-				animation_player.play("put_away")
-				await animation_player.animation_finished
-			equipLight()
 		
 	if(event.is_action_pressed("scrollup")):
 		GlobalVariables.white = false
@@ -182,29 +163,34 @@ func _input(event):
 			GlobalVariables.darkenindex = 0
 		else:
 			GlobalVariables.darkenindex += 1
-	
-	if(event.is_action_pressed("swap_mode")):
-		if alt_fire:
-			alt_fire = false
-			altFire.visible = false
-		else:
-			alt_fire = true
-			altFire.visible = true	
 			
-	if(event.is_action_pressed("scan")):
-		if scanMode:
-			scanMode = false
-			scanIndicator.visible = false
-			deselectScanObject()
-		else:
-			scanMode = true
-			scanIndicator.visible = true
-		
+#region Hotkeys
+
 	if(event.is_action_pressed("infiniteAmmo")):
 		if GlobalVariables.infinite_ammo:
 			GlobalVariables.infinite_ammo = false;
 		else:
 			GlobalVariables.infinite_ammo = true;
+			
+	if(event.is_action_pressed("gun")):
+		GlobalVariables.modeIndex = 0
+		changeMode()
+		
+	if(event.is_action_pressed("paint")):
+		GlobalVariables.modeIndex = 1
+		changeMode()
+		
+	if(event.is_action_pressed("scan")):
+		GlobalVariables.modeIndex = 2
+		changeMode()
+		
+	if(event.is_action_pressed("light")):
+		GlobalVariables.modeIndex = 3
+		changeMode()
+		
+	if(event.is_action_pressed("vacuum")):
+		GlobalVariables.modeIndex = 4
+		changeMode()
 			
 	if(event.is_action_pressed("Hotkey1")):
 		GlobalVariables.white = true
@@ -228,7 +214,9 @@ func _input(event):
 	if(event.is_action_pressed("Hotkey6")):
 		GlobalVariables.white = false
 		GlobalVariables.colorindex = 32
-			
+
+#endregion
+
 func playerHoldingBulb():
 	playerLight.global_position = vision.to_global(vision.target_position)
 	lightBulb.transparency = non_placable_lightbulb_transparency
@@ -302,14 +290,12 @@ func kickMyHead():
 	get_tree().call_group("global_kick_events", "trigger_kick_effect")
 	
 func putLightAway():
-	lightMode = false
-	playerLight.queue_free()
+	if is_instance_valid(playerLight):
+		playerLight.queue_free()
 	playerLight = null 
 	lightBulb = null
 	
 func equipLight():
-	#Set Lightmode
-	lightMode = true
 	
 	#Create Instance of Light
 	playerLight = player_light.duplicate()
@@ -393,3 +379,66 @@ func deselectScanObject():
 		else:	
 			scanCollisionMesh.material_override = colorStore
 		scanSelected = false
+		
+func changeMode():
+	resetGun()
+	if !shotgun_in_use:
+		return
+	if GlobalVariables.get_mode() == "gunMode":
+		return
+	if GlobalVariables.get_mode() == "paintMode":
+		altFire.visible = true
+	if GlobalVariables.get_mode() == "scanMode":
+		scanIndicator.visible = true
+	if GlobalVariables.get_mode() == "lightMode":
+		equipLight()
+	if GlobalVariables.get_mode() == "vaccumMode":
+		vaccum.visible = true
+		
+func resetGun():
+	putLightAway()
+	putScanAway()
+	putVacuumAway()
+	putPaintAway()
+	
+func putScanAway():
+	scanIndicator.visible = false
+	deselectScanObject()
+	
+func putVacuumAway():
+	vaccum.visible = false
+
+func putPaintAway():
+	altFire.visible = false
+
+func gunAndAmmoLogic():
+	if GlobalVariables.lightAmmo < 1 && !GlobalVariables.infinite_ammo:
+		fail.play()
+	elif !animation_player.is_playing():
+		animateShoot()
+		fireGun()
+		if GlobalVariables.lightAmmo > 0:
+			GlobalVariables.lightAmmo -= 1
+
+func suckBullets(delta):
+	if is_instance_valid(suck_cast.get_collider()):
+		hold_time += delta
+		for child in suck_cast.get_collider().get_children():
+			if child.is_in_group("bullet") && !child.is_in_group("paint"):
+				suckBullet(child)
+
+	# This is formatted weird to make sure we check if we are still colliding each frame. It stops crashes.
+	if is_instance_valid(suck_cast.get_collider()) && suck_cast.get_collider().is_in_group("light"):
+		hold_time += delta
+		suckLight()
+
+func checkForScannedObject():
+	if vision.is_colliding() || scanSelected:
+		if scanSelected:
+			scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
+		else:
+			if vision.get_collider() != null:
+				showScannableObjectIsSelectable()
+		
+	elif !vision.is_colliding():
+		deselectScanObject()

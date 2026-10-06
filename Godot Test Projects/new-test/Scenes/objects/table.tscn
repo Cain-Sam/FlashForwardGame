@@ -13,15 +13,13 @@ size = Vector3(2.9992523, 1.0135498, 1.1011353)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38866538, -0.41860527, 0)
 collision_layer = 5
 collision_mask = 5
-mass = 6.503
-gravity_scale = 6.0
+mass = 63.28
 can_sleep = false
-linear_damp = 30.0
 script = ExtResource("1_q60ij")
-directionXOffset = 10.0
+directionXOffset = 2.0
 directionYOffset = 2.0
-directionZOffset = 10.0
-intensityOffset = 30.0
+directionZOffset = 2.0
+intensityOffset = 100.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=421838347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16898394, -0.43173093, 0)

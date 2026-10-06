@@ -58,7 +58,13 @@ var lightAmmo: int = 0
 var infinite_ammo: bool = false
 var white: bool = false
 
+var playerModeList: Array = ["gunMode", "paintMode", "scanMode", "lightMode", "vaccumMode"]
+var modeIndex = 0
+
 func get_color():
 	if white:
 		return Color(0.5,0.5,0.5)
 	return color_list[colorindex].darkened(darken_list[darkenindex])
+	
+func get_mode():
+	return playerModeList[modeIndex]

@@ -10,7 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://ilvyqkwvke38" path="res://Audio/rat_impact.mp3" id="6_53sl3"]
 [ext_resource type="Script" uid="uid://cjrvellg3vije" path="res://Scripts/light_scan.gd" id="6_787l6"]
 [ext_resource type="AudioStream" uid="uid://cbj2rhv5tu3a6" path="res://STOLENSHITTHATWEWILLDELETE/illuFAIL.wav" id="7_4n8fr"]
+[ext_resource type="Texture2D" uid="uid://dhrd827r3hxs0" path="res://Textures/Jersey Melange/jersey_melange_diff_4k.png" id="7_7nn45"]
 [ext_resource type="Texture2D" uid="uid://dtns37w7ifete" path="res://Textures/SBS - Noise Texture Pack - 512x512/512x512/Techno/Techno_05-512x512.png" id="7_x4mhi"]
+[ext_resource type="AudioStream" uid="uid://d3py754wpjv37" path="res://STOLENSHITTHATWEWILLDELETE/vaccum.mp3" id="12_8xa5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgq1h"]
 resource_name = "ShotgunMaterial"
@@ -246,6 +248,20 @@ size = Vector2(0.9, 0.8)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_787l6"]
 points = PackedVector3Array(0.45, 0.4, 0, 0.45, -0.4, 0, -0.45, 0.4, 0, -0.45, -0.4, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xa5y"]
+blend_mode = 4
+albedo_texture = ExtResource("7_7nn45")
+metallic = 1.0
+emission = Color(0.6291956, 0.0002905172, 0.6286541, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8xa5y"]
+top_radius = 0.3
+bottom_radius = 0.03515625
+height = 1.076
+cap_top = false
+cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rapw5"]
 
@@ -6140,6 +6156,13 @@ mesh = SubResource("QuadMesh_p5x4p")
 transform = Transform3D(1, -6.8394e-10, 1.1641532e-10, -7.421477e-10, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_787l6")
 
+[node name="Vaccum" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=1763289202]
+transform = Transform3D(-0.0019067272, 0.29708627, -0.033357136, 0.009992791, 0.041736446, 0.23753802, 0.2998192, 0.0004982924, -0.008129105, 0.46094033, 0.22192605, 0.0005418137)
+layers = 2
+material_override = SubResource("StandardMaterial3D_8xa5y")
+mesh = SubResource("CylinderMesh_8xa5y")
+script = ExtResource("3_rueqf")
+
 [node name="right_hand" type="Node3D" parent="fps_rig/shotgun" unique_id=561650335]
 transform = Transform3D(-0.009342853, -0.03398465, -0.0007564398, 0.033726927, -0.009392908, -0.0009941725, 0.0007374431, -0.0009766117, 0.035884872, 0.120732844, -0.07731636, -0.2640478)
 
@@ -6919,7 +6942,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.798817, -0.14587685, -0.5836158, 0.59316117, 0.029347148, 0.804546, -0.10023749, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.7988169, -0.14587685, -0.5836158, 0.59316117, 0.029347148, 0.804546, -0.10023748, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
@@ -6951,3 +6974,7 @@ volume_db = -21.889
 stream = ExtResource("7_4n8fr")
 volume_db = -21.832
 pitch_scale = 0.44
+
+[node name="Vaccum" type="AudioStreamPlayer" parent="." unique_id=352609718]
+stream = ExtResource("12_8xa5y")
+volume_db = -19.818
