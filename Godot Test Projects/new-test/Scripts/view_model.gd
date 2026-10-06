@@ -31,7 +31,7 @@ var bullet = load("res://Scenes/Bullets/bullet.tscn")
 var drawMaterial = load("res://Scenes/Bullets/drawmaterial.tscn")
 var bullet_instance
 var scanSelected: bool = false
-var colorStore
+var materialStore
 var scanCollisionMesh
 var bulletmesh = null
 
@@ -362,23 +362,19 @@ func suckLight():
 		if lightSuck:
 			increaseAmmo()
 			
-func showScannableObjectIsSelectable():
+func saveScannbleObject():
 	scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
 	if is_instance_valid(scanCollisionMesh.material_override):
 		var unique_material = scanCollisionMesh.material_override.duplicate()
-		colorStore = unique_material
-		scanCollisionMesh.material_override = unique_material
-	else:
-		colorStore = null
-	scanCollisionMesh.material_override = StandardMaterial3D.new()
+		materialStore = unique_material
 	scanSelected = true
 	
 func deselectScanObject():
 	if is_instance_valid(scanCollisionMesh):
-		if colorStore == null:
+		if materialStore == null:
 			scanCollisionMesh.material_override = null
 		else:	
-			scanCollisionMesh.material_override = colorStore
+			scanCollisionMesh.material_override = materialStore
 		scanSelected = false
 		
 func changeMode():
@@ -442,8 +438,11 @@ func checkForScannedObject():
 	if !vision.is_colliding():
 		deselectScanObject()
 	elif vision.is_colliding() || scanSelected:
-		if scanSelected:
-			scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
+		if !scanSelected:
+			saveScannbleObject()
 		else:
 			if vision.get_collider() != null:
-				showScannableObjectIsSelectable()
+				if !is_instance_valid(scanCollisionMesh.material_override):
+					materialStore = null
+					scanCollisionMesh.material_override = StandardMaterial3D.new()
+				scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
