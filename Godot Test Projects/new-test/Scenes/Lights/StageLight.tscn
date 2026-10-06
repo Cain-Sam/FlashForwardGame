@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://o6kbvbf4polp"]
+
+[ext_resource type="Script" uid="uid://clba5alnqsjl2" path="res://Scripts/lightsuckableSPOT.gd" id="1_0deqa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oayfh"]
+albedo_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oayfh"]
+top_radius = 0.068359375
+bottom_radius = 0.068359375
+height = 0.011367798
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.05882353)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 9.77
+
+[sub_resource type="SphereMesh" id="SphereMesh_oayfh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xq3o0"]
+height = 0.016067505
+radius = 0.0234375
+
+[node name="Lamp" type="RigidBody3D" unique_id=218677188 groups=["light", "paintchange"]]
+collision_layer = 9
+collision_mask = 9
+freeze = true
+linear_damp = 100.0
+angular_damp = 100.0
+script = ExtResource("1_0deqa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1074257278]
+transform = Transform3D(1, 0, 0, 0, 10.29, 0, 0, 0, 1, 0, -0.019853532, 0)
+layers = 9
+material_override = SubResource("StandardMaterial3D_oayfh")
+mesh = SubResource("CylinderMesh_oayfh")
+
+[node name="Light" type="SpotLight3D" parent="MeshInstance3D" unique_id=1227562570]
+transform = Transform3D(1, 0, 0, 0, 0.007127539, 0.9999746, 0, -0.9999746, 0.007127539, 0, -0.008549534, 0)
+layers = 11
+light_energy = 10.147
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_shadow = 22.14
+spot_range = 7.964
+
+[node name="Bulb" type="MeshInstance3D" parent="MeshInstance3D" unique_id=740350196]
+transform = Transform3D(0.125, 0, 0, 0, 0.0014577259, 0, 0, 0, 0.125, 0, -0.00553371, 0)
+layers = 9
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("SphereMesh_oayfh")
+
+[node name="LightCollision" type="CollisionShape3D" parent="." unique_id=1671238274]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.05602348, 0)
+shape = SubResource("CylinderShape3D_xq3o0")

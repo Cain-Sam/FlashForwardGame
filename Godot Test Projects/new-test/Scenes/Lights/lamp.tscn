@@ -42,7 +42,9 @@ mesh = SubResource("CylinderMesh_oayfh")
 [node name="Light" type="OmniLight3D" parent="MeshInstance3D" unique_id=1985413562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34069073, 0)
 layers = 9
-light_energy = 10.147
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
 
 [node name="Bulb" type="MeshInstance3D" parent="MeshInstance3D" unique_id=740350196]
 transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0.347, 0)
