@@ -94,6 +94,8 @@ func _process(delta):
 			fireDraw()
 		
 	if vision.is_colliding() || scanSelected:
+		if scanSelected:
+			scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
 		if !scanSelected && scanMode: 
 			if vision.get_collider() != null && !lightMode:
 				showScannableObjectIsSelectable()
@@ -382,7 +384,6 @@ func showScannableObjectIsSelectable():
 	else:
 		colorStore = null
 	scanCollisionMesh.material_override = StandardMaterial3D.new()
-	scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
 	scanSelected = true
 	
 func deselectScanObject():
