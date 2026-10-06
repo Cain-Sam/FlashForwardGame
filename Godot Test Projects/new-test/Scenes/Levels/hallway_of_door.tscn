@@ -9892,7 +9892,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988167, -0.14587685, -0.5836158, 0.593161, 0.029347148, 0.804546, -0.10023745, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.7988166, -0.14587685, -0.5836158, 0.59316087, 0.029347148, 0.804546, -0.100237444, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player/Head/Camera3D/SubViewportContainer/SubViewport/view_model_camera/fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")
@@ -10054,7 +10054,7 @@ size = Vector3(1.4143991, 0.20478821, 0.9764482)
 [node name="door_hinged" type="Node3D" parent="inner_wallR/subtraction" unique_id=170761439]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction/door_hinged" unique_id=68427573 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction/door_hinged" unique_id=68427573]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10064,11 +10064,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction/door_hinged/DOOR" unique_id=767662530 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction/door_hinged/DOOR" unique_id=767662530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_y2arq")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction/door_hinged/DOOR" unique_id=895845993 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction/door_hinged/DOOR" unique_id=895845993]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10108,7 +10108,7 @@ size = Vector3(1.373476, 0.20478821, 0.960831)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction2" unique_id=363809891]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction2/DOOR" unique_id=1655571721 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction2/DOOR" unique_id=1655571721]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10118,11 +10118,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction2/DOOR/DOOR" unique_id=1012185702 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction2/DOOR/DOOR" unique_id=1012185702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_ld7ko")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction2/DOOR/DOOR" unique_id=1139595037 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction2/DOOR/DOOR" unique_id=1139595037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10162,7 +10162,7 @@ size = Vector3(1.373476, 0.20478821, 0.9388739)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction3" unique_id=2020320288]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.004588604, -0.00076150894)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction3/DOOR" unique_id=1147708634 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction3/DOOR" unique_id=1147708634]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10172,11 +10172,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction3/DOOR/DOOR" unique_id=675442897 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction3/DOOR/DOOR" unique_id=675442897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_y2arq")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction3/DOOR/DOOR" unique_id=127928006 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction3/DOOR/DOOR" unique_id=127928006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10216,7 +10216,7 @@ size = Vector3(1.373476, 0.20478821, 0.92385924)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction4" unique_id=536669815]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction4/DOOR" unique_id=1984157992 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction4/DOOR" unique_id=1984157992]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10226,11 +10226,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction4/DOOR/DOOR" unique_id=1657466216 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction4/DOOR/DOOR" unique_id=1657466216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_h04mc")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction4/DOOR/DOOR" unique_id=402858123 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction4/DOOR/DOOR" unique_id=402858123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10270,7 +10270,7 @@ size = Vector3(1.373476, 0.20478821, 0.95840514)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction5" unique_id=924129820]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction5/DOOR" unique_id=1259106189 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction5/DOOR" unique_id=1259106189]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10280,11 +10280,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("29_dywha")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction5/DOOR/DOOR" unique_id=479557537 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction5/DOOR/DOOR" unique_id=479557537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_x8ogr")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction5/DOOR/DOOR" unique_id=175417956 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction5/DOOR/DOOR" unique_id=175417956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10324,7 +10324,7 @@ size = Vector3(1.373476, 0.20478821, 0.93411314)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction6" unique_id=1280760236]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction6/DOOR" unique_id=1712715689 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction6/DOOR" unique_id=1712715689]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10334,11 +10334,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction6/DOOR/DOOR" unique_id=1840305249 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction6/DOOR/DOOR" unique_id=1840305249]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_vmsa2")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction6/DOOR/DOOR" unique_id=1335500826 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction6/DOOR/DOOR" unique_id=1335500826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10378,7 +10378,7 @@ size = Vector3(1.373476, 0.20478821, 0.9156805)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction7" unique_id=611152602]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction7/DOOR" unique_id=49084224 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction7/DOOR" unique_id=49084224]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10388,11 +10388,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction7/DOOR/DOOR" unique_id=1559697522 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction7/DOOR/DOOR" unique_id=1559697522]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_rp4wh")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction7/DOOR/DOOR" unique_id=1549610774 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction7/DOOR/DOOR" unique_id=1549610774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10432,7 +10432,7 @@ size = Vector3(1.373476, 0.20478821, 0.8873602)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction8" unique_id=152807711]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.002624154, 0.0049732924, -0.0011844635)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction8/DOOR" unique_id=2023233476 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction8/DOOR" unique_id=2023233476]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10442,11 +10442,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction8/DOOR/DOOR" unique_id=1752598974 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction8/DOOR/DOOR" unique_id=1752598974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_36ra3")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction8/DOOR/DOOR" unique_id=1792145871 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction8/DOOR/DOOR" unique_id=1792145871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10486,7 +10486,7 @@ size = Vector3(1.373476, 0.20478821, 0.9144598)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction9" unique_id=1180073214]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction9/DOOR" unique_id=596182592 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction9/DOOR" unique_id=596182592]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10496,11 +10496,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction9/DOOR/DOOR" unique_id=1524251828 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction9/DOOR/DOOR" unique_id=1524251828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_gau1o")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction9/DOOR/DOOR" unique_id=2021828899 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction9/DOOR/DOOR" unique_id=2021828899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10540,7 +10540,7 @@ size = Vector3(1.373476, 0.20478821, 0.9154364)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction10" unique_id=604430759]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction10/DOOR" unique_id=2068646679 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction10/DOOR" unique_id=2068646679]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10550,11 +10550,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction10/DOOR/DOOR" unique_id=1206172372 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction10/DOOR/DOOR" unique_id=1206172372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_hi7lt")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction10/DOOR/DOOR" unique_id=143679456 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction10/DOOR/DOOR" unique_id=143679456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10594,7 +10594,7 @@ size = Vector3(1.373476, 0.20478821, 0.9111639)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction11" unique_id=1653414530]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction11/DOOR" unique_id=612750049 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction11/DOOR" unique_id=612750049]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10604,11 +10604,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction11/DOOR/DOOR" unique_id=1293705633 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction11/DOOR/DOOR" unique_id=1293705633]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_dywha")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction11/DOOR/DOOR" unique_id=222503587 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction11/DOOR/DOOR" unique_id=222503587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10648,7 +10648,7 @@ size = Vector3(1.373476, 0.20478821, 0.93216)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction12" unique_id=214446381]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction12/DOOR" unique_id=1948538414 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction12/DOOR" unique_id=1948538414]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10658,11 +10658,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction12/DOOR/DOOR" unique_id=1926381537 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction12/DOOR/DOOR" unique_id=1926381537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_8f8kq")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction12/DOOR/DOOR" unique_id=1996812630 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction12/DOOR/DOOR" unique_id=1996812630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10702,7 +10702,7 @@ size = Vector3(1.373476, 0.20478821, 0.9272772)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction13" unique_id=254481698]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction13/DOOR" unique_id=530103722 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction13/DOOR" unique_id=530103722]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10712,11 +10712,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction13/DOOR/DOOR" unique_id=235700114 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction13/DOOR/DOOR" unique_id=235700114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_vtesv")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction13/DOOR/DOOR" unique_id=1961004699 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction13/DOOR/DOOR" unique_id=1961004699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10756,7 +10756,7 @@ size = Vector3(1.373476, 0.20478821, 0.9137274)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction14" unique_id=1600173101]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction14/DOOR" unique_id=1741203812 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction14/DOOR" unique_id=1741203812]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10766,11 +10766,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction14/DOOR/DOOR" unique_id=363340653 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction14/DOOR/DOOR" unique_id=363340653]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_0g8up")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction14/DOOR/DOOR" unique_id=1235230695 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction14/DOOR/DOOR" unique_id=1235230695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10810,7 +10810,7 @@ size = Vector3(1.373476, 0.20478821, 0.9117743)
 [node name="DOOR" type="Node3D" parent="inner_wallR/subtraction15" unique_id=1192591530]
 transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction15/DOOR" unique_id=600217286 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallR/subtraction15/DOOR" unique_id=600217286]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10820,11 +10820,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction15/DOOR/DOOR" unique_id=2130868640 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallR/subtraction15/DOOR/DOOR" unique_id=2130868640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_kqvid")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction15/DOOR/DOOR" unique_id=268268013 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallR/subtraction15/DOOR/DOOR" unique_id=268268013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -10957,7 +10957,7 @@ size = Vector3(1.4502878, 0.20478821, 0.95558196)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction" unique_id=70241232]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction/DOOR" unique_id=543636878 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction/DOOR" unique_id=543636878]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -10967,11 +10967,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction/DOOR/DOOR" unique_id=974203051 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction/DOOR/DOOR" unique_id=974203051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_e3xpd")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction/DOOR/DOOR" unique_id=707573507 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction/DOOR/DOOR" unique_id=707573507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11008,7 +11008,7 @@ size = Vector3(1.373476, 0.20478821, 0.9228827)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction2" unique_id=1284731187]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction2/DOOR" unique_id=1315923614 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction2/DOOR" unique_id=1315923614]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11018,11 +11018,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction2/DOOR/DOOR" unique_id=1527585340 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction2/DOOR/DOOR" unique_id=1527585340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_ej205")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction2/DOOR/DOOR" unique_id=465719564 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction2/DOOR/DOOR" unique_id=465719564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11062,7 +11062,7 @@ size = Vector3(1.373476, 0.20478821, 0.8906561)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction3" unique_id=531922640]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction3/DOOR" unique_id=33302379 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction3/DOOR" unique_id=33302379]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11072,11 +11072,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction3/DOOR/DOOR" unique_id=849960546 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction3/DOOR/DOOR" unique_id=849960546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_u02ss")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction3/DOOR/DOOR" unique_id=1254334940 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction3/DOOR/DOOR" unique_id=1254334940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11116,7 +11116,7 @@ size = Vector3(1.373476, 0.20478821, 0.8932196)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction4" unique_id=1860253715]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction4/DOOR" unique_id=1039784410 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction4/DOOR" unique_id=1039784410]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11126,11 +11126,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction4/DOOR/DOOR" unique_id=1438150258 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction4/DOOR/DOOR" unique_id=1438150258]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_nha5d")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction4/DOOR/DOOR" unique_id=840558192 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction4/DOOR/DOOR" unique_id=840558192]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11170,7 +11170,7 @@ size = Vector3(1.373476, 0.20478821, 0.9066473)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction5" unique_id=2023595827]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction5/DOOR" unique_id=465959174 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction5/DOOR" unique_id=465959174]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11180,11 +11180,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction5/DOOR/DOOR" unique_id=1974870937 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction5/DOOR/DOOR" unique_id=1974870937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_1tw5f")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction5/DOOR/DOOR" unique_id=425468112 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction5/DOOR/DOOR" unique_id=425468112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11224,7 +11224,7 @@ size = Vector3(1.373476, 0.20478821, 0.8932196)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction6" unique_id=877306455]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction6/DOOR" unique_id=409107486 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction6/DOOR" unique_id=409107486]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11234,11 +11234,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction6/DOOR/DOOR" unique_id=1708332893 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction6/DOOR/DOOR" unique_id=1708332893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_2i8ai")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction6/DOOR/DOOR" unique_id=632294158 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction6/DOOR/DOOR" unique_id=632294158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11278,7 +11278,7 @@ size = Vector3(1.373476, 0.20478821, 0.8988348)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction7" unique_id=1461088757]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction7/DOOR" unique_id=250006974 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction7/DOOR" unique_id=250006974]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11288,11 +11288,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction7/DOOR/DOOR" unique_id=1106349831 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction7/DOOR/DOOR" unique_id=1106349831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_q0qds")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction7/DOOR/DOOR" unique_id=667349916 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction7/DOOR/DOOR" unique_id=667349916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11332,7 +11332,7 @@ size = Vector3(1.373476, 0.20478821, 0.8906561)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction8" unique_id=1603804821]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction8/DOOR" unique_id=1097417666 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction8/DOOR" unique_id=1097417666]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11342,11 +11342,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction8/DOOR/DOOR" unique_id=1860432053 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction8/DOOR/DOOR" unique_id=1860432053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_t04hu")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction8/DOOR/DOOR" unique_id=2141155211 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction8/DOOR/DOOR" unique_id=2141155211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11386,7 +11386,7 @@ size = Vector3(1.373476, 0.20478821, 0.8951727)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction9" unique_id=1500873050]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction9/DOOR" unique_id=1806905017 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction9/DOOR" unique_id=1806905017]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11396,11 +11396,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction9/DOOR/DOOR" unique_id=540100459 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction9/DOOR/DOOR" unique_id=540100459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_cw47b")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction9/DOOR/DOOR" unique_id=425989061 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction9/DOOR/DOOR" unique_id=425989061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11440,7 +11440,7 @@ size = Vector3(1.373476, 0.20478821, 0.90689147)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction10" unique_id=1565572473]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction10/DOOR" unique_id=617048112 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction10/DOOR" unique_id=617048112]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11450,11 +11450,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction10/DOOR/DOOR" unique_id=815031266 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction10/DOOR/DOOR" unique_id=815031266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_0ci46")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction10/DOOR/DOOR" unique_id=1407189701 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction10/DOOR/DOOR" unique_id=1407189701]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11494,7 +11494,7 @@ size = Vector3(1.373476, 0.20478821, 0.9105536)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction11" unique_id=684503289]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction11/DOOR" unique_id=346336949 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction11/DOOR" unique_id=346336949]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11504,11 +11504,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction11/DOOR/DOOR" unique_id=1035992338 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction11/DOOR/DOOR" unique_id=1035992338]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_lx50m")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction11/DOOR/DOOR" unique_id=1026146555 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction11/DOOR/DOOR" unique_id=1026146555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11548,7 +11548,7 @@ size = Vector3(1.373476, 0.20478821, 0.8989569)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction12" unique_id=148037543]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction12/DOOR" unique_id=827479880 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction12/DOOR" unique_id=827479880]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11558,11 +11558,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction12/DOOR/DOOR" unique_id=924892366 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction12/DOOR/DOOR" unique_id=924892366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_ebys0")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction12/DOOR/DOOR" unique_id=1037002877 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction12/DOOR/DOOR" unique_id=1037002877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11602,7 +11602,7 @@ size = Vector3(1.373476, 0.20478821, 0.9173895)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction13" unique_id=1879934645]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction13/DOOR" unique_id=649690522 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction13/DOOR" unique_id=649690522]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11612,11 +11612,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction13/DOOR/DOOR" unique_id=1357896882 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction13/DOOR/DOOR" unique_id=1357896882]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_b1tg4")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction13/DOOR/DOOR" unique_id=1793650904 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction13/DOOR/DOOR" unique_id=1793650904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11656,7 +11656,7 @@ size = Vector3(1.373476, 0.20478821, 0.90200865)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction14" unique_id=2077152055]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction14/DOOR" unique_id=310417437 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction14/DOOR" unique_id=310417437]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11666,11 +11666,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction14/DOOR/DOOR" unique_id=1053760996 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction14/DOOR/DOOR" unique_id=1053760996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_o4sth")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction14/DOOR/DOOR" unique_id=906199524 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction14/DOOR/DOOR" unique_id=906199524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 
@@ -11710,7 +11710,7 @@ size = Vector3(1.373476, 0.20478821, 0.9175116)
 [node name="DOOR" type="Node3D" parent="inner_wallL/subtraction15" unique_id=625241927]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.0026240945, 0.0050172806, -0.0032639503)
 
-[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction15/DOOR" unique_id=839692334 groups=["kickable"]]
+[node name="DOOR" type="RigidBody3D" parent="inner_wallL/subtraction15/DOOR" unique_id=839692334]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40930668, 0, 0)
 collision_layer = 8
 collision_mask = 15
@@ -11720,11 +11720,11 @@ max_contacts_reported = 1
 linear_damp = 100.0
 script = ExtResource("11_y60j3")
 
-[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction15/DOOR/DOOR" unique_id=1913181165 groups=["collidable", "kickable"]]
+[node name="DoorMesh" type="MeshInstance3D" parent="inner_wallL/subtraction15/DOOR/DOOR" unique_id=1913181165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41403872, 0, 0)
 mesh = SubResource("ArrayMesh_w5eyr")
 
-[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction15/DOOR/DOOR" unique_id=496022435 groups=["kickable"]]
+[node name="DoorCollision" type="CollisionShape3D" parent="inner_wallL/subtraction15/DOOR/DOOR" unique_id=496022435]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41024595, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_x8ogr")
 

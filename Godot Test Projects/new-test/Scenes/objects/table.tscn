@@ -9,7 +9,7 @@ albedo_color = Color(0.32305145, 0.18814602, 1.92523e-07, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_oayfh"]
 size = Vector3(2.9992523, 1.0135498, 1.1011353)
 
-[node name="Table" type="RigidBody3D" unique_id=1970238669 groups=["collidable", "kickable"]]
+[node name="Table" type="RigidBody3D" unique_id=1970238669 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38866538, -0.41860527, 0)
 collision_layer = 5
 collision_mask = 5

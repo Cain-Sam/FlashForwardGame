@@ -292,7 +292,7 @@ points = PackedVector3Array(-0.17354813, -0.365757, 0.021449812, -0.17229286, -0
 [node name="door_pieces" type="Node3D" unique_id=469200051]
 script = ExtResource("1_1rm8h")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1553610915 groups=["collidable", "kickable"]]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1553610915 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18506408, -0.43443367, 0.06779337)
 collision_layer = 21
 collision_mask = 21
@@ -319,7 +319,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2648893, -0.32333997, 0.08180509)
 shape = SubResource("ConvexPolygonShape3D_g4jfj")
 
-[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=413103321 groups=["collidable", "kickable"]]
+[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=413103321 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25555968, 0.48260283, 0.06517652)
 collision_layer = 21
 collision_mask = 21
@@ -346,7 +346,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24419878, 0.2863414, 0.042004585)
 shape = SubResource("ConvexPolygonShape3D_1rm8h")
 
-[node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1247563184 groups=["collidable", "kickable"]]
+[node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1247563184 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236449, 0.28139916, 0.059880733)
 collision_layer = 21
 collision_mask = 21
@@ -373,7 +373,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11574218, 0.21129507, -0.0012414418)
 shape = SubResource("ConvexPolygonShape3D_keos2")
 
-[node name="RigidBody3D4" type="RigidBody3D" parent="." unique_id=1880816707 groups=["collidable", "kickable"]]
+[node name="RigidBody3D4" type="RigidBody3D" parent="." unique_id=1880816707 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1555966, -0.29545808, -0.04016882)
 collision_layer = 21
 collision_mask = 21
@@ -400,7 +400,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1878673, -0.19595805, -0.0131355)
 shape = SubResource("ConvexPolygonShape3D_faasg")
 
-[node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=1131388790 groups=["collidable", "kickable"]]
+[node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=1131388790 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24760929, 0.318717, -0.07463451)
 collision_layer = 21
 collision_mask = 21
@@ -427,7 +427,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
 shape = SubResource("ConvexPolygonShape3D_baj1c")
 
-[node name="RigidBody3D6" type="RigidBody3D" parent="." unique_id=430622538 groups=["collidable", "kickable"]]
+[node name="RigidBody3D6" type="RigidBody3D" parent="." unique_id=430622538 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25030258, 0.27433053, 0)
 collision_layer = 21
 collision_mask = 21
@@ -454,7 +454,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24586841, 0.32760626, -0.047675055)
 shape = SubResource("ConvexPolygonShape3D_w1yup")
 
-[node name="RigidBody3D7" type="RigidBody3D" parent="." unique_id=126489978 groups=["collidable", "kickable"]]
+[node name="RigidBody3D7" type="RigidBody3D" parent="." unique_id=126489978 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2561662, -0.270742, -0.02587676)
 collision_layer = 21
 collision_mask = 21
@@ -481,7 +481,7 @@ collision_mask = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1773881, -0.2712244, -0.0014436431)
 shape = SubResource("ConvexPolygonShape3D_2gvmt")
 
-[node name="RigidBody3D8" type="RigidBody3D" parent="." unique_id=1291481842 groups=["collidable", "kickable"]]
+[node name="RigidBody3D8" type="RigidBody3D" parent="." unique_id=1291481842 groups=["collidable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2043289, -0.4705878, 0.07503782)
 collision_layer = 21
 collision_mask = 21

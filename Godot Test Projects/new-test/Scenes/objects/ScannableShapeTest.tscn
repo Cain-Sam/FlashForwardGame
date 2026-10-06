@@ -232,7 +232,7 @@ bind/70/pose = Transform3D(-0.9699097, -0.24345313, 0.00225319, 0.019268323, -0.
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u37j"]
 
-[node name="Triangle" type="RigidBody3D" unique_id=1774071606 groups=["collidable", "kickable"]]
+[node name="Triangle" type="RigidBody3D" unique_id=1774071606 groups=["collidable"]]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_n48h1")

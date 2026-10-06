@@ -7,9 +7,9 @@
 [ext_resource type="Material" uid="uid://sjngqjbs367b" path="res://materials/pole.tres" id="8_0hhbd"]
 [ext_resource type="Material" uid="uid://caoiku0ipqv8c" path="res://materials/megaphone.tres" id="9_jp01x"]
 [ext_resource type="AudioStream" uid="uid://cdqtslhjtd3oo" path="res://STOLENSHITTHATWEWILLDELETE/The Paperstud Savage Young Taterbug.mp3" id="10_lb0mj"]
-[ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/NPCs/Rat.tscn" id="12_6wees"]
+[ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/NPCs/Rat.tscn" id="12_wiwc6"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="13_vhyt2"]
-[ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/objects/ScannableShapeTest.tscn" id="13_xohai"]
+[ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/objects/ScannableShapeTest.tscn" id="13_yqpiu"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/Scenery/door_rigid.tscn" id="16_3i5ih"]
 [ext_resource type="PackedScene" uid="uid://dj5k7oqq1cdo1" path="res://Scenes/Lights/lamp.tscn" id="17_3r5t6"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="18_k2kp4"]
@@ -187,12 +187,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.4
 sceneTo = "res://Scenes/Levels/Theatre01.tscn"
 portalColor = Color(0.07293365, 0.42977807, 0, 1)
 
-[node name="Rat" parent="." unique_id=1567692786 instance=ExtResource("12_6wees")]
-transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, -1.9336684, -0.58379096, -0.016141415)
-
-[node name="Rat2" parent="." unique_id=1907114190 instance=ExtResource("13_xohai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5083861, -0.4580333, -1.0343549)
-
 [node name="Lamp" parent="." unique_id=363834986 instance=ExtResource("17_3r5t6")]
 transform = Transform3D(3.18, 0, 0, 0, 3.18, 0, 0, 0, 3.18, -3.0182211, -0.69520307, 4.883244)
 ON = false
@@ -230,3 +224,9 @@ sceneTo = "res://Scenes/Levels/main.tscn"
 [node name="rung" parent="." unique_id=2000850885 instance=ExtResource("13_vhyt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2359675, -0.30791622, 4.23528)
 rungs = 13
+
+[node name="Rat" parent="." unique_id=178485542 instance=ExtResource("12_wiwc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2828279, -0.4361533, -1.1109302)
+
+[node name="Triangle" parent="." unique_id=1774071606 instance=ExtResource("13_yqpiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2164996, -0.43528295, -2.3645825)

@@ -94,9 +94,8 @@ func _process(delta):
 		
 	if vision.is_colliding() || scanSelected:
 		if !scanSelected && scanMode: 
-			if vision.get_collider() != null:
-				if vision.get_collider().is_in_group("scannable") && !lightMode:
-					showScannableObjectIsSelectable()
+			if vision.get_collider() != null && !lightMode:
+				showScannableObjectIsSelectable()
 		
 		elif !vision.is_colliding():
 			deselectScanObject()
@@ -285,8 +284,7 @@ func fireGun():
 	
 func checkKickCollision():
 	var collider = kick_cast.get_collider()
-	if collider.is_in_group("kickable"):
-		kickKickable(collider)
+	kickKickable(collider)
 	if collider.is_in_group("myhead"):
 		kickMyHead()
 

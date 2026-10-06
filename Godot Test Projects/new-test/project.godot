@@ -29,14 +29,11 @@ enabled=PackedStringArray("res://addons/brackeys_particle_controls/plugin.cfg")
 
 [global_group]
 
-kickable=""
 player="literally the player"
 view_model="a group for the view model"
-collidable="can be collided with"
 bullet=""
 teleporter=""
 level_transition=""
-scannable=""
 light=""
 paintchange=""
 paint=""
