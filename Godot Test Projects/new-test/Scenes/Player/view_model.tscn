@@ -6158,6 +6158,7 @@ shape = SubResource("ConvexPolygonShape3D_787l6")
 
 [node name="Vaccum" type="MeshInstance3D" parent="fps_rig/shotgun/Shotgun_Model" unique_id=1763289202]
 transform = Transform3D(-0.0019067272, 0.29708627, -0.033357136, 0.009992791, 0.041736446, 0.23753802, 0.2998192, 0.0004982924, -0.008129105, 0.46094033, 0.22192605, 0.0005418137)
+visible = false
 layers = 2
 material_override = SubResource("StandardMaterial3D_8xa5y")
 mesh = SubResource("CylinderMesh_8xa5y")
@@ -6942,7 +6943,7 @@ transform = Transform3D(0.40647066, -0.559117, -0.72261304, 0.5626536, 0.7763155
 transform = Transform3D(0.36986774, -0.56131214, -0.7403546, 0.60187525, 0.7518101, -0.26931116, 0.7077759, -0.3459918, 0.6159083, 217.88402, -162.71652, -773.05615)
 
 [node name="Marker3D4" type="Marker3D" parent="fps_rig/leg/left_leg/Armature" unique_id=168927759]
-transform = Transform3D(0.7988169, -0.14587685, -0.5836158, 0.59316117, 0.029347148, 0.804546, -0.10023748, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
+transform = Transform3D(0.79881686, -0.14587685, -0.5836158, 0.5931611, 0.029347148, 0.804546, -0.100237474, -0.98886466, 0.10997173, 1162.404, -1707.3429, -707.6248)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fps_rig/leg/left_leg" unique_id=1466407447]
 libraries/ = SubResource("AnimationLibrary_q8fdi")

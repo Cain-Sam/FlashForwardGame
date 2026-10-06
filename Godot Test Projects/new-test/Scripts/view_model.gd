@@ -433,12 +433,11 @@ func suckBullets(delta):
 		suckLight()
 
 func checkForScannedObject():
-	if vision.is_colliding() || scanSelected:
+	if !vision.is_colliding():
+		deselectScanObject()
+	elif vision.is_colliding() || scanSelected:
 		if scanSelected:
 			scanCollisionMesh.material_override.albedo_color = GlobalVariables.get_color()
 		else:
 			if vision.get_collider() != null:
 				showScannableObjectIsSelectable()
-		
-	elif !vision.is_colliding():
-		deselectScanObject()
