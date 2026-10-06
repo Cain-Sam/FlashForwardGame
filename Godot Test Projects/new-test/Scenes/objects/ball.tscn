@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cecbdkh2dsred"]
 
 [ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="1_d60mj"]
+[ext_resource type="Texture2D" uid="uid://odkfqoio8x2p" path="res://Textures/sam.png" id="2_tyvla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ty25"]
+albedo_color = Color(0.22745098, 1, 0.15686275, 1)
+albedo_texture = ExtResource("2_tyvla")
 
 [sub_resource type="SphereMesh" id="SphereMesh_d60mj"]
 
@@ -15,9 +20,19 @@ script = ExtResource("1_d60mj")
 directionYOffset = 0.3
 
 [node name="Door2_cell_004" type="MeshInstance3D" parent="." unique_id=100978859]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017589897, -0.03811091, -0.0794224)
+material_override = SubResource("StandardMaterial3D_1ty25")
 mesh = SubResource("SphereMesh_d60mj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=875896262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017589897, -0.03811091, -0.0794224)
+shape = SubResource("SphereShape3D_ij5cq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=256904871 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2141045, -0.3250442, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1823037906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2845242, 0.27757365, -0.0794224)
 shape = SubResource("SphereShape3D_ij5cq")

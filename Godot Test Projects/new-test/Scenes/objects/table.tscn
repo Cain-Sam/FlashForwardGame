@@ -28,6 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16898394, -0.43173093, 0)
 material_override = SubResource("StandardMaterial3D_b86mc")
 mesh = ExtResource("2_vc8no")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=437589973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19733942, -0.42495602, 0.0061950684)
+shape = SubResource("BoxShape3D_oayfh")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2143024435 groups=["scannable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18935645, -0.43173093, 0)
 collision_layer = 8
@@ -35,8 +39,4 @@ collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1251104679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36288452, 0, 0)
-shape = SubResource("BoxShape3D_oayfh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=437589973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19733942, -0.42495602, 0.0061950684)
 shape = SubResource("BoxShape3D_oayfh")

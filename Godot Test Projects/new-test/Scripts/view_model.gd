@@ -376,7 +376,7 @@ func showScannableObjectIsSelectable():
 	scanCollisionMesh = vision.get_collider().get_parent().get_child(0)
 	if is_instance_valid(scanCollisionMesh.material_override):
 		var unique_material = scanCollisionMesh.material_override.duplicate()
-		colorStore = unique_material.albedo_color
+		colorStore = unique_material
 		scanCollisionMesh.material_override = unique_material
 	else:
 		colorStore = null
@@ -389,5 +389,5 @@ func deselectScanObject():
 		if colorStore == null:
 			scanCollisionMesh.material_override = null
 		else:	
-			scanCollisionMesh.material_override.albedo_color = colorStore
+			scanCollisionMesh.material_override = colorStore
 		scanSelected = false
