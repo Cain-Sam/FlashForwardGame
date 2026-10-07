@@ -5,12 +5,14 @@ extends RigidBody3D
 @export var bulbEmission: float = 15
 @export var lightEnergy: float = 5 
 @export var lightRange = 100
+@export_range(0, 180, 0.1, "suffix:°") var radius: float = 45.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var bulb = find_child("Bulb")
 	var light = find_child("Light")
 	light.spot_range = lightRange
+	light.spot_angle = radius
 	if ON:
 		bulb.material_override.emission_energy_multiplier = bulbEmission
 		light.light_energy = lightEnergy
