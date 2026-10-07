@@ -13,7 +13,7 @@ func _ready() -> void:
 	var light = find_child("Light")
 	light.spot_range = lightRange
 	light.spot_angle = radius
-	if ON:
+	if ON && currentPower > 0:
 		bulb.material_override.emission_energy_multiplier = bulbEmission
 		light.light_energy = lightEnergy
 	else:

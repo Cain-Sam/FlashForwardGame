@@ -11,7 +11,7 @@ func _ready() -> void:
 	var bulb = find_child("Bulb")
 	var light = find_child("Light")
 	light.omni_range = lightRange
-	if ON:
+	if ON && currentPower > 0:
 		bulb.material_override.emission_energy_multiplier = bulbEmission
 		light.light_energy = lightEnergy
 	else:
