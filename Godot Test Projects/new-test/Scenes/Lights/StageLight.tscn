@@ -42,10 +42,12 @@ mesh = SubResource("CylinderMesh_oayfh")
 transform = Transform3D(1, 0, 0, 0, 0.007127539, 0.9999746, 0, -0.9999746, 0.007127539, 0, -0.008549534, 0)
 layers = 11
 light_energy = 10.147
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_shadow = 22.14
-spot_range = 7.964
+spot_range = 100.0
 
 [node name="Bulb" type="MeshInstance3D" parent="MeshInstance3D" unique_id=740350196]
 transform = Transform3D(0.125, 0, 0, 0, 0.0014577259, 0, 0, 0, 0.125, 0, -0.00553371, 0)
