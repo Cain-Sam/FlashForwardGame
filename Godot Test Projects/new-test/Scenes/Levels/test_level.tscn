@@ -436,7 +436,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967686e-08, -1.1333597e-07, -2.6433437e-08, 0.9934173, 0.11454084, 1.17134675e-07, -0.114542305, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676856e-08, -1.1333597e-07, -2.6433437e-08, 0.99341726, 0.11454084, 1.17134675e-07, -0.114542305, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -790,7 +790,7 @@ transform = Transform3D(-0.08011596, -1.9133558, 2.3092535, -1.2287279, 2.128219
 lightEnergy = 1.0
 
 [node name="Lamp6" parent="Lights/StageLights/FirstRow" unique_id=1834010163 instance=ExtResource("17_ch0ib")]
-transform = Transform3D(-0.08011596, -1.9133558, 2.3092535, -1.2287279, 2.1282196, 1.7207294, -2.7356546, -0.8998622, -0.8404994, 17.630148, 4.9380913, -7.719637)
+transform = Transform3D(-0.61526406, -2.040488, 2.1113644, -0.4671499, 2.197768, 1.9878602, -2.8988307, 0.07891176, -0.7684738, 17.630148, 4.9380913, -7.719637)
 lightEnergy = 1.0
 
 [node name="BackRow" type="Node3D" parent="Lights/StageLights" unique_id=1829564801]
