@@ -5,7 +5,7 @@ extends StaticBody3D
 @onready var fog: AnimationPlayer = $"../../../Wall5/FogVolume/FogAnimation"
 
 
-var playing := false
+var playing = false
 
 func kicked (_direction, _intensity): 
 	if lightswitch.is_playing() or fog.is_playing():
