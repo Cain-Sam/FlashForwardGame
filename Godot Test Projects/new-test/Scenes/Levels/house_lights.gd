@@ -8,22 +8,17 @@ extends StaticBody3D
 
 var on = false
 
-func kicked (_direction, _intensity): 
+func _ready() -> void:
+	flipSwitch()
+
+func kicked (_direction, _intensity):
+	flipSwitch()
+
+func flipSwitch():
 	if lightswitch.is_playing():
 		return 
 	on = !on 
 	if on:
-		lightswitch.play_backwards("Lights_on") 
-		for light in house_lights.get_children():
-			if light.ON:
-				light.ON = false
-		for light in work_lights.get_children():
-			if light.ON:
-				light.ON = false
-		for light in lobby_lights.get_children():
-			if light.ON:
-				light.ON = false
-	else:
 		lightswitch.play("Lights_on") 
 		for light in house_lights.get_children():
 			if !light.ON:
@@ -34,3 +29,14 @@ func kicked (_direction, _intensity):
 		for light in lobby_lights.get_children():
 			if !light.ON:
 				light.ON = true
+	else:
+		lightswitch.play_backwards("Lights_on") 
+		for light in house_lights.get_children():
+			if light.ON:
+				light.ON = false
+		for light in work_lights.get_children():
+			if light.ON:
+				light.ON = false
+		for light in lobby_lights.get_children():
+			if light.ON:
+				light.ON = false
