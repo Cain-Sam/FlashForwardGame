@@ -833,7 +833,6 @@ material = SubResource("StandardMaterial3D_dtjkg")
 [node name="StageLights" type="Node3D" parent="Lights" unique_id=499954092]
 
 [node name="AboveStage" type="Node3D" parent="Lights/StageLights" unique_id=601336275]
-visible = false
 
 [node name="Right" parent="Lights/StageLights/AboveStage" unique_id=218677188 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-1.2940954, -4.829629, -4.371139e-07, -4.829629, 1.2940954, 0, 1.1313341e-07, 4.2221959e-07, -5, 27.510103, 2.8620212, -1.1661038)
@@ -919,7 +918,6 @@ lightEnergy = 10.0
 lightRange = 10
 
 [node name="FirstRow" type="Node3D" parent="Lights/StageLights" unique_id=2078366180]
-visible = false
 
 [node name="Right" parent="Lights/StageLights/FirstRow" unique_id=395909814 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-2.34769, -1.8448952, 0.2910529, -1.4976465, 2.138861, 1.4772707, -1.115977, 1.0107598, -2.5947945, 17.630148, 4.9380913, -1.8855138)
@@ -976,7 +974,6 @@ lightEnergy = 2.0
 radius = 20.0
 
 [node name="OnStage" type="Node3D" parent="Lights/StageLights" unique_id=1902664784]
-visible = false
 
 [node name="Right" parent="Lights/StageLights/OnStage" unique_id=1486165994 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(2.3047736, -4.0400867, -1.8345894, -4.2906895, -1.5025783, -2.081404, 1.1304878, 2.533764, -4.159572, 28.289759, -6.7312927, 2.0917795)
