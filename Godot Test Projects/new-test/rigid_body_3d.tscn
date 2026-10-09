@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cnprl1uwxvmwq"]
+
+[ext_resource type="Material" uid="uid://cla83y5h0026e" path="res://light_rope.tres" id="2_vs7vu"]
+
+[sub_resource type="GDScript" id="GDScript_mvxmr"]
+script/source = "extends RigidBody3D
+@export var directionXOffset: float = 1
+@export var directionYOffset: float = 1
+@export var directionZOffset: float = 1
+@export var intensityOffset: float = 0
+var velocity_last_frame: Vector3 = Vector3.ZERO
+@export var timeout = 5.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	await get_tree().create_timer(4.0).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, \"scale\", Vector3(0.0, 0.0, 0.0), 1)
+	await get_tree().create_timer(1.0).timeout
+	queue_free()
+
+func kicked(direction, intensity):
+	direction.x = direction.x * directionXOffset
+	direction.y += directionYOffset
+	direction.z = direction.z * directionZOffset
+	intensity += intensityOffset
+	self.apply_impulse( direction * intensity, self.global_position )
+	
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+	var contact_count = state.get_contact_count()
+	for i in range(contact_count):
+		var total_impulse = Vector3.ZERO
+		var impulse = state.get_contact_impulse(i)
+		total_impulse += impulse
+		# Currently unused, but keeping in case we use later
+		var _impact_strength = total_impulse.length()
+		var hit_object = state.get_contact_collider_object(i)
+		var global_normal = state.get_contact_local_normal(i)
+		var hit_from_direction = global_transform.basis * global_normal
+		
+		if hit_object && state.get_contact_collider_object(i).has_method(\"collided\"):		
+			state.get_contact_collider_object(i).collided(hit_from_direction, total_impulse.length() + 2)
+		
+func _physics_process(delta: float) -> void:
+	if linear_velocity.length_squared() < 0.5:
+		return
+	var next_position = global_position + (linear_velocity * delta)
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(global_position, next_position)
+	var result = space_state.intersect_ray(query)
+	query.collision_mask = collision_mask 
+	if result and result.collider is SoftBody3D:
+		doSoftBodyPhysics(result)
+		
+func doSoftBodyPhysics(result):
+		global_position = result.position - (linear_velocity.normalized() * 0.05)
+		linear_velocity = linear_velocity * 0.15
+		linear_velocity.y -= 2.0 
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v8hb4"]
+radius = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_5yrm1"]
+radius = 0.2
+height = 0.4
+
+[node name="Projectile" type="RigidBody3D" unique_id=798993199]
+mass = 10.0
+script = SubResource("GDScript_mvxmr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1227402127]
+shape = SubResource("SphereShape3D_v8hb4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=402814720]
+material_override = ExtResource("2_vs7vu")
+mesh = SubResource("SphereMesh_5yrm1")

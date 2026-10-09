@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c4tq3dpw4v2oj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v84vq"]
+albedo_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oayfh"]
+size = Vector3(7.748291, 0.49121094, 1.9677734)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u37j"]
+size = Vector3(7.7936096, 0.54397583, 1.9901123)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hul88"]
+size = Vector3(0.2890625, 0.3053589, 0.3242798)
+
+[node name="LightBoard" type="StaticBody3D" unique_id=47845347]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2075078260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22116268, -0.035176933, -0.7205928)
+material_override = SubResource("StandardMaterial3D_v84vq")
+mesh = SubResource("BoxMesh_oayfh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1348504888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21754456, -0.030685425, -0.7353843)
+shape = SubResource("BoxShape3D_7u37j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=585462743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7825005, 0.19454956, -1.4165686)
+mesh = SubResource("BoxMesh_hul88")
