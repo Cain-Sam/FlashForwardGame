@@ -321,7 +321,7 @@ subdivide_depth = 50
 orientation = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dtjkg"]
-size = Vector2(18, 3)
+size = Vector2(28.975, 4.78)
 subdivide_width = 50
 subdivide_depth = 50
 orientation = 0
@@ -331,18 +331,17 @@ top_radius = 0.03
 bottom_radius = 0.03
 height = 11.530884
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsyfn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f5yo"]
 cull_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 metallic_texture = ExtResource("3_rsyfn")
 metallic_texture_channel = 2
-roughness = 0.1
 roughness_texture = ExtResource("3_rsyfn")
 roughness_texture_channel = 1
 emission_enabled = true
-emission = Color(0.01252908, 0.00039160965, 0.0015650996, 1)
-emission_energy_multiplier = 0.1
+emission = Color(0.2665993, 0.019366208, 0.07579938, 1)
+emission_energy_multiplier = 0.01
 normal_enabled = true
 normal_texture = ExtResource("4_7w7ni")
 ao_enabled = true
@@ -356,6 +355,25 @@ size = Vector2(10, 10.5)
 subdivide_width = 50
 subdivide_depth = 50
 orientation = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqheo"]
+cull_mode = 2
+albedo_color = Color(0.054174088, 1.8801075e-10, 0.004589241, 1)
+metallic = 1.0
+metallic_texture = ExtResource("3_rsyfn")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_rsyfn")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(0.2665993, 0.019366208, 0.07579938, 1)
+emission_energy_multiplier = 0.01
+normal_enabled = true
+normal_texture = ExtResource("4_7w7ni")
+ao_enabled = true
+ao_texture = ExtResource("3_rsyfn")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="Curve3D" id="Curve3D_2f5yo"]
 resource_local_to_scene = true
@@ -451,7 +469,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.99341685, 0.11454084, 1.17134675e-07, -0.11454225, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.9934168, 0.11454084, 1.17134675e-07, -0.114542246, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -471,7 +489,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.99341685, 0.11454084, 1.17134675e-07, -0.11454225, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.9934168, 0.11454084, 1.17134675e-07, -0.114542246, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -491,7 +509,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/stage lights switch" unique_id=1639151365]
-transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.9934168, 0.11454084, 1.17134675e-07, -0.114542246, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676834e-08, -1.1333597e-07, -2.6433437e-08, 0.9934167, 0.11454084, 1.17134675e-07, -0.11454224, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/stage lights switch" unique_id=1969721109]
@@ -511,7 +529,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fun lights switch" unique_id=1671067284]
-transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.9934168, 0.11454084, 1.17134675e-07, -0.114542246, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676834e-08, -1.1333597e-07, -2.6433437e-08, 0.9934167, 0.11454084, 1.17134675e-07, -0.11454224, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fun lights switch" unique_id=1826872708]
@@ -531,7 +549,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/spot light switch" unique_id=560178376]
-transform = Transform3D(0.99998623, 3.9676838e-08, -1.1333597e-07, -2.6433437e-08, 0.9934168, 0.11454084, 1.17134675e-07, -0.114542246, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676834e-08, -1.1333597e-07, -2.6433437e-08, 0.9934167, 0.11454084, 1.17134675e-07, -0.11454224, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/spot light switch" unique_id=191195447]
@@ -1278,16 +1296,13 @@ transform = Transform3D(10.304434, 0, 0, 0, -2.8216888e-07, 0.10192633, 0, -6.45
 mesh = SubResource("PlaneMesh_rsyfn")
 
 [node name="curtain5" parent="Curtains/Curtain Pole" unique_id=978497570 instance=ExtResource("2_rsyfn")]
-transform = Transform3D(10.304434, 0, 0, 0, -2.821691e-07, 0.10192633, 0, -6.455281, -4.4552735e-09, 4.5770264, -0.0008942485, 10.504522)
+transform = Transform3D(10.304434, 0, 0, 0, -2.8216948e-07, 0.10192633, 0, -6.455285, -4.4553303e-09, 125.11331, -0.0008943081, -28.83881)
 mesh = SubResource("PlaneMesh_dtjkg")
 simulation_precision = 25
-pinned_points = [2703, 2652, 2657, 2662, 2667, 2672, 2677, 2682, 2687, 2692, 2697, 1291, 1290]
-attachments/11/point_index = 1291
+pinned_points = [2703, 2652, 2657, 2662, 2667, 2672, 2677, 2682, 2687, 2692, 2697, 2078]
+attachments/11/point_index = 2078
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
-attachments/12/point_index = 1290
-attachments/12/spatial_attachment_path = NodePath("")
-attachments/12/offset = Vector3(0, 0, 0)
 
 [node name="Curtain Pole3" type="MeshInstance3D" parent="Curtains" unique_id=1057983826]
 transform = Transform3D(0.09704561, 0, 0, 0, -4.288528e-07, -0.1549124, 0, 9.811008, -6.771436e-09, 25.412739, 3.3191066, -7.674464)
@@ -1299,7 +1314,7 @@ mesh = SubResource("CylinderMesh_oayfh")
 
 [node name="curtain4" parent="Curtains/MeshInstance3D" unique_id=1821789227 instance=ExtResource("2_rsyfn")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -5.270229, 0.8587551, -0.10905552)
-material_override = SubResource("StandardMaterial3D_rsyfn")
+material_override = SubResource("StandardMaterial3D_2f5yo")
 mesh = SubResource("PlaneMesh_btda1")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Curtains" unique_id=1681294926]
@@ -1308,7 +1323,7 @@ mesh = SubResource("CylinderMesh_oayfh")
 
 [node name="curtain4" parent="Curtains/MeshInstance3D2" unique_id=1549675895 instance=ExtResource("2_rsyfn")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -5.270229, 0.8587551, -0.10905552)
-material_override = SubResource("StandardMaterial3D_rsyfn")
+material_override = SubResource("StandardMaterial3D_lqheo")
 mesh = SubResource("PlaneMesh_btda1")
 
 [node name="doors" type="Node3D" parent="." unique_id=1533507442]
