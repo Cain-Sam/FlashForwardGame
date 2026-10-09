@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2r1u3msan53n"]
+
+[ext_resource type="Texture2D" uid="uid://dja5a336x0r36" path="res://Textures/Sun Color2.png" id="1_eq61v"]
+
+[resource]
+resource_name = "Sun.001"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_eq61v")
+roughness = 0.5
