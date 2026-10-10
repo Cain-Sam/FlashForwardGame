@@ -4,13 +4,38 @@
 albedo_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oayfh"]
-size = Vector3(7.748291, 0.49121094, 1.9677734)
+size = Vector3(8, 0.491, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u37j"]
 size = Vector3(7.7936096, 0.54397583, 1.9901123)
 
+[sub_resource type="BoxMesh" id="BoxMesh_m77gd"]
+size = Vector3(0.5213623, 0.102874756, 0.5350418)
+
 [sub_resource type="BoxMesh" id="BoxMesh_hul88"]
-size = Vector3(0.2890625, 0.3053589, 0.3242798)
+size = Vector3(0.10595703, 0.102874756, 0.18362427)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avjiw"]
+albedo_color = Color(6.497651e-07, 0, 0.3783614, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akmmg"]
+albedo_color = Color(0, 0.56381637, 1.92523e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqheo"]
+albedo_color = Color(0.43266955, 0.00061553816, 9.62615e-08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_oayfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n62h"]
+albedo_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oayfh"]
+material = SubResource("StandardMaterial3D_4n62h")
+top_radius = 0.08886719
+bottom_radius = 0.08886719
+height = 7.8100586
 
 [node name="LightBoard" type="StaticBody3D" unique_id=47845347]
 
@@ -24,5 +49,314 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21754456, -0.030685425, -0
 shape = SubResource("BoxShape3D_7u37j")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=585462743]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7825005, 0.19454956, -1.4165686)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.730239, 0.19454956, -1.7585263)
+mesh = SubResource("BoxMesh_m77gd")
+
+[node name="Slidergroup" type="Node3D" parent="." unique_id=1983547596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20669091, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup" unique_id=910449072]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.7512884, 0.21394938, 0.6213279)
+text = "Back Row"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup" unique_id=720168819]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup/Sliders" unique_id=445317854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9801526, 0.20090857, 0.40336597)
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup/Sliders" unique_id=1306385750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4940548, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup/Sliders" unique_id=142172577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6547909, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup/Sliders" unique_id=68902982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8162675, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup" unique_id=428982623]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=952182981]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.4829245, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=737294084]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -4.1057262, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=399765508]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.688201, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=35756674]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.9006696, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="Slidergroup2" type="Node3D" parent="." unique_id=584967160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50130093, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup2" unique_id=150399351]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.948701, 0.21394938, 0.630337)
+text = "Front Row"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup2" unique_id=1756342418]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup2/Sliders" unique_id=1573626678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1762438, 0.20090857, 0.40336597)
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup2/Sliders" unique_id=1469465823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.690146, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup2/Sliders" unique_id=1438409372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.850882, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup2/Sliders" unique_id=1750405829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0123587, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup2" unique_id=1727966192]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup2/PowerIndicator" unique_id=1090971186]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.699954, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup2/PowerIndicator" unique_id=390663325]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.1187558, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup2/PowerIndicator" unique_id=397224618]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.9052305, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="Slidergroup3" type="Node3D" parent="." unique_id=841196151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79555357, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup3" unique_id=69515380]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.0803933, 0.21394938, 0.6213279)
+text = "Above Stage"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup3" unique_id=1666128012]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup3/Sliders" unique_id=2120807336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3448741, 0.20090857, 0.40336597)
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup3/Sliders" unique_id=21941108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8587766, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup3/Sliders" unique_id=186621378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0195127, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup3/Sliders" unique_id=300231073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1809893, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup3" unique_id=1601255425]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup3/PowerIndicator" unique_id=1181591013]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.8880261, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup3/PowerIndicator" unique_id=121018842]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.3068275, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup3/PowerIndicator" unique_id=926131877]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.0933022, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="Slidergroup4" type="Node3D" parent="." unique_id=1680562889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0599669, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup4" unique_id=1018940283]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.2992682, 0.21394938, 0.6213279)
+text = "On Stage"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup4" unique_id=582992827]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup4/Sliders" unique_id=510734065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5269456, 0.20090857, 0.40336597)
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup4/Sliders" unique_id=542014957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.040848, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup4/Sliders" unique_id=1398781843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2015841, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup4/Sliders" unique_id=225971945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3630607, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup4" unique_id=421324622]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup4/PowerIndicator" unique_id=1406028189]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.1831782, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup4/PowerIndicator" unique_id=131232801]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.3972931, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="Slidergroup5" type="Node3D" parent="." unique_id=233148187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3505112, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup5" unique_id=711039559]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.49816763, 0.21394938, 0.6213279)
+text = "High Accent"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup5" unique_id=1444113155]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup5/Sliders" unique_id=522476398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7414546, 0.20090857, 0.40336597)
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup5/Sliders" unique_id=1423199943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25535703, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup5/Sliders" unique_id=813926388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4160931, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup5/Sliders" unique_id=178603440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5775697, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup5" unique_id=151711852]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup5/PowerIndicator" unique_id=1590559010]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -0.29657376, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup5/PowerIndicator" unique_id=1051717429]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -0.7153752, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup5/PowerIndicator" unique_id=2124295866]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -0.5018499, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="Slidergroup6" type="Node3D" parent="." unique_id=93841253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6395328, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup6" unique_id=849349497]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.33563328, 0.21394938, 0.6213279)
+text = "Low Accent"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup6" unique_id=1922365271]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup6/Sliders" unique_id=501610696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05674362, 0.20090857, 0.40336597)
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup6/Sliders" unique_id=496601681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5428412, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup6/Sliders" unique_id=106324886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3821051, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup6/Sliders" unique_id=2041189941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2206285, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup6" unique_id=1494424882]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup6/PowerIndicator" unique_id=1674279654]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.5219457, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup6/PowerIndicator" unique_id=834658492]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.10314441, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup6/PowerIndicator" unique_id=1512781378]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.3166697, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="Slidergroup7" type="Node3D" parent="." unique_id=1000772212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21140313, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Slidergroup7" unique_id=894819691]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.1721444, 0.21394938, 0.6213279)
+text = "Spot"
+
+[node name="Sliders" type="Node3D" parent="Slidergroup7" unique_id=1574185836]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup7/Sliders" unique_id=2008481469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9110541, 0.20090857, 0.40336597)
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Slidergroup7/Sliders" unique_id=1822187357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3971517, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_avjiw")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Slidergroup7/Sliders" unique_id=542652315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2364156, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_akmmg")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Slidergroup7/Sliders" unique_id=1427965571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.074939, 0.20090857, 0.40336597)
+material_override = SubResource("StandardMaterial3D_lqheo")
+mesh = SubResource("BoxMesh_hul88")
+
+[node name="PowerIndicator" type="Node3D" parent="Slidergroup7" unique_id=779637672]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup7/PowerIndicator" unique_id=534695732]
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 3.1828609, 0.21320927, -0.5934703)
+material_override = SubResource("StandardMaterial3D_hul88")
+mesh = SubResource("QuadMesh_oayfh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=896890849]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.1965332, 0.17325537, -0.36756432)
+mesh = SubResource("CylinderMesh_oayfh")
