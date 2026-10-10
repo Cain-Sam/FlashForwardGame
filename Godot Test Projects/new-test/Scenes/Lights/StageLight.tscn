@@ -22,11 +22,9 @@ emission_energy_multiplier = 9.77
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xq3o0"]
 height = 0.016067505
-radius = 0.0234375
+radius = 0.012207031
 
 [node name="Lamp" type="RigidBody3D" unique_id=218677188 groups=["light", "paintchange"]]
-collision_layer = 9
-collision_mask = 9
 freeze = true
 linear_damp = 100.0
 angular_damp = 100.0

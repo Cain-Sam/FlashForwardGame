@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dn5py8pj6jepe"]
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/Player/player.tscn" id="1_iti4p"]
-[ext_resource type="Script" uid="uid://bg8g1gytlstqf" path="res://Scenes/Levels/test_level.gd" id="1_lqheo"]
+[ext_resource type="Script" uid="uid://bg8g1gytlstqf" path="res://Scripts/test_level.gd" id="1_lqheo"]
 [ext_resource type="PackedScene" uid="uid://i2f6t1bssoik" path="res://Scenes/VFX/water.tscn" id="2_l7ek2"]
 [ext_resource type="Script" uid="uid://dppljdd406dtd" path="res://Scripts/fog_switch.gd" id="2_rkdv3"]
 [ext_resource type="PackedScene" uid="uid://dyhrmfcfolehn" path="res://Scenes/Scenery/curtain.tscn" id="2_rsyfn"]
-[ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scenes/Levels/house_lights.gd" id="3_4tft1"]
+[ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scripts/house_lights.gd" id="3_4tft1"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
-[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scenes/Levels/stage_lights.gd" id="4_k0p41"]
+[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scripts/stage_lights.gd" id="4_k0p41"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/VFX/fog_machine.tscn" id="4_xnpcw"]
 [ext_resource type="Texture2D" uid="uid://by8oc5godxb5k" path="res://Textures/CarpetTest.png" id="5_3bggx"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
-[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scenes/Levels/fun_lights.gd" id="5_mbrqs"]
+[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scripts/fun_lights.gd" id="5_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://cxnx0wigyvhmm" path="res://vfx/shitty_colorful_vfx_cloud.tscn" id="5_xnpcw"]
-[ext_resource type="Script" uid="uid://bq3tt8y2whqih" path="res://Scenes/Levels/spot_light.gd" id="6_2f5yo"]
+[ext_resource type="Script" uid="uid://bq3tt8y2whqih" path="res://Scripts/spot_light.gd" id="6_2f5yo"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="PackedScene" uid="uid://dg3ekcx461lgr" path="res://Scenes/Lights/FlatLight.tscn" id="7_xq3o0"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/Scenery/door_rigid.tscn" id="9_7rivk"]
@@ -376,7 +376,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_akmmg"]
+[sub_resource type="Curve3D" id="Curve3D_lqheo"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -471,7 +471,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676834e-08, -1.1333597e-07, -2.6433437e-08, 0.9934167, 0.11454084, 1.17134675e-07, -0.11454224, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.99341667, 0.11454084, 1.17134675e-07, -0.11454223, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -491,7 +491,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676834e-08, -1.1333597e-07, -2.6433437e-08, 0.9934167, 0.11454084, 1.17134675e-07, -0.11454224, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.99341667, 0.11454084, 1.17134675e-07, -0.11454223, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -511,7 +511,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/stage lights switch" unique_id=1639151365]
-transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.99341667, 0.11454084, 1.17134675e-07, -0.11454223, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.9934166, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/stage lights switch" unique_id=1969721109]
@@ -531,7 +531,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fun lights switch" unique_id=1671067284]
-transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.99341667, 0.11454084, 1.17134675e-07, -0.11454223, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.9934166, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fun lights switch" unique_id=1826872708]
@@ -551,7 +551,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/spot light switch" unique_id=560178376]
-transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.99341667, 0.11454084, 1.17134675e-07, -0.11454223, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.9934166, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/spot light switch" unique_id=191195447]
@@ -1403,6 +1403,6 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_akmmg")
+curve = SubResource("Curve3D_lqheo")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
