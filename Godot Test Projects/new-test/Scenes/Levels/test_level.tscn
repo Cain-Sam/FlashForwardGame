@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dn5py8pj6jepe"]
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/Player/player.tscn" id="1_iti4p"]
-[ext_resource type="Script" uid="uid://bg8g1gytlstqf" path="res://Scripts/test_level.gd" id="1_lqheo"]
+[ext_resource type="Script" uid="uid://bg8g1gytlstqf" path="res://Scenes/Levels/test_level.gd" id="1_lqheo"]
 [ext_resource type="PackedScene" uid="uid://i2f6t1bssoik" path="res://Scenes/VFX/water.tscn" id="2_l7ek2"]
 [ext_resource type="Script" uid="uid://dppljdd406dtd" path="res://Scripts/fog_switch.gd" id="2_rkdv3"]
 [ext_resource type="PackedScene" uid="uid://dyhrmfcfolehn" path="res://Scenes/Scenery/curtain.tscn" id="2_rsyfn"]
-[ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scripts/house_lights.gd" id="3_4tft1"]
+[ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scenes/Levels/house_lights.gd" id="3_4tft1"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
-[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scripts/stage_lights.gd" id="4_k0p41"]
+[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scenes/Levels/stage_lights.gd" id="4_k0p41"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/VFX/fog_machine.tscn" id="4_xnpcw"]
 [ext_resource type="Texture2D" uid="uid://by8oc5godxb5k" path="res://Textures/CarpetTest.png" id="5_3bggx"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
-[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scripts/fun_lights.gd" id="5_mbrqs"]
+[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scenes/Levels/fun_lights.gd" id="5_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://cxnx0wigyvhmm" path="res://vfx/shitty_colorful_vfx_cloud.tscn" id="5_xnpcw"]
-[ext_resource type="Script" uid="uid://bq3tt8y2whqih" path="res://Scripts/spot_light.gd" id="6_2f5yo"]
+[ext_resource type="Script" uid="uid://bq3tt8y2whqih" path="res://Scenes/Levels/spot_light.gd" id="6_2f5yo"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="PackedScene" uid="uid://dg3ekcx461lgr" path="res://Scenes/Lights/FlatLight.tscn" id="7_xq3o0"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/Scenery/door_rigid.tscn" id="9_7rivk"]
@@ -38,6 +38,26 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(0.3995327, 0.021056175, 0.087640636, 1)
 metallic = 0.08
 roughness = 0.72
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5x4p"]
+albedo_color = Color(0.07447178, 6.4961473e-06, 0.07744037, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
+albedo_color = Color(0.32430485, 0.2621465, 0.111075975, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnp3h"]
+albedo_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+metallic = 0.54
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kxxg"]
+albedo_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+metallic = 0.54
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pqdas"]
+viewport_path = NodePath("Building/Floor14/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lqheo"]
+viewport_path = NodePath("Building/Floor12/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgl4d"]
 albedo_color = Color(0.5137255, 0.5019608, 0, 1)
@@ -301,6 +321,44 @@ albedo_color = Color(1, 0.74509805, 0.47058824, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kklc1"]
 albedo_texture = ExtResource("5_3bggx")
 
+[sub_resource type="Animation" id="Animation_j1jhc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6546068, 1.8593011, 0.0028369203)]
+}
+
+[sub_resource type="Animation" id="Animation_kklc1"]
+resource_name = "camera_rotate"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9333334, 5.0666666, 7.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6546068, 1.8593011, 0.0028369203), Vector3(-0.6546068, 1.8593011, 0.0028369203), Vector3(-0.6546069, 2.597807, 0.0028369206), Vector3(-0.6546069, 2.597807, 0.0028369206)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tfomm"]
+_data = {
+&"RESET": SubResource("Animation_j1jhc"),
+&"camera_rotate": SubResource("Animation_kklc1")
+}
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p51s7"]
 albedo_color = Color(0.23137255, 0, 0.23137255, 1)
 
@@ -442,11 +500,45 @@ material = SubResource("StandardMaterial3D_1e8r0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.985653, 4.1833086, -7.6088686)
 use_collision = true
 size = Vector3(24.198036, 0.5546875, 30.775965)
+material = SubResource("StandardMaterial3D_p5x4p")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall2" unique_id=823660422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.542069, -0.42020273, 13.658771)
 operation = 2
 size = Vector3(6.2493668, 2.8468018, 2.8091125)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Building/Wall2" unique_id=1176349463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.732206, 0.39368153, 4.8547564)
+size = Vector3(0.9995117, 0.22601318, 2.0408936)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="TheaterCameraTV" type="CSGBox3D" parent="Building/Wall2/CSGBox3D" unique_id=871735494]
+transform = Transform3D(0.44848296, 0, 0, 0, 0.44848296, 0, 0, 0, 0.44848296, -0.09951711, 0.3456502, -0.74963856)
+size = Vector3(0.4951172, 1, 1)
+material = SubResource("StandardMaterial3D_xnp3h")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Building/Wall2/CSGBox3D/TheaterCameraTV" unique_id=779736488]
+transform = Transform3D(0.572482, 0, 0, 0, 0.57248193, 0, 0, 0, 0.572482, 0.38398623, 0.028284073, 0.0024032593)
+size = Vector3(0.4951172, 1.2901001, 1.3833008)
+material = SubResource("StandardMaterial3D_3kxxg")
+
+[node name="Sprite3D" type="Sprite3D" parent="Building/Wall2/CSGBox3D/TheaterCameraTV" unique_id=2080453323]
+transform = Transform3D(-7.2009736e-09, 0, 0.16473907, 0, 0.16473907, 0, -0.16473907, 0, -7.2009736e-09, -0.25155807, 0, 0.0035572052)
+texture = SubResource("ViewportTexture_pqdas")
+
+[node name="HallwayCameraTV" type="CSGBox3D" parent="Building/Wall2/CSGBox3D" unique_id=63760334]
+transform = Transform3D(0.44848296, 0, 0, 0, 0.44848296, 0, 0, 0, 0.44848296, -0.09951711, 0.3456502, 0.041951895)
+size = Vector3(0.4951172, 1, 1)
+material = SubResource("StandardMaterial3D_xnp3h")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Building/Wall2/CSGBox3D/HallwayCameraTV" unique_id=1279674475]
+transform = Transform3D(0.572482, 0, 0, 0, 0.57248193, 0, 0, 0, 0.572482, 0.38398623, 0.028284073, 0.0024032593)
+size = Vector3(0.4951172, 1.2901001, 1.3833008)
+material = SubResource("StandardMaterial3D_3kxxg")
+
+[node name="Sprite3D" type="Sprite3D" parent="Building/Wall2/CSGBox3D/HallwayCameraTV" unique_id=221804631]
+transform = Transform3D(-7.2009736e-09, 0, 0.16473907, 0, 0.16473907, 0, -0.16473907, 0, -7.2009736e-09, -0.25155807, 0, 0.0035572052)
+texture = SubResource("ViewportTexture_lqheo")
 
 [node name="Floor2" type="CSGBox3D" parent="Building" unique_id=2093462296]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -9.018004, 5.016956, 7.3116198)
@@ -726,6 +818,11 @@ use_collision = true
 size = Vector3(30.834248, 0.9736328, 7.7577586)
 material = SubResource("StandardMaterial3D_0j4h4")
 
+[node name="SubViewport" type="SubViewport" parent="Building/Floor14" unique_id=1699752934]
+
+[node name="stagecamera" type="Camera3D" parent="Building/Floor14/SubViewport" unique_id=1921468825]
+transform = Transform3D(0.9975885, 0.069404654, 0.00039844264, -0.044641223, 0.63723415, 0.7693762, 0.05314439, -0.76753867, 0.6387958, 29.654055, 4.844856, 3.1524272)
+
 [node name="Floor15" type="CSGBox3D" parent="Building" unique_id=872494278]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 47.428745, 1.0038052, -7.686636)
 use_collision = true
@@ -817,6 +914,16 @@ size = Vector3(0.18325663, 0.11328125, 30.142742)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 17.232058, 0.7901659, -26.822853)
 use_collision = true
 size = Vector3(76.67643, 0.9736328, 20.58489)
+
+[node name="SubViewport" type="SubViewport" parent="Building/Floor12" unique_id=1678059554]
+
+[node name="Camera3D" type="Camera3D" parent="Building/Floor12/SubViewport" unique_id=266471053]
+transform = Transform3D(-0.2861738, -0.5828744, 0.76050127, 0.00225049, 0.7932842, 0.60884744, -0.95817494, 0.17594768, -0.22570544, 51.3404, 7.1085353, -25.904747)
+fov = 79.98022
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Building/Floor12/SubViewport/Camera3D" unique_id=1825466972]
+libraries/ = SubResource("AnimationLibrary_tfomm")
+autoplay = &"camera_rotate"
 
 [node name="Floor13" type="CSGBox3D" parent="Building" unique_id=1549457326]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 17.232058, 0.7901659, 11.9256115)
