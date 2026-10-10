@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://daka3em8x00ym" path="res://Scenes/NPCs/Rat.tscn" id="10_mvu5i"]
 [ext_resource type="PackedScene" uid="uid://0xp8awsucx7e" path="res://Scenes/objects/ScannableShapeTest.tscn" id="11_xxcax"]
 [ext_resource type="PackedScene" uid="uid://bfpqkrhypfyav" path="res://Scenes/objects/table.tscn" id="12_xxcax"]
+[ext_resource type="PackedScene" uid="uid://c4tq3dpw4v2oj" path="res://Scenes/objects/light_board.tscn" id="13_akmmg"]
 [ext_resource type="PackedScene" uid="uid://o6kbvbf4polp" path="res://Scenes/Lights/StageLight.tscn" id="17_ch0ib"]
 [ext_resource type="PackedScene" uid="uid://dxy4jgmed2s46" path="res://Scenes/objects/NewStageSun.tscn" id="22_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://4q5s56fqwxja" path="res://path_3d_rope.tscn" id="23_2f5yo"]
@@ -395,7 +396,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_lqheo"]
+[sub_resource type="Curve3D" id="Curve3D_avjiw"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -490,7 +491,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.9934166, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676827e-08, -1.1333597e-07, -2.6433437e-08, 0.99341655, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -510,7 +511,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.967683e-08, -1.1333597e-07, -2.6433437e-08, 0.9934166, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676827e-08, -1.1333597e-07, -2.6433437e-08, 0.99341655, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -530,7 +531,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/stage lights switch" unique_id=1639151365]
-transform = Transform3D(0.99998623, 3.9676827e-08, -1.1333597e-07, -2.6433437e-08, 0.99341655, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676824e-08, -1.1333597e-07, -2.6433437e-08, 0.9934165, 0.11454084, 1.17134675e-07, -0.114542216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/stage lights switch" unique_id=1969721109]
@@ -550,7 +551,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fun lights switch" unique_id=1671067284]
-transform = Transform3D(0.99998623, 3.9676827e-08, -1.1333597e-07, -2.6433437e-08, 0.99341655, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676824e-08, -1.1333597e-07, -2.6433437e-08, 0.9934165, 0.11454084, 1.17134675e-07, -0.114542216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fun lights switch" unique_id=1826872708]
@@ -570,7 +571,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/spot light switch" unique_id=560178376]
-transform = Transform3D(0.99998623, 3.9676827e-08, -1.1333597e-07, -2.6433437e-08, 0.99341655, 0.11454084, 1.17134675e-07, -0.11454222, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676824e-08, -1.1333597e-07, -2.6433437e-08, 0.9934165, 0.11454084, 1.17134675e-07, -0.114542216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/spot light switch" unique_id=191195447]
@@ -1223,6 +1224,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3899182, 3.1546755, -18.36
 [node name="Lamp7" parent="Lights/Bar" unique_id=1157402563 instance=ExtResource("7_xq3o0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.281972, 3.1546755, 2.0219972)
 
+[node name="LightBoard" parent="." unique_id=47845347 instance=ExtResource("13_akmmg")]
+transform = Transform3D(-0.012380749, 0, -0.9999234, 0, 1, 0, 0.9999234, 0, -0.012380749, -0.11380339, 4.2580295, -7.3122377)
+
 [node name="Portals" type="Node3D" parent="." unique_id=550434520]
 
 [node name="Area3D" parent="Portals" unique_id=1652388293 instance=ExtResource("5_7w7ni")]
@@ -1392,6 +1396,6 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_lqheo")
+curve = SubResource("Curve3D_avjiw")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
