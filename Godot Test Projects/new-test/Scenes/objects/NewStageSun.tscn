@@ -48,23 +48,14 @@ gravity_scale = 6.48
 script = ExtResource("1_ahxan")
 intensityOffset = 10.0
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1613499315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6594322, 0)
+mesh = SubResource("ArrayMesh_nuj06")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=269642537]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.6594322, -0.012865782)
 mesh = SubResource("ArrayMesh_nuj06")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2020689666]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.6594322, 0)
-shape = SubResource("CylinderShape3D_oayfh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1613499315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6594322, 0)
-mesh = SubResource("ArrayMesh_nuj06")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1771139412 groups=["scannable"]]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.2141045, -0.6594322, -0.3250442)
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=274120385]
-transform = Transform3D(0.9993957, 0.0330022, -0.010913754, 0.03312883, -0.99938333, 0.011633568, -0.010523103, -0.011988082, -0.9998728, -0.3850019, 0.3619399, 0.029112935)
 shape = SubResource("CylinderShape3D_oayfh")
