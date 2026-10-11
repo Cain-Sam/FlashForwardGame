@@ -120,6 +120,12 @@ compositor_effects = Array[CompositorEffect]([null])
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t7ij0"]
 points = PackedVector3Array(-0.5, -1, 0, -0.49765074, -1, -0.049040705, -0.49765074, -1, 0.048942864, -0.5, 1, 0, -0.4904072, -1, -0.097592026, -0.49765074, 1, -0.049040705, -0.4904072, -1, 0.097494125, -0.49765074, 1, 0.048942864, -0.47856304, -1, -0.14516446, -0.4904072, 1, -0.097592026, -0.47856304, -1, 0.14506656, -0.4904072, 1, 0.097494125, -0.46202037, -1, -0.1913665, -0.47856304, 1, -0.14516446, -0.46202037, -1, 0.19126862, -0.47856304, 1, 0.14506656, -0.44097495, -1, -0.23570868, -0.46202037, 1, -0.1913665, -0.44097495, -1, 0.23561078, -0.46202037, 1, 0.19126862, -0.41581833, -1, -0.27779955, -0.44097495, 1, -0.23570868, -0.41581833, -1, 0.27770162, -0.44097495, 1, 0.23561078, -0.38655052, -1, -0.31724745, -0.41581833, 1, -0.27779955, -0.38655052, -1, 0.31714958, -0.41581833, 1, 0.27770162, -0.35356304, -1, -0.35356304, -0.38655052, 1, -0.31724745, -0.35356304, -1, 0.35346514, -0.38655052, 1, 0.31714958, -0.31724745, -1, -0.38655052, -0.35356304, 1, -0.35356304, -0.31724745, -1, 0.38645262, -0.35356304, 1, 0.35346514, -0.27779955, -1, -0.41581833, -0.31724745, 1, -0.38655052, -0.27779955, -1, 0.41572046, -0.31724745, 1, 0.38645262, -0.23570868, -1, -0.44097495, -0.27779955, 1, -0.41581833, -0.23570868, -1, 0.44087708, -0.27779955, 1, 0.41572046, -0.1913665, -1, -0.46202037, -0.23570868, 1, -0.44097495, -0.1913665, -1, 0.46192247, -0.23570868, 1, 0.44087708, -0.14516446, -1, -0.47856304, -0.1913665, 1, -0.46202037, -0.14516446, -1, 0.47846514, -0.1913665, 1, 0.46192247, -0.097592026, -1, -0.4904072, -0.14516446, 1, -0.47856304, -0.097592026, -1, 0.4903093, -0.14516446, 1, 0.47846514, -0.049040705, -1, -0.49765074, -0.097592026, 1, -0.4904072, -0.049040705, -1, 0.49755287, -0.097592026, 1, 0.4903093, 0, -1, -0.5, -0.049040705, 1, -0.49765074, 0, -1, 0.5, -0.049040705, 1, 0.49755287, 0.048942864, -1, -0.49765074, 0, 1, -0.5, 0.048942864, -1, 0.49755287, 0, 1, 0.5, 0.097494125, -1, -0.4904072, 0.048942864, 1, -0.49765074, 0.097494125, -1, 0.4903093, 0.048942864, 1, 0.49755287, 0.14506656, -1, -0.47856304, 0.097494125, 1, -0.4904072, 0.14506656, -1, 0.47846514, 0.097494125, 1, 0.4903093, 0.19126862, -1, -0.46202037, 0.14506656, 1, -0.47856304, 0.19126862, -1, 0.46192247, 0.14506656, 1, 0.47846514, 0.23561078, -1, -0.44097495, 0.19126862, 1, -0.46202037, 0.23561078, -1, 0.44087708, 0.19126862, 1, 0.46192247, 0.27770162, -1, -0.41581833, 0.23561078, 1, -0.44097495, 0.27770162, -1, 0.41572046, 0.23561078, 1, 0.44087708, 0.31714958, -1, -0.38655052, 0.27770162, 1, -0.41581833, 0.31714958, -1, 0.38645262, 0.27770162, 1, 0.41572046, 0.35346514, -1, -0.35356304, 0.31714958, 1, -0.38655052, 0.35346514, -1, 0.35346514, 0.31714958, 1, 0.38645262, 0.38645262, -1, -0.31724745, 0.35346514, 1, -0.35356304, 0.38645262, -1, 0.31714958, 0.35346514, 1, 0.35346514, 0.41572046, -1, -0.27779955, 0.38645262, 1, -0.31724745, 0.41572046, -1, 0.27770162, 0.38645262, 1, 0.31714958, 0.44087708, -1, -0.23570868, 0.41572046, 1, -0.27779955, 0.44087708, -1, 0.23561078, 0.41572046, 1, 0.27770162, 0.46192247, -1, -0.1913665, 0.44087708, 1, -0.23570868, 0.46192247, -1, 0.19126862, 0.44087708, 1, 0.23561078, 0.47846514, -1, -0.14516446, 0.46192247, 1, -0.1913665, 0.47846514, -1, 0.14506656, 0.46192247, 1, 0.19126862, 0.4903093, -1, -0.097592026, 0.47846514, 1, -0.14516446, 0.4903093, -1, 0.097494125, 0.47846514, 1, 0.14506656, 0.49755287, -1, -0.049040705, 0.4903093, 1, -0.097592026, 0.49755287, -1, 0.048942864, 0.4903093, 1, 0.097494125, 0.5, -1, 0, 0.49755287, 1, -0.049040705, 0.49755287, 1, 0.048942864, 0.5, 1, 0)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_1xiaw"]
+size = Vector2(9.3, 7.3)
+subdivide_width = 25
+subdivide_depth = 25
+orientation = 0
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_pqdas"]
 viewport_path = NodePath("Curtain Pole/SubViewport")
 
@@ -138,8 +144,8 @@ ao_texture = ExtResource("11_1f2ln")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p5x4p"]
 size = Vector2(9.3, 7.3)
-subdivide_width = 50
-subdivide_depth = 50
+subdivide_width = 25
+subdivide_depth = 25
 orientation = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skl3y"]
@@ -648,49 +654,103 @@ shape = SubResource("ConvexPolygonShape3D_t7ij0")
 
 [node name="curtain3" parent="Curtain Pole" unique_id=15610218 instance=ExtResource("10_mwpog")]
 transform = Transform3D(10.304434, 0, 0, 0, -2.8216851e-07, 0.10192633, 0, -6.455263, -4.4553414e-09, -0.44, -0.474, 24.343)
+mesh = SubResource("PlaneMesh_1xiaw")
+simulation_precision = 25
+pinned_points = [728, 726, 724, 722, 720, 718, 716, 714, 712, 710, 708, 706, 704, 702]
+attachments/0/point_index = 728
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
+attachments/1/point_index = 726
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
+attachments/2/point_index = 724
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
+attachments/3/point_index = 722
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
+attachments/4/point_index = 720
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
+attachments/5/point_index = 718
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
+attachments/6/point_index = 716
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
+attachments/7/point_index = 714
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
+attachments/8/point_index = 712
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
+attachments/9/point_index = 710
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
+attachments/10/point_index = 708
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
+attachments/11/point_index = 706
+attachments/11/spatial_attachment_path = NodePath("")
+attachments/11/offset = Vector3(0, 0, 0)
+attachments/12/point_index = 704
+attachments/12/spatial_attachment_path = NodePath("")
+attachments/12/offset = Vector3(0, 0, 0)
+attachments/13/point_index = 702
+attachments/13/spatial_attachment_path = NodePath("")
+attachments/13/offset = Vector3(0, 0, 0)
 
 [node name="curtain4" type="SoftBody3D" parent="Curtain Pole" unique_id=981222218 groups=["collidable"]]
 transform = Transform3D(10.304434, 0, 0, 0, -2.8216857e-07, 0.10192633, 0, -6.4552646, -4.4553414e-09, -0.44, 0.506, 24.343)
 material_override = SubResource("StandardMaterial3D_3kxxg")
 mesh = SubResource("PlaneMesh_p5x4p")
-simulation_precision = 100
+simulation_precision = 25
 total_mass = 0.076
 linear_stiffness = 0.35
 damping_coefficient = 0.23
-pinned_points = [2703, 2652, 2657, 2662, 2667, 2672, 2677, 2682, 2687, 2692, 2697]
-attachments/0/point_index = 2703
+pinned_points = [702, 728, 726, 724, 722, 720, 718, 716, 714, 712, 710, 708, 706, 704]
+attachments/0/point_index = 702
 attachments/0/spatial_attachment_path = NodePath("")
 attachments/0/offset = Vector3(0, 0, 0)
-attachments/1/point_index = 2652
+attachments/1/point_index = 728
 attachments/1/spatial_attachment_path = NodePath("")
 attachments/1/offset = Vector3(0, 0, 0)
-attachments/2/point_index = 2657
+attachments/2/point_index = 726
 attachments/2/spatial_attachment_path = NodePath("")
 attachments/2/offset = Vector3(0, 0, 0)
-attachments/3/point_index = 2662
+attachments/3/point_index = 724
 attachments/3/spatial_attachment_path = NodePath("")
 attachments/3/offset = Vector3(0, 0, 0)
-attachments/4/point_index = 2667
+attachments/4/point_index = 722
 attachments/4/spatial_attachment_path = NodePath("")
 attachments/4/offset = Vector3(0, 0, 0)
-attachments/5/point_index = 2672
+attachments/5/point_index = 720
 attachments/5/spatial_attachment_path = NodePath("")
 attachments/5/offset = Vector3(0, 0, 0)
-attachments/6/point_index = 2677
+attachments/6/point_index = 718
 attachments/6/spatial_attachment_path = NodePath("")
 attachments/6/offset = Vector3(0, 0, 0)
-attachments/7/point_index = 2682
+attachments/7/point_index = 716
 attachments/7/spatial_attachment_path = NodePath("")
 attachments/7/offset = Vector3(0, 0, 0)
-attachments/8/point_index = 2687
+attachments/8/point_index = 714
 attachments/8/spatial_attachment_path = NodePath("")
 attachments/8/offset = Vector3(0, 0, 0)
-attachments/9/point_index = 2692
+attachments/9/point_index = 712
 attachments/9/spatial_attachment_path = NodePath("")
 attachments/9/offset = Vector3(0, 0, 0)
-attachments/10/point_index = 2697
+attachments/10/point_index = 710
 attachments/10/spatial_attachment_path = NodePath("")
 attachments/10/offset = Vector3(0, 0, 0)
+attachments/11/point_index = 708
+attachments/11/spatial_attachment_path = NodePath("")
+attachments/11/offset = Vector3(0, 0, 0)
+attachments/12/point_index = 706
+attachments/12/spatial_attachment_path = NodePath("")
+attachments/12/offset = Vector3(0, 0, 0)
+attachments/13/point_index = 704
+attachments/13/spatial_attachment_path = NodePath("")
+attachments/13/offset = Vector3(0, 0, 0)
 script = ExtResource("13_buxhf")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Curtain Pole/curtain4" unique_id=655089238]
