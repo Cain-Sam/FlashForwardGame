@@ -8,13 +8,10 @@
 [ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scenes/Levels/house_lights.gd" id="3_4tft1"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
-[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scenes/Levels/stage_lights.gd" id="4_k0p41"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/VFX/fog_machine.tscn" id="4_xnpcw"]
 [ext_resource type="Texture2D" uid="uid://by8oc5godxb5k" path="res://Textures/CarpetTest.png" id="5_3bggx"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
-[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scenes/Levels/fun_lights.gd" id="5_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://cxnx0wigyvhmm" path="res://vfx/shitty_colorful_vfx_cloud.tscn" id="5_xnpcw"]
-[ext_resource type="Script" uid="uid://bq3tt8y2whqih" path="res://Scenes/Levels/spot_light.gd" id="6_2f5yo"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="PackedScene" uid="uid://dg3ekcx461lgr" path="res://Scenes/Lights/FlatLight.tscn" id="7_xq3o0"]
 [ext_resource type="PackedScene" uid="uid://bh377qwom0d52" path="res://Scenes/Scenery/door_rigid.tscn" id="9_7rivk"]
@@ -459,7 +456,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_avjiw"]
+[sub_resource type="Curve3D" id="Curve3D_2f5yo"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -557,11 +554,11 @@ size = Vector3(8.857849, 0.04647827, 4.0374746)
 material = SubResource("StandardMaterial3D_eglq2")
 
 [node name="fog switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=847103235]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, -2.9325538, -0.37067914, -2.715025)
+transform = Transform3D(-0.99999994, 8.395155e-08, -2.4390182e-08, 0, -0.2789912, -0.9602936, -8.742278e-08, -0.96029365, 0.27899116, -1.6512628, -0.06530118, -2.6115499)
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967681e-08, -1.1333597e-07, -2.6433437e-08, 0.9934161, 0.11454084, 1.17134675e-07, -0.114542164, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -581,7 +578,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.967681e-08, -1.1333597e-07, -2.6433437e-08, 0.9934161, 0.11454084, 1.17134675e-07, -0.114542164, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -594,66 +591,6 @@ transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833,
 shape = SubResource("BoxShape3D_p5x4p")
 
 [node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/house light switch" unique_id=620905399]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="stage lights switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=3905234]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.9248862, -0.40528965, -2.6802192)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/stage lights switch" unique_id=1639151365]
-transform = Transform3D(0.99998623, 3.9676806e-08, -1.1333597e-07, -2.6433437e-08, 0.993416, 0.11454084, 1.17134675e-07, -0.11454216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/stage lights switch" unique_id=1969721109]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("4_k0p41")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/stage lights switch/StaticBody3D" unique_id=1936447334]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/stage lights switch" unique_id=562043800]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="fun lights switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=244211974]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.5761962, -0.4092474, -2.665411)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fun lights switch" unique_id=1671067284]
-transform = Transform3D(0.99998623, 3.9676806e-08, -1.1333597e-07, -2.6433437e-08, 0.993416, 0.11454084, 1.17134675e-07, -0.11454216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fun lights switch" unique_id=1826872708]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("5_mbrqs")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/fun lights switch/StaticBody3D" unique_id=1257464945]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/fun lights switch" unique_id=2028555988]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="spot light switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=155478275]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.1954322, -0.4092474, -2.6654115)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/spot light switch" unique_id=560178376]
-transform = Transform3D(0.99998623, 3.9676806e-08, -1.1333597e-07, -2.6433437e-08, 0.993416, 0.11454084, 1.17134675e-07, -0.11454216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/spot light switch" unique_id=191195447]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("6_2f5yo")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/spot light switch/StaticBody3D" unique_id=1132453184]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/spot light switch" unique_id=285322326]
 libraries/ = SubResource("AnimationLibrary_3bggx")
 
 [node name="Floor4" type="CSGBox3D" parent="Building" unique_id=380427403]
@@ -990,7 +927,7 @@ transform = Transform3D(-1.2940954, -4.829629, -4.371139e-07, -4.829629, 1.29409
 ON = false
 currentPower = 3.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 60.0
 
 [node name="Left" parent="Lights/StageLights/AboveStage" unique_id=1998113257 instance=ExtResource("17_ch0ib")]
@@ -998,7 +935,7 @@ transform = Transform3D(-2.105179, -4.53522, -4.371139e-07, -4.53522, 2.105179, 
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 60.0
 
 [node name="Middle" parent="Lights/StageLights/AboveStage" unique_id=600053325 instance=ExtResource("17_ch0ib")]
@@ -1006,7 +943,7 @@ transform = Transform3D(1.5118494, -4.7659535, -4.371139e-07, -4.7659535, -1.511
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 60.0
 
 [node name="BackLightsBottom" type="Node3D" parent="Lights/StageLights" unique_id=261354044]
@@ -1015,21 +952,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09459114, 0.0789299, 0)
 [node name="Middle" parent="Lights/StageLights/BackLightsBottom" unique_id=947168920 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(2.862721, 0.8971224, 0, 0.8971224, -2.862721, -4.5298742e-07, -1.354617e-07, 4.3225884e-07, -3, 35.781616, -7.111957, -7.962165)
 ON = false
-lightEnergy = 10.0
+lightEnergy = 0.0
 lightRange = 10
 
 [node name="Right" parent="Lights/StageLights/BackLightsBottom" unique_id=1788027870 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(2.862721, 0.8971224, 0, 0.8971224, -2.862721, -4.5298742e-07, -1.354617e-07, 4.3225884e-07, -3, 35.781616, -7.111957, -1.2888327)
 ON = false
 currentPower = 0.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 lightRange = 10
 
 [node name="Left" parent="Lights/StageLights/BackLightsBottom" unique_id=1172054225 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(2.862721, 0.8971224, 0, 0.8971224, -2.862721, -4.5298742e-07, -1.354617e-07, 4.3225884e-07, -3, 35.781616, -7.111957, -14.405299)
 ON = false
 currentPower = 0.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 lightRange = 10
 
 [node name="BackLightsTop" type="Node3D" parent="Lights/StageLights" unique_id=65859318]
@@ -1038,21 +975,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4609537)
 [node name="Right" parent="Lights/StageLights/BackLightsTop" unique_id=416982406 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-2.948806, 0.551854, -2.6226832e-07, 0.551854, 2.948806, 0, 2.5779283e-07, -4.8244615e-08, -3, 35.781616, 5.3461576, -2.2361934)
 ON = false
-lightEnergy = 10.0
+lightEnergy = 0.0
 lightRange = 10
 
 [node name="Middle" parent="Lights/StageLights/BackLightsTop" unique_id=2095150141 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-2.9488058, 0.551854, -4.5298742e-07, 0.551854, 2.9488058, -2.1310237e-15, 4.452573e-07, -8.3327635e-08, -3, 35.781616, 5.3461576, -9.208059)
 ON = false
 currentPower = 0.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 lightRange = 10
 
 [node name="Left" parent="Lights/StageLights/BackLightsTop" unique_id=1593763237 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-2.9488058, 0.551854, -4.5298742e-07, 0.551854, 2.9488058, -2.1310237e-15, 4.452573e-07, -8.3327635e-08, -3, 35.781616, 5.3461576, -15.602699)
 ON = false
 currentPower = 0.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 lightRange = 10
 
 [node name="FirstRow" type="Node3D" parent="Lights/StageLights" unique_id=2078366180]
@@ -1062,21 +999,21 @@ transform = Transform3D(-1.4696575, -2.5989542, 0.292479, -2.2104762, 1.4136585,
 ON = false
 currentPower = 3.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 
 [node name="Left" parent="Lights/StageLights/FirstRow" unique_id=172625894 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-0.05357846, -2.5518749, 1.5764083, -0.64198154, 1.5498806, 2.4871125, -2.9300146, -0.29292318, -0.5737657, 17.630148, 4.9380913, -12.991206)
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 
 [node name="Middle" parent="Lights/StageLights/FirstRow" unique_id=1834010163 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-0.046139266, -2.6248362, 1.4519324, -0.57880986, 1.4326051, 2.571502, -2.9432719, -0.24058203, -0.52846014, 17.630148, 4.9380913, -7.719637)
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 
 [node name="BackRow" type="Node3D" parent="Lights/StageLights" unique_id=1829564801]
 
@@ -1085,7 +1022,7 @@ transform = Transform3D(0.012766868, -2.7347143, 1.233359, -0.6394069, 1.2025495
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 20.0
 
 [node name="MiddleLeft" parent="Lights/StageLights/BackRow" unique_id=2108638418 instance=ExtResource("17_ch0ib")]
@@ -1093,7 +1030,7 @@ transform = Transform3D(0.13394658, -2.7771986, 1.1265998, -0.6220398, 1.0774045
 ON = false
 currentPower = 3.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 20.0
 
 [node name="Left" parent="Lights/StageLights/BackRow" unique_id=229878961 instance=ExtResource("17_ch0ib")]
@@ -1101,7 +1038,7 @@ transform = Transform3D(-0.27901894, -2.8006306, 1.0385658, -0.67186064, 1.07520
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 20.0
 
 [node name="Right" parent="Lights/StageLights/BackRow" unique_id=1415943637 instance=ExtResource("17_ch0ib")]
@@ -1109,7 +1046,7 @@ transform = Transform3D(-1.2393692, -2.6070876, 0.8167362, -0.6692967, 1.1592559
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 20.0
 
 [node name="OnStage" type="Node3D" parent="Lights/StageLights" unique_id=1902664784]
@@ -1119,7 +1056,7 @@ transform = Transform3D(2.3047736, -4.0400867, -1.8345894, -4.2906895, -1.502578
 ON = false
 currentPower = 3.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 60.0
 
 [node name="Left" parent="Lights/StageLights/OnStage" unique_id=176766185 instance=ExtResource("17_ch0ib")]
@@ -1127,7 +1064,7 @@ transform = Transform3D(-3.1892846, -3.8505, 0.045948304, 1.8172852, -1.5576017,
 ON = false
 currentPower = 0.0
 maxPower = 3.0
-lightEnergy = 10.0
+lightEnergy = 0.0
 radius = 60.0
 
 [node name="SpotLight" type="Node3D" parent="Lights/StageLights" unique_id=676701458]
@@ -1137,7 +1074,7 @@ transform = Transform3D(-2.867379, 0.8821209, 2.6226832e-07, 0.8821209, 2.867379
 ON = false
 currentPower = 3.0
 maxPower = 3.0
-lightEnergy = 50.0
+lightEnergy = 0.0
 radius = 20.0
 
 [node name="HouseLights" type="Node3D" parent="Lights" unique_id=187425165]
@@ -2019,7 +1956,7 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_avjiw")
+curve = SubResource("Curve3D_2f5yo")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 

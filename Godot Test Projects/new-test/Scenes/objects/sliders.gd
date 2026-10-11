@@ -2,7 +2,7 @@ extends StaticBody3D
 @onready var stageLights: Node3D = $"../../../../Lights/StageLights"
 @export var lightGroup = ""
 @export var level = 1
-@export var lightIntensity = 1
+@export var lightIntensity = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +10,8 @@ func _ready() -> void:
 	while tempCount > 0:
 		self.position.z -= 0.1
 		tempCount -= 1
+		for uniqueLight in stageLights.find_child(lightGroup).get_children():
+				uniqueLight.lightEnergy += lightIntensity
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
