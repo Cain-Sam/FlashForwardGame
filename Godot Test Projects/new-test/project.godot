@@ -214,7 +214,5 @@ showfps={
 
 rendering_device/d3d12/max_resource_descriptors=524288
 rendering_device/driver.windows="d3d12"
-lights_and_shadows/directional_shadow/size=1024
-lights_and_shadows/directional_shadow/size.mobile=1024
 environment/volumetric_fog/volume_size=124
 environment/volumetric_fog/volume_depth=124
