@@ -9,15 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://csdeiayy0cvtj" path="res://Textures/woodfloor/WoodFloor070_4K-PNG_Color.png" id="3_kklc1"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
-[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scenes/Levels/stage_lights.gd" id="4_k0p41"]
 [ext_resource type="Texture2D" uid="uid://cvo2yf8tc62ib" path="res://Textures/woodfloor/WoodFloor070_4K-PNG_NormalGL.png" id="4_tfomm"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/VFX/fog_machine.tscn" id="4_xnpcw"]
 [ext_resource type="Texture2D" uid="uid://by8oc5godxb5k" path="res://Textures/CarpetTest.png" id="5_3bggx"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
-[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scenes/Levels/fun_lights.gd" id="5_mbrqs"]
 [ext_resource type="Texture2D" uid="uid://deltdh5ipqcso" path="res://Textures/woodfloor/WoodFloor070_4K-PNG_Roughness.png" id="5_t6ttu"]
 [ext_resource type="PackedScene" uid="uid://cxnx0wigyvhmm" path="res://vfx/shitty_colorful_vfx_cloud.tscn" id="5_xnpcw"]
-[ext_resource type="Script" uid="uid://bq3tt8y2whqih" path="res://Scenes/Levels/spot_light.gd" id="6_2f5yo"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://dbahikmx3gf03" path="res://Textures/Onyx/Onyx013_4K-PNG_Color.png" id="6_l843e"]
 [ext_resource type="Texture2D" uid="uid://cleoabu1ltk0e" path="res://Textures/Onyx/Onyx013_4K-PNG_NormalGL.png" id="7_etqpt"]
@@ -531,7 +528,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_0xgmu"]
+[sub_resource type="Curve3D" id="Curve3D_wlfjt"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -672,7 +669,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676806e-08, -1.1333597e-07, -2.6433437e-08, 0.993416, 0.11454084, 1.17134675e-07, -0.11454216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -692,7 +689,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676806e-08, -1.1333597e-07, -2.6433437e-08, 0.993416, 0.11454084, 1.17134675e-07, -0.11454216, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -705,66 +702,6 @@ transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833,
 shape = SubResource("BoxShape3D_p5x4p")
 
 [node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/house light switch" unique_id=620905399]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="stage lights switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=3905234]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.9248862, -0.40528965, -2.6802192)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/stage lights switch" unique_id=1639151365]
-transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/stage lights switch" unique_id=1969721109]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("4_k0p41")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/stage lights switch/StaticBody3D" unique_id=1936447334]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/stage lights switch" unique_id=562043800]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="fun lights switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=244211974]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.5761962, -0.4092474, -2.665411)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fun lights switch" unique_id=1671067284]
-transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fun lights switch" unique_id=1826872708]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("5_mbrqs")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/fun lights switch/StaticBody3D" unique_id=1257464945]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/fun lights switch" unique_id=2028555988]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="spot light switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=155478275]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.1954322, -0.4092474, -2.6654115)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/spot light switch" unique_id=560178376]
-transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/spot light switch" unique_id=191195447]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("6_2f5yo")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/spot light switch/StaticBody3D" unique_id=1132453184]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/spot light switch" unique_id=285322326]
 libraries/ = SubResource("AnimationLibrary_3bggx")
 
 [node name="Table" parent="Building/Floor3" unique_id=1970238669 instance=ExtResource("12_xxcax")]
@@ -2156,7 +2093,7 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_0xgmu")
+curve = SubResource("Curve3D_wlfjt")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 
