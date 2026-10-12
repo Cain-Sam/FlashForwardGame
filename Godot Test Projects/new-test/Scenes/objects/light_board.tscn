@@ -1,20 +1,22 @@
-[gd_scene format=3 uid="uid://c4tq3dpw4v2oj"]
+[gd_scene format=3 uid="uid://b7sgs7hfan5y3"]
 
-[ext_resource type="Texture2D" uid="uid://b2uxjuekc8fey" path="res://Textures/Metal/Metal038_4K-PNG_Color.png" id="1_dvyuh"]
-[ext_resource type="Texture2D" uid="uid://dbg34dbvkpdd2" path="res://Textures/Metal/Metal038_4K-PNG_Metalness.png" id="2_g8l4m"]
-[ext_resource type="Texture2D" uid="uid://cxape886v13un" path="res://Textures/Metal/Metal038_4K-PNG_NormalGL.png" id="3_jboq1"]
-[ext_resource type="Texture2D" uid="uid://d2d16jf5wnn45" path="res://Textures/Metal/Metal038_4K-PNG_Roughness.png" id="4_0m3nu"]
+[ext_resource type="Script" uid="uid://x5gend0dnhav" path="res://Scenes/objects/sliders.gd" id="1_1buc0"]
+[ext_resource type="Script" uid="uid://boa3ysf6au8je" path="res://Scenes/objects/PowerIndicator.gd" id="1_msxle"]
+[ext_resource type="Script" uid="uid://bumdi8t4nirc6" path="res://Scenes/objects/LightboardOn.gd" id="1_u12c6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euyio"]
+albedo_color = Color(0.712692, 2.9359758e-06, 5.7756904e-07, 1)
+emission_enabled = true
+emission = Color(0.28166673, 2.030516e-07, 1.0829419e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m77gd"]
+size = Vector3(0.5213623, 0.102874756, 0.5350418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dvyuh"]
+size = Vector3(0.5213623, 0.102874756, 0.5350418)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v84vq"]
-albedo_texture = ExtResource("1_dvyuh")
-metallic = 1.0
-metallic_texture = ExtResource("2_g8l4m")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("4_0m3nu")
-normal_enabled = true
-normal_texture = ExtResource("3_jboq1")
-uv1_scale = Vector3(2.5, 2.5, 2.5)
-uv1_triplanar = true
+albedo_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oayfh"]
 size = Vector3(8, 0.491, 3)
@@ -22,15 +24,55 @@ size = Vector3(8, 0.491, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u37j"]
 size = Vector3(7.7936096, 0.54397583, 1.9901123)
 
-[sub_resource type="BoxMesh" id="BoxMesh_m77gd"]
-size = Vector3(0.5213623, 0.102874756, 0.5350418)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvyuh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hul88"]
 size = Vector3(0.10595703, 0.102874756, 0.18362427)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_u12c6"]
+size = Vector3(0.10595703, 0.102874756, 0.18362427)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msxle"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oayfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1buc0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u12c6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hul88"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrmsj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wbjm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rdwv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ylos"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pbp7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_716d8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyhwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fm66"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duqkq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l35nx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1105"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0m3nu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7t3y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8l4m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jboq1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0m3nu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n62h"]
 albedo_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
@@ -46,6 +88,20 @@ size = Vector3(0.27056885, 0.102874756, 0.25336075)
 
 [node name="LightBoard" type="StaticBody3D" unique_id=47845347]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1780943616]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_u12c6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D" unique_id=585462743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.730239, 0.19454956, -1.7585263)
+material_override = SubResource("StandardMaterial3D_euyio")
+mesh = SubResource("BoxMesh_m77gd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1551793523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.730239, 0.19454956, -1.7585263)
+shape = SubResource("BoxShape3D_dvyuh")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2075078260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22116268, -0.035176933, -0.7205928)
 material_override = SubResource("StandardMaterial3D_v84vq")
@@ -54,10 +110,6 @@ mesh = SubResource("BoxMesh_oayfh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1348504888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21754456, -0.030685425, -0.7353843)
 shape = SubResource("BoxShape3D_7u37j")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=585462743]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.730239, 0.19454956, -1.7585263)
-mesh = SubResource("BoxMesh_m77gd")
 
 [node name="Slidergroup" type="Node3D" parent="." unique_id=1983547596]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20669091, 0, 0)
@@ -69,31 +121,55 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup" unique_id=720168819]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup/Sliders" unique_id=445317854]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -3.8989449, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup/Sliders" unique_id=486463471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9516587, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "BackRow"
+lightIntensity = 3
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup/Sliders/RigidBody3D" unique_id=105990173]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup/Sliders/RigidBody3D" unique_id=648849206]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup" unique_id=428982623]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=952182981]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.4829245, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.7324357, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_msxle")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackRow"
+lightName = "Right"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=737294084]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -4.1057262, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -4.2233458, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_1buc0")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackRow"
+lightName = "Left"
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=399765508]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.688201, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.8965883, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_u12c6")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackRow"
+lightName = "MiddleLeft"
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Slidergroup/PowerIndicator" unique_id=35756674]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.9006696, 0.21320927, -1.0005295)
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -4.062921, 0.21320927, -1.0005295)
 material_override = SubResource("StandardMaterial3D_hul88")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackRow"
+lightName = "MiddleRight"
 
 [node name="Slidergroup2" type="Node3D" parent="." unique_id=584967160]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50130093, 0, 0)
@@ -105,26 +181,47 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup2" unique_id=1756342418]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup2/Sliders" unique_id=1573626678]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -3.483018, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup2/Sliders" unique_id=1715551335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5178146, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "FirstRow"
+lightIntensity = 3
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup2/Sliders/RigidBody3D" unique_id=1086365989]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup2/Sliders/RigidBody3D" unique_id=908628653]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup2" unique_id=1727966192]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup2/PowerIndicator" unique_id=1090971186]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.699954, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.340073, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_nrmsj")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "FirstRow"
+lightName = "Right"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup2/PowerIndicator" unique_id=390663325]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.1187558, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.6763864, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_3wbjm")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "FirstRow"
+lightName = "Left"
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup2/PowerIndicator" unique_id=397224618]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.9052305, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.507627, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_7rdwv")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "FirstRow"
+lightName = "Middle"
 
 [node name="Slidergroup3" type="Node3D" parent="." unique_id=841196151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79555357, 0, 0)
@@ -136,26 +233,48 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup3" unique_id=1666128012]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup3/Sliders" unique_id=2120807336]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -3.0868268, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup3/Sliders" unique_id=169424810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1161923, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "AboveStage"
+level = 4
+lightIntensity = 6
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup3/Sliders/RigidBody3D" unique_id=1514412745]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup3/Sliders/RigidBody3D" unique_id=704534931]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup3" unique_id=1601255425]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup3/PowerIndicator" unique_id=1181591013]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.8880261, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.9366689, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_5ylos")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "AboveStage"
+lightName = "Right"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup3/PowerIndicator" unique_id=121018842]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.3068275, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.268561, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_8pbp7")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "AboveStage"
+lightName = "Left"
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup3/PowerIndicator" unique_id=926131877]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.0933022, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -3.100091, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_716d8")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "AboveStage"
+lightName = "Middle"
 
 [node name="Slidergroup4" type="Node3D" parent="." unique_id=1680562889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0599669, 0, 0)
@@ -167,21 +286,39 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup4" unique_id=582992827]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup4/Sliders" unique_id=510734065]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -2.630346, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup4/Sliders" unique_id=282499861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6877627, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "OnStage"
+lightIntensity = 3
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup4/Sliders/RigidBody3D" unique_id=2081547253]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup4/Sliders/RigidBody3D" unique_id=998164988]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup4" unique_id=421324622]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup4/PowerIndicator" unique_id=1406028189]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.1831782, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.5387807, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_pyhwn")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "OnStage"
+lightName = "Right"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup4/PowerIndicator" unique_id=131232801]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.3972931, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.7116723, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_5fm66")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "OnStage"
+lightName = "Left"
 
 [node name="Slidergroup5" type="Node3D" parent="." unique_id=233148187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3505112, 0, 0)
@@ -193,26 +330,48 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup5" unique_id=1444113155]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup5/Sliders" unique_id=522476398]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -2.2278354, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup5/Sliders" unique_id=213809755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2623928, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "BackLightsTop"
+level = 3
+lightIntensity = 10
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup5/Sliders/RigidBody3D" unique_id=522476398]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup5/Sliders/RigidBody3D" unique_id=120155307]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup5" unique_id=151711852]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup5/PowerIndicator" unique_id=1590559010]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -0.29657376, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.030962, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_duqkq")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackLightsTop"
+lightName = "Right"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup5/PowerIndicator" unique_id=1051717429]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -0.7153752, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.3666954, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_l35nx")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackLightsTop"
+lightName = "Left"
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup5/PowerIndicator" unique_id=2124295866]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -0.5018499, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -2.1989179, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_x1105")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackLightsTop"
+lightName = "Middle"
 
 [node name="Slidergroup6" type="Node3D" parent="." unique_id=93841253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6395328, 0, 0)
@@ -224,26 +383,48 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup6" unique_id=1922365271]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup6/Sliders" unique_id=501610696]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -1.8226854, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup6/Sliders" unique_id=1398370522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8154854, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "BackLightsBottom"
+level = 3
+lightIntensity = 10
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup6/Sliders/RigidBody3D" unique_id=716472041]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup6/Sliders/RigidBody3D" unique_id=1591696252]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup6" unique_id=1494424882]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup6/PowerIndicator" unique_id=1674279654]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.5219457, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.6262245, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_0m3nu")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackLightsBottom"
+lightName = "Right"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Slidergroup6/PowerIndicator" unique_id=834658492]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.10314441, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.970473, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_d7t3y")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackLightsBottom"
+lightName = "Left"
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Slidergroup6/PowerIndicator" unique_id=1512781378]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.3166697, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, -1.8009342, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_g8l4m")
 mesh = SubResource("QuadMesh_oayfh")
+script = ExtResource("1_msxle")
+lightGroup = "BackLightsBottom"
+lightName = "Middle"
 
 [node name="Slidergroup7" type="Node3D" parent="." unique_id=1000772212]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21140313, 0, 0)
@@ -255,16 +436,32 @@ font_size = 16
 
 [node name="Sliders" type="Node3D" parent="Slidergroup7" unique_id=1574185836]
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup7/Sliders" unique_id=2008481469]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, 0.72707486, 0.20090857, 0.30549395)
+[node name="RigidBody3D" type="StaticBody3D" parent="Slidergroup7/Sliders" unique_id=807805996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7283926, 0.22809365, 0.2761535)
+collision_layer = 5
+script = ExtResource("1_1buc0")
+lightGroup = "SpotLight"
+level = 0
+lightIntensity = 6
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Slidergroup7/Sliders/RigidBody3D" unique_id=937153666]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+material_override = SubResource("StandardMaterial3D_dvyuh")
 mesh = SubResource("BoxMesh_hul88")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slidergroup7/Sliders/RigidBody3D" unique_id=1911064147]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -0.01396966, -0.027185082, 0.029340446)
+shape = SubResource("BoxShape3D_u12c6")
 
 [node name="PowerIndicator" type="Node3D" parent="Slidergroup7" unique_id=779637672]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Slidergroup7/PowerIndicator" unique_id=534695732]
-transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 3.2246137, 0.21320927, -1.0005295)
-material_override = SubResource("StandardMaterial3D_hul88")
-mesh = SubResource("QuadMesh_oayfh")
+transform = Transform3D(0.14, 0, 0, 0, -6.119594e-09, 0.14, 0, -0.14, -6.119594e-09, 0.7531934, 0.21320927, -1.0005295)
+material_override = SubResource("StandardMaterial3D_jboq1")
+mesh = SubResource("QuadMesh_0m3nu")
+script = ExtResource("1_msxle")
+lightGroup = "SpotLight"
+lightName = "BigSpot"
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=896890849]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.1965332, 0.17325537, -0.7280511)
