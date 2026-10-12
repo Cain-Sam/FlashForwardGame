@@ -25,6 +25,12 @@ func kicked(direction, intensity):
 	if !power:
 		self.get_child(0).material_override.albedo_color = Color(255, 0, 0).darkened(0.5)
 		self.get_child(0).material_override.emission = Color(255, 0, 0).darkened(0.5)
+		for child in self.get_parent().get_children():
+			if child is Sprite3D:
+				child.visible = false
 	else:
 		self.get_child(0).material_override.albedo_color = Color(0, 255, 0).darkened(0.5)
 		self.get_child(0).material_override.emission = Color(0, 255, 0).darkened(0.5)
+		for child in self.get_parent().get_children():
+			if child is Sprite3D:
+				child.visible = true
