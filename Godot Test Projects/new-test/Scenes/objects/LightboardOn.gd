@@ -19,8 +19,6 @@ func kicked(direction, intensity):
 			var bulb = lightObject.find_child("Bulb")
 			var light = lightObject.find_child("Light")
 			lightObject.ON = !lightObject.ON
-			light.light_color = Color(0.5,0.5,0.5)
-			bulb.material_override.emission = Color(0.5,0.5,0.5)
 	
 	if !power:
 		self.get_child(0).material_override.albedo_color = Color(255, 0, 0).darkened(0.5)

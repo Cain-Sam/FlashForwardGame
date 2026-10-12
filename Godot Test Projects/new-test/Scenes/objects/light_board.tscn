@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4tq3dpw4v2oj"]
 
 [ext_resource type="Script" uid="uid://x5gend0dnhav" path="res://Scenes/objects/sliders.gd" id="1_1buc0"]
+[ext_resource type="Script" uid="uid://cnpd5iw3hfymq" path="res://Scenes/objects/light_board_body.gd" id="1_dvyuh"]
 [ext_resource type="Script" uid="uid://boa3ysf6au8je" path="res://Scenes/objects/PowerIndicator.gd" id="1_msxle"]
 [ext_resource type="Script" uid="uid://bumdi8t4nirc6" path="res://Scenes/objects/LightboardOn.gd" id="1_u12c6"]
 
@@ -87,6 +88,7 @@ height = 7.8100586
 size = Vector3(0.27056885, 0.102874756, 0.25336075)
 
 [node name="LightBoard" type="StaticBody3D" unique_id=47845347]
+script = ExtResource("1_dvyuh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1780943616]
 collision_layer = 5

@@ -15,7 +15,7 @@ resource_local_to_scene = true
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.05882353)
 emission_enabled = true
-emission = Color(1, 1, 1, 1)
+emission = Color(0.32941177, 0.32941177, 0.32941177, 1)
 emission_energy_multiplier = 9.77
 
 [sub_resource type="SphereMesh" id="SphereMesh_oayfh"]
@@ -41,6 +41,7 @@ mesh = SubResource("CylinderMesh_oayfh")
 [node name="Light" type="SpotLight3D" parent="MeshInstance3D" unique_id=1227562570]
 transform = Transform3D(1, 0, 0, 0, 0.007127539, 0.9999746, 0, -0.9999746, 0.007127539, 0, -0.008549534, 0)
 layers = 11
+light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
 light_energy = 10.147
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
