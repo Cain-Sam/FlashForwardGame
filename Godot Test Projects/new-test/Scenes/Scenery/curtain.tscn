@@ -22,16 +22,15 @@ ao_enabled = true
 ao_texture = ExtResource("1_p1s5g")
 uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
-uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p5x4p"]
 size = Vector2(9.3, 7.3)
-subdivide_width = 50
-subdivide_depth = 50
+subdivide_width = 35
+subdivide_depth = 35
 orientation = 0
 
 [node name="curtain3" type="SoftBody3D" unique_id=15610218 groups=["collidable"]]
-transform = Transform3D(10.304434, 0, 0, 0, -4.4553423e-09, 0.10192633, 0, -6.455263, -2.8216846e-07, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_3kxxg")
 mesh = SubResource("PlaneMesh_p5x4p")
 simulation_precision = 100
