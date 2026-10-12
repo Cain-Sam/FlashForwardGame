@@ -478,7 +478,7 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dtjkg"]
-size = Vector2(28.975, 7)
+size = Vector2(28.77, 4.605)
 subdivide_width = 25
 subdivide_depth = 25
 orientation = 0
@@ -1675,7 +1675,7 @@ attachments/26/spatial_attachment_path = NodePath("")
 attachments/26/offset = Vector3(0, 0, 0)
 
 [node name="curtain5" parent="Curtains/Curtain Pole" unique_id=978497570 instance=ExtResource("2_rsyfn")]
-transform = Transform3D(10.304434, 0, 0, 0, -2.8216948e-07, 0.10192633, 0, -6.455285, -4.4553303e-09, 125.11331, -0.0008943081, -28.83881)
+transform = Transform3D(10.304434, 0, 0, 0, -2.8216957e-07, 0.10192633, 0, -6.4552875, -4.455302e-09, 125.11331, -0.0008943081, -29.107346)
 material_override = SubResource("StandardMaterial3D_akmmg")
 mesh = SubResource("PlaneMesh_dtjkg")
 simulation_precision = 25
