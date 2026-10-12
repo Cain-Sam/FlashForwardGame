@@ -44,7 +44,7 @@ layers = 11
 light_energy = 10.147
 shadow_enabled = true
 distance_fade_enabled = true
-distance_fade_shadow = 22.14
+distance_fade_shadow = 22.17
 omni_range = 10.0
 
 [node name="Bulb" type="MeshInstance3D" parent="MeshInstance3D" unique_id=740350196]

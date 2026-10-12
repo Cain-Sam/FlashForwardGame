@@ -662,7 +662,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676795e-08, -1.1333597e-07, -2.6433437e-08, 0.9934157, 0.11454084, 1.17134675e-07, -0.11454213, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967679e-08, -1.1333597e-07, -2.6433437e-08, 0.99341565, 0.11454084, 1.17134675e-07, -0.11454212, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -682,7 +682,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676795e-08, -1.1333597e-07, -2.6433437e-08, 0.9934157, 0.11454084, 1.17134675e-07, -0.11454213, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967679e-08, -1.1333597e-07, -2.6433437e-08, 0.99341565, 0.11454084, 1.17134675e-07, -0.11454212, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -1085,6 +1085,7 @@ ON = false
 currentPower = 3.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 10
 radius = 60.0
 
 [node name="Left" parent="Lights/StageLights/AboveStage" unique_id=1998113257 instance=ExtResource("17_ch0ib")]
@@ -1093,6 +1094,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 10
 radius = 60.0
 
 [node name="Middle" parent="Lights/StageLights/AboveStage" unique_id=600053325 instance=ExtResource("17_ch0ib")]
@@ -1101,6 +1103,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 10
 radius = 60.0
 
 [node name="BackLightsBottom" type="Node3D" parent="Lights/StageLights" unique_id=261354044]
@@ -1157,6 +1160,7 @@ ON = false
 currentPower = 3.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 20
 
 [node name="Left" parent="Lights/StageLights/FirstRow" unique_id=172625894 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-0.05357846, -2.5518749, 1.5764083, -0.64198154, 1.5498806, 2.4871125, -2.9300146, -0.29292318, -0.5737657, 17.630148, 4.9380913, -12.991206)
@@ -1164,6 +1168,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 20
 
 [node name="Middle" parent="Lights/StageLights/FirstRow" unique_id=1834010163 instance=ExtResource("17_ch0ib")]
 transform = Transform3D(-0.046139266, -2.6248362, 1.4519324, -0.57880986, 1.4326051, 2.571502, -2.9432719, -0.24058203, -0.52846014, 17.630148, 4.9380913, -7.719637)
@@ -1171,6 +1176,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 20
 
 [node name="BackRow" type="Node3D" parent="Lights/StageLights" unique_id=1829564801]
 
@@ -1180,6 +1186,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 35
 radius = 20.0
 
 [node name="MiddleLeft" parent="Lights/StageLights/BackRow" unique_id=2108638418 instance=ExtResource("17_ch0ib")]
@@ -1188,6 +1195,7 @@ ON = false
 currentPower = 3.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 35
 radius = 20.0
 
 [node name="Left" parent="Lights/StageLights/BackRow" unique_id=229878961 instance=ExtResource("17_ch0ib")]
@@ -1196,6 +1204,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 35
 radius = 20.0
 
 [node name="Right" parent="Lights/StageLights/BackRow" unique_id=1415943637 instance=ExtResource("17_ch0ib")]
@@ -1204,6 +1213,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 35
 radius = 20.0
 
 [node name="OnStage" type="Node3D" parent="Lights/StageLights" unique_id=1902664784]
@@ -1214,6 +1224,7 @@ ON = false
 currentPower = 3.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 10
 radius = 60.0
 
 [node name="Left" parent="Lights/StageLights/OnStage" unique_id=176766185 instance=ExtResource("17_ch0ib")]
@@ -1222,6 +1233,7 @@ ON = false
 currentPower = 0.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 10
 radius = 60.0
 
 [node name="SpotLight" type="Node3D" parent="Lights/StageLights" unique_id=676701458]
@@ -1232,6 +1244,7 @@ ON = false
 currentPower = 3.0
 maxPower = 3.0
 lightEnergy = 0.0
+lightRange = 20
 radius = 20.0
 
 [node name="HouseLights" type="Node3D" parent="Lights" unique_id=187425165]
