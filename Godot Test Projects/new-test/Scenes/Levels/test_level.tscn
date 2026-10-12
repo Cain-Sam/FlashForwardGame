@@ -8,11 +8,9 @@
 [ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scenes/Levels/house_lights.gd" id="3_4tft1"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
-[ext_resource type="Script" uid="uid://dxyfoxp2hq2rt" path="res://Scenes/Levels/stage_lights.gd" id="4_k0p41"]
 [ext_resource type="PackedScene" uid="uid://b1nwamhsw7vb6" path="res://Scenes/VFX/fog_machine.tscn" id="4_xnpcw"]
 [ext_resource type="Texture2D" uid="uid://by8oc5godxb5k" path="res://Textures/CarpetTest.png" id="5_3bggx"]
 [ext_resource type="PackedScene" uid="uid://05i7s1qkfh7c" path="res://Scenes/Scenery/teleporter.tscn" id="5_7w7ni"]
-[ext_resource type="Script" uid="uid://dmc77cyn8nref" path="res://Scenes/Levels/fun_lights.gd" id="5_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://cxnx0wigyvhmm" path="res://vfx/shitty_colorful_vfx_cloud.tscn" id="5_xnpcw"]
 [ext_resource type="PackedScene" uid="uid://ithph37eu7eu" path="res://Scenes/objects/ladder.tscn" id="6_btda1"]
 [ext_resource type="PackedScene" uid="uid://dg3ekcx461lgr" path="res://Scenes/Lights/FlatLight.tscn" id="7_xq3o0"]
@@ -458,7 +456,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_avjiw"]
+[sub_resource type="Curve3D" id="Curve3D_2f5yo"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -466,6 +464,12 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lqheo"]
+viewport_path = NodePath("Building/Floor12/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pqdas"]
+viewport_path = NodePath("Building/Floor14/SubViewport")
 
 [node name="TestLevel" type="Node3D" unique_id=1767970727]
 script = ExtResource("1_lqheo")
@@ -511,14 +515,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.542069, -0.42020273, 13.658
 operation = 2
 size = Vector3(6.2493668, 2.8468018, 2.8091125)
 
-[node name="Sprite3D2" type="Sprite3D" parent="Building" unique_id=221804631]
-transform = Transform3D(-5.8793566e-09, 0.13791986, -0.030592263, 1.8883703e-09, -0.030592263, -0.13791986, -0.14127213, -6.1487797e-09, -5.703966e-10, 2.611647, 3.381118, -8.242633)
-texture = SubResource("ViewportTexture_lqheo")
-
-[node name="Sprite3D" type="Sprite3D" parent="Building" unique_id=2080453323]
-transform = Transform3D(-5.879375e-09, 0.1379199, -0.030592082, 1.8883746e-09, -0.030592082, -0.1379199, -0.14127213, -6.148798e-09, -5.7040456e-10, 2.6152313, 3.3744767, -9.140236)
-texture = SubResource("ViewportTexture_pqdas")
-
 [node name="Floor2" type="CSGBox3D" parent="Building" unique_id=2093462296]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -9.018061, 5.018106, 7.310966)
 use_collision = true
@@ -562,7 +558,7 @@ transform = Transform3D(-0.99999994, 8.395155e-08, -2.4390182e-08, 0, -0.2789912
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676816e-08, -1.1333597e-07, -2.6433437e-08, 0.9934163, 0.11454084, 1.17134675e-07, -0.11454219, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -582,7 +578,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676816e-08, -1.1333597e-07, -2.6433437e-08, 0.9934163, 0.11454084, 1.17134675e-07, -0.11454219, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676802e-08, -1.1333597e-07, -2.6433437e-08, 0.99341595, 0.11454084, 1.17134675e-07, -0.11454215, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -595,66 +591,6 @@ transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833,
 shape = SubResource("BoxShape3D_p5x4p")
 
 [node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/house light switch" unique_id=620905399]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="stage lights switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=3905234]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.9248862, -0.40528965, -2.6802192)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/stage lights switch" unique_id=1639151365]
-transform = Transform3D(0.99998623, 3.9676816e-08, -1.1333597e-07, -2.6433437e-08, 0.99341625, 0.11454084, 1.17134675e-07, -0.114542186, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/stage lights switch" unique_id=1969721109]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("4_k0p41")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/stage lights switch/StaticBody3D" unique_id=1936447334]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/stage lights switch" unique_id=562043800]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="fun lights switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=244211974]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.5761962, -0.4092474, -2.665411)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fun lights switch" unique_id=1671067284]
-transform = Transform3D(0.99998623, 3.9676816e-08, -1.1333597e-07, -2.6433437e-08, 0.99341625, 0.11454084, 1.17134675e-07, -0.114542186, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fun lights switch" unique_id=1826872708]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("5_mbrqs")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/fun lights switch/StaticBody3D" unique_id=1257464945]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/fun lights switch" unique_id=2028555988]
-libraries/ = SubResource("AnimationLibrary_3bggx")
-
-[node name="spot light switch" type="MeshInstance3D" parent="Building/Floor3" unique_id=155478275]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 2.1954322, -0.4092474, -2.6654115)
-mesh = SubResource("BoxMesh_p5x4p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/spot light switch" unique_id=560178376]
-transform = Transform3D(0.99998623, 3.9676816e-08, -1.1333597e-07, -2.6433437e-08, 0.99341625, 0.11454084, 1.17134675e-07, -0.114542186, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
-mesh = SubResource("BoxMesh_4tft1")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/spot light switch" unique_id=191195447]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("6_2f5yo")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/spot light switch/StaticBody3D" unique_id=1132453184]
-transform = Transform3D(0.27088314, 0, 2.6645353e-15, -7.1054274e-15, 0.2708833, -7.4115383e-22, -2.6645353e-15, 5.293956e-23, 0.27088314, -0.00141716, -0.060143232, 0)
-shape = SubResource("BoxShape3D_p5x4p")
-
-[node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/spot light switch" unique_id=285322326]
 libraries/ = SubResource("AnimationLibrary_3bggx")
 
 [node name="Floor4" type="CSGBox3D" parent="Building" unique_id=380427403]
@@ -1413,16 +1349,38 @@ mesh = SubResource("PlaneMesh_7w7ni")
 simulation_precision = 25
 pinned_points = [702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728]
 attachments/0/point_index = 702
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
 attachments/1/point_index = 703
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
 attachments/2/point_index = 704
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
 attachments/3/point_index = 705
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
 attachments/4/point_index = 706
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
 attachments/5/point_index = 707
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
 attachments/6/point_index = 708
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
 attachments/7/point_index = 709
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
 attachments/8/point_index = 710
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
 attachments/9/point_index = 711
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
 attachments/10/point_index = 712
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
 attachments/11/point_index = 713
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
@@ -1478,16 +1436,38 @@ mesh = SubResource("PlaneMesh_rsyfn")
 simulation_precision = 25
 pinned_points = [702, 728, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727]
 attachments/0/point_index = 702
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
 attachments/1/point_index = 728
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
 attachments/2/point_index = 703
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
 attachments/3/point_index = 704
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
 attachments/4/point_index = 705
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
 attachments/5/point_index = 706
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
 attachments/6/point_index = 707
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
 attachments/7/point_index = 708
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
 attachments/8/point_index = 709
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
 attachments/9/point_index = 710
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
 attachments/10/point_index = 711
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
 attachments/11/point_index = 712
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
@@ -1544,16 +1524,38 @@ mesh = SubResource("PlaneMesh_dtjkg")
 simulation_precision = 25
 pinned_points = [702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 728, 727, 726, 725, 724, 723, 722, 721, 720, 719, 718, 717, 716, 715, 714]
 attachments/0/point_index = 702
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
 attachments/1/point_index = 703
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
 attachments/2/point_index = 704
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
 attachments/3/point_index = 705
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
 attachments/4/point_index = 706
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
 attachments/5/point_index = 707
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
 attachments/6/point_index = 708
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
 attachments/7/point_index = 709
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
 attachments/8/point_index = 710
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
 attachments/9/point_index = 711
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
 attachments/10/point_index = 712
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
 attachments/11/point_index = 713
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
@@ -1609,16 +1611,38 @@ mesh = SubResource("PlaneMesh_dtjkg")
 simulation_precision = 25
 pinned_points = [728, 727, 726, 725, 724, 723, 722, 721, 720, 719, 718, 717, 716, 715, 714, 713, 712, 711, 710, 709, 708, 707, 706, 705, 704, 703, 702]
 attachments/0/point_index = 728
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
 attachments/1/point_index = 727
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
 attachments/2/point_index = 726
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
 attachments/3/point_index = 725
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
 attachments/4/point_index = 724
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
 attachments/5/point_index = 723
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
 attachments/6/point_index = 722
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
 attachments/7/point_index = 721
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
 attachments/8/point_index = 720
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
 attachments/9/point_index = 719
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
 attachments/10/point_index = 718
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
 attachments/11/point_index = 717
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
@@ -1683,16 +1707,38 @@ mesh = SubResource("PlaneMesh_btda1")
 simulation_precision = 25
 pinned_points = [702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 728, 727, 726, 725, 724, 723, 722, 721, 720, 719, 718]
 attachments/0/point_index = 702
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
 attachments/1/point_index = 703
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
 attachments/2/point_index = 704
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
 attachments/3/point_index = 705
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
 attachments/4/point_index = 706
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
 attachments/5/point_index = 707
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
 attachments/6/point_index = 708
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
 attachments/7/point_index = 709
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
 attachments/8/point_index = 710
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
 attachments/9/point_index = 711
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
 attachments/10/point_index = 712
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
 attachments/11/point_index = 713
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
@@ -1753,16 +1799,38 @@ mesh = SubResource("PlaneMesh_btda1")
 simulation_precision = 25
 pinned_points = [728, 727, 726, 725, 724, 723, 722, 721, 720, 719, 718, 717, 716, 715, 714, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
 attachments/0/point_index = 728
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3(0, 0, 0)
 attachments/1/point_index = 727
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3(0, 0, 0)
 attachments/2/point_index = 726
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3(0, 0, 0)
 attachments/3/point_index = 725
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3(0, 0, 0)
 attachments/4/point_index = 724
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3(0, 0, 0)
 attachments/5/point_index = 723
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3(0, 0, 0)
 attachments/6/point_index = 722
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3(0, 0, 0)
 attachments/7/point_index = 721
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3(0, 0, 0)
 attachments/8/point_index = 720
+attachments/8/spatial_attachment_path = NodePath("")
+attachments/8/offset = Vector3(0, 0, 0)
 attachments/9/point_index = 719
+attachments/9/spatial_attachment_path = NodePath("")
+attachments/9/offset = Vector3(0, 0, 0)
 attachments/10/point_index = 718
+attachments/10/spatial_attachment_path = NodePath("")
+attachments/10/offset = Vector3(0, 0, 0)
 attachments/11/point_index = 717
 attachments/11/spatial_attachment_path = NodePath("")
 attachments/11/offset = Vector3(0, 0, 0)
@@ -1888,9 +1956,17 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_avjiw")
+curve = SubResource("Curve3D_2f5yo")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 
 [node name="LightBoard" parent="." unique_id=47845347 instance=ExtResource("13_akmmg")]
 transform = Transform3D(-3.30021e-08, 0.16341192, -0.73710346, 0, 0.73710346, 0.16341192, 0.755, 7.1429618e-09, -3.2219816e-08, 1.3659565, 3.4886742, -7.3078713)
+
+[node name="Sprite3D2" type="Sprite3D" parent="LightBoard" unique_id=221804631]
+transform = Transform3D(-0.23000029, -3.472904e-08, 1.3322676e-15, -6.661338e-16, -3.7252907e-09, -0.23000008, 3.4729055e-08, -0.23000008, 3.7252903e-09, 2.9427543, 0.24875593, -1.448447)
+texture = SubResource("ViewportTexture_lqheo")
+
+[node name="Sprite3D" type="Sprite3D" parent="LightBoard" unique_id=2080453323]
+transform = Transform3D(-0.23000029, -3.472904e-08, 1.3322676e-15, -6.661338e-16, -3.7252907e-09, -0.23000008, 3.4729055e-08, -0.23000008, 3.7252903e-09, 1.6563044, 0.24119568, -1.454984)
+texture = SubResource("ViewportTexture_pqdas")
