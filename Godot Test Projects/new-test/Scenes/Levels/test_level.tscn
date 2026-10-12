@@ -27,13 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://bfpqkrhypfyav" path="res://Scenes/objects/table.tscn" id="12_xxcax"]
 [ext_resource type="PackedScene" uid="uid://c4tq3dpw4v2oj" path="res://Scenes/objects/light_board.tscn" id="13_akmmg"]
 [ext_resource type="Script" uid="uid://cqm6of2aiq33m" path="res://Scripts/kickedObject.gd" id="15_etqpt"]
-[ext_resource type="Texture2D" uid="uid://b5f7iksiqxaj0" path="res://Textures/pizza/Pizza004_4K-PNG_Color.png" id="15_srwfw"]
-[ext_resource type="Texture2D" uid="uid://cdcwtc0qaylln" path="res://Textures/pizza/Pizza004_4K-PNG_AmbientOcclusion.png" id="16_0n5l5"]
-[ext_resource type="Texture2D" uid="uid://cnoqcpp8wqoia" path="res://Textures/pizza/Pizza004_4K-PNG_NormalGL.png" id="17_0xgmu"]
+[ext_resource type="ArrayMesh" uid="uid://diop3o142pm1n" path="res://table.obj" id="16_l843e"]
 [ext_resource type="PackedScene" uid="uid://o6kbvbf4polp" path="res://Scenes/Lights/StageLight.tscn" id="17_ch0ib"]
-[ext_resource type="Texture2D" uid="uid://d1n46tknpox7o" path="res://Textures/pizza/Pizza004_4K-PNG_Roughness.png" id="18_1v56e"]
 [ext_resource type="PackedScene" uid="uid://dxy4jgmed2s46" path="res://Scenes/objects/NewStageSun.tscn" id="22_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://4q5s56fqwxja" path="res://path_3d_rope.tscn" id="23_2f5yo"]
+[ext_resource type="PackedScene" uid="uid://5rdyfasu7h23" path="res://Scenes/Levels/pizza.tscn" id="32_gyxwp"]
 [ext_resource type="Texture2D" uid="uid://c7dyfw6l3jt55" path="res://Textures/youdidok.png" id="38_wlfjt"]
 [ext_resource type="Texture2D" uid="uid://cwlqt850wmfrn" path="res://Textures/Metal/Metal050A_4K-PNG_Metalness.png" id="40_s4p7w"]
 [ext_resource type="Texture2D" uid="uid://cpwqq10hp7lp0" path="res://Textures/plastic/Plastic012A_4K-PNG_NormalGL.png" id="41_s4p7w"]
@@ -175,6 +173,12 @@ _data = {
 &"Lights_on": SubResource("Animation_rkdv3"),
 &"RESET": SubResource("Animation_xnpcw")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b86mc"]
+albedo_color = Color(0.32305145, 0.18814602, 1.92523e-07, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oayfh"]
+size = Vector3(2.9992523, 1.0135498, 1.1011353)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4p7w"]
 metallic = 0.15
@@ -528,7 +532,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_wlfjt"]
+[sub_resource type="Curve3D" id="Curve3D_etqpt"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -542,23 +546,6 @@ viewport_path = NodePath("Building/Floor14/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_srwfw"]
 viewport_path = NodePath("Building/Floor12/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
-albedo_texture = ExtResource("15_srwfw")
-roughness_texture = ExtResource("18_1v56e")
-normal_enabled = true
-normal_texture = ExtResource("17_0xgmu")
-ao_enabled = true
-ao_texture = ExtResource("16_0n5l5")
-uv1_scale = Vector3(1.8, 1.8, 1.8)
-uv1_offset = Vector3(1.025, -0.845, -0.97)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_pqdas"]
-material = SubResource("StandardMaterial3D_pqdas")
-height = 0.09033203
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_etqpt"]
-points = PackedVector3Array(0, -0.045166016, -0.5, -0.049040705, -0.045166016, -0.49765074, 0, 0.045166016, -0.5, 0.048942864, -0.045166016, -0.49765074, -0.049040705, 0.045166016, -0.49765074, -0.097592026, -0.045166016, -0.4904072, 0.048942864, 0.045166016, -0.49765074, 0.097494125, -0.045166016, -0.4904072, -0.097592026, 0.045166016, -0.4904072, -0.14516446, -0.045166016, -0.47856304, 0.097494125, 0.045166016, -0.4904072, 0.14506656, -0.045166016, -0.47856304, -0.14516446, 0.045166016, -0.47856304, -0.1913665, -0.045166016, -0.46202037, 0.14506656, 0.045166016, -0.47856304, 0.19126862, -0.045166016, -0.46202037, -0.1913665, 0.045166016, -0.46202037, -0.23570868, -0.045166016, -0.44097495, 0.19126862, 0.045166016, -0.46202037, 0.23561078, -0.045166016, -0.44097495, -0.23570868, 0.045166016, -0.44097495, -0.27779955, -0.045166016, -0.41581833, 0.23561078, 0.045166016, -0.44097495, 0.27770162, -0.045166016, -0.41581833, -0.27779955, 0.045166016, -0.41581833, -0.31724745, -0.045166016, -0.38655052, 0.27770162, 0.045166016, -0.41581833, 0.31714958, -0.045166016, -0.38655052, -0.31724745, 0.045166016, -0.38655052, -0.35356304, -0.045166016, -0.35356304, 0.31714958, 0.045166016, -0.38655052, 0.35346514, -0.045166016, -0.35356304, -0.35356304, 0.045166016, -0.35356304, -0.38655052, -0.045166016, -0.31724745, 0.35346514, 0.045166016, -0.35356304, 0.38645262, -0.045166016, -0.31724745, -0.38655052, 0.045166016, -0.31724745, -0.41581833, -0.045166016, -0.27779955, 0.38645262, 0.045166016, -0.31724745, 0.41572046, -0.045166016, -0.27779955, -0.41581833, 0.045166016, -0.27779955, -0.44097495, -0.045166016, -0.23570868, 0.41572046, 0.045166016, -0.27779955, 0.44087708, -0.045166016, -0.23570868, -0.44097495, 0.045166016, -0.23570868, -0.46202037, -0.045166016, -0.1913665, 0.44087708, 0.045166016, -0.23570868, 0.46192247, -0.045166016, -0.1913665, -0.46202037, 0.045166016, -0.1913665, -0.47856304, -0.045166016, -0.14516446, 0.46192247, 0.045166016, -0.1913665, 0.47846514, -0.045166016, -0.14516446, -0.47856304, 0.045166016, -0.14516446, -0.4904072, -0.045166016, -0.097592026, 0.47846514, 0.045166016, -0.14516446, 0.4903093, -0.045166016, -0.097592026, -0.4904072, 0.045166016, -0.097592026, -0.49765074, -0.045166016, -0.049040705, 0.4903093, 0.045166016, -0.097592026, 0.49755287, -0.045166016, -0.049040705, -0.49765074, 0.045166016, -0.049040705, -0.5, -0.045166016, 0, 0.49755287, 0.045166016, -0.049040705, 0.5, -0.045166016, 0, -0.5, 0.045166016, 0, -0.49765074, -0.045166016, 0.048942864, 0.5, 0.045166016, 0, 0.49755287, -0.045166016, 0.048942864, -0.49765074, 0.045166016, 0.048942864, -0.4904072, -0.045166016, 0.097494125, 0.49755287, 0.045166016, 0.048942864, 0.4903093, -0.045166016, 0.097494125, -0.4904072, 0.045166016, 0.097494125, -0.47856304, -0.045166016, 0.14506656, 0.4903093, 0.045166016, 0.097494125, 0.47846514, -0.045166016, 0.14506656, -0.47856304, 0.045166016, 0.14506656, -0.46202037, -0.045166016, 0.19126862, 0.47846514, 0.045166016, 0.14506656, 0.46192247, -0.045166016, 0.19126862, -0.46202037, 0.045166016, 0.19126862, -0.44097495, -0.045166016, 0.23561078, 0.46192247, 0.045166016, 0.19126862, 0.44087708, -0.045166016, 0.23561078, -0.44097495, 0.045166016, 0.23561078, -0.41581833, -0.045166016, 0.27770162, 0.44087708, 0.045166016, 0.23561078, 0.41572046, -0.045166016, 0.27770162, -0.41581833, 0.045166016, 0.27770162, -0.38655052, -0.045166016, 0.31714958, 0.41572046, 0.045166016, 0.27770162, 0.38645262, -0.045166016, 0.31714958, -0.38655052, 0.045166016, 0.31714958, -0.35356304, -0.045166016, 0.35346514, 0.38645262, 0.045166016, 0.31714958, 0.35346514, -0.045166016, 0.35346514, -0.35356304, 0.045166016, 0.35346514, -0.31724745, -0.045166016, 0.38645262, 0.35346514, 0.045166016, 0.35346514, 0.31714958, -0.045166016, 0.38645262, -0.31724745, 0.045166016, 0.38645262, -0.27779955, -0.045166016, 0.41572046, 0.31714958, 0.045166016, 0.38645262, 0.27770162, -0.045166016, 0.41572046, -0.27779955, 0.045166016, 0.41572046, -0.23570868, -0.045166016, 0.44087708, 0.27770162, 0.045166016, 0.41572046, 0.23561078, -0.045166016, 0.44087708, -0.23570868, 0.045166016, 0.44087708, -0.1913665, -0.045166016, 0.46192247, 0.23561078, 0.045166016, 0.44087708, 0.19126862, -0.045166016, 0.46192247, -0.1913665, 0.045166016, 0.46192247, -0.14516446, -0.045166016, 0.47846514, 0.19126862, 0.045166016, 0.46192247, 0.14506656, -0.045166016, 0.47846514, -0.14516446, 0.045166016, 0.47846514, -0.097592026, -0.045166016, 0.4903093, 0.14506656, 0.045166016, 0.47846514, 0.097494125, -0.045166016, 0.4903093, -0.097592026, 0.045166016, 0.4903093, -0.049040705, -0.045166016, 0.49755287, 0.097494125, 0.045166016, 0.4903093, 0.048942864, -0.045166016, 0.49755287, -0.049040705, 0.045166016, 0.49755287, 0, -0.045166016, 0.5, 0.048942864, 0.045166016, 0.49755287, 0, 0.045166016, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shoj4"]
 albedo_color = Color(0.4862745, 0.023529412, 0.08235294, 1)
@@ -675,7 +662,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.96768e-08, -1.1333597e-07, -2.6433437e-08, 0.99341583, 0.11454084, 1.17134675e-07, -0.11454214, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676795e-08, -1.1333597e-07, -2.6433437e-08, 0.9934158, 0.11454084, 1.17134675e-07, -0.114542134, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -695,7 +682,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.96768e-08, -1.1333597e-07, -2.6433437e-08, 0.99341583, 0.11454084, 1.17134675e-07, -0.11454214, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676795e-08, -1.1333597e-07, -2.6433437e-08, 0.9934158, 0.11454084, 1.17134675e-07, -0.114542134, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -710,8 +697,35 @@ shape = SubResource("BoxShape3D_p5x4p")
 [node name="Lightswitch_animation" type="AnimationPlayer" parent="Building/Floor3/house light switch" unique_id=620905399]
 libraries/ = SubResource("AnimationLibrary_3bggx")
 
-[node name="Table" parent="Building/Floor3" unique_id=1970238669 instance=ExtResource("12_xxcax")]
+[node name="Table" type="RigidBody3D" parent="Building/Floor3" unique_id=1970238669 groups=["collidable"]]
 transform = Transform3D(-1.1866504e-08, -1.1866504e-08, 0.27147397, -0.27147397, 5.187014e-16, -1.1866504e-08, 0, -0.27147397, -1.1866504e-08, -5.8580985, 5.5887165, -3.7606883)
+collision_layer = 5
+collision_mask = 5
+mass = 63.28
+can_sleep = false
+script = ExtResource("15_etqpt")
+directionXOffset = 2.0
+directionYOffset = 2.0
+directionZOffset = 2.0
+intensityOffset = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building/Floor3/Table" unique_id=421838347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16898394, -0.43173093, 0)
+material_override = SubResource("StandardMaterial3D_b86mc")
+mesh = ExtResource("16_l843e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/Table" unique_id=437589973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19733942, -0.42495602, 0.0061950684)
+shape = SubResource("BoxShape3D_oayfh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/Table" unique_id=2143024435 groups=["scannable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18935645, -0.43173093, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Floor3/Table/StaticBody3D" unique_id=1251104679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36288452, 0, 0)
+shape = SubResource("BoxShape3D_oayfh")
 
 [node name="plate" type="RigidBody3D" parent="Building/Floor3" unique_id=1912591035]
 transform = Transform3D(-1.1713698e-08, -1.1713698e-08, 0.26797816, -0.26797816, 5.12022e-16, -1.1713698e-08, 0, -0.26797816, -1.1713698e-08, -5.8580985, 5.594492, -3.8412333)
@@ -2099,7 +2113,7 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_wlfjt")
+curve = SubResource("Curve3D_etqpt")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 
@@ -2116,26 +2130,8 @@ transform = Transform3D(0.22000022, -7.313564e-09, -1.1440871e-08, 1.1463424e-08
 cast_shadow = 0
 texture = SubResource("ViewportTexture_srwfw")
 
-[node name="pizza" type="RigidBody3D" parent="." unique_id=672005787]
+[node name="pizza" parent="." unique_id=230683344 instance=ExtResource("32_gyxwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8131213, 4.658208, -13.483649)
-collision_layer = 5
-collision_mask = 5
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="pizza" unique_id=168173055]
-transform = Transform3D(0.077677846, 0, 0, 0, 0.02950352, 0, 0, 0, 0.077677846, 0, 0.002901554, 0)
-mesh = SubResource("CylinderMesh_pqdas")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pizza" unique_id=1033170746]
-transform = Transform3D(0.077677846, 0, 0, 0, 0.02950352, 0, 0, 0, 0.077677846, 0, 0.002901554, 0)
-shape = SubResource("ConvexPolygonShape3D_etqpt")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="pizza" unique_id=817737195]
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pizza/StaticBody3D" unique_id=1269386017]
-transform = Transform3D(0.077677846, 0, 0, 0, 0.02950352, 0, 0, 0, 0.077677846, 0, 0.002901554, 0)
-shape = SubResource("ConvexPolygonShape3D_etqpt")
 
 [node name="SoftBody3D" type="SoftBody3D" parent="." unique_id=1588266151]
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, -5.655741, 0.5204606, -3.2375164)
@@ -2150,5 +2146,4 @@ pressure_coefficient = 100.0
 damping_coefficient = 0.21
 
 [editable path="Building/Floor/curtain3"]
-[editable path="Building/Floor3/Table"]
 [editable path="NewStageSun"]
