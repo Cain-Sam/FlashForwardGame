@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dn5py8pj6jepe"]
 
 [ext_resource type="PackedScene" uid="uid://ctmymxux33uvo" path="res://Scenes/Player/player.tscn" id="1_iti4p"]
-[ext_resource type="Script" uid="uid://bg8g1gytlstqf" path="res://Scenes/Levels/test_level.gd" id="1_lqheo"]
+[ext_resource type="Script" uid="uid://bg8g1gytlstqf" path="res://Scripts/test_level.gd" id="1_lqheo"]
 [ext_resource type="PackedScene" uid="uid://i2f6t1bssoik" path="res://Scenes/VFX/water.tscn" id="2_l7ek2"]
 [ext_resource type="Script" uid="uid://dppljdd406dtd" path="res://Scripts/fog_switch.gd" id="2_rkdv3"]
 [ext_resource type="PackedScene" uid="uid://dyhrmfcfolehn" path="res://Scenes/Scenery/curtain.tscn" id="2_rsyfn"]
-[ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scenes/Levels/house_lights.gd" id="3_4tft1"]
+[ext_resource type="Script" uid="uid://r6io8mfpl81y" path="res://Scripts/house_lights.gd" id="3_4tft1"]
 [ext_resource type="Texture2D" uid="uid://csdeiayy0cvtj" path="res://Textures/woodfloor/WoodFloor070_4K-PNG_Color.png" id="3_kklc1"]
 [ext_resource type="Texture2D" uid="uid://yijygwpji72i" path="res://Textures/Jersey Melange/jersey_melange_arm_4k.png" id="3_rsyfn"]
 [ext_resource type="Texture2D" uid="uid://chw2vxpcnmqed" path="res://Textures/Jersey Melange/jersey_melange_nor_gl_4k.png" id="4_7w7ni"]
@@ -540,7 +540,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_l843e"]
+[sub_resource type="Curve3D" id="Curve3D_0xgmu"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -907,7 +907,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676788e-08, -1.1333597e-07, -2.6433437e-08, 0.9934156, 0.11454084, 1.17134675e-07, -0.11454211, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676788e-08, -1.1333597e-07, -2.6433437e-08, 0.99341553, 0.11454084, 1.17134675e-07, -0.114542104, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -927,7 +927,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676788e-08, -1.1333597e-07, -2.6433437e-08, 0.9934156, 0.11454084, 1.17134675e-07, -0.11454211, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676788e-08, -1.1333597e-07, -2.6433437e-08, 0.99341553, 0.11454084, 1.17134675e-07, -0.114542104, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -2379,7 +2379,7 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_l843e")
+curve = SubResource("Curve3D_0xgmu")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 
@@ -2421,7 +2421,7 @@ curve = SubResource("Curve3D_dtnn3")
 transform = Transform3D(-0.9944841, -0.0070900735, 0.10337681, -6.9839917e-10, 0.9974436, 0.0684296, -0.10361271, 0.06805116, -0.9922199, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -8.381906e-09, -0.103626296, -0.0070915837, 0.997656, 0.06806563, 0.10338348, 0.06843407, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -8.847568e-09, -0.103626296, -0.007091583, 0.997656, 0.06806562, 0.10338348, 0.06843406, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873

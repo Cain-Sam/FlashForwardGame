@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c4tq3dpw4v2oj"]
 
-[ext_resource type="Script" uid="uid://x5gend0dnhav" path="res://Scenes/objects/sliders.gd" id="1_1buc0"]
-[ext_resource type="Script" uid="uid://cnpd5iw3hfymq" path="res://Scenes/objects/light_board_body.gd" id="1_dvyuh"]
-[ext_resource type="Script" uid="uid://boa3ysf6au8je" path="res://Scenes/objects/PowerIndicator.gd" id="1_msxle"]
-[ext_resource type="Script" uid="uid://bumdi8t4nirc6" path="res://Scenes/objects/LightboardOn.gd" id="1_u12c6"]
+[ext_resource type="Script" uid="uid://x5gend0dnhav" path="res://Scripts/sliders.gd" id="1_1buc0"]
+[ext_resource type="Script" uid="uid://cnpd5iw3hfymq" path="res://Scripts/light_board_body.gd" id="1_dvyuh"]
+[ext_resource type="Script" uid="uid://boa3ysf6au8je" path="res://Scripts/PowerIndicator.gd" id="1_msxle"]
+[ext_resource type="Script" uid="uid://bumdi8t4nirc6" path="res://Scripts/LightboardOn.gd" id="1_u12c6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euyio"]
 albedo_color = Color(0.712692, 2.9359758e-06, 5.7756904e-07, 1)
