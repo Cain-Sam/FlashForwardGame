@@ -9,15 +9,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
-func kicked(direction, intensity):
+func kicked(_direction, _intensity):
 	power = !power
 	for group in stageLights.get_children():
 		for lightObject in group.get_children():
-			var bulb = lightObject.find_child("Bulb")
-			var light = lightObject.find_child("Light")
 			lightObject.ON = !lightObject.ON
 	
 	if !power:

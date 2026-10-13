@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func bulletHit(body: Node3D) -> void:
@@ -43,16 +43,12 @@ func kicked(direction, intensity):
 			level += 1
 			self.position.z -= 0.1
 			for uniqueLight in stageLights.find_child(lightGroup).get_children():
-				var bulb = uniqueLight.find_child("Bulb")
-				var light = uniqueLight.find_child("Light")
 				uniqueLight.lightEnergy += lightIntensity
 	else:
 		if level > 0:
 			level -= 1
 			self.position.z += 0.1
 			for uniqueLight in stageLights.find_child(lightGroup).get_children():
-				var bulb = uniqueLight.find_child("Bulb")
-				var light = uniqueLight.find_child("Light")
 				uniqueLight.lightEnergy -= lightIntensity
 					
 					
