@@ -720,7 +720,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 12.966666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 0.99]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -907,7 +907,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676788e-08, -1.1333597e-07, -2.6433437e-08, 0.99341553, 0.11454084, 1.17134675e-07, -0.114542104, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676785e-08, -1.1333597e-07, -2.6433437e-08, 0.9934155, 0.11454084, 1.17134675e-07, -0.1145421, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -927,7 +927,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676788e-08, -1.1333597e-07, -2.6433437e-08, 0.99341553, 0.11454084, 1.17134675e-07, -0.114542104, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676785e-08, -1.1333597e-07, -2.6433437e-08, 0.9934155, 0.11454084, 1.17134675e-07, -0.1145421, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -2418,10 +2418,10 @@ transform = Transform3D(-0.0596127, 0, -1.2936395, 0, 1.2950124, 0, 1.2936395, 0
 curve = SubResource("Curve3D_dtnn3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1451448987]
-transform = Transform3D(-0.9944841, -0.0070900735, 0.10337681, -6.9839917e-10, 0.9974436, 0.0684296, -0.10361271, 0.06805116, -0.9922199, -0.027387619, 0.033967018, 0.07995796)
+transform = Transform3D(-0.9944838, -0.0070900735, 0.10337679, -6.9839895e-10, 0.9974436, 0.06842958, -0.10361268, 0.06805116, -0.9922197, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -8.847568e-09, -0.103626296, -0.007091583, 0.997656, 0.06806562, 0.10338348, 0.06843406, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -9.313229e-09, -0.103626296, -0.0070915828, 0.997656, 0.06806561, 0.10338348, 0.06843405, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873

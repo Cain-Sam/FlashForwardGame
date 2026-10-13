@@ -1,7 +1,7 @@
 extends Area3D
 @onready var gnome_runnin: AnimationPlayer = $"../Path3D/GnomeRunnin"
 
-var player_detected := false
+var player_detected = false
 
 func _ready() -> void:
 	body_entered.connect(_manual_on_body_entered)
