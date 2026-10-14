@@ -571,7 +571,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_3pphj"]
+[sub_resource type="Curve3D" id="Curve3D_ics35"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -938,7 +938,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.9934154, 0.11454084, 1.17134675e-07, -0.11454209, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.99341536, 0.11454084, 1.17134675e-07, -0.11454208, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -958,7 +958,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.9934154, 0.11454084, 1.17134675e-07, -0.11454209, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.99341536, 0.11454084, 1.17134675e-07, -0.11454208, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -985,7 +985,7 @@ directionYOffset = 2.0
 directionZOffset = 2.0
 intensityOffset = 100.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Building/Floor3/Table" unique_id=421838347]
+[node name="Table" type="MeshInstance3D" parent="Building/Floor3/Table" unique_id=421838347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16898394, -0.43173093, 0)
 material_override = SubResource("StandardMaterial3D_b86mc")
 mesh = ExtResource("16_l843e")
@@ -2421,7 +2421,7 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_3pphj")
+curve = SubResource("Curve3D_ics35")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 
@@ -2460,10 +2460,10 @@ transform = Transform3D(-0.0596127, 0, -1.2936395, 0, 1.2950124, 0, 1.2936395, 0
 curve = SubResource("Curve3D_dtnn3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1451448987]
-transform = Transform3D(-0.99448377, -0.0070900735, 0.10337678, -6.9839895e-10, 0.9974436, 0.068429574, -0.103612676, 0.06805116, -0.9922196, -0.027387619, 0.033967018, 0.07995796)
+transform = Transform3D(-0.99448377, -0.0070900735, 0.103376776, -6.9839895e-10, 0.9974436, 0.068429574, -0.103612676, 0.06805116, -0.99221957, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -9.313229e-09, -0.103626296, -0.0070915823, 0.997656, 0.068065606, 0.10338348, 0.068434045, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -9.778891e-09, -0.103626296, -0.007091582, 0.997656, 0.0680656, 0.10338348, 0.06843404, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873

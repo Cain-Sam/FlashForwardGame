@@ -232,6 +232,8 @@ func animateShoot():
 			rat_shot.play()
 		else:
 			shootsound.play()
+		if bulletmesh.name == "Table":
+			bulletmesh.create_trimesh_collision()
 	else:
 		shootsound.play()
 		
