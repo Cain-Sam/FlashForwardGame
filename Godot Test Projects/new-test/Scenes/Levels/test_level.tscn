@@ -938,7 +938,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676774e-08, -1.1333597e-07, -2.6433437e-08, 0.9934152, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967677e-08, -1.1333597e-07, -2.6433437e-08, 0.9934151, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -958,7 +958,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676774e-08, -1.1333597e-07, -2.6433437e-08, 0.9934152, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967677e-08, -1.1333597e-07, -2.6433437e-08, 0.9934151, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -1349,24 +1349,35 @@ height = 1.298584
 sides = 37
 material = SubResource("StandardMaterial3D_dtjkg")
 
-[node name="Wall14" type="CSGBox3D" parent="Building" unique_id=649813365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.024982, 3.741991, -7.552673)
+[node name="Wall15" type="CSGBox3D" parent="Building" unique_id=1988270145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.061563, 3.8890257, -7.552673)
 material_override = SubResource("StandardMaterial3D_p5x4p")
 use_collision = true
-size = Vector3(21.260582, 0.22436523, 30.575857)
+size = Vector3(21.187422, 0.5741577, 30.575857)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall14" unique_id=1542765027]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall15" unique_id=2011964623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.776418, 0.35453272, 13.721651)
 operation = 2
 size = Vector3(7.3345585, 2.8468018, 3.5469704)
 
-[node name="Wall15" type="CSGBox3D" parent="Building" unique_id=1988270145]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.061563, 4.063922, -7.552673)
-material_override = SubResource("StandardMaterial3D_p5x4p")
+[node name="Floor19" type="CSGBox3D" parent="Building" unique_id=1089125988]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -4.123434, 6.1463046, -3.0369577)
+layers = 2
+cast_shadow = 3
 use_collision = true
-size = Vector3(21.187422, 0.22436523, 30.575857)
+collision_layer = 2
+collision_mask = 2
+size = Vector3(21.630953, 0.9736328, 4.1083503)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall15" unique_id=2011964623]
+[node name="Wall16" type="CSGBox3D" parent="Building" unique_id=1514164747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.061563, 3.9105358, -7.552673)
+layers = 3
+material_override = SubResource("StandardMaterial3D_p5x4p")
+cast_shadow = 3
+use_collision = true
+size = Vector3(21.187422, 0.5741577, 30.575857)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall16" unique_id=472528701]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.776418, 0.35453272, 13.721651)
 operation = 2
 size = Vector3(7.3345585, 2.8468018, 3.5469704)
@@ -2474,7 +2485,7 @@ curve = SubResource("Curve3D_dtnn3")
 transform = Transform3D(-0.99448377, -0.0070900735, 0.10337675, -6.9839895e-10, 0.9974436, 0.06842956, -0.103612676, 0.06805116, -0.9922194, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -1.0710213e-08, -0.103626296, -0.0070915804, 0.997656, 0.068065576, 0.10338348, 0.068434015, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -1.11758744e-08, -0.103626296, -0.00709158, 0.997656, 0.06806557, 0.10338348, 0.06843401, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873

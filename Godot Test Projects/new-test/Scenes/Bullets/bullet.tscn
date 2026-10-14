@@ -28,10 +28,12 @@ light_indirect_energy = 5.119
 light_volumetric_fog_energy = 1.265
 light_size = 0.307
 shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
 shadow_reverse_cull_face = true
 shadow_blur = 0.0
 omni_range = 10.0
-omni_attenuation = -2.0
+omni_attenuation = -1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1281291410]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.024796411, 0)
