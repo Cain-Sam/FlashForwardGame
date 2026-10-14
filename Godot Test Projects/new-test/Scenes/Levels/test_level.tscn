@@ -32,6 +32,10 @@
 [ext_resource type="PackedScene" uid="uid://o6kbvbf4polp" path="res://Scenes/Lights/StageLight.tscn" id="17_ch0ib"]
 [ext_resource type="PackedScene" uid="uid://dxy4jgmed2s46" path="res://Scenes/objects/NewStageSun.tscn" id="22_mbrqs"]
 [ext_resource type="PackedScene" uid="uid://4q5s56fqwxja" path="res://path_3d_rope.tscn" id="23_2f5yo"]
+[ext_resource type="Texture2D" uid="uid://b2uxjuekc8fey" path="res://Textures/Metal/Metal038_4K-PNG_Color.png" id="23_ics35"]
+[ext_resource type="Texture2D" uid="uid://dbg34dbvkpdd2" path="res://Textures/Metal/Metal038_4K-PNG_Metalness.png" id="24_dtnn3"]
+[ext_resource type="Texture2D" uid="uid://cxape886v13un" path="res://Textures/Metal/Metal038_4K-PNG_NormalGL.png" id="25_14bjo"]
+[ext_resource type="Texture2D" uid="uid://d2d16jf5wnn45" path="res://Textures/Metal/Metal038_4K-PNG_Roughness.png" id="26_0wk7w"]
 [ext_resource type="PackedScene" uid="uid://5rdyfasu7h23" path="res://Scenes/Levels/pizza.tscn" id="32_gyxwp"]
 [ext_resource type="ArrayMesh" uid="uid://cjpc208dtkmke" path="res://Grome.tres" id="37_0n5l5"]
 [ext_resource type="Texture2D" uid="uid://cd5grqli7q8tl" path="res://Textures/Gnome/garden_gnome_diff_4k.png" id="38_0xgmu"]
@@ -448,6 +452,33 @@ albedo_color = Color(0.23137255, 0, 0.23137255, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ft1"]
 albedo_color = Color(0.23137255, 0, 0.23137255, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
+albedo_texture = ExtResource("23_ics35")
+metallic = 0.5
+metallic_texture = ExtResource("24_dtnn3")
+roughness_texture = ExtResource("26_0wk7w")
+normal_enabled = true
+normal_texture = ExtResource("25_14bjo")
+uv1_scale = Vector3(7.2, 7.2, 7.2)
+
+[sub_resource type="TorusMesh" id="TorusMesh_p5x4p"]
+material = SubResource("StandardMaterial3D_pqdas")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p5x4p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejvcq"]
+transparency = 1
+albedo_color = Color(0, 0.36078432, 0.36078432, 0.3019608)
+metallic = 0.2
+roughness = 0.0
+normal_enabled = true
+billboard_mode = 1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pqdas"]
+material = SubResource("StandardMaterial3D_ejvcq")
+radius = 0.02
+height = 0.11
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_pqdas"]
 size = Vector3(2.2037354, 3.0629883, 0.20155334)
 
@@ -540,7 +571,7 @@ uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="Curve3D" id="Curve3D_0xgmu"]
+[sub_resource type="Curve3D" id="Curve3D_3pphj"]
 resource_local_to_scene = true
 bake_interval = 512.0
 _data = {
@@ -907,7 +938,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676785e-08, -1.1333597e-07, -2.6433437e-08, 0.9934155, 0.11454084, 1.17134675e-07, -0.1145421, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.9934154, 0.11454084, 1.17134675e-07, -0.11454209, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -927,7 +958,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676785e-08, -1.1333597e-07, -2.6433437e-08, 0.9934155, 0.11454084, 1.17134675e-07, -0.1145421, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.9934154, 0.11454084, 1.17134675e-07, -0.11454209, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -1103,7 +1134,7 @@ transform = Transform3D(6.0367064, 0, 0, 0, 6.0367064, 0, 0, 0, 6.0367064, 3.210
 mesh = SubResource("BoxMesh_pqdas")
 
 [node name="roof" type="MeshInstance3D" parent="Building/Wall5/StageHouse" unique_id=983517488]
-transform = Transform3D(-5.2390483e-08, 0, 0.01738727, 0, 0.66208196, 0, -1.1985546, 0, -7.600217e-10, -0.00071942806, 0.83468235, 3.1452174e-11)
+transform = Transform3D(-5.239048e-08, 0, 0.01738727, 0, 0.66208196, 0, -1.1985546, 0, -7.6002177e-10, -0.00071907043, 0.8299879, 0)
 mesh = SubResource("PrismMesh_p5x4p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Wall5/StageHouse/roof" unique_id=1984133688]
@@ -1288,6 +1319,17 @@ transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 
 use_collision = true
 size = Vector3(39.247623, 0.9736328, 20.58914)
 material = SubResource("StandardMaterial3D_x6ft1")
+
+[node name="pipe" type="MeshInstance3D" parent="Building/Floor18" unique_id=909305636]
+transform = Transform3D(1.4527006, 0.28595853, 1.3718221e-08, 1.2185595e-09, -7.721777e-08, 1.4805781, 0.28595853, -1.4527006, -7.5999225e-08, 18.484373, 0.35848618, 5.4622602)
+mesh = SubResource("TorusMesh_p5x4p")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Building/Floor18/pipe" unique_id=499528888]
+transform = Transform3D(0.9999999, 2.9802322e-08, -3.5527137e-15, -2.9802322e-08, 0.9999999, 4.440892e-16, 0, -1.3322676e-15, 1, -0.00736475, 0.03741336, 0.55368423)
+amount = 13
+lifetime = 5.3
+process_material = SubResource("ParticleProcessMaterial_p5x4p")
+draw_pass_1 = SubResource("CapsuleMesh_pqdas")
 
 [node name="Wall12" type="CSGBox3D" parent="Building" unique_id=1326401110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.018406, 4.911392, 0.71049476)
@@ -2379,7 +2421,7 @@ transform = Transform3D(-0.5817233, -0.7105613, 0.39585406, -0.3336651, -0.23537
 
 [node name="Path3DRope" parent="." unique_id=301387047 node_paths=PackedStringArray("rigidbody_attached_to_end") instance=ExtResource("23_2f5yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.28733, 4.9365416, -14.322421)
-curve = SubResource("Curve3D_0xgmu")
+curve = SubResource("Curve3D_3pphj")
 cable_thickness = 0.01
 rigidbody_attached_to_end = NodePath("../NewStageSun")
 
@@ -2418,10 +2460,10 @@ transform = Transform3D(-0.0596127, 0, -1.2936395, 0, 1.2950124, 0, 1.2936395, 0
 curve = SubResource("Curve3D_dtnn3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1451448987]
-transform = Transform3D(-0.9944838, -0.0070900735, 0.10337679, -6.9839895e-10, 0.9974436, 0.06842958, -0.10361268, 0.06805116, -0.9922197, -0.027387619, 0.033967018, 0.07995796)
+transform = Transform3D(-0.99448377, -0.0070900735, 0.10337678, -6.9839895e-10, 0.9974436, 0.068429574, -0.103612676, 0.06805116, -0.9922196, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -9.313229e-09, -0.103626296, -0.0070915828, 0.997656, 0.06806561, 0.10338348, 0.06843405, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -9.313229e-09, -0.103626296, -0.0070915823, 0.997656, 0.068065606, 0.10338348, 0.068434045, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873
