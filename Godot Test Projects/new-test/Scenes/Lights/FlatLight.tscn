@@ -24,7 +24,7 @@ emission_energy_multiplier = 9.77
 height = 0.016235352
 radius = 0.100097656
 
-[node name="Lamp" type="RigidBody3D" unique_id=218677188 groups=["light", "paintchange"]]
+[node name="Lamp2" type="RigidBody3D" unique_id=218677188 groups=["light", "paintchange"]]
 collision_layer = 9
 collision_mask = 9
 freeze = true
@@ -44,7 +44,7 @@ layers = 11
 light_energy = 10.147
 shadow_enabled = true
 distance_fade_enabled = true
-distance_fade_shadow = 22.17
+distance_fade_shadow = 35.0
 omni_range = 10.0
 
 [node name="Bulb" type="MeshInstance3D" parent="MeshInstance3D" unique_id=740350196]

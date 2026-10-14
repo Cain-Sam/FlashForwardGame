@@ -2,7 +2,6 @@ extends Node3D
 
 
 const SPEED = 30
-
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var bullet_raycast: RayCast3D = $bullet_raycast
 @onready var omni_light: OmniLight3D = $OmniLight
@@ -42,8 +41,9 @@ func stick() -> void:
 	global_position = collision
 	bulletFaceUp(collision, coll_normal)
 	checkForObjectReaction(hit_object)
-	removeCollision()
-	mergeWithObject(hit_object)
+	if hit_object is RigidBody3D || hit_object.get_parent() is RigidBody3D:
+		removeCollision()
+		mergeWithObject(hit_object)
 		
 func bulletTimeout(body):
 	GlobalVariables.lightAmmo += 1
