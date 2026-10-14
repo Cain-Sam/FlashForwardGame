@@ -885,9 +885,9 @@ size = Vector3(24.27309, 0.9736328, 38.43449)
 material = SubResource("StandardMaterial3D_1e8r0")
 
 [node name="Wall2" type="CSGBox3D" parent="Building" unique_id=850711025]
-transform = Transform3D(0.95209575, 0.30580038, 0, -0.30580038, 0.95209575, 0, 0, 0, 1, 0.9892808, 3.4420195, -9.226688)
+transform = Transform3D(0.95209575, 0.30580038, 0, -0.30580038, 0.95209575, 0, 0, 0, 1, 1.0665334, 3.682542, -9.226688)
 use_collision = true
-size = Vector3(3.2396946, 0.54003906, 27.540325)
+size = Vector3(3.2396946, 0.03479004, 27.540325)
 material = SubResource("StandardMaterial3D_p5x4p")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall2" unique_id=823660422]
@@ -938,7 +938,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.99341536, 0.11454084, 1.17134675e-07, -0.11454208, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676774e-08, -1.1333597e-07, -2.6433437e-08, 0.9934152, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -958,7 +958,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.967678e-08, -1.1333597e-07, -2.6433437e-08, 0.99341536, 0.11454084, 1.17134675e-07, -0.11454208, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676774e-08, -1.1333597e-07, -2.6433437e-08, 0.9934152, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -1350,12 +1350,23 @@ sides = 37
 material = SubResource("StandardMaterial3D_dtjkg")
 
 [node name="Wall14" type="CSGBox3D" parent="Building" unique_id=649813365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.061563, 3.9127674, -7.552673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.024982, 3.741991, -7.552673)
 material_override = SubResource("StandardMaterial3D_p5x4p")
 use_collision = true
-size = Vector3(21.187422, 0.56591797, 30.575857)
+size = Vector3(21.260582, 0.22436523, 30.575857)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall14" unique_id=1542765027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.776418, 0.35453272, 13.721651)
+operation = 2
+size = Vector3(7.3345585, 2.8468018, 3.5469704)
+
+[node name="Wall15" type="CSGBox3D" parent="Building" unique_id=1988270145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.061563, 4.063922, -7.552673)
+material_override = SubResource("StandardMaterial3D_p5x4p")
+use_collision = true
+size = Vector3(21.187422, 0.22436523, 30.575857)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall15" unique_id=2011964623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.776418, 0.35453272, 13.721651)
 operation = 2
 size = Vector3(7.3345585, 2.8468018, 3.5469704)
@@ -2460,10 +2471,10 @@ transform = Transform3D(-0.0596127, 0, -1.2936395, 0, 1.2950124, 0, 1.2936395, 0
 curve = SubResource("Curve3D_dtnn3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1451448987]
-transform = Transform3D(-0.99448377, -0.0070900735, 0.103376776, -6.9839895e-10, 0.9974436, 0.068429574, -0.103612676, 0.06805116, -0.99221957, -0.027387619, 0.033967018, 0.07995796)
+transform = Transform3D(-0.99448377, -0.0070900735, 0.10337675, -6.9839895e-10, 0.9974436, 0.06842956, -0.103612676, 0.06805116, -0.9922194, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -9.778891e-09, -0.103626296, -0.007091582, 0.997656, 0.0680656, 0.10338348, 0.06843404, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -1.0710213e-08, -0.103626296, -0.0070915804, 0.997656, 0.068065576, 0.10338348, 0.068434015, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873
@@ -2487,6 +2498,17 @@ shape = SubResource("ConvexPolygonShape3D_ics35")
 
 [node name="GnomeRunnin" type="AnimationPlayer" parent="Path3D" unique_id=1081345495]
 libraries/ = SubResource("AnimationLibrary_ijc8a")
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1945464411]
+transform = Transform3D(0.95209575, 0.30580038, 0, -0.30580038, 0.95209575, 0, 0, 0, 1, 1.0665334, 3.1742003, -9.226688)
+use_collision = true
+size = Vector3(3.2396946, 0.03479004, 27.540325)
+material = SubResource("StandardMaterial3D_p5x4p")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Wall2" unique_id=422958117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.542069, -0.42020273, 13.658771)
+operation = 2
+size = Vector3(6.2493668, 2.8468018, 2.8091125)
 
 [editable path="player"]
 [editable path="Building/Floor/curtain3"]

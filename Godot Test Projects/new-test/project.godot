@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://djsycf0ls5nod"
 
 GlobalVariables="*uid://dhubt70xj3yye"
 
+[display]
+
+window/size/initial_position_type=3
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/brackeys_particle_controls/plugin.cfg")
