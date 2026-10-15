@@ -219,7 +219,7 @@ func _input(event):
 #endregion
 
 func playerHoldingBulb():
-	playerLight.global_position = vision.to_global(vision.target_position)
+	playerLight.global_position = vision.to_global(vision.target_position * 0.3)
 	lightBulb.transparency = non_placable_lightbulb_transparency
 	lightBulb.material_override.albedo_color = GlobalVariables.get_color()
 	lightBulb.material_override.emission = GlobalVariables.get_color()

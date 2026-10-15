@@ -87,7 +87,7 @@ texture = ExtResource("5_x3wgy")
 expand_mode = 1
 
 [node name="Vision" type="RayCast3D" parent="Head" unique_id=1748234429]
-transform = Transform3D(1, 0, 0, 0, -4.2400046e-08, -0.49999997, 0, 0.97, -2.1855692e-08, 0, 0, -0.049968764)
+transform = Transform3D(6.005, 0, 0, 0, -6.556708e-08, -4.24, 0, 1.5, -1.8533628e-07, 0, 0, -0.049968764)
 collision_mask = 8
 
 [node name="KickCast" type="RayCast3D" parent="Head" unique_id=711449485]
@@ -95,7 +95,7 @@ transform = Transform3D(2.73, 0, 0, 0, -6.010316e-08, -2.99, 0, 1.375, -1.306970
 collision_mask = 4
 
 [node name="SuckCast" type="RayCast3D" parent="Head" unique_id=1761095147]
-transform = Transform3D(1, 0, 0, 0, -0.4187936, -0.9993908, 0, 11.992691, -0.03489946, -0.018628761, -0.022089452, -0.003295824)
+transform = Transform3D(12.89, 0, 0, 0, -0.24429624, -7.6753216, 0, 6.995736, -0.26802787, -0.018628761, -0.022089452, -0.003295824)
 collision_mask = 9
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="." unique_id=2119777659]

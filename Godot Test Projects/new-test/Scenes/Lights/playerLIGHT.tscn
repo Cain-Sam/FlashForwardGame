@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://duv2f1ncwjvc5"]
 
+[ext_resource type="Texture2D" uid="uid://cyucin64db6k0" path="res://Textures/curly teddy/curly_teddy_natural_disp_4k.png" id="1_o4xl4"]
+
 [sub_resource type="GDScript" id="GDScript_uuc11"]
 script/source = "extends Node3D
 @onready var omni_light: OmniLight3D = $OmniLight
@@ -18,12 +20,13 @@ func _process(_delta: float) -> void:
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qgu4"]
 transparency = 1
-blend_mode = 3
+blend_mode = 1
 albedo_color = Color(0.2, 0, 0.2, 0)
+albedo_texture = ExtResource("1_o4xl4")
 metallic = 1.0
 emission_enabled = true
 emission = Color(0.12941177, 0.12941177, 0.12941177, 1)
-emission_energy_multiplier = 1.75
+emission_energy_multiplier = 0.47
 
 [sub_resource type="SphereMesh" id="SphereMesh_1thqu"]
 
