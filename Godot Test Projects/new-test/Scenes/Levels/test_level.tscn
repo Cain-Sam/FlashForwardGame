@@ -517,7 +517,7 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dtjkg"]
-size = Vector2(28.77, 4.605)
+size = Vector2(28.77, 6.36)
 subdivide_width = 25
 subdivide_depth = 25
 orientation = 0
@@ -938,7 +938,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967677e-08, -1.1333597e-07, -2.6433437e-08, 0.9934151, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676767e-08, -1.1333597e-07, -2.6433437e-08, 0.99341506, 0.11454084, 1.17134675e-07, -0.11454205, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -958,7 +958,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.967677e-08, -1.1333597e-07, -2.6433437e-08, 0.9934151, 0.11454084, 1.17134675e-07, -0.11454206, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.9676767e-08, -1.1333597e-07, -2.6433437e-08, 0.99341506, 0.11454084, 1.17134675e-07, -0.11454205, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -1615,10 +1615,10 @@ lightRange = 30
 [node name="LobbyLights" type="Node3D" parent="Lights" unique_id=15187866]
 
 [node name="Lamp" parent="Lights/LobbyLights" unique_id=256142661 instance=ExtResource("7_xq3o0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6698904, 2.8940444, -10.265211)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2739973, 2.8940444, -10.265211)
 
 [node name="Lamp4" parent="Lights/LobbyLights" unique_id=629240344 instance=ExtResource("7_xq3o0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5843964, 2.8940444, 0.7940135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1087558, 2.8940444, 0.7940135)
 
 [node name="Lamp2" parent="Lights/LobbyLights" unique_id=994943088 instance=ExtResource("7_xq3o0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.236374, 2.8940444, -10.265211)
@@ -1778,6 +1778,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3899182, 2.8999453, -18.36
 
 [node name="Lamp7" parent="Lights/Bar" unique_id=1157402563 instance=ExtResource("7_xq3o0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.281972, 2.8951273, 2.0219972)
+
+[node name="SecretLights" type="Node3D" parent="Lights" unique_id=910668732]
+
+[node name="Lamp2" parent="Lights/SecretLights" unique_id=1547810300 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(0.049392577, 0.9987794, -1.2434498e-14, -0.9987794, 0.049392577, -3.8857806e-15, -3.2668657e-15, 1.2611249e-14, 1, 26.733717, 7.041274, -19.343044)
+lightEnergy = 0.5
+lightRange = 5
+
+[node name="Lamp3" parent="Lights/SecretLights" unique_id=2107586200 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(0.049392577, 0.9987794, -1.2434498e-14, -0.9987794, 0.049392577, -3.8857806e-15, -3.2668657e-15, 1.2611249e-14, 1, 26.733717, 7.041274, -14.506847)
+lightEnergy = 0.5
+lightRange = 5
+
+[node name="Lamp4" parent="Lights/SecretLights" unique_id=2080741785 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(0.049392577, 0.9987794, -1.2434498e-14, -0.9987794, 0.049392577, -3.8857806e-15, -3.2668657e-15, 1.2611249e-14, 1, 26.733717, 7.041274, -10.394978)
+lightEnergy = 0.5
+lightRange = 5
+
+[node name="Lamp5" parent="Lights/SecretLights" unique_id=1253017442 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(0.049392577, 0.9987794, -1.2434498e-14, -0.9987794, 0.049392577, -3.8857806e-15, -3.2668657e-15, 1.2611249e-14, 1, 26.733717, 7.041274, -5.9020967)
+lightEnergy = 0.5
+lightRange = 5
+
+[node name="Lamp6" parent="Lights/SecretLights" unique_id=1055823236 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(0.049392577, 0.9987794, -1.2434498e-14, -0.9987794, 0.049392577, -3.8857806e-15, -3.2668657e-15, 1.2611249e-14, 1, 26.733717, 7.041274, -1.2566974)
+lightEnergy = 0.5
+lightRange = 5
+
+[node name="Lamp7" parent="Lights/SecretLights" unique_id=1895895023 instance=ExtResource("7_xq3o0")]
+transform = Transform3D(0.049392577, 0.9987794, -1.2434498e-14, -0.9987794, 0.049392577, -3.8857806e-15, -3.2668657e-15, 1.2611249e-14, 1, 26.733717, 7.041274, 3.7807512)
+lightEnergy = 0.5
+lightRange = 5
 
 [node name="Portals" type="Node3D" parent="." unique_id=550434520]
 
@@ -2093,7 +2125,7 @@ attachments/26/spatial_attachment_path = NodePath("")
 attachments/26/offset = Vector3(0, 0, 0)
 
 [node name="curtain6" parent="Curtains/Curtain Pole" unique_id=752806669 instance=ExtResource("2_rsyfn")]
-transform = Transform3D(10.304434, 0, 0, 0, -2.821696e-07, 0.10192633, 0, -6.455293, -4.455302e-09, -6.727585, -0.0008942485, -21.447887)
+transform = Transform3D(10.304434, 0, 0, 0, -2.821696e-07, 0.10192633, 0, -6.455295, -4.455302e-09, -6.727585, -0.0008943081, -23.736313)
 mesh = SubResource("PlaneMesh_dtjkg")
 simulation_precision = 25
 pinned_points = [728, 727, 726, 725, 724, 723, 722, 721, 720, 719, 718, 717, 716, 715, 714, 713, 712, 711, 710, 709, 708, 707, 706, 705, 704, 703, 702]
@@ -2485,7 +2517,7 @@ curve = SubResource("Curve3D_dtnn3")
 transform = Transform3D(-0.99448377, -0.0070900735, 0.10337675, -6.9839895e-10, 0.9974436, 0.06842956, -0.103612676, 0.06805116, -0.9922194, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -1.11758744e-08, -0.103626296, -0.00709158, 0.997656, 0.06806557, 0.10338348, 0.06843401, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -1.11758744e-08, -0.103626296, -0.0070915795, 0.997656, 0.06806556, 0.10338348, 0.068434, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873
@@ -2511,9 +2543,9 @@ shape = SubResource("ConvexPolygonShape3D_ics35")
 libraries/ = SubResource("AnimationLibrary_ijc8a")
 
 [node name="Wall2" type="CSGBox3D" parent="." unique_id=1945464411]
-transform = Transform3D(0.95209575, 0.30580038, 0, -0.30580038, 0.95209575, 0, 0, 0, 1, 1.0665334, 3.1742003, -9.226688)
+transform = Transform3D(0.95209575, 0.30580038, 0, -0.30580038, 0.95209575, 0, 0, 0, 1, 1.0603088, 3.1548202, -9.226688)
 use_collision = true
-size = Vector3(3.2396946, 0.03479004, 27.540325)
+size = Vector3(3.2396946, 0.07550049, 27.540325)
 material = SubResource("StandardMaterial3D_p5x4p")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Wall2" unique_id=422958117]
