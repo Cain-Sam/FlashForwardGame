@@ -113,6 +113,7 @@ transparency = 1
 albedo_color = Color(0.4862745, 0.4862745, 0.4862745, 0.27058825)
 metallic = 0.02
 roughness = 0.52
+shadow_to_opacity = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_p5x4p"]
 size = Vector3(0.13366699, 0.041015625, 0.22027588)
