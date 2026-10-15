@@ -42,7 +42,7 @@ func stick() -> void:
 	bulletFaceUp(collision, coll_normal)
 	checkForObjectReaction(hit_object)
 	if hit_object is RigidBody3D || hit_object.get_parent() is RigidBody3D:
-		removeCollision()
+		removeCollision(self)
 		mergeWithObject(hit_object)
 		
 func bulletTimeout(body):
@@ -59,10 +59,12 @@ func checkForObjectReaction(hit_object):
 	if collider.has_method("bulletHit"):
 		hit_object.bulletHit(self)
 
-func removeCollision():
-	for child in get_children():
+func removeCollision(node):
+	for child in node.get_children():
 		if child is CollisionShape3D or child is CollisionObject3D:
 			child.queue_free()
+		elif child.get_child_count() > 0:
+			removeCollision(child)
 			
 func mergeWithObject(hit_object):
 	if hit_object and hit_object is Node:
