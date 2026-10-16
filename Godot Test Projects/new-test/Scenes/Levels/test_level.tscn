@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://cwlqt850wmfrn" path="res://Textures/Metal/Metal050A_4K-PNG_Metalness.png" id="40_s4p7w"]
 [ext_resource type="Texture2D" uid="uid://cpwqq10hp7lp0" path="res://Textures/plastic/Plastic012A_4K-PNG_NormalGL.png" id="41_s4p7w"]
 [ext_resource type="Texture2D" uid="uid://bip5fky5biwiy" path="res://Textures/plastic/Plastic012A_4K-PNG_Roughness.png" id="42_ijc8a"]
-[ext_resource type="PackedScene" uid="uid://dpeyjs3uuhm2t" path="res://Scenes/Bullets/Low_Grav.tscn" id="43_14bjo"]
 
 [sub_resource type="Environment" id="Environment_oayfh"]
 background_mode = 1
@@ -958,7 +957,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.9676763e-08, -1.1333597e-07, -2.6433437e-08, 0.99341494, 0.11454084, 1.17134675e-07, -0.11454204, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967676e-08, -1.1333597e-07, -2.6433437e-08, 0.9934149, 0.11454084, 1.17134675e-07, -0.11454203, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -978,7 +977,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.9676763e-08, -1.1333597e-07, -2.6433437e-08, 0.99341494, 0.11454084, 1.17134675e-07, -0.11454204, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967676e-08, -1.1333597e-07, -2.6433437e-08, 0.9934149, 0.11454084, 1.17134675e-07, -0.11454203, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -2524,14 +2523,6 @@ shrinking_factor = -0.18
 pressure_coefficient = 100.0
 damping_coefficient = 0.21
 
-[node name="Area3D" parent="." unique_id=1154340047 instance=ExtResource("43_14bjo")]
-transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, -4.4861627, 0.5204606, -6.696218)
-gravity_point_center = Vector3(0, -1, 0)
-gravity_direction = Vector3(0, -1, 0)
-gravity = 0.02
-linear_damp_space_override = 1
-angular_damp_space_override = 1
-
 [node name="SoftBody3D5" type="SoftBody3D" parent="." unique_id=520733585]
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 0, -3.5527137e-15, 0, 1, -9.118266, 0.2530877, -16.177376)
 mesh = SubResource("SphereMesh_ejvcq")
@@ -2552,7 +2543,7 @@ curve = SubResource("Curve3D_dtnn3")
 transform = Transform3D(-0.99448377, -0.0070900735, 0.10337675, -6.9839895e-10, 0.9974436, 0.06842956, -0.103612676, 0.06805116, -0.9922194, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -1.2107198e-08, -0.103626296, -0.0070915786, 0.997656, 0.06806555, 0.10338348, 0.068433985, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -1.2107198e-08, -0.103626296, -0.007091578, 0.997656, 0.06806554, 0.10338348, 0.06843398, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873
