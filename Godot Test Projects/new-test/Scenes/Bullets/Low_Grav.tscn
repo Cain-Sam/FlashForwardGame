@@ -1,15 +1,31 @@
 [gd_scene format=3 uid="uid://dpeyjs3uuhm2t"]
 
-[sub_resource type="Gradient" id="Gradient_3kxxg"]
-offsets = PackedFloat32Array(0, 0.48989898, 1)
-colors = PackedColorArray(0, 0.23529412, 0.70980394, 0.46666667, 0.22352941, 1, 0.3137255, 0.39215687, 4.2128015, 1.5000646, 3.1181884, 1)
+[ext_resource type="Shader" uid="uid://comm332ynrxw6" path="res://shaders/Low_Grav_shader.tres" id="1_qdpx4"]
+[ext_resource type="Texture2D" uid="uid://d2wb7e4qvxjxn" path="res://materials/low_grav.tres" id="2_kqf2o"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xnp3h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5x4p"]
+render_priority = 0
+shader = ExtResource("1_qdpx4")
+shader_parameter/Vector3Parameter = Vector3(0, 0, 0)
+shader_parameter/Time_control = 0.2
+shader_parameter/Pulse_range = 0.202
+shader_parameter/UV_scale = Vector3(1, 1, 1)
+shader_parameter/UV_offset = Vector3(0, 0, 0)
+shader_parameter/Texture2DParameter2 = ExtResource("2_kqf2o")
+shader_parameter/ColoroverTime = 0.105
+shader_parameter/Texture2DParameter3 = ExtResource("2_kqf2o")
+shader_parameter/alpha = 0.879
+shader_parameter/metallic = 0.346
+shader_parameter/roughness = 0.201
+shader_parameter/specular = 0.411
+shader_parameter/Texture2DParameter = ExtResource("2_kqf2o")
+shader_parameter/FloatParameter = 0.52
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_skl3y"]
-noise = SubResource("FastNoiseLite_xnp3h")
-color_ramp = SubResource("Gradient_3kxxg")
-seamless = true
+[sub_resource type="SphereMesh" id="SphereMesh_p5x4p"]
+material = SubResource("ShaderMaterial_p5x4p")
+radius = 3.0
+height = 3.5
+radial_segments = 65
 
 [sub_resource type="Gradient" id="Gradient_gkf6b"]
 offsets = PackedFloat32Array(0, 0.48989898, 1)
@@ -25,19 +41,13 @@ seamless = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
 transparency = 1
 albedo_color = Color(1.3709314, 1.7816057, 2.02956, 0.59607846)
-albedo_texture = SubResource("NoiseTexture2D_skl3y")
+albedo_texture = ExtResource("2_kqf2o")
 metallic_specular = 0.6
 metallic_texture_channel = 1
 roughness = 0.07
 normal_enabled = true
 normal_scale = 0.74
 normal_texture = SubResource("NoiseTexture2D_qdpx4")
-
-[sub_resource type="SphereMesh" id="SphereMesh_p5x4p"]
-material = SubResource("StandardMaterial3D_pqdas")
-radius = 3.0
-height = 3.5
-radial_segments = 65
 
 [sub_resource type="SphereMesh" id="SphereMesh_gkf6b"]
 material = SubResource("StandardMaterial3D_pqdas")
@@ -66,6 +76,7 @@ angular_damp = 65.091
 mesh = SubResource("SphereMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1358490227]
+visible = false
 mesh = SubResource("SphereMesh_gkf6b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=164925308]
