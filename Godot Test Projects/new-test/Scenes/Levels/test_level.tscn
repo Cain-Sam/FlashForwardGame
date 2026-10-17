@@ -225,6 +225,16 @@ albedo_color = Color(0.5137255, 0.5019608, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwmob"]
 albedo_color = Color(0.5137255, 0.5019608, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
+cull_mode = 2
+albedo_texture = ExtResource("23_ics35")
+metallic = 1.0
+metallic_texture = ExtResource("24_dtnn3")
+roughness_texture = ExtResource("24_dtnn3")
+normal_enabled = true
+normal_texture = ExtResource("25_14bjo")
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbmvr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7alf0"]
@@ -452,6 +462,8 @@ _data = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p51s7"]
 albedo_color = Color(0.23137255, 0, 0.23137255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5x4p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ft1"]
 albedo_color = Color(0.23137255, 0, 0.23137255, 1)
@@ -957,7 +969,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/fog switch" unique_id=476135237]
-transform = Transform3D(0.99998623, 3.967676e-08, -1.1333597e-07, -2.6433437e-08, 0.9934149, 0.11454084, 1.17134675e-07, -0.11454203, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967676e-08, -1.1333597e-07, -2.6433437e-08, 0.9934148, 0.11454084, 1.17134675e-07, -0.11454202, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/fog switch" unique_id=968771895]
@@ -977,7 +989,7 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 mesh = SubResource("BoxMesh_p5x4p")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Building/Floor3/house light switch" unique_id=729701818]
-transform = Transform3D(0.99998623, 3.967676e-08, -1.1333597e-07, -2.6433437e-08, 0.9934149, 0.11454084, 1.17134675e-07, -0.11454203, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
+transform = Transform3D(0.99998623, 3.967676e-08, -1.1333597e-07, -2.6433437e-08, 0.9934148, 0.11454084, 1.17134675e-07, -0.11454202, 0.9934046, -0.002506256, 0.024955988, 0.0011668205)
 mesh = SubResource("BoxMesh_4tft1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Building/Floor3/house light switch" unique_id=1546561727]
@@ -1127,6 +1139,69 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.191402, 10.600216, -6.6985
 use_collision = true
 size = Vector3(78.723206, 0.9736328, 41.176678)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Building/Wall3" unique_id=925311910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.194645, 1.2891321, 12.516778)
+operation = 2
+size = Vector3(2, 3.6436768, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Building/Wall3" unique_id=389716474]
+transform = Transform3D(4.2957034, 0, 0, 0, 4.2957034, 0, 0, 0, 4.2957034, 23.352192, 1.9826632, 18.00462)
+size = Vector3(0.8289795, 0.70166016, 3.0717468)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Building/Wall3/CSGBox3D2" unique_id=858891866]
+transform = Transform3D(0.23279063, 0, 0, 0, 0.23279063, 0, 0, 0, 0.23279063, -0.036675453, -0.16144776, -1.2816985)
+operation = 2
+size = Vector3(2, 3.6436768, 2.0300293)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Building/Wall3/CSGBox3D2" unique_id=1754139605]
+transform = Transform3D(0.23279074, 0, 0, 0, -1.0175606e-08, -0.23279074, 0, 0.23279074, -1.0175606e-08, -0.036675453, -0.09343147, 0.20026231)
+operation = 2
+size = Vector3(2, 11.274178, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Building/Wall3/CSGBox3D2" unique_id=1093325291]
+transform = Transform3D(0.23279063, 0, 0, 0, -0.23279063, 2.0351207e-08, 0, -2.0351207e-08, -0.23279063, -0.036675453, -2.151792, 1.2375765)
+operation = 2
+size = Vector3(2, 19.689651, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Building/Wall3" unique_id=403243866]
+transform = Transform3D(4.2957034, 0, 0, 0, 4.2957034, 0, 0, 0, 4.2957034, 23.352192, -15.761873, 21.390396)
+size = Vector3(0.8289795, 0.70166016, 1.5260925)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Building/Wall3/CSGBox3D4" unique_id=1077219447]
+transform = Transform3D(0.23279074, 0, 0, 0, 3.0526817e-08, 0.23279074, 0, -0.23279074, 3.0526817e-08, -0.036675453, -0.07937491, -0.05276656)
+operation = 2
+size = Vector3(2, 6.317238, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Building/Wall3/CSGBox3D4" unique_id=1149614486]
+transform = Transform3D(0.23279063, 0, 0, 0, -0.23279063, 2.0351207e-08, 0, -2.0351207e-08, -0.23279063, -0.036675453, 1.9800293, 0.449399)
+operation = 2
+size = Vector3(2, 19.692482, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Building/Wall3" unique_id=975549255]
+transform = Transform3D(4.295703, 0, 0, 0, -1.8777115e-07, -4.295703, 0, 4.295703, -1.8777115e-07, 23.352192, -6.8801336, 23.121113)
+size = Vector3(0.8289795, 0.70166016, 3.4694867)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Building/Wall3/CSGBox3D3" unique_id=156861214]
+transform = Transform3D(0.23279077, 0, 0, 0, -1.0175608e-08, -0.23279077, 0, 0.23279077, -1.0175608e-08, -0.036675453, 0.04650426, 0.07685363)
+operation = 2
+size = Vector3(2, 20.200014, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Building/Wall3/CSGBox3D3" unique_id=474948009]
+transform = Transform3D(0.23279075, 0, 0, 0, 0.23279075, 0, 0, 0, 0.23279075, -0.036675453, -0.983135, -1.9740286)
+operation = 2
+size = Vector3(2, 11.274178, 2)
+material = SubResource("StandardMaterial3D_pqdas")
+
 [node name="Floor9" type="CSGBox3D" parent="Building" unique_id=1002331575]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 36.52137, -1.9325762, -7.638606)
 use_collision = true
@@ -1204,7 +1279,7 @@ transform = Transform3D(-1.2133601e-08, 0, -0.27758443, 0, 0.27758443, 0, 0.2775
 shape = SubResource("ConvexPolygonShape3D_j1jhc")
 
 [node name="Floor10" type="CSGBox3D" parent="Building" unique_id=2056361274]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 25.463537, 0.78943396, 7.3116198)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 25.46137, 0.7894337, 7.311734)
 use_collision = true
 size = Vector3(44.781166, 0.9736328, 20.050222)
 material = SubResource("StandardMaterial3D_0212m")
@@ -1218,6 +1293,10 @@ size = Vector3(2.8793945, 2.8468018, 3.8722248)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.734962, 0.03280258, -6.540936)
 operation = 2
 size = Vector3(2.8793945, 2.8468018, 3.8722248)
+
+[node name="rung4" parent="Building" unique_id=397048614 instance=ExtResource("6_btda1")]
+transform = Transform3D(0, 4.371139e-08, -1, 0, 1, 4.3711385e-08, 1, 0, 1.9106853e-15, 40.54975, 5.820812, 6.6950006)
+rungs = 26
 
 [node name="Floor11" type="CSGBox3D" parent="Building" unique_id=668598758]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 25.43601, 0.78943396, -22.672367)
@@ -1359,6 +1438,12 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 17.2
 use_collision = true
 size = Vector3(76.67643, 0.9736328, 20.58489)
 material = SubResource("StandardMaterial3D_p51s7")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Building/Floor13" unique_id=981842025]
+transform = Transform3D(0.99999994, 0, 0, 0, -0.99999994, 8.742276e-08, 0, -8.742276e-08, -0.99999994, 23.15399, 2.539566, 6.292794)
+operation = 2
+size = Vector3(2, 6.317238, 2)
+material = SubResource("StandardMaterial3D_p5x4p")
 
 [node name="Floor18" type="CSGBox3D" parent="Building" unique_id=510255147]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 52.207863, 1.0038052, -7.7491674)
@@ -1850,7 +1935,7 @@ transform = Transform3D(-2.6226832e-07, 0, 1.4, 0, 1.4, 0, -6, 0, -6.119594e-08,
 
 [node name="Ladders" type="Node3D" parent="." unique_id=280918693]
 
-[node name="rung" parent="Ladders" unique_id=397048614 instance=ExtResource("6_btda1")]
+[node name="rung" parent="Ladders" unique_id=668555225 instance=ExtResource("6_btda1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.36015, -0.5980736, 7.879138)
 rungs = 31
 
@@ -2543,7 +2628,7 @@ curve = SubResource("Curve3D_dtnn3")
 transform = Transform3D(-0.99448377, -0.0070900735, 0.10337675, -6.9839895e-10, 0.9974436, 0.06842956, -0.103612676, 0.06805116, -0.9922194, -0.027387619, 0.033967018, 0.07995796)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Path3D/PathFollow3D" unique_id=158225516]
-transform = Transform3D(-0.9946176, -1.2107198e-08, -0.103626296, -0.007091578, 0.997656, 0.06806554, 0.10338348, 0.06843398, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
+transform = Transform3D(-0.9946176, -1.2572859e-08, -0.103626296, -0.0070915776, 0.997656, 0.06806553, 0.10338348, 0.06843397, -0.99228466, -0.016105652, 0.010135263, 0.093201086)
 collision_layer = 5
 collision_mask = 5
 mass = 2.873
