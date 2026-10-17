@@ -38,8 +38,8 @@ volumetric_fog_emission_energy = 0.0
 volumetric_fog_ambient_inject = 0.92
 
 [node name="player" type="CharacterBody3D" unique_id=961832965 groups=["player"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 265
+collision_mask = 265
 script = ExtResource("1_vgqql")
 
 [node name="Grome" type="MeshInstance3D" parent="." unique_id=1660201055]

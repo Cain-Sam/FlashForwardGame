@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dpeyjs3uuhm2t"]
+
+[ext_resource type="Shader" uid="uid://comm332ynrxw6" path="res://shaders/Low_Grav_shader.tres" id="1_qdpx4"]
+[ext_resource type="Texture2D" uid="uid://d2wb7e4qvxjxn" path="res://materials/low_grav.tres" id="2_kqf2o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5x4p"]
+render_priority = 0
+shader = ExtResource("1_qdpx4")
+shader_parameter/Vector3Parameter = Vector3(0, 0, 0)
+shader_parameter/Time_control = 0.2
+shader_parameter/Pulse_range = 0.202
+shader_parameter/UV_scale = Vector3(1, 1, 1)
+shader_parameter/UV_offset = Vector3(0, 0, 0)
+shader_parameter/Texture2DParameter2 = ExtResource("2_kqf2o")
+shader_parameter/ColoroverTime = 0.105
+shader_parameter/Texture2DParameter3 = ExtResource("2_kqf2o")
+shader_parameter/alpha = 0.879
+shader_parameter/metallic = 0.346
+shader_parameter/roughness = 0.201
+shader_parameter/specular = 0.411
+shader_parameter/Texture2DParameter = ExtResource("2_kqf2o")
+shader_parameter/FloatParameter = 0.52
+
+[sub_resource type="SphereMesh" id="SphereMesh_p5x4p"]
+material = SubResource("ShaderMaterial_p5x4p")
+radius = 3.0
+height = 3.5
+radial_segments = 65
+
+[sub_resource type="Gradient" id="Gradient_gkf6b"]
+offsets = PackedFloat32Array(0, 0.48989898, 1)
+colors = PackedColorArray(0, 0.23529412, 0.70980394, 0.46666667, 0.22352941, 1, 0.3137255, 0.39215687, 4.2128015, 1.5000646, 3.1181884, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l1kbq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qdpx4"]
+noise = SubResource("FastNoiseLite_l1kbq")
+color_ramp = SubResource("Gradient_gkf6b")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdas"]
+transparency = 1
+albedo_color = Color(1.3709314, 1.7816057, 2.02956, 0.59607846)
+albedo_texture = ExtResource("2_kqf2o")
+metallic_specular = 0.6
+metallic_texture_channel = 1
+roughness = 0.07
+normal_enabled = true
+normal_scale = 0.74
+normal_texture = SubResource("NoiseTexture2D_qdpx4")
+
+[sub_resource type="SphereMesh" id="SphereMesh_gkf6b"]
+material = SubResource("StandardMaterial3D_pqdas")
+flip_faces = true
+radius = 2.99
+height = 3.49
+radial_segments = 65
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kqf2o"]
+points = PackedVector3Array(0.36642107, 0.10827909, 1.9555358, -0.36602703, -0.13542426, -1.9498347, -0.36678708, 0.10840087, -1.9538872, 1.9553345, 0.10837886, -0.36453807, 0.41910568, -1.2114848, 0.2408066, -1.619268, 0.70599467, 0.3013026, 0.59776837, 1.1820858, -0.23715745, -1.6857513, -0.6157595, 0.42276636, 0.11904735, -0.96966696, -1.253064, -1.6265826, -0.25452068, -1.0827142, 1.6988727, 0.107533395, 1.0327561, -0.7276715, -0.37728396, 1.7598331, -0.2992557, 0.8842695, 1.3780762, 1.0282931, 0.16781977, -1.69206, -0.65667135, 0.8817589, -1.2517093, 1.6141939, -0.67131245, -0.47657672, 0.9538121, -0.7288104, 1.3126382, 1.2524918, 0.8214964, 0.83642083, -0.7774298, -1.1498096, 0.060997125, -1.3253627, 0.22724678, 1.4472041, -0.59957594, 1.1857015, 0.18099663, 1.3090554, 0.7600132, -0.8907886, -0.4169674, -0.966933, 1.1929755, -1.9465296, 0.22953513, -0.2413256, -1.0696623, -0.8455304, -1.0082917, 0.41990194, 0.82630664, -1.4379711, 1.0847082, -0.3751446, -1.5650427, -1.3872119, 0.5895591, -1.0838605, 1.6857575, -0.6157617, 0.42276794, -1.8217896, -0.13491955, 0.7909379, 0.5357269, 0.99854434, 1.0732539, 1.6192646, 0.70599324, 0.30130202)
+
+[node name="Area3D" type="Area3D" unique_id=1154340047]
+collision_layer = 256
+collision_mask = 257
+gravity_space_override = 3
+gravity_point_unit_distance = 2.5
+gravity_point_center = Vector3(1, -1, 1)
+gravity_direction = Vector3(1, -1, 1)
+gravity = 0.061
+linear_damp_space_override = 4
+linear_damp = 88.692
+angular_damp_space_override = 4
+angular_damp = 65.091
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1957995683]
+mesh = SubResource("SphereMesh_p5x4p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1358490227]
+visible = false
+mesh = SubResource("SphereMesh_gkf6b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=164925308]
+shape = SubResource("ConvexPolygonShape3D_kqf2o")
